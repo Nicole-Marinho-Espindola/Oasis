@@ -1,0 +1,1 @@
+Esta pasta será utilizada para organizar todos os arquivos e coisas relacionadas a parte do front-end do site.

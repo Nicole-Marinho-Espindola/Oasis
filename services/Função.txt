@@ -1,0 +1,1 @@
+Está pasta irá servir para colocarmos todos os arquivos .php que irão fazer algum tipo de serviço, por exemplo todas as funções php que iremos utilizar no site.
