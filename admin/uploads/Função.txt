@@ -1,0 +1,1 @@
+Está pasta irá servir para colocar todas as imagens que os usuarios fizerem upload, como por exemplo a foto de perfil.

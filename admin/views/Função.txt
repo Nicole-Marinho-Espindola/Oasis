@@ -1,0 +1,1 @@
+Esta pasta irá servir para colocar todos os arquivos de pagina que iremos utilizar, por exemplo a pagina "sobre-nós.php"

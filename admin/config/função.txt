@@ -1,0 +1,1 @@
+Esta pasta vai servir para colocar todos os arquivos de configuração, um exemplo que iremos utilizar é a conexão com o banco de dados que vamos denominar "database.php"
