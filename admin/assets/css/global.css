@@ -6,7 +6,7 @@
 }
 
 .content{
-    padding: 5em 5em 3em 25em ;
+    padding: 7em 5em 3em 25em ;
 }
 
 .table{
@@ -51,4 +51,18 @@
 .btn:hover{
     background-color: #b3c3a8;
     color: #fff;
+}
+
+.header-table{
+    font-weight: bold;
+    background-color: #242920;
+    color: #fff;
+}
+
+.page-nav{
+    margin-top: 3em;
+}
+
+.page-link{
+    color: #242920;
 }

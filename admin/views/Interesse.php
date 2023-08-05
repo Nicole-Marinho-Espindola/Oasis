@@ -1,6 +1,6 @@
 <?php
-    include_once('../includes/navbar.php');
-    include_once('../../assets/mocks/situacaoVoluntario.php')
+    include_once('./includes/navbar.php');
+    include_once('./../assets/mocks/interesse.php');
 ?>
 
 <div class="content">
@@ -11,22 +11,19 @@
     </div>
     <table class="table">
         <thead>
-            <th>Id</th>
-            <th>Situação do Voluntário</th>
-            <th></th>
+            <th>Interesses Cadastrados</th>
             <th></th>
             <th></th>
         </thead>
         <tbody>
             <?php
-                foreach($voluntarios as $voluntario) 
+                foreach($interesses as $interesse) 
                 {
             ?>
                 <tr class="row-table">
-                    <td class="content-table"><?= $voluntario['id'] ?></td>
-                    <td class="content-table"><?= $voluntario['situacao'] ?></td>
-                    <td></td>
+                    <td class="content-table"><?= $interesse['interesse'] ?></td>
                     <td><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></td>
+                    <td><i class="fa-solid fa-trash" style="color: #1f513b;"></i></td>
                 </tr>
             <?php
                 }

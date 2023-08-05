@@ -1,6 +1,6 @@
 <?php
     include_once('../includes/navbar.php');
-    include_once('../../assets/mocks/situacaoVoluntario.php')
+    include_once('../../assets/mocks/ongs.php');
 ?>
 
 <div class="content">
@@ -12,21 +12,23 @@
     <table class="table">
         <thead>
             <th>Id</th>
-            <th>Situação do Voluntário</th>
+            <th>Nome</th>
+            <th>CNPJ</th>
             <th></th>
             <th></th>
             <th></th>
         </thead>
         <tbody>
             <?php
-                foreach($voluntarios as $voluntario) 
+                foreach($ONG as $ong) 
                 {
             ?>
                 <tr class="row-table">
-                    <td class="content-table"><?= $voluntario['id'] ?></td>
-                    <td class="content-table"><?= $voluntario['situacao'] ?></td>
-                    <td></td>
+                    <td class="content-table"><?= $ong['id'] ?></td>
+                    <td class="content-table"><?= $ong['nome'] ?></td>
+                    <td class="content-table"><?= $ong['cnpj'] ?></td>  
                     <td><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></td>
+                    <td><i class="fa-solid fa-trash" style="color: #1f513b;"></i></td>
                 </tr>
             <?php
                 }

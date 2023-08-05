@@ -15,6 +15,9 @@
                 <th class="h-table">ID</th>
                 <th class="h-table">Nome</th>
                 <th class="h-table">Idade</th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody class="body-table">
@@ -26,11 +29,26 @@
                     <td class="content-table"><?= $voluntario['id'] ?></td>
                     <td class="content-table"><?= $voluntario['nome'] ?></td>
                     <td class="content-table"><?= $voluntario['idade'] ?></td>  
+                    <td><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></td>
+                    <td><i class="fa-solid fa-trash" style="color: #1f513b;"></i></td>
                 </tr>
             <?php
                 }
             ?>
         </tbody>
     </table>
+    <div class="page-nav" aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+            <a class="page-link">Anterior</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+            <a class="page-link" href="#">Próximo</a>
+            </li>
+        </ul>
+    </div>
 </div>
 

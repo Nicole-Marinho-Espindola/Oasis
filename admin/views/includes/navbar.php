@@ -44,20 +44,14 @@
                 </a>
             </li>
             <ul class="collapse multi-collapse" id="multiCollapseExample2">
-                <li class="list-style"><a class="sub-list" href="">Lista de ongs</a></li>
-                <li class="list-style"><a class="sub-list" href="">Situação da ong</a></li>
-                <li class="list-style"><a class="sub-list" href="">Nivel de acesso</a></li>
+                <li class="list-style"><a class="sub-list" href="../ongs/index.php">Lista de ongs</a></li>
+                <li class="list-style"><a class="sub-list" href="../ongs/situacaoOng.php">Situação da ong</a></li>
+                <li class="list-style"><a class="sub-list" href="../ongs/nivelAcesso.php">Nivel de acesso</a></li>
             </ul>
             <li class="list-style">
                 <i class="fa-solid fa-list" style="color: #ffffff;"></i>
-                <a class="link-style" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample3" role="button" aria-expanded="false" aria-controls="multiCollapseExample2">
-                  Interesses
-                </a>
+                <a href="../interesse.php" class="link-style">Interesses</a>
             </li>
-            <ul class="collapse multi-collapse" id="multiCollapseExample3">
-                <li class="list-style"><a class="sub-list" href="">Interesses cadastrados</a></li>
-                <li class="list-style"><a class="sub-list" href="">Interesses config</a></li>
-            </ul>
             <div class="btn-block">
                 <button class="btn"><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i><span class="margin-5">Sair</span></button>
             </div>
