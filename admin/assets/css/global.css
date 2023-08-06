@@ -41,11 +41,12 @@
     color: #fff;
     font-family: 'Poppins', sans-serif;
     box-shadow: 1px 1px 7px #94a588;
+    text-transform: uppercase;
 }
 
 .btn-color{
-    background-color: #53604a;
-    box-shadow: 1px 1px 7px #53604a;
+    background-color: #586D48;
+    box-shadow: 1px 1px 7px #586D48;
 }
 
 .btn:hover{
@@ -65,4 +66,18 @@
 
 .page-link{
     color: #242920;
+}
+
+.title{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.line{
+    width: 14em;
+    height: 5px;
+    background-color: #C7D6BB;
+    border-radius: 10px;
+    margin-top: 15px;
 }
