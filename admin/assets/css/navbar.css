@@ -2,22 +2,41 @@
 /* Navbar */
 .navbar{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     background-color: rgb(247, 247, 247);
     box-shadow: 10px 0px 12px rgb(212, 212, 212);
-    padding: 10px 10px;
+    padding-left: 40px;
     width: 100%;
-    height: 4em;
+    height: 9vh;
     position: fixed;
 }
 
 .logo{
-    height: 25px;
-    margin-right: 70em;
+    height: 40px;
+    margin-left: 30px;
 }
 
-.perfil{
+.logo-block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo-nome{
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.icon{
+    font-size: 30px;
+    color: #b3c3a8;
+}
+
+/* .perfil{
     height: 50px;
     width: 50px;
     border-radius: 100%;
@@ -30,7 +49,7 @@
     justify-content: center;
     height: 55px;
     object-fit: cover;
-}
+} */
 
 /* Aside */
 .barra-lateral{
@@ -39,11 +58,17 @@
     padding-left: 15px;
     padding-top: 3em;
     background-color: #53604a;
-    height: 43em;
+    height: 91vh;
     width: 20em;
     box-shadow: 0px 10px 12px rgb(195, 195, 195);
     position: fixed;
-    margin-top: 4em;
+    margin-top: 9vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in;
+}
+
+.barra-lateral.active{
+    transform: translateX(0);
 }
 
 .list-style{
@@ -85,3 +110,11 @@
     width: 100%; */
 }
 
+@media screen and (max-width: 768px){
+    
+    .barra-lateral{
+        width: 100%;
+        height: 100%;
+        margin-top: 9vh;
+    }
+} 

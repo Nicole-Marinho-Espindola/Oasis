@@ -6,7 +6,7 @@
 }
 
 .content{
-    padding: 7em 5em 3em 25em ;
+    padding: 7em 7em 3em 7em ;
 }
 
 .table{
@@ -18,12 +18,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 30em;
+    margin-left: 44em;
 }
 
 .search{
     outline: none;
-    border-radius: 5px;
+    border-radius: 10px;
     height: 3em;
     width: 20em;
     border: 1px solid #d0d0d0;
@@ -35,13 +35,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 6em;
+    width: 8em;
     height: 45px;
     background-color: #94a588;
     color: #fff;
     font-family: 'Poppins', sans-serif;
     box-shadow: 1px 1px 7px #94a588;
     text-transform: uppercase;
+    font-size: 15px;
+    padding: 7px;
+    border-radius: 10px;
 }
 
 .btn-color{
@@ -80,4 +83,36 @@
     background-color: #C7D6BB;
     border-radius: 10px;
     margin-top: 15px;
+}
+
+@media screen and (max-width: 768px){
+    .content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .search-block{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin-left: 0;
+    }
+    
+    .search{
+        height: 45px;
+        width: 15em;
+        padding-left: 7px;
+        margin-right: 0;
+        margin-bottom: 13px;
+    }
+
+    .btn{
+        width: 20em;
+        height: 40px;
+        font-size: 12px;
+        padding: 7px;
+        margin-bottom: 10px;
+    }
 }

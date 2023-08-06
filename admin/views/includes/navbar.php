@@ -2,13 +2,20 @@
 <html lang="en">
 <body>
     <nav class="navbar">
-        <img class="logo" src="" alt="Logo da Oásis">
-        <div class="perfil">
-            <img class="foto-perfil" src="../../assets/img/foto-perfil.jpeg" alt="Foto de perfil admin">
+        <div class="logo-block">
+            <a href="javascript:void(0);">
+                <i class="fa-solid fa-bars icon" ></i>
+            </a>
+            
+            <img class="logo" src="<?= baseUrl('/assets/img/logo-oasis.png') ?>" alt="Logo da Oásis">
+            <span class="logo-nome">Oásis</span>
         </div>
+        <!-- <div class="perfil">
+            <img class="foto-perfil" src="../../assets/img/foto-perfil.jpeg" alt="Foto de perfil admin">
+        </div> -->
     </nav>
-    <aside class="barra-lateral">
-        <ul class="menu-lateral">
+    <aside class="barra-lateral" >
+        <ul class="menuLateral">
             <li class="list-style">
                 <i class="fa-solid fa-house" style="color: #ffffff;"></i>
                 <a class="link-style" href="">Home</a>
@@ -42,3 +49,5 @@
             </div>
         </ul>
     </aside>
+
+    <script src="<?= baseUrl('/assets/js/menuHamburguer.js') ?>"></script>

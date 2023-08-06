@@ -17,7 +17,6 @@
                 <th class="h-table">Idade</th>
                 <th></th>
                 <th></th>
-                <th></th>
             </tr>
         </thead>
         <tbody class="body-table">

@@ -16,11 +16,6 @@
     height: 30em;
 }
 
-.img-block{
-    background-color: #b3c3a8;
-    height: 100%;
-}
-
 .form-title{
     display: flex;
     flex-direction: column;
@@ -42,6 +37,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #b3c3a8;
+    height: 100%;
 }
 
 .user-info-block{
@@ -73,4 +70,45 @@
 .btn{
     margin-top: 55px;
     width: 10em;
+}
+
+@media screen and (max-width:768px){
+
+    .main-content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .img-block{
+        display: none;
+    }
+
+    .input-block{
+        width: 17em;
+        margin-top: 7px;
+        height: 30px;
+    }
+
+    .title{
+        font-size: 25px;
+    }
+
+    .line{
+        width: 10em;
+    }
+
+    .btn{
+        width: 8em;
+        height: 40px;
+    }
 }
