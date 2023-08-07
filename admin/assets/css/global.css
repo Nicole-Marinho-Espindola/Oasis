@@ -85,7 +85,69 @@
     margin-top: 15px;
 }
 
-@media screen and (max-width: 768px){
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 7em 3em 3em 3em;
+}
+
+.text-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    flex-direction: column;
+}
+
+.title-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.paragraph-text{
+    margin-top: 3em;
+    width: 25em;
+    text-align: justify;
+}
+
+.img-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img{
+    height: 35em;
+}
+
+.saiba-mais{
+    margin-top: 25px;
+    width: 27em;
+    height: 50px;
+    border: 1px solid #586D48;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #586D48;
+}
+
+.center-itens{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: #fff;
+}
+
+.arrow-icon{
+    margin-right: 10px;
+    font-size: 15px;
+    color: #fff;
+}
+
+@media screen and (max-width: 425px){
     .content{
         display: flex;
         justify-content: center;
@@ -115,4 +177,93 @@
         padding: 7px;
         margin-bottom: 10px;
     }
+
+    .grid{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .text-block{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        flex-direction: column;
+    }
+    
+    .title-block{
+        font-size: 20px;
+    }
+    
+    .paragraph-text{
+        margin-top: 3em;
+        width: 15em;
+        text-align: justify;
+    }
+    
+    .img{
+        height: 17em;
+    }
+    
+    .saiba-mais{
+        height: 55px;
+        width: 20em;
+        padding: 10px;
+        font-size: 12px;
+    }
+    
+    .center-itens{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        color: #fff;
+    }
+    
+}
+
+@media screen and (min-width: 425px) and (max-width: 768px){
+
+    .grid{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .text-block{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        flex-direction: column;
+    }
+    
+    .title-block{
+        font-size: 20px;
+    }
+    
+    .paragraph-text{
+        margin-top: 3em;
+        width: 22em;
+        text-align: justify;
+    }
+    
+    .img{
+        height: 25em;
+    }
+    
+    .saiba-mais{
+        height: 55px;
+        width: 30em;
+        padding: 10px;
+        font-size: 12px;
+    }
+    
+    .center-itens{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        color: #fff;
+    }
+    
 }

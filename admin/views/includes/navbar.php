@@ -18,7 +18,7 @@
         <ul class="menuLateral">
             <li class="list-style">
                 <i class="fa-solid fa-house" style="color: #ffffff;"></i>
-                <a class="link-style" href="">Home</a>
+                <a class="link-style" href=<?= baseUrl('views/index.php') ?>>Home</a>
             </li>
             <li class="list-style">
                 <i class="fa-solid fa-user" style="color: #ffffff;"></i>
@@ -27,8 +27,8 @@
                 </a>
             </li>
             <ul class="collapse multi-collapse" id="multiCollapseExample1">
-                <li class="list-style"><a class="sub-list" href="../voluntarios/index.php">Lista de voluntários</a></li>
-                <li class="list-style"><a class="sub-list" href="../voluntarios/situacaoVoluntario.php">Situação do voluntário</a></li>
+                <li class="list-style"><a class="sub-list" href=<?= baseUrl('views/voluntarios/index.php') ?>>Lista de voluntários</a></li>
+                <li class="list-style"><a class="sub-list" href=<?= baseUrl('views/voluntarios/situacaoVoluntario.php') ?>>Situação do voluntário</a></li>
             </ul>
             <li class="list-style">
                 <i class="fa-solid fa-user-group" style="color: #ffffff;"></i>
@@ -37,12 +37,12 @@
                 </a>
             </li>
             <ul class="collapse multi-collapse" id="multiCollapseExample2">
-                <li class="list-style"><a class="sub-list" href="../ongs/index.php">Lista de ongs</a></li>
-                <li class="list-style"><a class="sub-list" href="../ongs/situacaoOng.php">Situação da ong</a></li>
+                <li class="list-style"><a class="sub-list" href=<?= baseUrl('views/ongs/index.php') ?>>Lista de ongs</a></li>
+                <li class="list-style"><a class="sub-list" href=<?= baseUrl('views/ongs/situacaoOng.php') ?>>Situação da ong</a></li>
             </ul>
             <li class="list-style">
                 <i class="fa-solid fa-list" style="color: #ffffff;"></i>
-                <a href="../interesse.php" class="link-style">Interesses</a>
+                <a href=<?= baseUrl('views/interesse.php') ?> class="link-style">Interesses</a>
             </li>
             <div class="btn-block">
                 <button class="btn"><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i><span class="margin-5">Sair</span></button>
