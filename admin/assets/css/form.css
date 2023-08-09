@@ -72,6 +72,17 @@
     width: 10em;
 }
 
+.section{
+    display: none;
+}
+
+.active{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 @media screen and (max-width:768px){
 
     .main-content{
