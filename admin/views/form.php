@@ -30,8 +30,8 @@
                 <label for="">Senha:</label>
                 <div class="input-block">
                     <i class="fa-solid fa-lock" style="color: #586D48;"></i>
-                    <input class="input" type="text">
-                    <i class="fa-regular fa-eye-slash" style="color: #586D48;"></i>
+                    <input class="input" type="text" name="password" placeholder="Senha" id="password" onChange="buttonToggle()">
+                    <i class="fa-regular fa-eye-slash" style="color: #586D48;" id="eyePng" onClick="eyeClick()"></i>
                 </div>
             </div>
             <button class="btn btn-color">Entrar</button>

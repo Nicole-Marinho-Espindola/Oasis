@@ -131,20 +131,25 @@
     padding: 10px;
     border-radius: 5px;
     background-color: #586D48;
+    color: #fff;
 }
 
 .center-itens{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    color: #fff;
 }
 
 .arrow-icon{
     margin-right: 10px;
     font-size: 15px;
     color: #fff;
+}
+
+.line-thin{
+    height: 1px;
+    background-color: #afafaf;
+    width: 25em;
 }
 
 @media screen and (max-width: 425px){
@@ -210,14 +215,13 @@
         width: 20em;
         padding: 10px;
         font-size: 12px;
+        color: #fff;
     }
     
     .center-itens{
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: row;
-        color: #fff;
     }
     
 }
@@ -262,8 +266,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: row;
-        color: #fff;
     }
     
 }

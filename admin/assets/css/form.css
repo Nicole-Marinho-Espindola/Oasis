@@ -44,7 +44,7 @@
 .user-info-block{
     display: flex;
     flex-direction: column;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .input-block{
@@ -81,6 +81,55 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.icon-green{
+    color: #586D48;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+}
+
+.label-interesse{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #b3c3a8;
+    border-radius: 10px;
+    border: 1px solid #586D48;
+    padding: 10px;
+    margin: 6px;
+    cursor: pointer;
+}
+
+.label-interesse input:checked + label{
+    background-color: #586D48;
+    border: 1px solid #424f38;
+}
+
+.label-interesse input{
+    appearance: none;
+}
+
+.subtitle{
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.subtitle-block{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 @media screen and (max-width:768px){

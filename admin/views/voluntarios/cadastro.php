@@ -31,52 +31,82 @@
                 <div class="line"></div>
             </div>
             <form class="form" action="">
-                <div class="section1 active">
+                <div class="section active">
                     <div class="user-info-block">
-                        <label class="" for="">Nome:</label>
-                        <div class="input-block">
-                            <i class="fa-regular fa-envelope" style="color: #586D48;"></i>
-                            <input class="input input-size" type="text">
-                        </div>
+                        <label class="" for="">Nome:
+                            <div class="input-block">
+                                <i class="fa-solid fa-user icon-green"></i>
+                                <input class="input input-size icon-green" type="text">
+                            </div>
+                        </label>
                     </div>
                     <div class="user-info-block">
-                        <label class="" for="">Sobrenome:</label>
-                        <div class="input-block">
-                            <i class="fa-regular fa-envelope" style="color: #586D48;"></i>
-                            <input class="input input-size" type="text">
-                        </div>
+                        <label class="" for="">Sobrenome:
+                            <div class="input-block">
+                                <i class="fa-solid fa-user icon-green"></i>
+                                <input class="input input-size" type="text">
+                            </div>
+                        </label>
                     </div>
                     <div class="user-info-block">
-                        <label class="" for="">Data de nascimento:</label>
-                        <div class="input-block">
-                            <i class="fa-regular fa-envelope" style="color: #586D48;"></i>
-                            <input class="input input-size" type="text">
-                        </div>
+                        <label class="" for="">Data de nascimento:
+                            <div class="input-block">
+                            <i class="fa-regular fa-calendar icon-green"></i>
+                                <input class="input input-size" type="text">
+                            </div>
+                        </label>
                     </div> 
                     <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>
                 </div>
-                <div class="section2">
+                <div class="section">
                     <div class="user-info-block">
-                        <label class="" for="">Selecione 3 interesses:</label>
-                        <!-- <div class="line"></div> -->
+                        <div class="center-itens subtitle-block">
+                            <span class="subtitle">Selecione 3 interesses:</span>
+                            <div class="line line-thin"></div>
+                        </div>
+                        <div class="container">
+                                <label class="label-interesse">Praia
+                                    <input type="checkbox" name="" id="">
+                                </label>
+                                <label class="label-interesse">Meio ambiente
+                                    <input type="checkbox" name="" id="">
+                                </label>
+                                <label class="label-interesse">Limpeza na praia
+                                    <input type="checkbox" name="" id="">
+                                </label>
+                                <label class="label-interesse">Esportes na praia
+                                    <input type="checkbox" name="" id="">
+                                </label>
+                                <label class="label-interesse">Eventos
+                                    <input type="checkbox" name="" id="">
+                                </label>
+                                <label class="label-interesse">Cuidar da natureza
+                                    <input type="checkbox" name="" id="">
+                                </label>
+                                <label class="label-interesse">Cuidar das plantas
+                                    <input type="checkbox" name="" id="">
+                                </label>
+                        </div>
                     </div>
                     <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>
                 </div>
-                <div class="section3">
+                <div class="section">
                     <div class="user-info-block">
-                        <label class="" for="">Email:</label>
-                        <div class="input-block">
-                            <i class="fa-regular fa-envelope" style="color: #586D48;"></i>
-                            <input class="input input-size" type="text">
-                        </div>
+                        <label class="" for="">Email:
+                            <div class="input-block">
+                                <i class="fa-regular fa-envelope icon-green"></i>
+                                <input class="input input-size" type="text">
+                            </div>
+                        </label>
                     </div>
                     <div class="user-info-block">
-                        <label for="">Senha:</label>
-                        <div class="input-block">
-                            <i class="fa-solid fa-lock" style="color: #586D48;"></i>
-                            <input class="input" type="text">
-                            <i class="fa-regular fa-eye-slash" style="color: #586D48;"></i>
-                        </div>
+                        <label for="">Senha:
+                            <div class="input-block">
+                                <i class="fa-solid fa-lock"></i>
+                                <input class="input" type="text">
+                                <i class="fa-regular fa-eye-slash icon-green"></i>
+                            </div>
+                        </label>
                     </div>
                     <button type="submit" class="btn btn-color">Cadastrar</button>
                 </div>
