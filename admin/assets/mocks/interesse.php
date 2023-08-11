@@ -1,66 +1,31 @@
 <?php
     $interesses = [
         [
+            'id' => 1,
             'interesse' => 'meio ambiente',
         ],
         [
+            'id' => 2,
             'interesse' => 'praia',
         ],
         [
+            'id' => 3,
             'interesse' => 'limpeza de praia',
         ],
         [
+            'id' => 4,
             'interesse' => 'eventos na praia',
         ],
         [
+            'id' => 5,
             'interesse' => 'palestras na praia',
         ],
         [
+            'id' => 6,
             'interesse' => 'conservação',
         ],
         [
-            'interesse' => 'plantas',
-        ],
-        [
-            'interesse' => 'meio ambiente',
-        ],
-        [
-            'interesse' => 'praia',
-        ],
-        [
-            'interesse' => 'limpeza de praia',
-        ],
-        [
-            'interesse' => 'eventos na praia',
-        ],
-        [
-            'interesse' => 'palestras na praia',
-        ],
-        [
-            'interesse' => 'conservação',
-        ],
-        [
-            'interesse' => 'plantas',
-        ],
-        [
-            'interesse' => 'meio ambiente',
-        ],
-        [
-            'interesse' => 'praia',
-        ],
-        [
-            'interesse' => 'limpeza de praia',
-        ],
-        [
-            'interesse' => 'eventos na praia',
-        ],
-        [
-            'interesse' => 'palestras na praia',
-        ],
-        [
-            'interesse' => 'conservação',
-        ],
-        [
+            'id' => 7,
             'interesse' => 'plantas',
         ],
     ];

@@ -1,13 +1,15 @@
 <?php
-    include_once('./includes/head.php');
-    include_once('./../assets/mocks/interesse.php');
+    include_once('../includes/head.php');
+    include_once('../../assets/mocks/interesse.php');
 ?>
 
 <div class="content">
     <div class="search-block">
         <input class="search" type="text" placeholder="Pesquisar...">
         <button class="btn">Pesquisar</button>
-        <button class="btn btn-color margin-5">Cadastrar</button>
+        <a class="link-style-none" href=<?= baseUrl('views/interesses/cadastro.php')?>>
+            <button class="btn btn-color margin-5">Cadastrar</button>
+        </a>
     </div>
     <table class="table">
         <thead>
@@ -22,7 +24,7 @@
             ?>
                 <tr class="row-table">
                     <td class="content-table"><?= $interesse['interesse'] ?></td>
-                    <td><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></td>
+                    <td><a href=<?= baseUrl('views/interesses/editar.php?id='.$interesse['id'])?>><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></a></td>
                     <td><i class="fa-solid fa-trash" style="color: #1f513b;"></i></td>
                 </tr>
             <?php

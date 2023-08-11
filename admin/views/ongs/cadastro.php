@@ -11,7 +11,7 @@
                 <div class="section active">
                     <div class="user-info-block">
                         <label class="" for="">Nome:
-                            <div class="input-block">
+                            <div class="form-input-block">
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size icon-green" type="text" required>
                             </div>
@@ -19,7 +19,7 @@
                     </div>
                     <div class="user-info-block">
                         <label class="" for="">Sobrenome:
-                            <div class="input-block">
+                            <div class="form-input-block">
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size" type="text" required>
                             </div>
@@ -27,7 +27,7 @@
                     </div>
                     <div class="user-info-block">
                     <label class="" for="">CNPJ:
-                            <div class="input-block">
+                            <div class="form-input-block">
                                 <i class="fa-regular fa-envelope icon-green"></i>
                                 <input class="input input-size" type="text" required>
                             </div>
@@ -38,7 +38,7 @@
                 <div class="section">
                     <div class="user-info-block">
                         <label class="" for="">Email:
-                            <div class="input-block">
+                            <div class="form-input-block">
                                 <i class="fa-regular fa-envelope icon-green"></i>
                                 <input class="input input-size" type="email" required>
                             </div>
@@ -46,7 +46,7 @@
                     </div>
                     <div class="user-info-block">
                         <label for="">Senha:
-                            <div class="input-block">
+                            <div class="form-input-block">
                                 <i class="fa-solid fa-lock"></i>
                                 <input class="input" type="password" required>
                                 <i class="fa-regular fa-eye-slash icon-green"></i>

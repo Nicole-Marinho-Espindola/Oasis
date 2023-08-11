@@ -42,7 +42,7 @@
             </ul>
             <li class="list-style">
                 <i class="fa-solid fa-list" style="color: #ffffff;"></i>
-                <a href=<?= baseUrl('views/interesse.php') ?> class="link-style">Interesses</a>
+                <a href=<?= baseUrl('views/interesses/index.php') ?> class="link-style">Interesses</a>
             </li>
             <div class="btn-block">
                 <button class="btn"><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i><span class="margin-5">Sair</span></button>
