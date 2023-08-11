@@ -7,7 +7,9 @@
     <div class="search-block">
         <input class="search" type="text" placeholder="Pesquisar...">
         <button class="btn">Pesquisar</button>
-        <button src="<?= baseUrl('views/voluntarios/cadastro.php') ?>" class="btn btn-color margin-5">Cadastrar</button>
+        <a class="link-style-none" href=<?= baseUrl('views/voluntarios/cadastro.php')?>>
+            <button class="btn btn-color margin-5">Cadastrar</button>
+        </a>
     </div>
     <table class="table">
         <thead class="header-table">

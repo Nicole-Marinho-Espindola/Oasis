@@ -12,18 +12,18 @@
     flex-direction: column;
 }
 
-.form-block .form-img{
+.form-img{
     height: 30em;
 }
 
-.form-block .form-title{
+.form-title{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.form-block .form{
+.form{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,7 +32,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.form-block .img-block{
+.img-block{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,13 +41,13 @@
     height: 100%;
 }
 
-.form-block .user-info-block{
+.user-info-block{
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
 }
 
-.form-block .form-input-block{
+.input-block{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,38 +57,38 @@
     height: 40px;
 }
 
-.form-block .input{
+.input{
     outline: none;
     border: none;
     width: 80%;
     margin-left: 10px;
 }
 
-.form-block .input-size{
+.input-size{
     width: 94%;
 }
 
-.form-block .btn{
+.btn{
     margin-top: 55px;
     width: 10em;
 }
 
-.form-block .section{
+.section{
     display: none;
 }
 
-.form-block .active{
+.active{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.form-block .icon-green{
+.icon-green{
     color: #586D48;
 }
 
-.form-block .container{
+.container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -96,7 +96,7 @@
     width: 30vw;
 }
 
-.form-block .label-interesse label{
+.label-interesse label{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,16 +108,16 @@
     cursor: pointer;
 }
 
-.form-block .label-interesse input:checked + label{
+.label-interesse input:checked + label{
     background-color: #859579;
     border: 1px solid #424f38;
 }
 
-.form-block .label-interesse input{
+.label-interesse input{
     appearance: none;
 }
 
-.form-block .subtitle{
+.subtitle{
     display: flex;
     justify-content:center ;
     align-items: center;
@@ -127,7 +127,7 @@
     margin-bottom: 20px;
 }
 
-.form-block .subtitle-block{
+.subtitle-block{
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
@@ -143,32 +143,32 @@
         width: 100vw;
     }
 
-    .form-block .form{
+    .form{
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 100%;
     }
 
-    .form-block .img-block{
+    .img-block{
         display: none;
     }
 
-    .form-block .input-block{
+    .input-block{
         width: 17em;
         margin-top: 7px;
         height: 30px;
     }
 
-    .form-block .title{
+    .title{
         font-size: 25px;
     }
 
-    .form-block .line{
+    .line{
         width: 10em;
     }
 
-    .form-block .btn{
+    .btn{
         width: 8em;
         height: 40px;
     }

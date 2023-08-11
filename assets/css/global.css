@@ -117,13 +117,13 @@
     text-align: justify;
 }
 
-.img-section{
+.img-block{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.img-size{
+.img{
     height: 35em;
 }
 

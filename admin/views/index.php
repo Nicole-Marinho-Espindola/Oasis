@@ -14,7 +14,7 @@
             <p class="center-itens"><i class="fa-solid fa-angle-right icon arrow-icon"></i> Saiba mais sobre as funcionalidades do painel</p>
         </div>
     </div>
-    <div class="img-block">
-        <img class="img" src=<?= baseUrl('assets/img/Admin-bro.png') ?> alt="">
+    <div class="img-section">
+        <img class="img-size" src=<?= baseUrl('assets/img/Admin-bro.png') ?> alt="">
     </div>
 </div>
