@@ -16,7 +16,7 @@
             <th>Id</th>
             <th>Nome</th>
             <th>CNPJ</th>
-            <th></th>
+            <th>Situação</th>
             <th></th>
             <th></th>
         </thead>
@@ -29,6 +29,7 @@
                     <td class="content-table"><?= $ong['id'] ?></td>
                     <td class="content-table"><?= $ong['nome'] ?></td>
                     <td class="content-table"><?= $ong['cnpj'] ?></td>  
+                    <td class="content-table"><?= $ong['situacao'] ?></td> 
                     <td><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></td>
                     <td><i class="fa-solid fa-trash" style="color: #1f513b;"></i></td>
                 </tr>

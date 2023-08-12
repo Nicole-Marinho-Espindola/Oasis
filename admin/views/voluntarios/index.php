@@ -17,7 +17,7 @@
                 <th class="h-table">ID</th>
                 <th class="h-table">Nome</th>
                 <th class="h-table">Idade</th>
-                <th></th>
+                <th>Situação</th>
                 <th></th>
             </tr>
         </thead>
@@ -30,7 +30,8 @@
                     <td class="content-table"><?= $voluntario['id'] ?></td>
                     <td class="content-table"><?= $voluntario['nome'] ?></td>
                     <td class="content-table"><?= $voluntario['idade'] ?></td>  
-                    <td><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></td>
+                    <td class="content-table"><?= $voluntario['situacao'] ?></td>  
+                    <a href=<?= baseUrl('views/voluntarios/editar.php?id='.$voluntario['id'])?>><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></a>
                     <td><i class="fa-solid fa-trash" style="color: #1f513b;"></i></td>
                 </tr>
             <?php

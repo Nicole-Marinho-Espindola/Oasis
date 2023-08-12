@@ -28,7 +28,6 @@
             </li>
             <ul class="collapse multi-collapse" id="multiCollapseExample1">
                 <li class="list-style"><a class="sub-list" href=<?= baseUrl('views/voluntarios/index.php') ?>>Lista de voluntários</a></li>
-                <li class="list-style"><a class="sub-list" href=<?= baseUrl('views/voluntarios/situacaoVoluntario.php') ?>>Situação do voluntário</a></li>
             </ul>
             <li class="list-style">
                 <i class="fa-solid fa-user-group" style="color: #ffffff;"></i>
@@ -38,7 +37,6 @@
             </li>
             <ul class="collapse multi-collapse" id="multiCollapseExample2">
                 <li class="list-style"><a class="sub-list" href=<?= baseUrl('views/ongs/index.php') ?>>Lista de ongs</a></li>
-                <li class="list-style"><a class="sub-list" href=<?= baseUrl('views/ongs/situacaoOng.php') ?>>Situação da ong</a></li>
             </ul>
             <li class="list-style">
                 <i class="fa-solid fa-list" style="color: #ffffff;"></i>
