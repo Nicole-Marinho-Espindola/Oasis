@@ -31,7 +31,7 @@
                     <td class="content-table"><?= $voluntario['nome'] ?></td>
                     <td class="content-table"><?= $voluntario['idade'] ?></td>  
                     <td class="content-table"><?= $voluntario['situacao'] ?></td>  
-                    <a href=<?= baseUrl('views/voluntarios/editar.php?id='.$voluntario['id'])?>><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></a>
+                    <td><a href=<?= baseUrl('views/voluntarios/editar.php?id='.$voluntario['id'])?>><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></a></td>
                     <td><i class="fa-solid fa-trash" style="color: #1f513b;"></i></td>
                 </tr>
             <?php

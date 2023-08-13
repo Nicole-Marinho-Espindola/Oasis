@@ -18,7 +18,7 @@
                         </label>
                     </div>
                     <div class="user-info-block">
-                        <label class="" for="">Sobrenome:
+                        <label class="" for="">Razão social:
                             <div class="form-input-block">
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size" type="text" required>

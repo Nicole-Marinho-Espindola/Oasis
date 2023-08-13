@@ -30,7 +30,7 @@
                     <td class="content-table"><?= $ong['nome'] ?></td>
                     <td class="content-table"><?= $ong['cnpj'] ?></td>  
                     <td class="content-table"><?= $ong['situacao'] ?></td> 
-                    <td><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></td>
+                    <td><a href=<?= baseUrl('views/ongs/editar.php?id='.$ong['id'])?>><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></a></td>
                     <td><i class="fa-solid fa-trash" style="color: #1f513b;"></i></td>
                 </tr>
             <?php

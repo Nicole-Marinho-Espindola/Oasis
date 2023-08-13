@@ -97,7 +97,6 @@
                     </div>
                     <button type="submit" class="btn btn-color">Cadastrar</button>
                 </div>
-                <!-- <button class="btn btn-color">Entrar</button> -->
             </form>
         </div> 
     </div>
