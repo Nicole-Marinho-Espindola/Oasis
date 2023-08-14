@@ -3,7 +3,7 @@
         return sprintf(
             "%s/%s/%s",
             $_SERVER['DOCUMENT_ROOT'],
-            'Oásis/admin',
+            'Oasis/admin',
             $path
         );
     }
