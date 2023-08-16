@@ -1,0 +1,147 @@
+.content{
+    margin-top: 9vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.sobre{
+    display: flex;
+    flex-direction: column;
+    height: 35em;
+    /* position: relative; */
+    background-color: #4A5641;
+}
+
+.green-block-sobre{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 5em;
+}
+
+.info-sobre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    padding-bottom: 10em;
+    padding-left: 45px;
+}
+
+.img-sobre{
+    height: 38em;
+    margin-top: 9em;
+}
+
+.title-sobre{
+    color: #fff;
+    font-weight: bold;
+    font-size: 45px;
+    font-family: "Poppins", sans-serif;
+}
+
+.text-sobre{
+    color: #C7D6BB;
+    width: 27em;
+    font-family: "Poppins", sans-serif;
+    text-align: justify;
+    font-size: 18px;
+    margin-top: 30px;
+    /* font-weight: 600; */
+}
+
+.purple-info-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #292032;
+    background-color: #D2BFE3;
+    border-radius: 5px;
+    width: 16em;
+    height: 43px;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    margin-top: 25px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.purple-info-block .icon{
+    font-size: 25px;
+    font-weight: bold;
+    color: #715987;
+}
+
+.purple-block-text{
+    margin-left: 10px;
+}
+
+.citacao-block{
+    margin: 7em 15em 7em 15em;
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    padding-bottom: 10em;
+}
+
+.hashtag-title{
+    color:  #AB7BC8;
+    font-weight: bold;
+    font-size: 35px;
+    text-transform: uppercase;
+}
+
+.text-hashtag-block{
+    color: #000;
+    font-size: 35px;
+    width: 29em;
+    text-align: justify;
+    font-weight: 700;
+}
+
+.sub-text{
+    color: #586D48;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 50px;
+}
+
+.MVV{
+    margin-top: 50em;
+    background-color: #715987;
+    height: 40em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.MVV-title{
+    color: #fff;
+    font-size: 40px;
+}
+
+.horizontal-bars{
+    width: 80em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.purple-line{
+    width: 5em;
+    height: 15px;
+    border-radius: 10px;
+}
+
+.color1{
+    background-color: #F6E8FF;
+}
+
+.color2{
+    color: #BBA1D4;
+}
+
+.color3{
+    color: #A173BD;
+}

@@ -25,5 +25,5 @@
     </head>
 
 <?php
-    include_once('./includes/navbar.php');
+    // include_once('./navbar.php');
 ?>
