@@ -30,16 +30,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 7em;
-    height: 40px;
+    height: 42px;
     background-color: #94a588;
     color: #fff;
     font-family: 'Poppins', sans-serif;
     box-shadow: 1px 1px 7px #94a588;
     text-transform: uppercase;
-    font-size: 15px;
     padding: 7px;
     border-radius: 10px;
+    font-size: 12px;
+    width: 8em;
 }
 
 .link-style-none{
@@ -166,6 +166,7 @@
 }
 
 .sign-in{
+    font-size: 14px;
     margin-right: 20px;
     text-transform: uppercase;
     color: #242920;

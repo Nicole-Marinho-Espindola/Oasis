@@ -1,5 +1,4 @@
-.content{
-    margin-top: 9vh;
+.sobre-content{
     display: flex;
     flex-direction: column;
 }
@@ -92,8 +91,8 @@
 
 .text-hashtag-block{
     color: #000;
-    font-size: 35px;
-    width: 29em;
+    font-size: 32px;
+    width: 30em;
     text-align: justify;
     font-weight: 700;
 }
@@ -108,40 +107,115 @@
 .MVV{
     margin-top: 50em;
     background-color: #715987;
-    height: 40em;
+    height: 45em;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.MVV-title-block{
+    margin: 7em 10em 5em 10em;
 }
 
 .MVV-title{
     color: #fff;
-    font-size: 40px;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.line{
+    width: 8em;
+    background-color: #AABE9B;
+    height: 7px;
+    border-radius: 10px;
 }
 
 .horizontal-bars{
-    width: 80em;
+    width: 63em;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-left: 14.5em;
 }
 
 .purple-line{
-    width: 5em;
-    height: 15px;
-    border-radius: 10px;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    width: 21em;
+    height: 20px;
+    /* border-radius: 5px; */
+    /* margin-left: 15em; */
 }
 
 .color1{
     background-color: #F6E8FF;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .color2{
-    color: #BBA1D4;
+    background-color: #BBA1D4;
+    position: relative;
 }
 
 .color3{
-    color: #A173BD;
+    background-color: #A173BD;
+    position: relative;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.card-MVV-block{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+}
+
+.card-MVV{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 17em;
+    height: 20em;
+    border-radius: 10px;
+    border: 1px solid #AABE9B;
+    background-color: #F0F3ED;
+    margin: 2em;
+}
+
+.icon-MVV{
+    color: #AABE9B;
+    font-size: 25px;
+}
+
+.card-title-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.card-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #586D48;
+    font-size: 25px;
+    background-color: #AABE9B;
+    width: 100%;
+    height: 45px;
+    margin-top: 15px;
+}
+
+.text-MVV{
+    width: 13em;
+    text-align: justify;
+    margin-top: 2em;
 }

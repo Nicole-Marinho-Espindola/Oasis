@@ -4,7 +4,7 @@
 
 <link rel="stylesheet" href="../../assets/css/sobre-nos.css">
 
-<div class="content">
+<div class="sobre-content">
     <section class="sobre">
         <div class="green-block-sobre">
             <img class="img-sobre" src="../../assets/img/Volunteering-amico.png" alt="">
@@ -29,32 +29,38 @@
     <section class="MVV">
         <div class="MVV-title-block">
             <h1 class="MVV-title">Nossa missão</h1>
-            <span class="line"></span>
+            <div class="line"></div>
         </div>
         <div class="horizontal-bars">
             <div class="color1 purple-line"></div>
             <div class="color2 purple-line"></div>
             <div class="color3 purple-line"></div>
         </div>
-        <div>
-            <div>
-                <i class="fa-solid fa-user-group"></i>
-                <span>Conectar pessoas</span>
-                <p>
+        <div class="card-MVV-block">
+            <div class="card-MVV">
+                <div class="card-title-block">
+                    <i class="fa-solid fa-user-group icon-MVV"></i>
+                    <span class="card-title">Conectar pessoas</span>
+                </div>
+                <p class="text-MVV">
                     Dedique tempo para o que faz sua alma felizDedique tempo para o que faz sua alma feliz
                 </p>
             </div>
-            <div>
-                <i class="fa-solid fa-earth-americas"></i>
-                <span>Dar visibilidade</span>
-                <p>
+            <div class="card-MVV">
+                <div class="card-title-block">
+                    <i class="fa-solid fa-earth-americas icon-MVV"></i>
+                    <span class="card-title">Dar visibilidade</span>
+                </div>
+                <p class="text-MVV">
                     Dedique tempo para o que faz sua alma felizDedique tempo para o que faz sua alma feliz
                 </p>
             </div>
-            <div>
-                <i class="fa-solid fa-user-group"></i>
-                <span>Transformar</span>
-                <p>
+            <div class="card-MVV">
+                <div class="card-title-block">
+                    <i class="fa-solid fa-user-group icon-MVV"></i>
+                    <span class="card-title">Transformar</span>
+                </div>
+                <p class="text-MVV">
                     Dedique tempo para o que faz sua alma felizDedique tempo para o que faz sua alma feliz
                 </p>
             </div>

@@ -9,7 +9,6 @@
     padding-left: 40px;
     width: 100%;
     height: 9vh;
-    position: fixed;
 }
 
 .logo{
@@ -36,21 +35,6 @@
     color: #b3c3a8;
 }
 
-/* .perfil{
-    height: 50px;
-    width: 50px;
-    border-radius: 100%;
-    overflow: hidden;
-}
-
-.foto-perfil{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 55px;
-    object-fit: cover;
-} */
-
 /* Aside */
 .barra-lateral{
     display: flex;
@@ -60,11 +44,10 @@
     background-color: #53604a;
     height: 91vh;
     width: 20em;
-    box-shadow: 0px 10px 12px rgb(195, 195, 195);
-    position: fixed;
-    margin-top: 9vh;
     transform: translateX(-100%);
     transition: transform 0.3s ease-in;
+    position: absolute;
+    border-radius: 5px ;
 }
 
 .barra-lateral.active{

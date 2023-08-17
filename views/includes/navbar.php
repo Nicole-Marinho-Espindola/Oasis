@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <body>
     <nav class="navbar">
         <div class="logo-block">
