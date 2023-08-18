@@ -1,0 +1,103 @@
+
+/* Navbar */
+.navbar{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: rgb(247, 247, 247);
+    box-shadow: 10px 0px 12px rgb(212, 212, 212);
+    padding-left: 40px;
+    width: 100%;
+    height: 9vh;
+}
+
+.logo{
+    height: 40px;
+    margin-left: 30px;
+}
+
+.logo-block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo-nome{
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.icon{
+    font-size: 30px;
+    color: #b3c3a8;
+}
+
+/* Aside */
+.barra-lateral{
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-top: 3em;
+    background-color: #53604a;
+    height: 91vh;
+    width: 20em;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in;
+    position: absolute;
+    border-radius: 5px ;
+}
+
+.barra-lateral.active{
+    transform: translateX(0);
+}
+
+.list-style{
+    list-style: none;
+    margin-top: 20px;
+}
+
+.link-style{
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    padding-left: 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-block{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 30px;
+}
+
+.margin-5{
+    margin-left: 5px;
+}
+
+.sub-list{
+    color: #b3c3a8;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+.sub-list:hover{
+    color: #fff;
+    /* background-color: #94a588;
+    padding: 10px;
+    width: 100%; */
+}
+
+@media screen and (max-width: 768px){
+    
+    .barra-lateral{
+        width: 100%;
+        height: 100%;
+        margin-top: 9vh;
+    }
+} 

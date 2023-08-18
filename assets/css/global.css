@@ -9,11 +9,6 @@
     padding: 7em 7em 3em 7em ;
 }
 
-.table{
-    font-family: 'Poppins', sans-serif;
-    margin-top: 40px;
-}
-
 .search-block{
     display: flex;
     justify-content: center;
@@ -35,20 +30,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 8em;
-    height: 45px;
+    height: 42px;
     background-color: #94a588;
     color: #fff;
     font-family: 'Poppins', sans-serif;
     box-shadow: 1px 1px 7px #94a588;
     text-transform: uppercase;
-    font-size: 15px;
     padding: 7px;
     border-radius: 10px;
+    font-size: 12px;
+    width: 8em;
 }
 
 .link-style-none{
     text-decoration: none;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
 }
 
 .btn-color{
@@ -61,11 +58,11 @@
     color: #fff;
 }
 
-.header-table{
-    font-weight: bold;
-    background-color: #242920;
-    color: #fff;
-}
+/* .navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
 
 .page-nav{
     margin-top: 3em;
@@ -127,17 +124,6 @@
     height: 35em;
 }
 
-.saiba-mais{
-    margin-top: 25px;
-    width: 27em;
-    height: 50px;
-    border: 1px solid #586D48;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #586D48;
-    color: #fff;
-}
-
 .center-itens{
     display: flex;
     justify-content: center;
@@ -150,10 +136,41 @@
     color: #fff;
 }
 
-.line-thin{
-    height: 1px;
-    background-color: #afafaf;
-    width: 25em;
+.icon-color{
+    color: #fff;
+}
+
+.navbar{
+    padding-right: 50px;
+}
+
+.nav-ul{
+    display: flex;
+    padding-top: 15px;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+}
+
+.nav-li{
+    margin-right: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-up-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+}
+
+.sign-in{
+    font-size: 14px;
+    margin-right: 20px;
+    text-transform: uppercase;
+    color: #242920;
+    font-family: "Poppins", sans-serif;
 }
 
 @media screen and (max-width: 425px){
