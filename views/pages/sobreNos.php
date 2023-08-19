@@ -64,7 +64,23 @@
                     Dedique tempo para o que faz sua alma felizDedique tempo para o que faz sua alma feliz
                 </p>
             </div>
+        </div>        
+    </section>
+    <section class="name-explain-block">
+        <div class="name-explain-card">
+            <div class="name-explain-head-block">
+                <div class="name-explain-title-block">
+                    <img class="logo-img" src="../../assets/img/logo-oasis.png" alt="">
+                    <h1 class="name-explain-title">Porque "Oásis"?</h1>
+                </div>
+                <div class="line"></div>
+            </div>
+            <div class="name-explain-text-block">
+                <p class="name-explain-text">No nosso projeto, escolhemos o nome 'Oásis' porque ele significa exatamente
+                    o que queremos ser: um cantinho online acolhedor e cheio de esperança. Assim como um oásis oferece conforto no deserto,
+                    nossa plataforma é um lugar digital onde todos podem se juntar para fazer coisas incríveis!</p>
+                <span class="name-explain-quote">“O nosso Oásis é para todos!” </span>
+            </div>
         </div>
-        
     </section>
 </div>
