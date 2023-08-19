@@ -227,9 +227,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #d3c2e4 !important; 
+    background-color: #d3c2e4; 
     position: relative;
-    height: 60em;
+    height: 47em;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .name-explain-card{
@@ -242,7 +244,7 @@
     border-radius:10px ;
     padding: 5em;
     position: absolute;
-    margin-bottom: 32em;
+    margin-bottom: 20em;
 }
 
 .name-explain-head-block{
@@ -285,18 +287,111 @@
     color: #313131;
     line-height: 30px;
     width: 50em;
+    text-align: justify;
 }
 
 .name-explain-quote{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10em;
-}
-
-.name-explain-quote{
+    margin-top: 7em;
     color: #A173BD;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-size: 30px;
+}
+
+.girls-block{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    margin-top: 10em;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 47em;
+}
+
+.girls-title-block{
+    margin-bottom: 7em;
+    margin-right: 48em;
+
+}
+
+.girls-title{
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+    padding-left: 14px;
+}
+
+.girls-card-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80em;
+    /* margin: 5em 7em; */
+    position: relative;
+}
+
+.girls-card{
+    border: 1px solid #A173BD;
+    margin: 40px;
+    height: 30em;
+    border-radius: 10px;
+    box-shadow: 6px 8px #BBA1D4;
+    padding: 40px;
+    position: relative;
+}
+
+.girls-text-block{
+    font-family: "Poppins", sans-serif;
+    margin-top: 8em;
+}
+
+.girls-name{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.girls-text{
+    text-align: justify;
+}
+
+.social-midia{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+}
+
+.social-midia-icon{
+    background-color: #AABE9B;
+    color: #fff;
+    font-size: 25px;
+    padding: 7px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.girls-img{
+    height: 10em;
+    border-radius: 100%;
+    border: 1px solid #ae96c5;
+    position: absolute;
+    object-fit: cover;
+    /* margin-bottom: 20em; */
+    top: -45;
+    margin-left: 3em;
+}
+
+.img-block{
+    border-radius: 100%;
+    object-fit: cover;
+    position: absolute;
+    margin-bottom: 25em;
 }

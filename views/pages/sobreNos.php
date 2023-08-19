@@ -75,11 +75,82 @@
                 </div>
                 <div class="line"></div>
             </div>
-            <div class="name-explain-text-block">
+            <div>
                 <p class="name-explain-text">No nosso projeto, escolhemos o nome 'Oásis' porque ele significa exatamente
                     o que queremos ser: um cantinho online acolhedor e cheio de esperança. Assim como um oásis oferece conforto no deserto,
                     nossa plataforma é um lugar digital onde todos podem se juntar para fazer coisas incríveis!</p>
                 <span class="name-explain-quote">“O nosso Oásis é para todos!” </span>
+            </div>
+        </div>
+    </section>
+    <section class="girls-block">
+        <div class="girls-title-block">
+            <h1 class="girls-title">Conheça nossa equipe!</h1>
+            <div class="line"></div>
+        </div>
+        <div class="girls-card-block">
+            <div class="girls-card">
+                <div class="girls-img-block">
+                    <img class="girls-img" src="../../assets/img/Emily.jpg" alt="">
+                </div>
+                <div class="girls-text-block">
+                    <h1 class="girls-name">Emily</h1>
+                    <p class="girls-text">Somos um grupo composto por três garotas que desenvolveram esse projeto com 
+                        o intuito de ajudar pessoas que querem ajudar!</p>
+                </div>
+                <div class="social-midia">
+                    <div class="social-midia-icon-block">
+                        <i class="fa-brands fa-instagram social-midia-icon"></i>
+                    </div>
+                    <div class="social-midia-icon-block">
+                        <i class="fa-brands fa-twitter social-midia-icon"></i>
+                    </div>
+                    <div class="social-midia-icon-block">
+                        <i class="fa-brands fa-discord social-midia-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="girls-card">
+                <div class="girls-img-block">
+                    <img class="girls-img" src="../../assets/img/Maira.jpg" alt="">
+                </div>
+                <div class="girls-text-block">
+                    <h1 class="girls-name">Maíra</h1>
+                    <p class="girls-text">Somos um grupo composto por três garotas que desenvolveram esse projeto com 
+                        o intuito de ajudar pessoas que querem ajudar!</p>
+                </div>
+                <div class="social-midia">
+                    <div class="social-midia-icon-block">
+                        <i class="fa-brands fa-instagram social-midia-icon"></i>
+                    </div>
+                    <div class="social-midia-icon-block">
+                        <i class="fa-brands fa-twitter social-midia-icon"></i>
+                    </div>
+                    <div class="social-midia-icon-block">
+                        <i class="fa-brands fa-discord social-midia-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="girls-card">
+                <div class="girls-img-block">
+                    <img class="girls-img" src="../../assets/img/Nicole.jpg" alt="">
+                </div>
+                <div class="girls-text-block">
+                    <h1 class="girls-name">Nicole</h1>
+                    <p class="girls-text">Somos um grupo composto por três garotas que desenvolveram esse projeto com 
+                        o intuito de ajudar pessoas que querem ajudar!</p>
+                </div>
+                <div class="social-midia">
+                    <div class="social-midia-icon-block">
+                        <i class="fa-brands fa-instagram social-midia-icon"></i>
+                    </div>
+                    <div class="social-midia-icon-block">
+                        <i class="fa-brands fa-twitter social-midia-icon"></i>
+                    </div>
+                    <div class="social-midia-icon-block">
+                        <i class="fa-brands fa-discord social-midia-icon"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
