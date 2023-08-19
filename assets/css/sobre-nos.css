@@ -34,7 +34,7 @@
 .title-sobre{
     color: #fff;
     font-weight: bold;
-    font-size: 45px;
+    font-size: 40px;
     font-family: "Poppins", sans-serif;
 }
 
@@ -43,7 +43,7 @@
     width: 27em;
     font-family: "Poppins", sans-serif;
     text-align: justify;
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 30px;
     /* font-weight: 600; */
 }
@@ -55,13 +55,14 @@
     color: #292032;
     background-color: #D2BFE3;
     border-radius: 5px;
-    width: 16em;
+    width: 17em;
     height: 43px;
     font-family: "Poppins", sans-serif;
     font-weight: bold;
     margin-top: 25px;
     text-decoration: none;
     cursor: pointer;
+    padding: 5px;
 }
 
 .purple-info-block .icon{
@@ -107,11 +108,12 @@
 .MVV{
     margin-top: 50em;
     background-color: #715987;
-    height: 45em;
+    height: 70em;
     display: flex;
     flex-direction: column;
     /* justify-content: center;
     align-items: center; */
+    position: relative;
 }
 
 .MVV-title-block{
@@ -120,8 +122,9 @@
 
 .MVV-title{
     color: #fff;
-    font-size: 32px;
+    font-size: 36px;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .line{
@@ -218,4 +221,85 @@
     width: 13em;
     text-align: justify;
     margin-top: 2em;
+}
+
+.name-explain-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d3c2e4 !important; 
+    position: relative;
+}
+
+.name-explain-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width: 85em;
+    border-radius:10px ;
+    padding: 5em;
+    position: absolute;
+    /* top: 10px; */
+    margin-top: 10em;
+}
+
+.name-explain-head-block{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3em;
+    margin-left: 10em;
+    margin-top: 30px;
+}
+
+.name-explain-title-block{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo-img{
+    height: 60px;
+    margin-right: 20px;
+}
+
+.name-explain-title{
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.line{
+    background-color: #D2BFE3;
+    height: 7px;
+    width: 10em;
+    margin-left: 1em;
+}
+
+.name-explain-text-block{
+}
+
+.name-explain-text{
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #313131;
+    line-height: 30px;
+    width: 50em;
+}
+
+.name-explain-quote{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10em;
+}
+
+.name-explain-quote{
+    color: #A173BD;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 30px;
 }
