@@ -108,7 +108,7 @@
 .MVV{
     margin-top: 50em;
     background-color: #715987;
-    height: 70em;
+    height: 60em;
     display: flex;
     flex-direction: column;
     /* justify-content: center;
@@ -229,6 +229,7 @@
     align-items: center;
     background-color: #d3c2e4 !important; 
     position: relative;
+    height: 60em;
 }
 
 .name-explain-card{
@@ -241,8 +242,7 @@
     border-radius:10px ;
     padding: 5em;
     position: absolute;
-    /* top: 10px; */
-    margin-top: 10em;
+    margin-bottom: 32em;
 }
 
 .name-explain-head-block{
@@ -276,9 +276,6 @@
     height: 7px;
     width: 10em;
     margin-left: 1em;
-}
-
-.name-explain-text-block{
 }
 
 .name-explain-text{
