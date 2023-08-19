@@ -9,9 +9,9 @@
             <span class="logo-nome">Oásis</span>
         </div>
         <ul class="nav-ul">
-            <li class="nav-li">Home</li>
-            <li class="nav-li">Sobre nós</li>
-            <li class="nav-li">Projetos</li>
+            <a href="<?= baseUrl('/views/index.php') ?>" class="nav-bar-link-style"><li class="nav-li">Home</li></a>
+            <a href="<?= baseUrl('/views/pages/sobreNos.php') ?>" class="nav-bar-link-style"><li class="nav-li">Sobre nós</li></a>
+            <a href="<?= baseUrl('/views/pages/projetos.php') ?>" class="nav-bar-link-style"><li class="nav-li">Projetos</li></a>
         </ul>
         <div class="sign-up-block">
             <a class="link-style-none sign-in" href="">Entrar</a>

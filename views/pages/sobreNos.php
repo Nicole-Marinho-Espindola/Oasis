@@ -100,10 +100,10 @@
                 </div>
                 <div class="social-midia">
                     <div class="social-midia-icon-block">
-                        <i class="fa-brands fa-instagram social-midia-icon"></i>
+                        <a href="https://www.instagram.com/emy_dz9/" target="_blank"><i class="fa-brands fa-instagram social-midia-icon"></i></a>
                     </div>
                     <div class="social-midia-icon-block">
-                        <i class="fa-brands fa-twitter social-midia-icon"></i>
+                        <a href="https://twitter.com/Emy_Dz6"><i class="fa-brands fa-twitter social-midia-icon"></i></a>
                     </div>
                     <div class="social-midia-icon-block">
                         <i class="fa-brands fa-discord social-midia-icon"></i>
@@ -121,10 +121,10 @@
                 </div>
                 <div class="social-midia">
                     <div class="social-midia-icon-block">
-                        <i class="fa-brands fa-instagram social-midia-icon"></i>
+                        <a href="https://www.instagram.com/m.llouise/" target="_blank"><i class="fa-brands fa-instagram social-midia-icon"></i></a>
                     </div>
                     <div class="social-midia-icon-block">
-                        <i class="fa-brands fa-twitter social-midia-icon"></i>
+                        <a href="https://twitter.com/krllouise"><i class="fa-brands fa-twitter social-midia-icon"></i></a>
                     </div>
                     <div class="social-midia-icon-block">
                         <i class="fa-brands fa-discord social-midia-icon"></i>
@@ -142,10 +142,10 @@
                 </div>
                 <div class="social-midia">
                     <div class="social-midia-icon-block">
-                        <i class="fa-brands fa-instagram social-midia-icon"></i>
+                        <a href="https://www.instagram.com/_nicoleesp/" target="_blank"><i class="fa-brands fa-instagram social-midia-icon"></i></a>
                     </div>
                     <div class="social-midia-icon-block">
-                        <i class="fa-brands fa-twitter social-midia-icon"></i>
+                        <a href="https://twitter.com/sunlnxyz"><i class="fa-brands fa-twitter social-midia-icon"></i></a>
                     </div>
                     <div class="social-midia-icon-block">
                         <i class="fa-brands fa-discord social-midia-icon"></i>

@@ -93,6 +93,17 @@
     width: 100%; */
 }
 
+.nav-bar-link-style{
+    text-decoration: none;
+    color: #000;
+}
+
+.nav-bar-link-style:hover{
+    color: #b3c3a8;
+}
+
+
+
 @media screen and (max-width: 768px){
     
     .barra-lateral{
