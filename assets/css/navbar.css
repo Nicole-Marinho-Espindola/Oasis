@@ -111,4 +111,12 @@
         height: 100%;
         margin-top: 9vh;
     }
+
+    .nav-bar-link-style{
+        display: none;
+    }
+
+    .navbar{
+        width: 100%;
+    }
 } 

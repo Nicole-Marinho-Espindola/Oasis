@@ -106,6 +106,9 @@
 }
 
 .MVV{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 50em;
     background-color: #715987;
     height: 60em;
@@ -114,13 +117,22 @@
     /* justify-content: center;
     align-items: center; */
     position: relative;
+    padding-bottom: 12em;
 }
 
 .MVV-title-block{
-    margin: 7em 10em 5em 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    margin-bottom: 5em;
 }
 
 .MVV-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #fff;
     font-size: 36px;
     margin-bottom: 10px;
@@ -140,7 +152,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-left: 14.5em;
+    /* margin-left: 14.5em; */
 }
 
 .purple-line{
@@ -395,4 +407,91 @@
     object-fit: cover;
     position: absolute;
     margin-bottom: 25em;
+}
+
+.girls-hashtag-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10em;
+}
+
+.girls-hashtag{
+    font-family: "Poppins", sans-serif;
+    color: #A173BD;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px){
+    .sobre{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 38em;
+        /* background-color: none; */
+    }
+
+    .green-block-sobre{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-top: 55em;
+        /* background-color: none; */
+        margin-right: 5em;
+    }
+
+    .img-sobre{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 15em;
+        margin-top: 3em;
+    }
+    
+    .info-sobre{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+    
+    .title-sobre{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        margin: 0;
+    }
+    
+    .text-sobre{
+        color: #C7D6BB;
+        width: 18em;
+        font-family: "Poppins", sans-serif;
+        text-align: justify;
+        font-size: 12px;
+        margin-top: 30px;
+        /* font-weight: 600; */
+    }
+    
+    .purple-info-block{
+        display: flex;
+        flex-direction: row;
+        border-radius: 5px;
+        width: 18em;
+        height: 30px;
+        margin-top: 25px;
+        font-size: 12px;
+    }
+    
+    .purple-info-block .icon{
+        font-size: 20px;
+        font-weight: bold;
+        color: #715987;
+    }
 }

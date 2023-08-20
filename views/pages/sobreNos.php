@@ -154,4 +154,8 @@
             </div>
         </div>
     </section>
+    <div class="girls-hashtag-block">
+        <h1 class="girls-hashtag">Nos mostre o seu Oásis!</h1>
+        <span class="girls-hashtag">#oasisparatodos</span>    
+    </div>
 </div>
