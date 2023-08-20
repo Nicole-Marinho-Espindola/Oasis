@@ -589,4 +589,144 @@
         margin-top: 2em;
         font-size: 13px;
     }
+
+    .name-explain-block{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 50em;
+    }
+    
+    .name-explain-card{
+        width: 20em;
+    }
+    
+    .name-explain-head-block{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+    
+    .name-explain-title-block{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .logo-img{
+        height: 30px;
+        margin-right: 10px;
+    }
+    
+    .name-explain-title{
+        font-size: 20px;
+        padding-top:10px;
+    }
+    
+    .line{
+        background-color: #D2BFE3;
+        height: 7px;
+        width: 8em;
+    }
+    
+    .name-explain-text{
+        font-size: 14px;
+        line-height: normal;
+        width: 18em;
+        margin-top: 3em;
+    }
+    
+    .name-explain-quote{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .girls-block{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* margin-top: 5em; */
+        height: 100em;
+        width: 100%;
+    }
+
+    .girls-title-block{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 3em;
+        margin-right: 0;
+    }
+
+    .girls-title{
+        font-size: 20px;
+        padding-left: 14px;
+    }
+
+    .girls-card-block{
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .girls-card{
+        margin-top: 5em;
+        height: 20em;
+        padding: 20px;
+        width: 20em;
+    }
+
+    .girls-text-block{
+        margin-top: 4em;
+    }
+
+    .girls-name{
+        font-size: 17px;
+    }
+
+    .girls-text{
+        text-align: justify;
+        font-size: 12px;
+    }
+
+    .social-midia{
+        margin-top: 4em;
+    }
+
+    .social-midia-icon{
+        font-size: 18px;
+        padding: 5px;
+        margin: 7px;
+        border-radius: 5px;
+    }
+
+    .girls-img{
+        height: 7em;
+        width: 7em;
+        top: -45;
+        margin-left: 3em;
+    }
+/* 
+    .img-block{
+        border-radius: 100%;
+        object-fit: cover;
+        position: absolute;
+        margin-bottom: 25em;
+    } */
+
+    .girls-hashtag-block{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5em;
+    }
+
+    .girls-hashtag{
+        font-size: 20px;
+    }
 }
