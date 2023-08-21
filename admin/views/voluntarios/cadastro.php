@@ -11,15 +11,16 @@
                 <div class="line"></div>
             </div>
             <form class="form" action="" method="POST" enctype="multipart/form-data"
-                    onsubmit="return limitarSelecoes(3);">
+                    onsubmit="return limitarSelecoes(3);" id="form">
                 <div class="section active">
                     <div class="user-info-block">
                         <label class="" for="">Nome:
-                            <div class="form-input-block">
+                            <div class="form-input-block required">
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size icon-green" type="text"
-                                    id="nomeVoluntario" name="nomeVoluntario" required>
+                                    id="nomeVoluntario" name="nomeVoluntario" oninput="nameValidate()">
                             </div>
+                            <span class="span-required">Mínimo de 3 caracteres</span>
                         </label>
                     </div>
                     <div class="user-info-block">
@@ -34,7 +35,6 @@
                     <div class="user-info-block">
                         <label class="" for="">Data de nascimento:
                             <div class="form-input-block">
-                            <i class="fa-regular fa-calendar icon-green"></i>
                                 <input class="input input-size" type="date"
                                     id="nascimentoVoluntario" name="nascimentoVoluntario" required>
                             </div>
@@ -95,12 +95,13 @@
                 <div class="section">
                     <div class="user-info-block">
                         <label class="" for="email">Email:
-                            <div class="form-input-block">
+                            <div class="form-input-block required">
                                 <i class="fa-regular fa-envelope icon-green"></i>
                                 <input class="input input-size" type="text" oninput="validarEmail(this.value)"
                                     id="emailVoluntario" name="emailVoluntario" requerid>
+                                <span class="span-required">Email inválido</span>
                             </div>
-                            <div id="mensagem"></div>
+                            <!-- <div id="mensagem"></div> -->
                         </label>
                     </div>
                     <div class="user-info-block">
@@ -158,7 +159,7 @@ if (!empty($_POST) && !isset($_SESSION['cadastro_realizado'])) {
 }
 
 ?>
-
+<script src="<?= baseUrl('/assets/js/validarInput.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/cadastroEtapas.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/limitarSelecoes.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/validarEmail.js') ?>"></script>
