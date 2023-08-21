@@ -1,0 +1,8 @@
+problemas que estão ocorrendo:
+
+- quando texto colocar um header para redirecionar o admin apos cadastrar, para evitar que
+ao recarregar a página ocorra inserts duplicados
+
+- ao declarar as variaveis de ambiente, o getenv(DB_USER) e getenv(DB_NAME) nao funcionam, tenho que colocar direto.
+
+
