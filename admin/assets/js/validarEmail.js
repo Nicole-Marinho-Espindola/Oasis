@@ -3,8 +3,8 @@ function validarEmail(email) {
     var mensagemDiv = document.getElementById('mensagem');
 
     if (padraoEmail.test(email)) {
-        mensagemDiv.textContent = "O email é válido.";
+        mensagemDiv.textContent = "Email válido.";
     } else {
-        mensagemDiv.textContent = "O email não é válido.";
+        mensagemDiv.textContent = "Email inválido.";
     }
 }

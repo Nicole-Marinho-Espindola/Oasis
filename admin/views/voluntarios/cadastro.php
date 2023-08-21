@@ -10,16 +10,22 @@
                 <h1 class="title">Cadastro de voluntários!</h1>
                 <div class="line"></div>
             </div>
+<<<<<<< HEAD
             <form class="form" action="../../services/CRUD/voluntario/cadastro.php" method="POST" enctype="multipart/form-data"
                     onsubmit="return limitarSelecoes(3);">
+=======
+            <form class="form" action="" method="POST" enctype="multipart/form-data"
+                    onsubmit="return limitarSelecoes(3);" id="form">
+>>>>>>> 50b5d72d72f493fa9a32ea83ab44f5191657b26e
                 <div class="section active">
                     <div class="user-info-block">
                         <label class="" for="">Nome:
-                            <div class="form-input-block">
+                            <div class="form-input-block required">
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size icon-green" type="text"
-                                    id="nomeVoluntario" name="nomeVoluntario" required>
+                                    id="nomeVoluntario" name="nomeVoluntario" oninput="nameValidate()">
                             </div>
+                            <span class="span-required">Mínimo de 3 caracteres</span>
                         </label>
                     </div>
                     <div class="user-info-block">
@@ -34,7 +40,6 @@
                     <div class="user-info-block">
                         <label class="" for="">Data de nascimento:
                             <div class="form-input-block">
-                            <i class="fa-regular fa-calendar icon-green"></i>
                                 <input class="input input-size" type="date"
                                     id="nascimentoVoluntario" name="nascimentoVoluntario" required>
                             </div>
@@ -95,12 +100,13 @@
                 <div class="section">
                     <div class="user-info-block">
                         <label class="" for="email">Email:
-                            <div class="form-input-block">
+                            <div class="form-input-block required">
                                 <i class="fa-regular fa-envelope icon-green"></i>
                                 <input class="input input-size" type="text" oninput="validarEmail(this.value)"
                                     id="emailVoluntario" name="emailVoluntario" requerid>
+                                <span class="span-required">Email inválido</span>
                             </div>
-                            <div id="mensagem"></div>
+                            <!-- <div id="mensagem"></div> -->
                         </label>
                     </div>
                     <div class="user-info-block">
@@ -121,6 +127,47 @@
 </body>
 </html>
 
+<<<<<<< HEAD
+=======
+<?php
+if (!empty($_POST) && !isset($_SESSION['cadastro_realizado'])) {
+    
+
+    $nome = $_POST['nomeVoluntario'];
+    $dt_nasc = $_POST['nascimentoVoluntario'];
+    $email = $_POST['emailVoluntario'];
+    $senha = $_POST['senhaVoluntario'];
+    $interesses = implode(', ', $_POST['interesses']); // Transforma o array de interesses em uma string
+
+    include_once('../../config/database.php');
+
+    try {
+        $hashDaSenha = password_hash($senha, PASSWORD_DEFAULT);
+
+        $stmt = $conn->prepare("INSERT INTO tb_voluntario (nm_voluntario, dt_nascimento, ds_email, cd_senha, ds_interesse)
+                                VALUES (:nome, :dt_nasc, :email, :senha, :interesse)");
+
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':dt_nasc', $dt_nasc);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':interesse', $interesses);
+        $stmt->bindParam(':senha', $hashDaSenha);
+
+        $stmt->execute();
+
+        echo "<script>alert('Cadastrado com Sucesso');</script>";
+
+        $_SESSION['cadastro_realizado'] = true;
+
+    } catch (PDOException $e) {
+        echo "Erro ao cadastrar: " . $e->getMessage();
+    }
+    $conn = null;
+}
+
+?>
+<script src="<?= baseUrl('/assets/js/validarInput.js') ?>"></script>
+>>>>>>> 50b5d72d72f493fa9a32ea83ab44f5191657b26e
 <script src="<?= baseUrl('/assets/js/cadastroEtapas.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/limitarSelecoes.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/validarEmail.js') ?>"></script>
