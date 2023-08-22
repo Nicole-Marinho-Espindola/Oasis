@@ -27,12 +27,13 @@
         <tbody class="body-table">
 
             <?php
-            if (isset($_GET['cadastro_sucesso']) && $_GET['cadastro_sucesso'] == 'true') {
-                echo '<p style="color: green;">Cadastro realizado com sucesso!</p>';
-            }
-            ?>
-            
-            <?php
+
+                if (isset($_GET['cadastro_sucesso']) && $_GET['cadastro_sucesso'] == 'true') {
+                    echo "<script>alert('Cadastrado com sucesso.');</script>";
+                } elseif (isset($_GET['email_repetido']) && $_GET['email_repetido'] == 'true') {
+                    echo "<script>alert('Email já cadastrado.');</script>";
+                }
+
                 try
                 {
                     $select = $conn->prepare('SELECT * FROM tb_voluntario');

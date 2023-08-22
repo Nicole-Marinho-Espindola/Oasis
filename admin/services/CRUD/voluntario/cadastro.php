@@ -18,7 +18,9 @@ if (!empty($_POST) && !isset($_SESSION['cadastro_realizado'])) {
         $stmt_verificar->execute();
 
         if ($stmt_verificar->rowCount() > 0) {
-            echo "<script>alert('Email já cadastrado.');</script>";
+
+            header("Location: ../../../views/voluntarios/index.php?email_repetido=true");
+
         } else {
             $hashDaSenha = password_hash($senha, PASSWORD_DEFAULT);
 

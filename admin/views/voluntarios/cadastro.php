@@ -10,13 +10,8 @@
                 <h1 class="title">Cadastro de voluntários!</h1>
                 <div class="line"></div>
             </div>
-<<<<<<< HEAD
-            <form class="form" action="../../services/CRUD/voluntario/cadastro.php" method="POST" enctype="multipart/form-data"
-                    onsubmit="return limitarSelecoes(3);">
-=======
-            <form class="form" action="" method="POST" enctype="multipart/form-data"
-                    onsubmit="return limitarSelecoes(3);" id="form">
->>>>>>> 50b5d72d72f493fa9a32ea83ab44f5191657b26e
+            <form class="form" action=<?= baseUrl('services/CRUD/voluntario/cadastro.php') ?>
+                        method="POST" onsubmit="return limitarSelecoes(3);" id="form">
                 <div class="section active">
                     <div class="user-info-block">
                         <label class="" for="">Nome:
@@ -47,8 +42,6 @@
                     </div>
                     <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>
                 </div>
-
-
                 <div class="section">
                     <div class="user-info-block">
                         <div class="center-itens subtitle-block">
@@ -96,7 +89,6 @@
                     <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>
                 </div>
 
-
                 <div class="section">
                     <div class="user-info-block">
                         <label class="" for="email">Email:
@@ -106,7 +98,6 @@
                                     id="emailVoluntario" name="emailVoluntario" requerid>
                                 <span class="span-required">Email inválido</span>
                             </div>
-                            <!-- <div id="mensagem"></div> -->
                         </label>
                     </div>
                     <div class="user-info-block">
@@ -127,47 +118,7 @@
 </body>
 </html>
 
-<<<<<<< HEAD
-=======
-<?php
-if (!empty($_POST) && !isset($_SESSION['cadastro_realizado'])) {
-    
-
-    $nome = $_POST['nomeVoluntario'];
-    $dt_nasc = $_POST['nascimentoVoluntario'];
-    $email = $_POST['emailVoluntario'];
-    $senha = $_POST['senhaVoluntario'];
-    $interesses = implode(', ', $_POST['interesses']); // Transforma o array de interesses em uma string
-
-    include_once('../../config/database.php');
-
-    try {
-        $hashDaSenha = password_hash($senha, PASSWORD_DEFAULT);
-
-        $stmt = $conn->prepare("INSERT INTO tb_voluntario (nm_voluntario, dt_nascimento, ds_email, cd_senha, ds_interesse)
-                                VALUES (:nome, :dt_nasc, :email, :senha, :interesse)");
-
-        $stmt->bindParam(':nome', $nome);
-        $stmt->bindParam(':dt_nasc', $dt_nasc);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':interesse', $interesses);
-        $stmt->bindParam(':senha', $hashDaSenha);
-
-        $stmt->execute();
-
-        echo "<script>alert('Cadastrado com Sucesso');</script>";
-
-        $_SESSION['cadastro_realizado'] = true;
-
-    } catch (PDOException $e) {
-        echo "Erro ao cadastrar: " . $e->getMessage();
-    }
-    $conn = null;
-}
-
-?>
 <script src="<?= baseUrl('/assets/js/validarInput.js') ?>"></script>
->>>>>>> 50b5d72d72f493fa9a32ea83ab44f5191657b26e
 <script src="<?= baseUrl('/assets/js/cadastroEtapas.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/limitarSelecoes.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/validarEmail.js') ?>"></script>
