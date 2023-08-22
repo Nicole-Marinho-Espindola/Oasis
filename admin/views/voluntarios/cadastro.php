@@ -10,13 +10,8 @@
                 <h1 class="title">Cadastro de voluntários!</h1>
                 <div class="line"></div>
             </div>
-<<<<<<< HEAD
             <form class="form" action="../../services/CRUD/voluntario/cadastro.php" method="POST" enctype="multipart/form-data"
                     onsubmit="return limitarSelecoes(3);">
-=======
-            <form class="form" action="" method="POST" enctype="multipart/form-data"
-                    onsubmit="return limitarSelecoes(3);" id="form">
->>>>>>> 50b5d72d72f493fa9a32ea83ab44f5191657b26e
                 <div class="section active">
                     <div class="user-info-block">
                         <label class="" for="">Nome:
@@ -102,7 +97,7 @@
                         <label class="" for="email">Email:
                             <div class="form-input-block required">
                                 <i class="fa-regular fa-envelope icon-green"></i>
-                                <input class="input input-size" type="text" oninput="validarEmail(this.value)"
+                                <input class="input input-size" type="text" oninput="emailValidate()"
                                     id="emailVoluntario" name="emailVoluntario" requerid>
                                 <span class="span-required">Email inválido</span>
                             </div>
@@ -127,8 +122,6 @@
 </body>
 </html>
 
-<<<<<<< HEAD
-=======
 <?php
 if (!empty($_POST) && !isset($_SESSION['cadastro_realizado'])) {
     
@@ -167,7 +160,6 @@ if (!empty($_POST) && !isset($_SESSION['cadastro_realizado'])) {
 
 ?>
 <script src="<?= baseUrl('/assets/js/validarInput.js') ?>"></script>
->>>>>>> 50b5d72d72f493fa9a32ea83ab44f5191657b26e
 <script src="<?= baseUrl('/assets/js/cadastroEtapas.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/limitarSelecoes.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/validarEmail.js') ?>"></script>

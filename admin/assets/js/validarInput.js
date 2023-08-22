@@ -15,10 +15,20 @@ function errorRemove(index){
 
 function nameValidate(){ // iniciando a função nameValidate
     if(campos[0].querySelector('input').value.length < 3){ // "se campos no index 0 com o valor de caracteres digitados for menor que 3"
-        error(0) // aciona a função error que adicionar a borda vermelha
+        error(0); // aciona a função error que adicionar a borda vermelha
         // console.log('não deu')
     }else{ // se o if não acontecer então é porque tem mais que 3 caracteres
-        errorRemove(0) // aciona a função errorRemove que retorna o input a sua aparencia inicial
+        errorRemove(0); // aciona a função errorRemove que retorna o input a sua aparencia inicial
         // console.log('deu');
+    }
+}
+
+function emailValidate(){
+    if(emailRegex.test(campos[0].querySelector('input').value)){
+        console.log(campos[0])
+        error(4); 
+    }else{
+        console.log('validado')
+        errorRemove(4);
     }
 }

@@ -11,10 +11,11 @@
                 <div class="section active">
                     <div class="user-info-block">
                         <label class="" for="">Nome:
-                            <div class="form-input-block">
+                            <div class="form-input-block required">
                                 <i class="fa-solid fa-user icon-green"></i>
-                                <input class="input input-size icon-green" type="text" required>
+                                <input class="input input-size icon-green" type="text" required oninput="nameValidate()">
                             </div>
+                            <span class="span-required">Mínimo de 3 caracteres</span>
                         </label>
                     </div>
                     <div class="user-info-block">
@@ -38,10 +39,11 @@
                 <div class="section">
                     <div class="user-info-block">
                         <label class="" for="">Email:
-                            <div class="form-input-block">
+                            <div class="form-input-block required">
                                 <i class="fa-regular fa-envelope icon-green"></i>
-                                <input class="input input-size" type="email" required>
+                                <input class="input input-size" type="email" required oninput="emailValidate()">
                             </div>
+                            <span class="span-required">Email inválido</span>
                         </label>
                     </div>
                     <div class="user-info-block">
@@ -59,4 +61,6 @@
         </div> 
     </div>
 </body>
+
+<script src="<?= baseUrl('/assets/js/validarInput.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/cadastroEtapas.js') ?>"></script>
