@@ -34,14 +34,15 @@
             <div class="line"></div>
         </div>
 
-        <form class="form" action="">
+        <form class="form" action=<?= baseUrl('services/CRUD/voluntario/editar.php') ?>>
             <div class="section active">
                 <div class="user-info-block">
                     <label for="nomeVoluntario">Nome:</label>
                     <div class="form-input-block">
                         <i class="fa-solid fa-user icon-green"></i>
                         <input class="input input-size icon-green" type="text"
-                            id="nomeVoluntario" name="nomeVoluntario" value="<?= $row['nm_voluntario'] ?? '' ?>">
+                            id="nomeVoluntario" name="nomeVoluntario"
+                                value="<?= $row['nm_voluntario'] ?? '' ?>">
                     </div>
                 </div>
                 <div class="user-info-block">
@@ -49,7 +50,8 @@
                     <div class="form-input-block">
                         <i class="fa-solid fa-user icon-green"></i>
                         <input class="input input-size" type="text"
-                            id="sobrenomeVoluntario" name="sobrenomeVoluntario" value="<?= $row['nm_sobrenome'] ?? '' ?>">
+                            id="sobrenomeVoluntario" name="sobrenomeVoluntario"
+                                value="<?= $row['nm_sobrenome'] ?? '' ?>">
                     </div>
                 </div>
                 <div class="user-info-block">
@@ -57,7 +59,8 @@
                     <div class="form-input-block">
                         <i class="fa-regular fa-calendar icon-green"></i>
                         <input class="input input-size" type="date"
-                            id="nascimentoVoluntario" name="nascimentoVoluntario" value="<?= $row['dt_nascimento'] ?? '' ?>">
+                            id="nascimentoVoluntario" name="nascimentoVoluntario"
+                                value="<?= $row['dt_nascimento'] ?? '' ?>">
                     </div>
                 </div>
                 <div class="user-info-block">
@@ -65,7 +68,8 @@
                     <div class="form-input-block">
                         <i class="fa-regular fa-calendar icon-green"></i>
                         <input class="input input-size" type="text"
-                            id="emailVoluntario" name="emailVoluntario" value="<?= $row['ds_email'] ?? '' ?>">
+                            id="emailVoluntario" name="emailVoluntario"
+                                value="<?= $row['ds_email'] ?? '' ?>">
                     </div>
                 </div>
                 <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>

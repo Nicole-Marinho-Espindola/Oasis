@@ -42,8 +42,6 @@
                     </div>
                     <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>
                 </div>
-
-
                 <div class="section">
                     <div class="user-info-block">
                         <div class="center-itens subtitle-block">
@@ -91,7 +89,6 @@
                     <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>
                 </div>
 
-
                 <div class="section">
                     <div class="user-info-block">
                         <label class="" for="email">Email:
@@ -101,7 +98,6 @@
                                     id="emailVoluntario" name="emailVoluntario" requerid>
                                 <span class="span-required">Email inválido</span>
                             </div>
-                            <!-- <div id="mensagem"></div> -->
                         </label>
                     </div>
                     <div class="user-info-block">
