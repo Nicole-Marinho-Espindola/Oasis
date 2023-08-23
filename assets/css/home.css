@@ -4,7 +4,8 @@
     align-items: center;
     flex-direction: row;
     padding-top: 3em;
-    background-image: url();
+    background-image: url(../img/wave-haikei.svg);
+    background-repeat: no-repeat;
 }
 
 .join-us-text-block{
