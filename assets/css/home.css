@@ -49,3 +49,43 @@
 .join-us-img{
     height: 37em;
 }
+
+.green-block-explain{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    height: 23em;
+    background-color: #AABE9B;
+    padding-left: 17em;
+    margin-top: 5em;
+    margin-bottom: 3em;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.green-title-block{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.green-block-img{
+    height: 45px;
+    margin-right: 30px;
+    opacity: 1;
+}
+
+.green-block-title{
+    color: #586D48;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.green-block-text{
+    color: #fff;
+    font-size: 23px;
+    width: 40em;
+    /* font-weight: 700; */
+    text-align: justify;
+}
