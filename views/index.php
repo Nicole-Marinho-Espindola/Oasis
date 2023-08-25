@@ -26,3 +26,49 @@
     A Oásis é uma comunidade de voluntários dedicados a preservar e restaurar a natureza. Junte-se a nós para fazer a diferença e ajudar a criar um mundo mais verde e sustentável.
     </p>
 </section>
+<section class="timeline">
+    <div class="timeline-title-block">
+        <h1 class="timeline-title">Como funciona?</h1>
+        <div class="line"></div>
+    </div>
+    <section class="timeline-section">
+        <div class="timeline-items">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card-title">Inscrições simples <i class="fa-solid fa-paste"></i></div>
+                <div class="timeline-content">
+                    <p>Comece rapidamente sua jornada de voluntariado com um processo de inscrição fácil e intuitivo.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card-title">Conexão direta<i class="fa-solid fa-handshake-angle"></i></div>
+                <div class="timeline-content">
+                    <p>Comece rapidamente sua jornada de voluntariado com um processo de inscrição fácil e intuitivo.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card-title">Explorar oportunidades<i class="fa-solid fa-users-viewfinder"></i></div>
+                <div class="timeline-content">
+                    <p>Comece rapidamente sua jornada de voluntariado com um processo de inscrição fácil e intuitivo.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card-title">Inovação social<i class="fa-regular fa-lightbulb"></i></div>
+                <div class="timeline-content">
+                    <p>Comece rapidamente sua jornada de voluntariado com um processo de inscrição fácil e intuitivo.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card-title">Inscrições simples<i class="fa-regular fa-heart"></i></div>
+                <div class="timeline-content">
+                    <p>Comece rapidamente sua jornada de voluntariado com um processo de inscrição fácil e intuitivo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</section>
