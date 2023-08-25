@@ -95,7 +95,7 @@
 }
 
 .timeline-title-block{
-    margin-bottom: 5em;
+    margin-bottom: 2em;
 }
 
 .timeline-title{
@@ -134,6 +134,7 @@
 
 .timeline-item:nth-child(odd){
     padding-right: calc(50% + 30px);
+    text-align: right;
 }
 
 .timeline-item:nth-child(even){
@@ -156,15 +157,10 @@
     font-family: 'Poppins',sans-serif;
     font-weight: bold;
     text-align: right;
+    display: flex;
+    align-items: center;  
+    margin-bottom: 8px;
 }
-
-/* .timeline-card-title:nth-child(odd){
-    text-align: left;
-}
-
-.timeline-card-title:nth-child(even){
-    text-align: right;
-} */
 
 .timeline-content{
     background-color: #D2BFE3;
@@ -173,5 +169,16 @@
     text-align: justify;
     font-family: 'Poppins', sans-serif;
     color: #2E104A;
+}
+
+.icon-timeline{
+    color: #AABE9B;
+    font-size: 20px;
+    margin: 8px;
+}
+
+.align-right{
+    margin-left: 18em;
+    width: 100%;
 }
 
