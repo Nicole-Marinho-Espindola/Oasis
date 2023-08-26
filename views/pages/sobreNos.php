@@ -159,3 +159,7 @@
         <span class="girls-hashtag">#oasisparatodos</span>    
     </div>
 </div>
+
+<?php
+    include_once('../includes/footer.php')
+?>

@@ -15,7 +15,7 @@
         </ul>
         <div class="sign-up-block">
             <a class="link-style-none sign-in" href="">Entrar</a>
-            <button class="btn"><a class="link-style-none" href="">Cadastro</a></button>
+            <button class="btn"><a class="link-style-none" href="<?= baseUrl('/views/forms/cadastro.php') ?>">Cadastro</a></button>
         </div>
     </nav>
     <aside class="barra-lateral" >
