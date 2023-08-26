@@ -1,3 +1,4 @@
+
 .join-us{
     display: flex;
     justify-content: center;
@@ -12,7 +13,6 @@
     width: 35em;
     margin-right: 5em;
     margin-left: 5em;
-    font-family: "Poppins", sans-serif;
 }
 
 .join-us-title{
@@ -128,7 +128,6 @@
 
 .timeline-item{
     width: 100%;
-    margin-bottom: 40px;
     position: relative;
 }
 
@@ -148,13 +147,12 @@
     background-color: #A173BD;
     position: absolute;
     left: calc(50% - 8px);
-    margin-top: 8px;
+    margin-top: 9px;
 }
 
 .timeline-card-title{
     color: #000;
     font-size: 18px;
-    font-family: 'Poppins',sans-serif;
     font-weight: bold;
     text-align: right;
     display: flex;
@@ -167,7 +165,6 @@
     padding: 36px;
     border-radius: 10px;
     text-align: justify;
-    font-family: 'Poppins', sans-serif;
     color: #2E104A;
 }
 
@@ -182,3 +179,95 @@
     width: 100%;
 }
 
+.line{
+    width: 8em;
+    margin-left: 2px;
+}
+
+.our-partners{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #AABE9B;
+    margin-top: 5em;
+    width: 100%;
+    height: 48em;
+}
+
+.partners-block{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #fff;
+    width: 70%;
+    padding: 5em;
+    height: 37em;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.our-partners-text-block{
+    width: 30em;
+    padding: 40px;
+}
+
+.our-partners-title{
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.our-partners-description{
+    margin-top: 50px;
+}
+
+.description-title{
+    font-size: 20px;
+    font-weight: 700;
+    color:715987;
+    margin-bottom: 20px;
+}
+
+.description-text{
+    width: 21em;
+    text-align: justify;
+    font-size: 15px;
+}
+
+.partners-card-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.partners-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 22em;
+    width: 16em;
+    background-color: #BBA1D4;
+    border-radius: 10px;
+    margin-left: 7em;
+}
+
+.partners-card::before{
+    content: '';
+    height: 22em;
+    width: 16em;
+    background-color: #715987;
+    position: absolute;
+    margin-right:50px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    margin-top: 6em;
+}
+
+.btn-block{
+    margin-top: 7em;
+    margin-left: 100%;
+}
