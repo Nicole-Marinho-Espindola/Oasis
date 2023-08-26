@@ -188,6 +188,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     background-color: #AABE9B;
     margin-top: 5em;
     width: 100%;
@@ -195,7 +196,7 @@
 }
 
 .partners-block{
-    display: grid;
+    display: none;
     grid-template-columns: 1fr 1fr;
     background-color: #fff;
     width: 70%;
@@ -203,6 +204,10 @@
     height: 37em;
     border-radius: 10px;
     margin-top: 40px;
+}
+
+.active-display{
+    display: grid;
 }
 
 .our-partners-text-block{
@@ -268,6 +273,26 @@
 }
 
 .btn-block{
-    margin-top: 7em;
-    margin-left: 100%;
+    margin-top: 6em;
+    margin-left: 80%;
+}
+
+.btn{
+    width: 5em;
+    margin-left: 20px;
+}
+
+.btn-back{
+    width: 5em;
+    height: 40px;
+    border: 1px solid #AABE9B;
+    box-shadow: 1px 1px 7px #94a588;
+    border-radius: 10px;
+    color: #586D48;
+    background-color: #fff;
+}
+
+.btn-back:hover{
+    background-color: #e1e1e1;
+    color: #1b2414;
 }

@@ -72,7 +72,7 @@
     </section>
 </section>
     <section class="our-partners">
-        <div class="partners-block">
+        <div class="partners-block active-display">
             <div class="our-partners-text-block">
                 <div class="our-partners-title-block">
                     <h1 class="our-partners-title">Conheça algumas ONG’S parceiras</h1>
@@ -92,9 +92,36 @@
                     <button class="btn">Saiba mais</button> -->
                 </div>
                 <div class="btn-block">
-                    <button><i class="fa-solid fa-arrow-left"></i></button>
-                    <button><i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="btn-back btn"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="btn"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="partners-block">
+            <div class="our-partners-text-block">
+                <div class="our-partners-title-block">
+                    <h1 class="our-partners-title">Conheça algumas ONG’S parceiras</h1>
+                    <div class="line"></div>
+                </div>
+                <div class="our-partners-description">
+                    <h1 class="description-title">Sereia Azul</h1>
+                    <p class="description-text">
+                    Esta ONG tem como objetivo combater a fome e promover a inclusão social por meio de projetos que proporcionam alimentação, educação..
+                    </p>
+                </div>
+            </div>
+            <div class="partners-card-block">
+                <div class="partners-card">
+                <!-- <img src="" alt="">
+                    <h3 class="partners-name">Formiguinhas da praia</h3>
+                    <button class="btn">Saiba mais</button> -->
+                </div>
+                <div class="btn-block">
+                    <button class="btn-back btn"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="btn" onclick="passarEtapa()"><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
     </section>
+
+    <script src="./../assets/js/passarCard.js"></script>
