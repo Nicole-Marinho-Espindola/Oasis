@@ -22,8 +22,8 @@
                     </div>
                     <div class="user-info-block">
                         <label class="" for="">Razão social:
-                            <div class="form-input-block">
-                                <i class="fa-solid fa-user icon-green"></i>
+                            <div class="form-input-block ">
+                                <i class="fa-solid fa-tag icon-green"></i>
                                 <input class="input input-size" type="text"
                                     id="razaoOng" name="razaoOng" requerid>
                             </div>
@@ -32,9 +32,30 @@
                     <div class="user-info-block">
                     <label class="" for="">CNPJ:
                             <div class="form-input-block">
-                                <i class="fa-regular fa-envelope icon-green"></i>
+                                <i class="fa-regular fa-id-card icon-green"></i>
                                 <input class="input input-size" type="text" oninput="validarCNPJ(this.value)"
                                     id="cnpjOng" name="cnpjOng" requerid>
+                            </div>
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>
+                </div>
+                <div class="section">
+                    <div class="user-info-block">
+                        <label class="" for="email">Telefone:
+                            <div class="form-input-block required ">
+                                <i class="fa-solid fa-phone icon-green"></i>
+                                <input class="input input-size" type="number" oninput="validarEmail(this.value)"
+                                    id="emailOng" name="emailOng" requerid>
+                            </div>
+                            <span class="span-required">Email inválido</span>
+                        </label>
+                    </div>
+                    <div class="user-info-block">
+                    <label for="">Sua missão:
+                            <div class="form-input-block">
+                                <i class="fa-solid fa-bullhorn icon-green"></i>
+                                <input class="input input-size" type="text">
                             </div>
                         </label>
                     </div>
@@ -47,7 +68,6 @@
                                 <i class="fa-regular fa-envelope icon-green"></i>
                                 <input class="input input-size" type="text" oninput="validarEmail(this.value)"
                                     id="emailOng" name="emailOng" requerid>
-                                <span class="span-required">Email inválido</span>
                             </div>
                             <span class="span-required">Email inválido</span>
                         </label>
@@ -55,7 +75,7 @@
                     <div class="user-info-block">
                     <label for="">Senha:
                             <div class="form-input-block">
-                                <i class="fa-solid fa-lock"></i>
+                                <i class="fa-solid fa-lock icon-green"></i>
                                 <input class="input" type="password"
                                     id="senhaOng" name="senhaOng" required>
                                 <i class="fa-regular fa-eye-slash icon-green"></i>
