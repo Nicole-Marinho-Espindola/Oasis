@@ -32,6 +32,14 @@
                     echo "<script>alert('Email já cadastrado.');</script>";
                 }
 
+                if (isset($_GET['editar_sucesso']) && $_GET['editar_sucesso'] == 'true') {
+                    echo "<script>alert('Editado com sucesso.');</script>";
+                }
+
+                if (isset($_GET['excluir_sucesso']) && $_GET['excluir_sucesso'] == 'true') {
+                    echo "<script>alert('Excluído com sucesso.');</script>";
+                }
+
                 try
                 {
                     $select = $conn->prepare('SELECT * FROM tb_ong');

@@ -32,11 +32,10 @@
 <div class="content">
     <div class="form-block">
         <div class="form-title">
-            <h1 class="title">Atualizar cadastro de voluntários!</h1>
+            <h1 class="title">Editar voluntário</h1>
             <div class="line"></div>
         </div>
         <form class="form" action="../../services/CRUD/voluntario/editar_action.php">
-        <div class="section active">
                     <div class="user-info-block">
                         <label class="" for="">Nome:
                             <div class="form-input-block required">
@@ -51,7 +50,7 @@
                     <div class="user-info-block">
                         <label class="" for="">Sobrenome:
                             <div class="form-input-block">
-                                <i class="fa-solid fa-user icon-green"></i>
+                                <i class="fa-solid fa-file-signature icon-green"></i>
                                 <input class="input input-size" type="text"
                                     id="sobrenomeVoluntario" name="sobrenomeVoluntario"
                                         value="<?= $row['nm_sobrenome'] ?? '' ?>">
@@ -67,9 +66,6 @@
                             </div>
                         </label>
                     </div>
-                    <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>
-        </div>
-        <div class="section">
                     <div class="user-info-block">
                         <label class="" for="email">Email:
                             <div class="form-input-block required">
@@ -81,7 +77,7 @@
                             </div>
                         </label>
                     </div>
-                    <div class="user-info-block">
+                    <!-- <div class="user-info-block">
                     <label for="">Senha:
                             <div class="form-input-block">
                                 <i class="fa-solid fa-lock"></i>
@@ -90,12 +86,9 @@
                                 <i class="fa-regular fa-eye-slash icon-green"></i>
                             </div>
                         </label>
-                    </div>
-                    <button type="submit" class="btn btn-color">Alterar dados</button>
-        </div>
+                    </div> -->
+                    <button type="submit" class="btn btn-color">Alterar</button>
         </form>
     </div>
 </div>
 </body>
-
-<script src="<?= baseUrl('/assets/js/cadastroEtapas.js') ?>"></script>

@@ -32,56 +32,73 @@
 <div class="content">
     <div class="form-block">
         <div class="form-title">
-            <h1 class="title">Atualizar cadastro de voluntários!</h1>
+            <h1 class="title">Alterar ONG</h1>
             <div class="line"></div>
         </div>
-        <form class="form" action="../../services/CRUD/voluntario/editar_action.php">
-        <div class="section active">
+        <form class="form" action="../../services/CRUD/ongs/editar_action.php">
                     <div class="user-info-block">
                         <label class="" for="">Nome:
                             <div class="form-input-block required">
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size" type="text"
-                                    id="nomeVoluntario" name="nomeVoluntario"
-                                        value="<?= $row['nm_voluntario'] ?? '' ?>">
+                                    id="nomeOng" name="nomeOng"
+                                        value="<?= $row['nm_ong'] ?? '' ?>">
                             </div>
                             <span class="span-required">Mínimo de 3 caracteres</span>
                         </label>
                     </div>
                     <div class="user-info-block">
-                        <label class="" for="">Sobrenome:
+                        <label class="" for="">Razão social:
                             <div class="form-input-block">
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size" type="text"
-                                    id="sobrenomeVoluntario" name="sobrenomeVoluntario"
+                                    id="razaoOng" name="razaoOng"
                                         value="<?= $row['nm_sobrenome'] ?? '' ?>">
                             </div>
                         </label>
                     </div>
                     <div class="user-info-block">
-                        <label class="" for="">Data de nascimento:
+                        <label class="" for="">Missão:
                             <div class="form-input-block">
-                                <input class="input input-size" type="date"
-                                    id="nascimentoVoluntario" name="nascimentoVoluntario"
-                                        value="<?= $row['dt_nascimento'] ?? '' ?>">
+                                <i class="fa-regular fa-calendar icon-green"></i>
+                                <input class="input input-size" type="text"
+                                    id="missaoOng" name="missaoOng"
+                                        value="<?= $row['dt_nascimento'] ?? '' ?>" >
                             </div>
                         </label>
                     </div>
-                    <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>
-        </div>
-        <div class="section">
+                    <div class="user-info-block">
+                        <label class="" for="">CNPJ:
+                            <div class="form-input-block">
+                                <i class="fa-regular fa-calendar icon-green"></i>
+                                <input class="input input-size" type="number"
+                                    id="cnpjOng" name="cnpjOng"
+                                        value="<?= $row['ds_cnpj'] ?? '' ?>" >
+                            </div>
+                        </label>
+                    </div>
+                    <div class="user-info-block">
+                        <label class="" for="">Telefone:
+                            <div class="form-input-block">
+                                <i class="fa-regular fa-calendar icon-green"></i>
+                                <input class="input input-size" type="number"
+                                    id="telefoneOng" name="telefoneOng"
+                                        value="<?= $row['dt_nascimento'] ?? '' ?>" >
+                            </div>
+                        </label>
+                    </div>
                     <div class="user-info-block">
                         <label class="" for="email">Email:
                             <div class="form-input-block required">
                                 <i class="fa-regular fa-envelope icon-green"></i>
                                 <input class="input input-size" type="text" oninput="emailValidate()"
-                                    id="emailVoluntario" name="emailVoluntario"
-                                        value="<?= $row['ds_email'] ?? '' ?>">
+                                    id="emailOng" name="emailOng"
+                                        value="<?= $row['ds_email'] ?? '' ?>" >
                                 <span class="span-required">Email inválido</span>
                             </div>
                         </label>
                     </div>
-                    <div class="user-info-block">
+                    <!-- <div class="user-info-block">
                     <label for="">Senha:
                             <div class="form-input-block">
                                 <i class="fa-solid fa-lock"></i>
@@ -90,12 +107,9 @@
                                 <i class="fa-regular fa-eye-slash icon-green"></i>
                             </div>
                         </label>
-                    </div>
-                    <button type="submit" class="btn btn-color">Alterar dados</button>
-        </div>
+                    </div> -->
+                    <button type="submit" class="btn btn-color">Alterar</button>
         </form>
     </div>
 </div>
 </body>
-
-<script src="<?= baseUrl('/assets/js/cadastroEtapas.js') ?>"></script>
