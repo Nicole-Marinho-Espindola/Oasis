@@ -16,6 +16,7 @@
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size icon-green" type="text"
                                     id="nomeOng" name="nomeOng" requerid>
+                                <input class="input input-size icon-green" type="text" required oninput="nameValidate()">
                             </div>
                             <span class="span-required">Mínimo de 3 caracteres</span>
                         </label>
@@ -30,6 +31,18 @@
                         </label>
                     </div>
                     <div class="user-info-block">
+                        <label class="" for="">Missão:
+                            <div class="form-input-block ">
+                                <i class="fa-solid fa-tag icon-green"></i>
+                                <input class="input input-size" type="text"
+                                    id="razaoOng" name="razaoOng" requerid>
+                            </div>
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>
+                </div>
+                <div class="section">
+                    <div class="user-info-block">
                     <label class="" for="">CNPJ:
                             <div class="form-input-block">
                                 <i class="fa-regular fa-id-card icon-green"></i>
@@ -38,24 +51,13 @@
                             </div>
                         </label>
                     </div>
-                    <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>
-                </div>
-                <div class="section">
                     <div class="user-info-block">
-                        <label class="" for="">Celular:
-                            <div class="form-input-block required ">
-                                <i class="fa-solid fa-phone icon-green"></i>
-                                <input class="input input-size" type="number"
-                                    id="celularOng" name="celularOng" requerid>
-                            </div>
-                        </label>
-                    </div>
-                    <div class="user-info-block">
-                    <label for="">Sua missão:
+                    <label for="">Telefone:
                             <div class="form-input-block">
-                                <i class="fa-solid fa-bullhorn icon-green"></i>
-                                <input class="input input-size" type="text"
-                                    id="missaoOng" name="missaoOng" requerid>
+                                <i class="fa-solid fa-lock icon-green"></i>
+                                <input class="input" type="number"
+                                    id="senhaOng" name="senhaOng" >
+                                <i class="fa-regular fa-eye-slash icon-green"></i>
                             </div>
                         </label>
                     </div>
@@ -68,6 +70,7 @@
                                 <i class="fa-regular fa-envelope icon-green"></i>
                                 <input class="input input-size" type="text" oninput="validarEmail(this.value)"
                                     id="emailOng" name="emailOng" requerid>
+                                <span class="span-required">Email inválido</span>
                             </div>
                             <span class="span-required">Email inválido</span>
                         </label>
@@ -92,3 +95,6 @@
 <script src="<?= baseUrl('/assets/js/validarEmail.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/cadastroEtapas.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/validarCNPJ.js') ?>"></script>
+<script src="<?= baseUrl('/assets/js/validarInput.js') ?>"></script>
+<script src="<?= baseUrl('/assets/js/cadastroEtapas.js') ?>"></script>
+
