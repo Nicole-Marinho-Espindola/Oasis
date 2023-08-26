@@ -18,11 +18,10 @@ var next = function (elem, selector) {
 
 };
 
-function passarEtapa() { 
-    
-    var currentActive = document.querySelector(".active-display"); 
-    var nextActive = next(currentActive, 'div');
+function passarCard() { 
+    var currentActive = document.querySelector(".active-display"); //pesquisa qual elemento possui essa classe
+    var nextActive = next(currentActive, 'div'); // faz passar para a proxima div
 
-    currentActive.classList.remove("active-display"); 
-    nextActive.classList.add("active-display"); 
+    currentActive.classList.remove("active-display"); // remove a classe da div que possuia
+    nextActive.classList.add("active-display"); // adciona a classe na proxima div que não possui a classe
 }

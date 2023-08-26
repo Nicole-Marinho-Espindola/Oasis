@@ -118,10 +118,13 @@
                 </div>
                 <div class="btn-block">
                     <button class="btn-back btn"><i class="fa-solid fa-arrow-left"></i></button>
-                    <button class="btn" onclick="passarEtapa()"><i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="btn" onclick="passarCard()"><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
     </section>
 
+    <?php
+        include_once('./includes/footer.php')
+    ?>
     <script src="./../assets/js/passarCard.js"></script>

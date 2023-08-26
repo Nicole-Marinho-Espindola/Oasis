@@ -15,15 +15,18 @@
                             <div class="form-input-block required">
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size icon-green" type="text"
-                                    id="nomeOng" name="nomeOng" oninput="nameValidate()" required >
+                                    id="nomeOng" name="nomeOng" requerid>
+=======
+                                <input class="input input-size icon-green" type="text" required oninput="nameValidate()">
+>>>>>>> bde796533e03c71a12e1b40e8bf686561253408f
                             </div>
                             <span class="span-required">Mínimo de 3 caracteres</span>
                         </label>
                     </div>
                     <div class="user-info-block">
                         <label class="" for="">Razão social:
-                            <div class="form-input-block">
-                                <i class="fa-solid fa-user icon-green"></i>
+                            <div class="form-input-block ">
+                                <i class="fa-solid fa-tag icon-green"></i>
                                 <input class="input input-size" type="text"
                                     id="razaoOng" name="razaoOng" requerid>
                             </div>
@@ -32,7 +35,7 @@
                     <div class="user-info-block">
                     <label class="" for="">CNPJ:
                             <div class="form-input-block">
-                                <i class="fa-regular fa-envelope icon-green"></i>
+                                <i class="fa-regular fa-id-card icon-green"></i>
                                 <input class="input input-size" type="text" oninput="validarCNPJ(this.value)"
                                     id="cnpjOng" name="cnpjOng" requerid>
                             </div>
@@ -42,18 +45,27 @@
                 </div>
                 <div class="section">
                     <div class="user-info-block">
+<<<<<<< HEAD
                         <label class="" for="email">Email:
                             <div class="form-input-block required">
                                 <i class="fa-regular fa-envelope icon-green"></i>
                                 <input class="input input-size" type="text" oninput="validarEmail(this.value)"
                                     id="emailOng" name="emailOng" requerid>
                                 <span class="span-required">Email inválido</span>
+=======
+                        <label class="" for="">Email:
+                            <div class="form-input-block required">
+                                <i class="fa-regular fa-envelope icon-green"></i>
+                                <input class="input input-size" type="email" required oninput="emailValidate()">
+>>>>>>> bde796533e03c71a12e1b40e8bf686561253408f
+                            </div>
+                            <span class="span-required">Email inválido</span>
                         </label>
                     </div>
                     <div class="user-info-block">
                     <label for="">Senha:
                             <div class="form-input-block">
-                                <i class="fa-solid fa-lock"></i>
+                                <i class="fa-solid fa-lock icon-green"></i>
                                 <input class="input" type="password"
                                     id="senhaOng" name="senhaOng" required>
                                 <i class="fa-regular fa-eye-slash icon-green"></i>
@@ -70,3 +82,7 @@
 <script src="<?= baseUrl('/assets/js/validarEmail.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/cadastroEtapas.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/validarCNPJ.js') ?>"></script>
+=======
+<script src="<?= baseUrl('/assets/js/validarInput.js') ?>"></script>
+<script src="<?= baseUrl('/assets/js/cadastroEtapas.js') ?>"></script>
+>>>>>>> bde796533e03c71a12e1b40e8bf686561253408f
