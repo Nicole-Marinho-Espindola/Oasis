@@ -10,7 +10,7 @@
                 <h1 class="title">Cadastro de voluntários!</h1>
                 <div class="line"></div>
             </div>
-            <form class="form" action=<?= baseUrl('services/CRUD/voluntario/cadastro.php') ?>
+            <form class="form" action=<?= baseUrl('services/CRUD/voluntario/cadastro_action.php') ?>
                         method="POST" onsubmit="return limitarSelecoes(3);" id="form">
                 <div class="section active">
                     <div class="user-info-block">

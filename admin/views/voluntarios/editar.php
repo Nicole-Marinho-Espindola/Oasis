@@ -1,11 +1,12 @@
 <?php
+
     include_once('../../views/includes/head.php');
     include_once('../../config/database.php');
     
     $row = null; // Inicializa a variável $row
     
     if (isset($_GET['cd_voluntario'])) {
-        $id = $_GET['cd_voluntario'];
+        $id = filter_input(INPUT_GET, 'cd_voluntario');
     
         try {
             $select = $conn->prepare("SELECT * FROM tb_voluntario WHERE cd_voluntario = :id");
@@ -23,6 +24,7 @@
     } else {
         echo "Não foi possível pegar o ID do voluntário.";
     }
+
 ?>
 
 <link rel="stylesheet" href="<?= baseUrl('/assets/css/form.css') ?>">
@@ -33,8 +35,7 @@
             <h1 class="title">Atualizar cadastro de voluntários!</h1>
             <div class="line"></div>
         </div>
-
-        <form class="form" action=<?= baseUrl('services/CRUD/voluntario/editar.php') ?>>
+        <form class="form" action=<?= baseUrl('services/CRUD/voluntario/editar_action.php') ?>>
             <div class="section active">
                 <div class="user-info-block">
                     <label for="nomeVoluntario">Nome:</label>
