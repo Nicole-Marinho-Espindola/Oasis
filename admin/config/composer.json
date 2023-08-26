@@ -1,6 +1,17 @@
 {
+    "name": "maria/oasis",
+    "autoload": {
+        "psr-4": {
+            "Maria\\Oasis\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mairalouise",
+            "email": "mairalouisef23@gmail.com"
+        }
+    ],
     "require": {
-        "symfony/dotenv": "^6.3",
         "vlucas/phpdotenv": "^5.5"
     }
 }

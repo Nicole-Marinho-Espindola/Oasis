@@ -1,30 +1,31 @@
 <?php
 
-    include_once('../../config/database.php');
+    include_once('../../../config/database.php');
 
-    $nome = filter_input(INPUT_POST, 'nm_voluntario');
-    $sobrenome = filter_input(INPUT_POST, 'nm_sobrenome');
-    $dt_nasc = filter_input(INPUT_POST, 'dt_nasc');
-    $email = filter_input(INPUT_POST, 'email');
-    $senha = filter_input(INPUT_POST, 'senha');
+    $id = filter_input(INPUT_POST, 'cd_voluntario');
+    $nome = filter_input(INPUT_POST, 'nomeVoluntario');
+    $sobrenome = filter_input(INPUT_POST, 'sobrenomeVoluntario');
+    $dt_nasc = filter_input(INPUT_POST, 'nascimentoVoluntario');
+    $email = filter_input(INPUT_POST, 'emailVoluntario');
     
-
 	try
 	{
 
-		$stmt = $conn->prepare("UPDATE tb_cliente SET nm_voluntario, nm_sobrenome, dt_nascimento, ds_email, cd_senha where 
+		$stmt = $conn->prepare("UPDATE tb_voluntario SET nm_voluntario = :nome,
+                                                        nm_sobrenome = :sobrenome,
+                                                        dt_nascimento = :dt_nasc,
+                                                        ds_email = :email
+                                                        WHERE cd_voluntario = :id");
 
-		$stmt->execute(array(':cod' => $cod,
+		$stmt->execute(array(':id' => $id,
                             ':nome' => $nome,
-                            ':cpf' => $cpf,
-                            ':rg' => $rg,
-                            ':cep' => $cep,
-                            ':num' => $num,
-                            ':email' => $email,
-                            ':cel' => $cel));
-		
-		header( "refresh:0;url=consultaCliente.php" );
-		echo "<script>alert('CLIENTE ALTERADO COM SUCESSO');</script>";
+                            ':sobrenome' => $sobrenome,
+                            ':dt_nasc' => $dt_nasc,
+                            ':email' => $email));
+
+        header("Location: ../../../views/voluntarios/index.php?editar_sucesso=true");
+        exit();
+                            
 	}
 	catch(PDOException $e)
 	{
