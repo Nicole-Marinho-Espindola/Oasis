@@ -15,7 +15,7 @@
                     Mas quem está por trás dessa iniciativa?</p>
                 <a href="https://www.instagram.com/oasisparatodos/" target="_blank" class="purple-info-block">
                     <i class="fa-solid fa-chevron-right icon"></i>
-                    <span class="purple-block-text">conheça o nosso instagram</span>
+                    <span class="purple-block-text">Conheça o nosso Instagram</span>
                 </a>
             </div>
         </div> 
@@ -71,7 +71,7 @@
             <div class="name-explain-head-block">
                 <div class="name-explain-title-block">
                     <img class="logo-img" src="../../assets/img/logo-oasis.png" alt="">
-                    <h1 class="name-explain-title">Porque "Oásis"?</h1>
+                    <h1 class="name-explain-title">Por que "Oásis"?</h1>
                 </div>
                 <div class="line"></div>
             </div>

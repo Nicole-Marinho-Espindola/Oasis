@@ -1,26 +1,18 @@
 <?php
 
-include_once('../../config/database.php');
+    include_once('../../config/database.php');
 
-$cod = $_POST['codigo'];
-$nome = $_POST['nome'];
-$cpf = $_POST['cpf'];
-$rg = $_POST['rg'];
-$cep = $_POST['cep'];
-$num = $_POST['numero'];
-$email = $_POST['email'];
-$cel = $_POST['celular'];
+    $nome = filter_input(INPUT_POST, 'nm_voluntario');
+    $sobrenome = filter_input(INPUT_POST, 'nm_sobrenome');
+    $dt_nasc = filter_input(INPUT_POST, 'dt_nasc');
+    $email = filter_input(INPUT_POST, 'email');
+    $senha = filter_input(INPUT_POST, 'senha');
+    
 
 	try
 	{
 
-		$stmt = $conn->prepare("UPDATE tb_cliente SET nm_cliente = :nome,
-													cd_cpf = :cpf,
-													cd_rg = :rg,
-													cd_cep = :cep,
-													nm_endereco = :num,
-                                                    nm_email = :email,
-													cd_celular = :cel WHERE cd_cliente = :cod");
+		$stmt = $conn->prepare("UPDATE tb_cliente SET nm_voluntario, nm_sobrenome, dt_nascimento, ds_email, cd_senha where 
 
 		$stmt->execute(array(':cod' => $cod,
                             ':nome' => $nome,
@@ -38,4 +30,5 @@ $cel = $_POST['celular'];
 	{
 		echo 'Error: ' . $e->getMessage();
 	}
+    
 ?>
