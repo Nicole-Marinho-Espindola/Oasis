@@ -32,18 +32,17 @@
 <div class="content">
     <div class="form-block">
         <div class="form-title">
-            <h1 class="title">Atualizar cadastro de voluntários!</h1>
+            <h1 class="title">Excluir ONG</h1>
             <div class="line"></div>
         </div>
         <form class="form" action="../../services/CRUD/voluntario/editar_action.php">
-        <div class="section active">
                     <div class="user-info-block">
                         <label class="" for="">Nome:
                             <div class="form-input-block required">
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size" type="text"
                                     id="nomeVoluntario" name="nomeVoluntario"
-                                        value="<?= $row['nm_voluntario'] ?? '' ?>">
+                                        value="<?= $row['nm_voluntario'] ?? '' ?>" readonly>
                             </div>
                             <span class="span-required">Mínimo de 3 caracteres</span>
                         </label>
@@ -54,48 +53,43 @@
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size" type="text"
                                     id="sobrenomeVoluntario" name="sobrenomeVoluntario"
-                                        value="<?= $row['nm_sobrenome'] ?? '' ?>">
+                                        value="<?= $row['nm_sobrenome'] ?? '' ?>" readonly>
                             </div>
                         </label>
                     </div>
                     <div class="user-info-block">
                         <label class="" for="">Data de nascimento:
                             <div class="form-input-block">
+                                <i class="fa-regular fa-calendar icon-green"></i>
                                 <input class="input input-size" type="date"
                                     id="nascimentoVoluntario" name="nascimentoVoluntario"
-                                        value="<?= $row['dt_nascimento'] ?? '' ?>">
+                                        value="<?= $row['dt_nascimento'] ?? '' ?>" readonly>
                             </div>
                         </label>
                     </div>
-                    <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>
-        </div>
-        <div class="section">
                     <div class="user-info-block">
                         <label class="" for="email">Email:
                             <div class="form-input-block required">
                                 <i class="fa-regular fa-envelope icon-green"></i>
                                 <input class="input input-size" type="text" oninput="emailValidate()"
                                     id="emailVoluntario" name="emailVoluntario"
-                                        value="<?= $row['ds_email'] ?? '' ?>">
+                                        value="<?= $row['ds_email'] ?? '' ?>" readonly>
                                 <span class="span-required">Email inválido</span>
                             </div>
                         </label>
                     </div>
-                    <div class="user-info-block">
+                    <!-- <div class="user-info-block">
                     <label for="">Senha:
                             <div class="form-input-block">
                                 <i class="fa-solid fa-lock"></i>
                                 <input class="input" type="password"
-                                    id="senhaVoluntario" name="senhaVoluntario">
+                                    id="senhaVoluntario" name="senhaVoluntario" readonly>
                                 <i class="fa-regular fa-eye-slash icon-green"></i>
                             </div>
                         </label>
-                    </div>
-                    <button type="submit" class="btn btn-color">Alterar dados</button>
-        </div>
+                    </div> -->
+                    <button type="submit" class="btn btn-color">Excluir</button>
         </form>
     </div>
 </div>
 </body>
-
-<script src="<?= baseUrl('/assets/js/cadastroEtapas.js') ?>"></script>

@@ -54,7 +54,7 @@
                             <td class="content-table"><?= $row['ds_email'] ?></td>
                             <!-- <td class="content-table"><?= $row['situacao'] ?></td>-->
                             <td><a href="editar.php?cd_voluntario=<?= $row['cd_voluntario'] ?>"><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></a></td>
-                            <td><i class="fa-solid fa-trash" style="color: #1f513b;"></i></td>
+                            <td><a href="excluir.php?cd_voluntario=<?= $row['cd_voluntario'] ?>"><i class="fa-solid fa-trash" style="color: #1f513b;"></i></a></td>
                         </tr>
                         <?php
                     }

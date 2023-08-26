@@ -81,7 +81,7 @@
                             </div>
                         </label>
                     </div>
-                    <!-- <div class="user-info-block">
+                    <div class="user-info-block">
                     <label for="">Senha:
                             <div class="form-input-block">
                                 <i class="fa-solid fa-lock"></i>
@@ -90,7 +90,7 @@
                                 <i class="fa-regular fa-eye-slash icon-green"></i>
                             </div>
                         </label>
-                    </div> -->
+                    </div>
                     <button type="submit" class="btn btn-color">Alterar dados</button>
         </div>
         </form>
