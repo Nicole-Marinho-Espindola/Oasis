@@ -13,13 +13,14 @@
     </div>
     <table class="table">
         <thead>
-            <th>Id</th>
+            <th>ID</th>
             <th>Nome</th>
             <th>Razão Social</th>
             <th>CNPJ</th>
             <!-- <th>Situação</th> -->
             <th>Email</th>
             <th>Celular</th>
+            <th></th>
             <th></th>
         </thead>
         <tbody>
