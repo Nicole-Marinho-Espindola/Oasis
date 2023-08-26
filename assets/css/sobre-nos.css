@@ -30,7 +30,7 @@
 
 .img-sobre{
     height: 38em;
-    margin-top: 9em;
+    margin-top: 8em;
 }
 
 .title-sobre{
@@ -224,8 +224,8 @@
     justify-content: center;
     align-items: center;
     color: #586D48;
-    font-size: 25px;
-    background-color: #AABE9B;
+    font-size: 23px;
+    /* background-color: #AABE9B; */
     width: 100%;
     height: 45px;
     margin-top: 15px;
@@ -235,6 +235,7 @@
     width: 13em;
     text-align: justify;
     margin-top: 2em;
+    font-size: 14px;
 }
 
 .name-explain-block{
@@ -243,7 +244,7 @@
     align-items: center;
     background-color: #d3c2e4; 
     position: relative;
-    height: 47em;
+    height: 37em;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
@@ -254,11 +255,11 @@
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    width: 85em;
+    width: 70em;
     border-radius:10px ;
-    padding: 5em;
+    padding: 3em;
     position: absolute;
-    margin-bottom: 20em;
+    margin-bottom: 15em;
 }
 
 .name-explain-head-block{
@@ -300,7 +301,7 @@
     font-weight: 500;
     color: #313131;
     line-height: 30px;
-    width: 50em;
+    width: 43em;
     text-align: justify;
 }
 
@@ -308,7 +309,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 7em;
+    margin-top: 5em;
     color: #A173BD;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
@@ -329,7 +330,7 @@
 }
 
 .girls-title-block{
-    margin-bottom: 7em;
+    margin-bottom: 4em;
     margin-right: 48em;
 
 }
@@ -345,15 +346,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80em;
+    width: 70em;
     /* margin: 5em 7em; */
     position: relative;
 }
 
 .girls-card{
     border: 1px solid #A173BD;
-    margin: 40px;
-    height: 30em;
+    margin: 50px;
+    height: 25em;
     border-radius: 10px;
     box-shadow: 6px 8px #BBA1D4;
     padding: 40px;
@@ -362,7 +363,7 @@
 
 .girls-text-block{
     font-family: "Poppins", sans-serif;
-    margin-top: 8em;
+    margin-top: 6em;
 }
 
 .girls-name{
@@ -372,7 +373,7 @@
 
 .girls-text{
     text-align: justify;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .social-midia{
@@ -394,14 +395,15 @@
 }
 
 .girls-img{
-    height: 10em;
+    height: 8em;
+    width: 8em;
     border-radius: 100%;
     border: 1px solid #ae96c5;
     position: absolute;
     object-fit: cover;
     /* margin-bottom: 20em; */
     top: -45;
-    margin-left: 3em;
+    margin-left: 2em;
 }
 
 .img-block{
@@ -416,7 +418,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10em;
+    margin-top: 5em;
 }
 
 .girls-hashtag{
