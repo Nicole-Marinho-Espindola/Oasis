@@ -32,6 +32,14 @@
                     echo "<script>alert('Email já cadastrado.');</script>";
                 }
 
+                if (isset($_GET['editar_sucesso']) && $_GET['editar_sucesso'] == 'true') {
+                    echo "<script>alert('Editado com sucesso.');</script>";
+                }
+
+                if (isset($_GET['excluir_sucesso']) && $_GET['excluir_sucesso'] == 'true') {
+                    echo "<script>alert('Excluído com sucesso.');</script>";
+                }
+
                 try
                 {
                     $select = $conn->prepare('SELECT * FROM tb_ong');
@@ -49,7 +57,7 @@
                             <td class="content-table"><?= $row['cd_celular_ong'] ?></td>
                             <!-- <td class="content-table"><?= $row['situacao'] ?></td>-->
                             <td><a href="editar.php?cd_ong=<?= $row['cd_ong'] ?>"><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></a></td>
-                            <td><i class="fa-solid fa-trash" style="color: #1f513b;"></i></td>
+                            <td><a href="excluir.php?cd_ong=<?= $row['cd_ong'] ?>"><i class="fa-solid fa-trash" style="color: #1f513b;"></i></td>
                         </tr>
                         <?php
                     }

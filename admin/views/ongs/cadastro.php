@@ -16,9 +16,6 @@
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size icon-green" type="text"
                                     id="nomeOng" name="nomeOng" requerid>
-=======
-                                <input class="input input-size icon-green" type="text" required oninput="nameValidate()">
->>>>>>> bde796533e03c71a12e1b40e8bf686561253408f
                             </div>
                             <span class="span-required">Mínimo de 3 caracteres</span>
                         </label>
@@ -45,19 +42,32 @@
                 </div>
                 <div class="section">
                     <div class="user-info-block">
-<<<<<<< HEAD
+                        <label class="" for="">Celular:
+                            <div class="form-input-block required ">
+                                <i class="fa-solid fa-phone icon-green"></i>
+                                <input class="input input-size" type="number"
+                                    id="celularOng" name="celularOng" requerid>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="user-info-block">
+                    <label for="">Sua missão:
+                            <div class="form-input-block">
+                                <i class="fa-solid fa-bullhorn icon-green"></i>
+                                <input class="input input-size" type="text"
+                                    id="missaoOng" name="missaoOng" requerid>
+                            </div>
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>
+                </div>
+                <div class="section">
+                    <div class="user-info-block">
                         <label class="" for="email">Email:
                             <div class="form-input-block required">
                                 <i class="fa-regular fa-envelope icon-green"></i>
                                 <input class="input input-size" type="text" oninput="validarEmail(this.value)"
                                     id="emailOng" name="emailOng" requerid>
-                                <span class="span-required">Email inválido</span>
-=======
-                        <label class="" for="">Email:
-                            <div class="form-input-block required">
-                                <i class="fa-regular fa-envelope icon-green"></i>
-                                <input class="input input-size" type="email" required oninput="emailValidate()">
->>>>>>> bde796533e03c71a12e1b40e8bf686561253408f
                             </div>
                             <span class="span-required">Email inválido</span>
                         </label>
@@ -82,7 +92,3 @@
 <script src="<?= baseUrl('/assets/js/validarEmail.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/cadastroEtapas.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/validarCNPJ.js') ?>"></script>
-=======
-<script src="<?= baseUrl('/assets/js/validarInput.js') ?>"></script>
-<script src="<?= baseUrl('/assets/js/cadastroEtapas.js') ?>"></script>
->>>>>>> bde796533e03c71a12e1b40e8bf686561253408f

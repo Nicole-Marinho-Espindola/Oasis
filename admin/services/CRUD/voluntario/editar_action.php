@@ -2,7 +2,7 @@
 
     include_once('../../../config/database.php');
 
-    $id = filter_input(INPUT_POST, 'cd_voluntario');
+    $id = filter_input(INPUT_POST, 'idVoluntario');
     $nome = filter_input(INPUT_POST, 'nomeVoluntario');
     $sobrenome = filter_input(INPUT_POST, 'sobrenomeVoluntario');
     $dt_nasc = filter_input(INPUT_POST, 'nascimentoVoluntario');
