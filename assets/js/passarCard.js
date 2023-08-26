@@ -25,3 +25,21 @@ function passarCard() {
     currentActive.classList.remove("active-display"); // remove a classe da div que possuia
     nextActive.classList.add("active-display"); // adciona a classe na proxima div que não possui a classe
 }
+
+// function voltarCard() {
+// 	var currentActive = document.querySelector(".active-display"); //pesquisa qual elemento possui essa classe
+//     var nextActive = next(currentActive, 'div'); // faz passar para a proxima div
+
+//     currentActive.classList.remove("active-display"); // remove a classe da div que possuia
+//     nextActive.classList.add("active-display"); // adciona a classe na proxima div que não possui a classe
+// }
+
+function voltarCard() {
+    var currentActive = document.querySelector(".active-display"); // Pesquisa o elemento com a classe "active-display"
+    var prevActive = currentActive.previousElementSibling; // como voltar para o elemento anterior
+
+    if (prevActive && prevActive.matches('.partners-block')) {
+        currentActive.classList.remove("active-display"); // Remove a classe "active-display" do elemento atual
+        prevActive.classList.add("active-display"); // Adiciona a classe "active-display" ao elemento anterior
+    }
+}

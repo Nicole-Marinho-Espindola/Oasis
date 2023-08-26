@@ -86,14 +86,16 @@
                 </div>
             </div>
             <div class="partners-card-block">
+                <div class="partners-card-empty">
+                </div>
                 <div class="partners-card">
-                <!-- <img src="" alt="">
-                    <h3 class="partners-name">Formiguinhas da praia</h3>
-                    <button class="btn">Saiba mais</button> -->
+                    <h3 class="partners-name">Formiguinhas</h3>
+                    <img class="partners-img" src="../assets/img/formiguinhas.jpg" alt="">
+                    <button class="btn-partners-card">Saiba mais</button>
                 </div>
                 <div class="btn-block">
                     <button class="btn-back btn"><i class="fa-solid fa-arrow-left"></i></button>
-                    <button class="btn"><i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="btn" onclick="passarCard()"><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
@@ -111,15 +113,17 @@
                 </div>
             </div>
             <div class="partners-card-block">
+                <div class="partners-card-empty">
+                </div>
                 <div class="partners-card">
-                <!-- <img src="" alt="">
-                    <h3 class="partners-name">Formiguinhas da praia</h3>
-                    <button class="btn">Saiba mais</button> -->
+                    <h3 class="partners-name">Sereia Azul</h3>
+                    <img class="partners-img" src="../assets/img/sereia-azul.png" alt="">
+                    <button class="btn-partners-card">Saiba mais</button>
                 </div>
                 <div class="btn-block">
-                    <button class="btn-back btn"><i class="fa-solid fa-arrow-left"></i></button>
-                    <button class="btn" onclick="passarCard()"><i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="btn-back btn" onclick="voltarCard()"><i class="fa-solid fa-arrow-left"></i></button>
                 </div>
+                
             </div>
         </div>
     </section>
