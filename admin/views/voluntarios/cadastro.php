@@ -10,13 +10,8 @@
                 <h1 class="title">Cadastro de voluntários!</h1>
                 <div class="line"></div>
             </div>
-<<<<<<< HEAD
-            <form class="form" action=<?= baseUrl('services/CRUD/voluntario/cadastro_action.php') ?>
-                        method="POST" onsubmit="return limitarSelecoes(3);" id="form">
-=======
-            <form class="form" action="../../services/CRUD/voluntario/cadastro.php" method="POST" enctype="multipart/form-data"
-                    onsubmit="return limitarSelecoes(3);">
->>>>>>> bde796533e03c71a12e1b40e8bf686561253408f
+            <form class="form" action="../../services/CRUD/voluntario/cadastro_action.php" method="POST"
+                    enctype="multipart/form-data" onsubmit="return limitarSelecoes(3);">
                 <div class="section active">
                     <div class="user-info-block">
                         <label class="" for="">Nome:
@@ -123,43 +118,6 @@
 </body>
 </html>
 
-<?php
-if (!empty($_POST) && !isset($_SESSION['cadastro_realizado'])) {
-    
-
-    $nome = $_POST['nomeVoluntario'];
-    $dt_nasc = $_POST['nascimentoVoluntario'];
-    $email = $_POST['emailVoluntario'];
-    $senha = $_POST['senhaVoluntario'];
-    $interesses = implode(', ', $_POST['interesses']); // Transforma o array de interesses em uma string
-
-    include_once('../../config/database.php');
-
-    try {
-        $hashDaSenha = password_hash($senha, PASSWORD_DEFAULT);
-
-        $stmt = $conn->prepare("INSERT INTO tb_voluntario (nm_voluntario, dt_nascimento, ds_email, cd_senha, ds_interesse)
-                                VALUES (:nome, :dt_nasc, :email, :senha, :interesse)");
-
-        $stmt->bindParam(':nome', $nome);
-        $stmt->bindParam(':dt_nasc', $dt_nasc);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':interesse', $interesses);
-        $stmt->bindParam(':senha', $hashDaSenha);
-
-        $stmt->execute();
-
-        echo "<script>alert('Cadastrado com Sucesso');</script>";
-
-        $_SESSION['cadastro_realizado'] = true;
-
-    } catch (PDOException $e) {
-        echo "Erro ao cadastrar: " . $e->getMessage();
-    }
-    $conn = null;
-}
-
-?>
 <script src="<?= baseUrl('/assets/js/validarInput.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/cadastroEtapas.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/limitarSelecoes.js') ?>"></script>

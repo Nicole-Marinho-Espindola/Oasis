@@ -34,6 +34,10 @@
                     echo "<script>alert('Email já cadastrado.');</script>";
                 }
 
+                if (isset($_GET['editar_sucesso']) && $_GET['editar_sucesso'] == 'true') {
+                    echo "<script>alert('Editado com sucesso.');</script>";
+                }
+
                 try
                 {
                     $select = $conn->prepare('SELECT * FROM tb_voluntario');
@@ -41,7 +45,7 @@
 
                     while ($row = $select->fetch())
                     {
-                        ?>
+            ?>
                         <tr class="row-table">
                             <td class="content-table"><?= $row['cd_voluntario'] ?></td>
                             <td class="content-table"><?= $row['nm_voluntario'] ?></td>
@@ -57,7 +61,7 @@
                 } catch (PDOException $e) {
                     echo "Erro ao consultar: " . $e->getMessage();
                 }
-            ?>
+                        ?>
         </tbody>
     </table>
     <div class="page-nav" aria-label="Page navigation example">
