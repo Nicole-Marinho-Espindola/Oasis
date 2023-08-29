@@ -37,6 +37,9 @@
             <button class="btn btn-color">Entrar</button>
         </form>
     </div>
+    <div class="img-block">
+        <img class="form-img" src="../../assets/img/Tablet login-bro.png" alt="">
+    </div>
 </div>
 </body>
 </html>
