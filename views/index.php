@@ -11,7 +11,7 @@
             Encontre oportunidades de voluntariado e ajude a transformar o mundo ao seu redor. Seja bem-vindo(a) ao Oásis para Todos.
         </p>
 
-        <button class="btn-purple">Fazer parte</button>
+        <button class="btn-purple"><a href="<?= baseUrl('/views/forms/cadastro.php')?>">Fazer parte</a></button>
     </div>
     <div class="join-us-img-block">
         <img class="join-us-img" src="./../assets/img/Taking care of the Earth-amico.png" alt="">
@@ -91,11 +91,11 @@
                 <div class="partners-card">
                     <h3 class="partners-name">Formiguinhas</h3>
                     <img class="partners-img" src="../assets/img/formiguinhas.jpg" alt="">
-                    <button class="btn-partners-card">Saiba mais</button>
+                    <button class="btn-partners-card"><a href="https://www.instagram.com/formiguinhasdapraia/" target="_blank">Saiba mais</a></button>
                 </div>
                 <div class="btn-block">
-                    <button class="btn-back btn"><i class="fa-solid fa-arrow-left"></i></button>
-                    <button class="btn" onclick="passarCard()"><i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="btn-back btn btn-details"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="btn btn-details" onclick="passarCard()"><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
@@ -118,10 +118,10 @@
                 <div class="partners-card">
                     <h3 class="partners-name">Sereia Azul</h3>
                     <img class="partners-img" src="../assets/img/sereia-azul.png" alt="">
-                    <button class="btn-partners-card">Saiba mais</button>
+                    <button class="btn-partners-card"><a href="https://www.instagram.com/asereiaazul/" target="_blank">Saiba mais</a></button>
                 </div>
                 <div class="btn-block">
-                    <button class="btn-back btn" onclick="voltarCard()"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="btn-back btn btn-details" onclick="voltarCard()"><i class="fa-solid fa-arrow-left"></i></button>
                 </div>
                 
             </div>

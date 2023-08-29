@@ -18,7 +18,7 @@
         <ul class="menuLateral">
             <li class="list-style">
                 <i class="fa-solid fa-house" style="color: #ffffff;"></i>
-                <a class="link-style" href=<?= baseUrl('views/index.php') ?>>Home</a>
+                <a class="link-style" href=<?= baseUrl('views/home-admin.php') ?>>Home</a>
             </li>
             <li class="list-style">
                 <i class="fa-solid fa-user" style="color: #ffffff;"></i>

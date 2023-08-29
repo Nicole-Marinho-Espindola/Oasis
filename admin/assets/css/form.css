@@ -86,6 +86,13 @@
 .form-block .btn{
     margin-top: 55px;
     width: 10em;
+    color: #fff;
+    text-decoration: none;
+}
+
+.form-block .btn a{
+    color: #fff;
+    text-decoration: none;
 }
 
 .form-block .section{
