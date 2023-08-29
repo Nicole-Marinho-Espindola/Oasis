@@ -23,22 +23,19 @@
                 <label class="" for="">Email:</label>
                 <div class="input-block">
                     <i class="fa-regular fa-envelope" style="color: #586D48;"></i>
-                    <input class="input input-size" type="text">
+                    <input class="input input-size" type="text" placeholder="Digite seu email...">
                 </div>
             </div>
             <div class="user-info-block">
                 <label for="">Senha:</label>
                 <div class="input-block">
                     <i class="fa-solid fa-lock" style="color: #586D48;"></i>
-                    <input class="input" type="text" name="password" placeholder="Senha" id="password" onChange="buttonToggle()">
-                    <i class="fa-regular fa-eye-slash" style="color: #586D48;" id="eyePng" onClick="eyeClick()"></i>
+                    <input class="input" type="text" name="password" placeholder="Digite sua senha..." id="password" onChange="buttonToggle()">
+                    <i class="fa-regular fa-eye-slash" style="color: #586D48;"></i>
                 </div>
             </div>
             <button class="btn btn-color">Entrar</button>
         </form>
-    </div>
-    <div class="img-block">
-        <img class="form-img" src="../assets/img/Tablet login-bro.png" alt="">
     </div>
 </div>
 </body>

@@ -1,6 +1,7 @@
 .main-content{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     width: 100vw;
 }
@@ -44,16 +45,16 @@
 .form-block .user-info-block{
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 
-.form-block .form-input-block{
+.form-block .input-block{
     display: flex;
     align-items: center;
     /* justify-content: center; */
     border-bottom: 2px solid #586D48;
     width: 20em;
-    margin-top: 7px;
+    margin-top: 10px;
     height: 40px;
 }
 
