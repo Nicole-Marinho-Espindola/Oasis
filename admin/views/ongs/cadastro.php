@@ -15,8 +15,7 @@
                             <div class="form-input-block required">
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size icon-green" type="text"
-                                    id="nomeOng" name="nomeOng" requerid>
-                                <input class="input input-size icon-green" type="text" required oninput="nameValidate()">
+                                    id="nomeOng" name="nomeOng" oninput="nameValidate()" requerid>
                             </div>
                             <span class="span-required">Mínimo de 3 caracteres</span>
                         </label>
@@ -33,9 +32,9 @@
                     <div class="user-info-block">
                         <label class="" for="">Missão:
                             <div class="form-input-block ">
-                                <i class="fa-solid fa-tag icon-green"></i>
+                            <i class="fa-solid fa-bullhorn icon-green"></i>
                                 <input class="input input-size" type="text"
-                                    id="razaoOng" name="razaoOng" requerid>
+                                    id="missaoOng" name="missaoOng" requerid>
                             </div>
                         </label>
                     </div>
@@ -52,12 +51,11 @@
                         </label>
                     </div>
                     <div class="user-info-block">
-                    <label for="">Telefone:
+                    <label for="">Celular:
                             <div class="form-input-block">
-                                <i class="fa-solid fa-lock icon-green"></i>
+                            <i class="fa-solid fa-phone icon-green"></i>
                                 <input class="input" type="number"
-                                    id="senhaOng" name="senhaOng" >
-                                <i class="fa-regular fa-eye-slash icon-green"></i>
+                                    id="celularOng" name="celularOng" >
                             </div>
                         </label>
                     </div>

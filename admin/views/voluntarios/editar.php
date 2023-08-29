@@ -35,7 +35,8 @@
             <h1 class="title">Editar voluntário</h1>
             <div class="line"></div>
         </div>
-        <form class="form" action="../../services/CRUD/voluntario/editar_action.php">
+        <form class="form" action=<?= baseUrl('services/CRUD/voluntario/editar_action.php') ?> method="POST" id="form">
+            <input type="hidden" name="idVoluntario" value="<?= $row['cd_voluntario']?>">
                     <div class="user-info-block">
                         <label class="" for="">Nome:
                             <div class="form-input-block required">
