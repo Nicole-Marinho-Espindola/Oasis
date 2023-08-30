@@ -26,7 +26,6 @@
         <tbody>
 
             <?php
-
                 if (isset($_GET['cadastro_sucesso']) && $_GET['cadastro_sucesso'] == 'true') {
                     echo "<script>alert('Cadastrado com sucesso.');</script>";
                 } elseif (isset($_GET['email_repetido']) && $_GET['email_repetido'] == 'true') {
@@ -48,7 +47,7 @@
 
                     while ($row = $select->fetch())
                     {
-                        ?>
+            ?>
                         <tr class="row-table">
                             <td class="content-table"><?= $row['cd_ong'] ?></td>
                             <td class="content-table"><?= $row['nm_ong'] ?></td>
@@ -60,7 +59,7 @@
                             <td><a href="editar.php?cd_ong=<?= $row['cd_ong'] ?>"><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></a></td>
                             <td><a href="excluir.php?cd_ong=<?= $row['cd_ong'] ?>"><i class="fa-solid fa-trash" style="color: #1f513b;"></i></a></td>
                         </tr>
-                        <?php
+            <?php
                     }
                 } catch (PDOException $e) {
                     echo "Erro ao consultar: " . $e->getMessage();

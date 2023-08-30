@@ -43,52 +43,36 @@
                     <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>
                 </div>
                 <div class="section">
-                    <div class="user-info-block">
-                        <div class="center-itens subtitle-block">
-                            <span class="subtitle">Selecione até 3 interesses:</span>
-                            <div class="line line-thin"></div>
-                        </div>
-                        <div class="container">
-                                <div class="label-interesse">
-                                    <input type="checkbox" name="interesses[]"
-                                        value= "praia" id="praia">
-                                    <label for="praia">Praia</label>
-                                </div>
-                                <div class="label-interesse">
-                                    <input type="checkbox" name="interesses[]"
-                                        value= "ambiente" id="ambiente">
-                                    <label for="ambiente">Meio ambiente</label>
-                                </div>
-                                <div class="label-interesse">
-                                    <input type="checkbox" name="interesses[]"
-                                        value= "limpeza" id="limpeza">
-                                    <label for="limpeza">Limpeza na praia</label>
-                                </div>
-                                <div class="label-interesse">
-                                    <input type="checkbox" name="interesses[]"
-                                        value= "esportes" id="esportes">
-                                    <label for="esportes">Esportes na praia</label>
-                                </div>
-                                <div class="label-interesse">
-                                    <input type="checkbox" name="interesses[]"
-                                        value= "eventos" id="eventos">
-                                    <label for="eventos">Eventos</label>
-                                </div>
-                                <div class="label-interesse">
-                                    <input type="checkbox" name="interesses[]"
-                                        value= "natureza" id="natureza">
-                                    <label for="natureza">Cuidar da natureza</label>
-                                </div>
-                                <div class="label-interesse">
-                                    <input type="checkbox" name="interesses[]"
-                                        value= "plantas" id="plantas">
-                                    <label for="plantas">Cuidar das plantas</label>
-                                </div>
-                        </div>
+                <div class="user-info-block">
+                    <div class="center-itens subtitle-block">
+                        <span class="subtitle">Selecione até 3 interesses:</span>
+                        <div class="line line-thin"></div>
                     </div>
-                    <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>
-                </div>
+                    <div class="container">
+                        <?php
+                            try {
+                                include_once('../../config/database.php');
 
+                                $selectInteresses = $conn->prepare('SELECT * FROM tb_interesse');
+                                $selectInteresses->execute();
+
+                                while ($rowInteresse = $selectInteresses->fetch()) {
+                                    $nomeInteresse = $rowInteresse['ds_interesse'];
+                        ?>
+                                <div class="label-interesse">
+                                    <input type="checkbox" name="interesses[]" value="<?= $nomeInteresse ?>" id="<?= $nomeInteresse ?>">
+                                    <label for="<?= $nomeInteresse ?>"><?= $nomeInteresse ?></label>
+                                </div>
+                        <?php
+                            }
+                        } catch (PDOException $e) {
+                            echo "Erro ao listar interesses: " . $e->getMessage();
+                        }
+                        ?>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>
+            </div>
                 <div class="section">
                     <div class="user-info-block">
                         <label class="" for="email">Email:

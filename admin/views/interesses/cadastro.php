@@ -7,7 +7,8 @@
                 <h1 class="title">Cadastro de interesses!</h1>
                 <div class="line"></div>
             </div>
-            <form class="form" action="">
+            <form class="form" action=<?= baseUrl('services/CRUD/interesse/cadastro_action.php') ?>
+                        method="POST" id="form">
                 <div class="section active">
                     <div class="user-info-block">
                         <label class="" for="">Interesse:

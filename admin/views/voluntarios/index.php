@@ -27,19 +27,15 @@
         <tbody class="body-table">
 
             <?php
-
+            
                 if (isset($_GET['cadastro_sucesso']) && $_GET['cadastro_sucesso'] == 'true') {
-                    echo "<script>alert('Cadastrado com sucesso.');</script>";
+                    $mensagem = "Cadastrado com sucesso.";
                 } elseif (isset($_GET['email_repetido']) && $_GET['email_repetido'] == 'true') {
-                    echo "<script>alert('Email já cadastrado.');</script>";
-                }
-
-                if (isset($_GET['editar_sucesso']) && $_GET['editar_sucesso'] == 'true') {
-                    echo "<script>alert('Editado com sucesso.');</script>";
-                }
-
-                if (isset($_GET['excluir_sucesso']) && $_GET['excluir_sucesso'] == 'true') {
-                    echo "<script>alert('Excluído com sucesso.');</script>";
+                    $mensagem = "Email já cadastrado.";
+                } elseif (isset($_GET['editar_sucesso']) && $_GET['editar_sucesso'] == 'true') {
+                    $mensagem = "Editado com sucesso.";
+                } elseif (isset($_GET['excluir_sucesso']) && $_GET['excluir_sucesso'] == 'true') {
+                    $mensagem = "Excluído com sucesso.";
                 }
 
                 try
@@ -60,12 +56,13 @@
                             <td><a href="editar.php?cd_voluntario=<?= $row['cd_voluntario'] ?>"><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></a></td>
                             <td><a href="excluir.php?cd_voluntario=<?= $row['cd_voluntario'] ?>"><i class="fa-solid fa-trash" style="color: #1f513b;"></i></a></td>
                         </tr>
-                        <?php
+            <?php
                     }
                 } catch (PDOException $e) {
                     echo "Erro ao consultar: " . $e->getMessage();
                 }
-                        ?>
+            ?>
+
         </tbody>
     </table>
     <div class="page-nav" aria-label="Page navigation example">

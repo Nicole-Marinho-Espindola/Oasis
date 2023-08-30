@@ -1,9 +1,9 @@
 <?php
     include_once('../includes/head.php');
-    include_once('../../assets/mocks/interesse.php');
+    include_once('../../config/database.php');
 ?>
 
-<div class="content">
+    <div class="content">
     <div class="search-block">
         <input class="search" type="text" placeholder="Pesquisar...">
         <button class="btn">Pesquisar</button>
@@ -18,18 +18,42 @@
             <th></th>
         </thead>
         <tbody>
+
             <?php
-                foreach($interesses as $interesse) 
-                {
-            ?>
-                <tr class="row-table">
-                    <td class="content-table"><?= $interesse['interesse'] ?></td>
-                    <td><a href=<?= baseUrl('views/interesses/editar.php?id='.$interesse['id'])?>><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></a></td>
-                    <td><i class="fa-solid fa-trash" style="color: #1f513b;"></i></td>
-                </tr>
-            <?php
+                if (isset($_GET['cadastro_sucesso']) && $_GET['cadastro_sucesso'] == 'true') {
+                    echo "<script>alert('Cadastrado com sucesso.');</script>";
+                } 
+
+                if (isset($_GET['editar_sucesso']) && $_GET['editar_sucesso'] == 'true') {
+                    echo "<script>alert('Editado com sucesso.');</script>";
                 }
+
+                if (isset($_GET['excluir_sucesso']) && $_GET['excluir_sucesso'] == 'true') {
+                    echo "<script>alert('Excluído com sucesso.');</script>";
+                }
+
+                try
+                {
+                    $select = $conn->prepare('SELECT * FROM tb_interesse');
+                    $select->execute();
+
+                    while ($row = $select->fetch())
+                    {
             ?>
+                        <tr class="row-table">
+                            <td class="content-table"><?= $row['ds_interesse'] ?></td>
+                            <td><a href="editar.php?cd_interesse=<?= $row['cd_interesse'] ?>"><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></a></td>
+                            <td><a href="excluir.php?cd_interesse=<?= $row['cd_interesse'] ?>"><i class="fa-solid fa-trash" style="color: #1f513b;"></i></a></td>
+                        </tr>
+            <?php
+
+                    }
+                } catch (PDOException $e) {
+                    echo "Erro ao consultar: " . $e->getMessage();
+                }
+
+            ?>
+
         </tbody>
     </table>
     <div class="page-nav" aria-label="Page navigation example">
