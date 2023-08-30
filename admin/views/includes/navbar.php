@@ -18,7 +18,7 @@
         <ul class="menuLateral">
             <li class="list-style">
                 <i class="fa-solid fa-house" style="color: #ffffff;"></i>
-                <a class="link-style" href=<?= baseUrl('views/home-admin.php') ?>>Home</a>
+                <a class="link-style" href="<?= baseUrl('views/home-admin.php') ?>">Home</a>
             </li>
             <li class="list-style">
                 <i class="fa-solid fa-user" style="color: #ffffff;"></i>
@@ -27,7 +27,7 @@
                 </a>
             </li>
             <ul class="collapse multi-collapse" id="multiCollapseExample1">
-                <li class="list-style"><a class="sub-list" href=<?= baseUrl('views/voluntarios/index.php') ?>>Lista de voluntários</a></li>
+                <li class="list-style"><a class="sub-list" href="<?= baseUrl('views/voluntarios/index.php') ?>">Lista de voluntários</a></li>
             </ul>
             <li class="list-style">
                 <i class="fa-solid fa-user-group" style="color: #ffffff;"></i>
@@ -36,11 +36,11 @@
                 </a>
             </li>
             <ul class="collapse multi-collapse" id="multiCollapseExample2">
-                <li class="list-style"><a class="sub-list" href=<?= baseUrl('views/ongs/index.php') ?>>Lista de ongs</a></li>
+                <li class="list-style"><a class="sub-list" href="<?= baseUrl('views/ongs/index.php') ?>">Lista de ongs</a></li>
             </ul>
             <li class="list-style">
                 <i class="fa-solid fa-list" style="color: #ffffff;"></i>
-                <a href=<?= baseUrl('views/interesses/index.php') ?> class="link-style">Interesses</a>
+                <a href="<?= baseUrl('views/interesses/index.php') ?>" class="link-style">Interesses</a>
             </li>
             <div class="btn-block">
                 <button class="btn"><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i><span class="margin-5">Sair</span></button>

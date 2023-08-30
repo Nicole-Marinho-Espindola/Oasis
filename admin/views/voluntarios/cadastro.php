@@ -2,7 +2,7 @@
     include_once('../../views/includes/head.php');
 ?>
 
-<link rel="stylesheet" href="(../../assets/css/form.css') ?>">
+<!-- <link rel="stylesheet" href="(../../assets/css/form.css') ?>"> -->
 
     <div class="content">
         <div class="form-block">
@@ -15,7 +15,7 @@
                 <div class="section active">
                     <div class="user-info-block">
                         <label class="" for="">Nome:
-                            <div class="form-input-block required">
+                            <div class="input-block required">
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size icon-green" type="text"
                                     id="nomeVoluntario" name="nomeVoluntario" oninput="nameValidate()">
@@ -25,7 +25,7 @@
                     </div>
                     <div class="user-info-block">
                         <label class="" for="">Sobrenome:
-                            <div class="form-input-block">
+                            <div class="input-block">
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size" type="text"
                                     id="sobrenomeVoluntario" name="sobrenomeVoluntario" required>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="user-info-block">
                         <label class="" for="">Data de nascimento:
-                            <div class="form-input-block">
+                            <div class="input-block">
                                 <input class="input input-size" type="date"
                                     id="nascimentoVoluntario" name="nascimentoVoluntario" required>
                             </div>
@@ -92,7 +92,7 @@
                 <div class="section">
                     <div class="user-info-block">
                         <label class="" for="email">Email:
-                            <div class="form-input-block required">
+                            <div class="input-block required">
                                 <i class="fa-regular fa-envelope icon-green"></i>
                                 <input class="input input-size" type="text" oninput="emailValidate()"
                                     id="emailVoluntario" name="emailVoluntario" requerid>
@@ -102,7 +102,7 @@
                     </div>
                     <div class="user-info-block">
                     <label for="">Senha:
-                            <div class="form-input-block">
+                            <div class="input-block">
                                 <i class="fa-solid fa-lock"></i>
                                 <input class="input" type="password"
                                     id="senhaVoluntario" name="senhaVoluntario" required>

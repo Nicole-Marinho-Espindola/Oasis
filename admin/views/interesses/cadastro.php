@@ -11,7 +11,7 @@
                 <div class="section active">
                     <div class="user-info-block">
                         <label class="" for="">Interesse:
-                            <div class="form-input-block">
+                            <div class="input-block">
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size icon-green" type="text" name="interesse" required>
                             </div>

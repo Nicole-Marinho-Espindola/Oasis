@@ -37,7 +37,7 @@
             <input type="hidden" name="idOng" value="<?= $row['cd_ong'] ?>">
             <div class="user-info-block">
                 <label class="" for="">Nome:
-                    <div class="form-input-block">
+                    <div class="input-block">
                         <i class="fa-solid fa-user icon-green"></i>
                         <input class="input input-size icon-green" type="text" id="nomeOng" name="nomeOng"
                             value="<?= $row['nm_ong'] ?? '' ?>" readonly>
@@ -46,7 +46,7 @@
             </div>
             <div class="user-info-block">
                 <label class="" for="">Razão social:
-                    <div class="form-input-block">
+                    <div class="input-block">
                         <i class="fa-solid fa-tag icon-green"></i>
                         <input class="input input-size" type="text" id="razaoOng" name="razaoOng"
                             value="<?= $row['nm_razao'] ?? '' ?>" readonly>
@@ -55,7 +55,7 @@
             </div>
             <div class="user-info-block">
                 <label class="" for="">CNPJ:
-                    <div class="form-input-block">
+                    <div class="input-block">
                         <i class="fa-regular fa-id-card icon-green"></i>
                         <input class="input input-size" type="text" id="cnpjOng" name="cnpjOng"
                             value="<?= $row['cd_cnpj'] ?? '' ?>" readonly>
@@ -64,7 +64,7 @@
             </div>
             <div class="user-info-block">
                 <label class="" for="">Celular:
-                    <div class="form-input-block required">
+                    <div class="input-block required">
                         <i class="fa-solid fa-phone icon-green"></i>
                         <input class="input input-size" type="number" id="celularOng" name="celularOng"
                             value="<?= $row['cd_celular_ong'] ?? '' ?>" readonly>
@@ -73,7 +73,7 @@
             </div>
             <div class="user-info-block">
                 <label for="">Sua missão:
-                    <div class="form-input-block">
+                    <div class="input-block">
                         <i class="fa-solid fa-bullhorn icon-green"></i>
                         <input class="input input-size" type="text" id="missaoOng" name="missaoOng"
                             value="<?= $row['ds_missao'] ?? '' ?>" readonly>
@@ -82,7 +82,7 @@
             </div>
             <div class="user-info-block">
                 <label class="" for="">Email:
-                    <div class="form-input-block">
+                    <div class="input-block">
                         <i class="fa-regular fa-envelope icon-green"></i>
                         <input class="input input-size" type="text" id="emailOng" name="emailOng"
                             value="<?= $row['ds_email'] ?? '' ?>" readonly>
@@ -91,7 +91,7 @@
             </div>
             <!-- <div class="user-info-block">
                 <label for="">Redefinir Senha:
-                    <div class="form-input-block">
+                    <div class="input-block">
                         <i class="fa-solid fa-lock"></i>
                         <input class="input" name="senha" type="text" value="<?= $ong['senha'] ?>" readonly>
                         <i class="fa-regular fa-eye-slash icon-green"></i>

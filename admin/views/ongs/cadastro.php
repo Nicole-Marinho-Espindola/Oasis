@@ -12,7 +12,7 @@
                 <div class="section active">
                     <div class="user-info-block">
                         <label class="" for="">Nome:
-                            <div class="form-input-block required">
+                            <div class="input-block required">
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size icon-green" type="text"
                                     id="nomeOng" name="nomeOng" oninput="nameValidate()" requerid>
@@ -22,7 +22,7 @@
                     </div>
                     <div class="user-info-block">
                         <label class="" for="">Razão social:
-                            <div class="form-input-block ">
+                            <div class="input-block ">
                                 <i class="fa-solid fa-tag icon-green"></i>
                                 <input class="input input-size" type="text"
                                     id="razaoOng" name="razaoOng" requerid>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="user-info-block">
                         <label class="" for="">Missão:
-                            <div class="form-input-block ">
+                            <div class="input-block ">
                             <i class="fa-solid fa-bullhorn icon-green"></i>
                                 <input class="input input-size" type="text"
                                     id="missaoOng" name="missaoOng" requerid>
@@ -43,7 +43,7 @@
                 <div class="section">
                     <div class="user-info-block">
                     <label class="" for="">CNPJ:
-                            <div class="form-input-block">
+                            <div class="input-block">
                                 <i class="fa-regular fa-id-card icon-green"></i>
                                 <input class="input input-size" type="text" oninput="validarCNPJ(this.value)"
                                     id="cnpjOng" name="cnpjOng" requerid>
@@ -52,7 +52,7 @@
                     </div>
                     <div class="user-info-block">
                     <label for="">Celular:
-                            <div class="form-input-block">
+                            <div class="input-block">
                             <i class="fa-solid fa-phone icon-green"></i>
                                 <input class="input" type="number"
                                     id="celularOng" name="celularOng" >
@@ -64,7 +64,7 @@
                 <div class="section">
                     <div class="user-info-block">
                         <label class="" for="email">Email:
-                            <div class="form-input-block required">
+                            <div class="input-block required">
                                 <i class="fa-regular fa-envelope icon-green"></i>
                                 <input class="input input-size" type="text" oninput="validarEmail(this.value)"
                                     id="emailOng" name="emailOng" requerid>
@@ -75,7 +75,7 @@
                     </div>
                     <div class="user-info-block">
                     <label for="">Senha:
-                            <div class="form-input-block">
+                            <div class="input-block">
                                 <i class="fa-solid fa-lock icon-green"></i>
                                 <input class="input" type="password"
                                     id="senhaOng" name="senhaOng" required>
