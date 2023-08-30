@@ -39,7 +39,7 @@
             <input type="hidden" name="idVoluntario" value="<?= $row['cd_voluntario']?>">
                     <div class="user-info-block">
                         <label class="" for="">Nome:
-                            <div class="form-input-block required">
+                            <div class="input-block required">
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size" type="text"
                                     id="nomeVoluntario" name="nomeVoluntario"
@@ -50,7 +50,7 @@
                     </div>
                     <div class="user-info-block">
                         <label class="" for="">Sobrenome:
-                            <div class="form-input-block">
+                            <div class="input-block">
                                 <i class="fa-solid fa-file-signature icon-green"></i>
                                 <input class="input input-size" type="text"
                                     id="sobrenomeVoluntario" name="sobrenomeVoluntario"
@@ -60,7 +60,7 @@
                     </div>
                     <div class="user-info-block">
                         <label class="" for="">Data de nascimento:
-                            <div class="form-input-block">
+                            <div class="input-block">
                                 <input class="input input-size" type="date"
                                     id="nascimentoVoluntario" name="nascimentoVoluntario"
                                         value="<?= $row['dt_nascimento'] ?? '' ?>">
@@ -69,7 +69,7 @@
                     </div>
                     <div class="user-info-block">
                         <label class="" for="email">Email:
-                            <div class="form-input-block required">
+                            <div class="input-block required">
                                 <i class="fa-regular fa-envelope icon-green"></i>
                                 <input class="input input-size" type="text" oninput="emailValidate()"
                                     id="emailVoluntario" name="emailVoluntario"
