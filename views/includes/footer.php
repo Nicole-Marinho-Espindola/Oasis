@@ -11,8 +11,8 @@
     </div>
     <div class="pages-block">
         <div class="pages-text">
-            <p>Sobre nós • Projetos • Doe</p> 
-            <p>Termos de Uso • Politica de privacidade</p>
+            <p class="pages-text-align">Sobre nós • Projetos • Doe</p> 
+            <p class="pages-text-align">Termos de Uso • Politica de privacidade</p>
         </div>
     </div>
     <div class="copyright">	&copy; 2023 Oásis</div>

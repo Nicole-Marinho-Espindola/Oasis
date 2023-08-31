@@ -156,20 +156,6 @@
     justify-content: center;
 }
 
-.sign-up-block{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #000;
-}
-
-.sign-in{
-    font-size: 14px;
-    margin-right: 20px;
-    text-transform: uppercase;
-    color: #242920;
-}
-
 @media screen and (max-width: 425px){
     .content{
         display: flex;
