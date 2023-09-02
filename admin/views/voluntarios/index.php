@@ -19,6 +19,7 @@
                 <th class="h-table">Sobrenome</th>
                 <th class="h-table">Data de Nascimento</th>
                 <th class="h-table">Email</th>
+                <th class="h-table">Interesses</th>
                 <!-- <th class="h-table">Situação</th> -->
                 <th></th>
                 <th></th>
@@ -40,7 +41,12 @@
 
                 try
                 {
-                    $select = $conn->prepare('SELECT * FROM tb_voluntario');
+                    $select = $conn->prepare('SELECT v.cd_voluntario, v.nm_voluntario, v.nm_sobrenome, 
+                                            v.dt_nascimento, v.ds_email, GROUP_CONCAT(i.ds_interesse SEPARATOR \', \') AS interesses
+                                            FROM tb_voluntario v
+                                            LEFT JOIN tb_escolha e ON v.cd_voluntario = e.cd_voluntario
+                                            LEFT JOIN tb_interesse i ON e.cd_interesse = i.cd_interesse
+                                            GROUP BY v.cd_voluntario');
                     $select->execute();
 
                     while ($row = $select->fetch())
@@ -52,6 +58,7 @@
                             <td class="content-table"><?= $row['nm_sobrenome'] ?></td>
                             <td class="content-table"><?= date("d-m-Y", strtotime($row['dt_nascimento'])) ?></td>
                             <td class="content-table"><?= $row['ds_email'] ?></td>
+                            <td class="content-table"><?= $row['interesses'] ?></td>
                             <!-- <td class="content-table"><?= $row['situacao'] ?></td>-->
                             <td><a href="editar.php?cd_voluntario=<?= $row['cd_voluntario'] ?>"><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></a></td>
                             <td><a href="excluir.php?cd_voluntario=<?= $row['cd_voluntario'] ?>"><i class="fa-solid fa-trash" style="color: #1f513b;"></i></a></td>

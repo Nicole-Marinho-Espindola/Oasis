@@ -49,18 +49,19 @@
                         <div class="line line-thin"></div>
                     </div>
                     <div class="container">
-                        <?php
-                            try {
-                                include_once('../../config/database.php');
+                    <?php
+                        try {
+                            include_once('../../config/database.php');
 
-                                $selectInteresses = $conn->prepare('SELECT * FROM tb_interesse');
-                                $selectInteresses->execute();
+                            $selectInteresses = $conn->prepare('SELECT * FROM tb_interesse');
+                            $selectInteresses->execute();
 
-                                while ($rowInteresse = $selectInteresses->fetch()) {
-                                    $nomeInteresse = $rowInteresse['ds_interesse'];
+                            while ($rowInteresse = $selectInteresses->fetch()) {
+                                $nomeInteresse = $rowInteresse['ds_interesse'];
+                                $cdInteresse = $rowInteresse['cd_interesse'];
                         ?>
                                 <div class="label-interesse">
-                                    <input type="checkbox" name="interesses[]" value="<?= $nomeInteresse ?>" id="<?= $nomeInteresse ?>">
+                                    <input type="checkbox" name="interesses[]" value="<?= $cdInteresse ?>" id="<?= $nomeInteresse ?>">
                                     <label for="<?= $nomeInteresse ?>"><?= $nomeInteresse ?></label>
                                 </div>
                         <?php

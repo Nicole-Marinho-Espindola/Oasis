@@ -19,7 +19,6 @@ if (!empty($_POST) && !isset($_SESSION['cadastro_realizado'])) {
         $stmt_verificar->execute();
 
         if ($stmt_verificar->rowCount() > 0) {
-
             header("Location: ../../../views/Ongs/index.php?email_repetido=true");
 
         } else {
@@ -35,18 +34,17 @@ if (!empty($_POST) && !isset($_SESSION['cadastro_realizado'])) {
         $stmt->bindParam(':celular', $celular);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':senha', $hashDaSenha);
-
         $stmt->execute();
 
         header("Location: ../../../views/ongs/index.php?cadastro_sucesso=true");
-    exit();
+        exit();
 
+            }
+        }catch (PDOException $e) {
+            echo "Erro ao cadastrar: " . $e->getMessage();
         }
-    }catch (PDOException $e) {
-        echo "Erro ao cadastrar: " . $e->getMessage();
-    }
 
-    $conn = null;
+        $conn = null;
 
 }
 
