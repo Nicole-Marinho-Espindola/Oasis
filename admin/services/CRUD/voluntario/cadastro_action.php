@@ -50,11 +50,9 @@
                     $stmt_associacao->execute();
                 }
 
-                // Limpe os interesses temporários
                 unset($_SESSION['interesses_temporarios']);
             }
 
-            // Redirecionar após o cadastro bem-sucedido
             header("Location: ../../../views/voluntarios/index.php?cadastro_sucesso=true");
             exit();
             }

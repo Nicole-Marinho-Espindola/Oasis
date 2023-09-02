@@ -18,19 +18,20 @@
             <h1 class="title">Bem vindo de volta!</h1>
             <div class="line"></div>
         </div>
-        <form class="form" action="">
+        <form class="form" action="../../../services/login/index_action.php"
+                        method="POST" id="form">
             <div class="user-info-block">
                 <label class="" for="">Email:</label>
                 <div class="input-block">
                     <i class="fa-regular fa-envelope" style="color: #586D48;"></i>
-                    <input class="input input-size" type="text" placeholder="Digite seu email...">
+                    <input class="input input-size" type="text" name="email" placeholder="Digite seu email...">
                 </div>
             </div>
             <div class="user-info-block">
                 <label for="">Senha:</label>
                 <div class="input-block">
                     <i class="fa-solid fa-lock" style="color: #586D48;"></i>
-                    <input class="input" type="text" name="password" placeholder="Digite sua senha..." id="password" onChange="buttonToggle()">
+                    <input class="input" type="text" name="senha" placeholder="Digite sua senha..." id="password" onChange="buttonToggle()">
                     <i class="fa-regular fa-eye-slash" style="color: #586D48;"></i>
                 </div>
             </div>
