@@ -30,15 +30,17 @@ if (!empty($_POST) && !isset($_SESSION['cadastro_realizado'])) {
             $stmt->bindParam(':dt_nasc', $dt_nasc);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':senha', $hashDaSenha);
-            
             $stmt->execute();
 
             $cd_voluntario = $conn->lastInsertId();
 
+            var_dump($_POST['interesses']);
+
             // Insere as associações na tabela tb_escolha
             foreach ($interesses as $interesse) {
+                $stmt_associacao = $conn->prepare("INSERT INTO tb_escolha(cd_voluntario, cd_interesse)
+                                                        VALUES (:voluntario, :interesse)");
 
-                $stmt_associacao = $conn->prepare("INSERT INTO tb_escolha (cd_voluntario, cd_interesse) VALUES (:voluntario, :interesse)");
                 $stmt_associacao->bindParam(':voluntario', $cd_voluntario);
                 $stmt_associacao->bindParam(':interesse', $interesse);
                 $stmt_associacao->execute();
@@ -47,11 +49,10 @@ if (!empty($_POST) && !isset($_SESSION['cadastro_realizado'])) {
             header("Location: ../../../views/voluntarios/index.php?cadastro_sucesso=true");
             exit();
         }
+
     } catch (PDOException $e) {
         echo "Erro ao cadastrar: " . $e->getMessage();
     }
-
-    $conn = null;
 }
 
 ?>
