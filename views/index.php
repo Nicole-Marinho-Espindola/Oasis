@@ -35,7 +35,7 @@
         <div class="timeline-items">
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                <div class="timeline-card-title"><i class="fa-solid fa-paste icon-timeline"></i>Inscrições simples </div>
+                <div class="timeline-card-title icon-position"><i class="fa-solid fa-paste icon-timeline"></i>Inscrições simples </div>
                 <div class="timeline-content">
                     <p>Comece rapidamente sua jornada de voluntariado com um processo de inscrição fácil e intuitivo.</p>
                 </div>
@@ -49,7 +49,7 @@
             </div>
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                <div class="timeline-card-title"><i class="fa-solid fa-users-viewfinder icon-timeline"></i>Explorar oportunidades</div>
+                <div class="timeline-card-title icon-position"><i class="fa-solid fa-users-viewfinder icon-timeline"></i>Explorar oportunidades</div>
                 <div class="timeline-content">
                     <p>Comece rapidamente sua jornada de voluntariado com um processo de inscrição fácil e intuitivo.</p>
                 </div>
@@ -63,7 +63,7 @@
             </div>
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                <div class="timeline-card-title"><i class="fa-regular fa-heart icon-timeline"></i>Inscrições simples</div>
+                <div class="timeline-card-title icon-position"><i class="fa-regular fa-heart icon-timeline"></i>Inscrições simples</div>
                 <div class="timeline-content">
                     <p>Comece rapidamente sua jornada de voluntariado com um processo de inscrição fácil e intuitivo.</p>
                 </div>

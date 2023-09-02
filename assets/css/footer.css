@@ -59,3 +59,29 @@
     color: #7e7e7e;
     margin-bottom: 2em;
 }
+
+@media screen and (max-width: 768px){
+    
+    .footer{
+        height: 20em;
+        color: #fff;
+        font-family: 'Poppins',sans-serif;
+        margin-top: 5em;
+    }
+
+    .social-midia-footer{
+        height: 35px;
+        width: 35px;
+    }
+
+    .pages-text{
+        flex-direction: column;
+        margin-bottom: 30px;
+        padding: 17px;
+    }
+
+    .pages-text-align{
+        text-align: center;
+        font-size: 15px;
+    }
+}
