@@ -89,7 +89,7 @@
                 <label class="" for="">Email:
                     <div class="input-block">
                         <i class="fa-regular fa-envelope icon-green"></i>
-                        <input class="input input-size" type="text"
+                        <input class="input input-size" type="email"
                             id="emailOng" name="emailOng"
                             value="<?= $row['ds_email'] ?? '' ?>">
                     </div>

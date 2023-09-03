@@ -110,6 +110,15 @@
     width: 100%; */
 }
 
+.logo-block-title{
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+}
+
 @media screen and (max-width: 768px){
     
     .barra-lateral{

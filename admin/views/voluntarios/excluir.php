@@ -70,7 +70,7 @@ if (isset($_GET['cd_voluntario'])) {
                 <label class="" for="email">Email:
                     <div class="input-block required">
                         <i class="fa-regular fa-envelope icon-green"></i>
-                        <input class="input input-size" type="text" oninput="emailValidate()"
+                        <input class="input input-size" type="email" oninput="emailValidate()"
                             id="emailVoluntario" name="emailVoluntario" value="<?= $row['ds_email'] ?? '' ?>" readonly>
                         <span class="span-required">Email inválido</span>
                     </div>
