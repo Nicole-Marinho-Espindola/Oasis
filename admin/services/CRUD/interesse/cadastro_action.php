@@ -17,7 +17,7 @@ if (!empty($_POST) && !isset($_SESSION['cadastro_realizado'])) {
         $stmt->execute();
 
         header("Location: ../../../views/interesses/index.php?cadastro_sucesso=true");
-    exit();
+        exit();
 
         
     }catch (PDOException $e) {

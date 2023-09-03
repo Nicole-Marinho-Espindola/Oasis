@@ -18,7 +18,7 @@
             <h1 class="title">Bem vindo de volta!</h1>
             <div class="line"></div>
         </div>
-        <form class="form" action="../../../services/login/index_action.php"
+        <form class="form" action="../services/login/index_action.php"
                         method="POST" id="form">
             <div class="user-info-block">
                 <label class="" for="">Email:</label>
@@ -35,7 +35,7 @@
                     <i class="fa-regular fa-eye-slash" style="color: #586D48;"></i>
                 </div>
             </div>
-            <button class="btn btn-color"><a href="./home-admin.php">Entrar</a></button>
+            <button class="btn btn-color">Entrar</a></button>
         </form>
     </div>
     <div class="img-block">

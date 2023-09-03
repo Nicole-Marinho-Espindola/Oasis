@@ -1,7 +1,5 @@
 <?php
 
-    include_once(includeURL('/services/helpers.php'));
-
     if (!empty($_POST)) {
         $email = $_POST['email'];
         $senha = $_POST['senha'];
@@ -21,7 +19,9 @@
                 // Verificar se a senha coincide com o hash no banco de dados
                 if (password_verify($senha, $hashDaSenhaNoBancoDeDados)) {
                     // Senha correta, continue com o processo de login
-                    echo "Login bem-sucedido!";
+
+                    header("Location: ../../views/home-admin.php");
+                    exit();
                 } else {
                     // Senha incorreta
                     echo "Senha incorreta. Tente novamente.";
