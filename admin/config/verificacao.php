@@ -1,24 +1,29 @@
 <?php
-session_start();
 
-if (!isset($_SESSION['email'])) {
-    header("Location: ../views/index.php?acesso_negado=true");
-    exit();
-}
+    session_start();
 
-include_once('database.php');
-
-try {
-    $sql = $conn->prepare("SELECT ds_email FROM tb_voluntario WHERE ds_email = :email");
-    $sql->bindParam(':email', $_SESSION['email']);
-    $sql->execute();
-    $row = $sql->fetch();
-
-    if (!$row) {
+    if (!isset($_SESSION['user'])) {
         header("Location: ../views/index.php?acesso_negado=true");
         exit();
     }
-} catch (PDOException $e) {
-    echo "Erro durante a verificação: " . $e->getMessage();
-}
+
+    try {
+
+        require_once 'vendor/autoload.php';
+
+        $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+        $dotenv->load();
+    
+        //definindo o usuario
+        $usuarioAdmin = $_ENV['LOGIN_USER'];
+
+        if ($_SESSION['user'] !== $usuarioAdmin) {
+            header("Location: ../views/index.php?acesso_negado=true");
+            exit();
+        }
+
+    } catch (PDOException $e) {
+        echo "Erro durante a verificação: " . $e->getMessage();
+    }
+
 ?>

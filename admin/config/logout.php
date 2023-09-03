@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	if (isset($_SESSION['email'])) {
+	if (isset($_SESSION['user'])) {
 		session_unset(); // Remove todas as variáveis de sessão
 		session_destroy(); // Destrói a sessão
 		// Remove os cookies de sessão, se aplicável
@@ -15,8 +15,10 @@
 
 		header("Location: ../views/index.php?sair_sucesso=true");
 		exit();
+
 	} else {
 		header("Location: ../views/index.php");
 		exit();
+
 	}
 ?>
