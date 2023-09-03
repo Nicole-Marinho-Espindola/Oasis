@@ -7,7 +7,7 @@
     if (isset($_GET['acesso_negado']) && $_GET['acesso_negado'] == 'true') {
         echo "<script>alert('faça login para continar.');</script>";
     } elseif (isset($_GET['sair_sucesso']) && $_GET['sair_sucesso'] == 'true') {
-        $mensagem = "Você saiu com sucesso.";
+        echo "<script>alert('Você saiu com sucesso.');</script>";
     }
 
 ?>

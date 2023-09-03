@@ -43,7 +43,10 @@
                 <a href="<?= baseUrl('views/interesses/index.php') ?>" class="link-style">Interesses</a>
             </li>
             <div class="btn-block">
-                <button class="btn"><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i><span class="margin-5">Sair</span></button>
+                <a href="<?= baseUrl('config/logout.php') ?>" class="btn">
+                    <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
+                    <span class="margin-5">Sair</span>
+                </a>
             </div>
         </ul>
     </aside>
