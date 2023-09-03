@@ -14,7 +14,7 @@
         <p class="paragraph-text">Sinta-se livre para usufruir de todas as funções que o
         painel do admin dispõe para a sua empresa, melhorando assim a experiencia de seus usuarios!</p>
         <div class="saiba-mais">
-            <p class="center-itens"><i class="fa-solid fa-angle-right icon arrow-icon"></i> Saiba mais sobre as funcionalidades do painel</p>
+            <a href="https://planejadorweb.com.br/painel-administrativo-wordpress-wp-admin/" target="_blank" class="center-itens saiba-mais-content"><i class="fa-solid fa-angle-right icon arrow-icon"></i> Saiba mais sobre as funcionalidades do painel</a>
         </div>
     </div>
     <div class="img-section">

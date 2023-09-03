@@ -156,6 +156,11 @@
     width: 25em;
 }
 
+.saiba-mais-content{
+    text-decoration: none;
+    color: #fff;
+}
+
 @media screen and (max-width: 425px){
     .content{
         display: flex;
