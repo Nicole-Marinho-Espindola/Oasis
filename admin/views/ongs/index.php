@@ -2,16 +2,18 @@
     include_once('../includes/head.php');
     include_once('../../config/database.php');
     include_once('../../config/verificacao.php');
+    include_once('search.php');
 ?>
 
-<div class="content">
-    <div class="search-block">
-        <input class="search" type="text" placeholder="Pesquisar...">
-        <button class="btn">Pesquisar</button>
-        <a class="link-style-none" href="<?= baseUrl('views/ongs/cadastro.php') ?>">
-            <button class="btn btn-color margin-5">Cadastrar</button>
-        </a>
-    </div>
+    <div class="content">
+        <div class="search-block">
+        <input class="search" id="searchInputOng" type="text" placeholder="Pesquisar...">
+            <button class="btn" id="searchButtonOng">Pesquisar</button>
+            <a class="link-style-none" href="<?= baseUrl('views/ongs/cadastro.php') ?>">
+                <button class="btn btn-color margin-5">Cadastrar</button>
+            </a>
+        </div>
+
     <table class="table">
         <thead>
             <th>ID</th>
@@ -83,3 +85,5 @@
         </ul>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="<?= baseUrl('/assets/js/pesquisarAjax.js') ?>"></script>
