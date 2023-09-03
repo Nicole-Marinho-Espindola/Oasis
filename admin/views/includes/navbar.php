@@ -7,8 +7,11 @@
                 <i class="fa-solid fa-bars icon" ></i>
             </a>
             
-            <img class="logo" src="<?= baseUrl('/assets/img/logo-oasis.png') ?>" alt="Logo da Oásis">
-            <span class="logo-nome">Oásis</span>
+            <a class="logo-block-title" href="<?= baseUrl('views/home-admin.php') ?>">
+                <img class="logo" src="<?= baseUrl('/assets/img/logo-oasis.png') ?>" alt="Logo da Oásis">
+                <span class="logo-nome">Oásis</span>
+            </a>
+
         </div>
         <!-- <div class="perfil">
             <img class="foto-perfil" src="../../assets/img/foto-perfil.jpeg" alt="Foto de perfil admin">

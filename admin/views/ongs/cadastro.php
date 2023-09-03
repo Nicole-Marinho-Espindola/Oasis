@@ -67,7 +67,7 @@
                         <label class="" for="email">Email:
                             <div class="input-block required">
                                 <i class="fa-regular fa-envelope icon-green"></i>
-                                <input class="input input-size" type="text" oninput="validarEmail(this.value)"
+                                <input class="input input-size" type="email" oninput="validarEmail(this.value)"
                                     id="emailOng" name="emailOng" requerid>
                                 <span class="span-required">Email inválido</span>
                             </div>

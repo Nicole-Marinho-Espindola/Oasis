@@ -44,7 +44,7 @@
                 <label for="">Senha:</label>
                 <div class="input-block">
                     <i class="fa-solid fa-lock" style="color: #586D48;"></i>
-                    <input class="input" type="text" name="senha" placeholder="Digite sua senha..." id="password" onChange="buttonToggle()">
+                    <input class="input" type="password" name="senha" placeholder="Digite sua senha..." id="password" onChange="buttonToggle()">
                     <i class="fa-regular fa-eye-slash" style="color: #586D48;"></i>
                 </div>
             </div>

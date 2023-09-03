@@ -19,7 +19,7 @@
                         <label class="" for="">Nome:
                             <div class="input-block required">
                                 <i class="fa-solid fa-user icon-green"></i>
-                                <input class="input input-size icon-green" type="text"
+                                <input class="input input-size" type="text"
                                     id="nomeVoluntario" name="nomeVoluntario" oninput="nameValidate()">
                             </div>
                             <span class="span-required">Mínimo de 3 caracteres</span>
@@ -81,7 +81,7 @@
                         <label class="" for="email">Email:
                             <div class="input-block required">
                                 <i class="fa-regular fa-envelope icon-green"></i>
-                                <input class="input input-size" type="text" oninput="emailValidate()"
+                                <input class="input input-size" type="email" oninput="emailValidate()"
                                     id="emailVoluntario" name="emailVoluntario" requerid>
                                 <span class="span-required">Email inválido</span>
                             </div>
