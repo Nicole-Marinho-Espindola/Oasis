@@ -32,7 +32,7 @@
             <h1 class="title">Bem vindo de volta!</h1>
             <div class="line"></div>
         </div>
-        <form class="form" action="../config/index_action.php" method="POST" id="form">
+        <form class="form" action="../config/login.php" method="POST" id="form">
             <div class="user-info-block">
                 <label class="" for="">User:</label>
                 <div class="input-block">
