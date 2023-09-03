@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+
     if (!empty($_POST)) {
         $email = $_POST['email'];
         $senha = $_POST['senha'];
@@ -7,7 +9,9 @@
         include_once('../../config/database.php');
 
         try {
-            // Buscar as informações do usuário pelo email no banco de dados
+
+            $_SESSION['email'] = $email;
+            
             $stmt = $conn->prepare("SELECT cd_senha FROM tb_voluntario WHERE ds_email = :email");
             $stmt->bindParam(':email', $email);
             $stmt->execute();
@@ -16,18 +20,14 @@
             if ($row) {
                 $hashDaSenhaNoBancoDeDados = $row['cd_senha'];
 
-                // Verificar se a senha coincide com o hash no banco de dados
                 if (password_verify($senha, $hashDaSenhaNoBancoDeDados)) {
-                    // Senha correta, continue com o processo de login
 
                     header("Location: ../../views/home-admin.php");
                     exit();
                 } else {
-                    // Senha incorreta
                     echo "Senha incorreta. Tente novamente.";
                 }
             } else {
-                // Usuário não encontrado
                 echo "Usuário não encontrado.";
             }
         } catch (PDOException $e) {

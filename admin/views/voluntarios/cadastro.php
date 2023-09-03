@@ -1,5 +1,7 @@
 <?php
     include_once('../../views/includes/head.php');
+    include_once('../../config/verificacao.php');
+    include_once('../../config/verificacao.php');
 ?>
 
 <!-- <link rel="stylesheet" href="(../../assets/css/form.css') ?>"> -->

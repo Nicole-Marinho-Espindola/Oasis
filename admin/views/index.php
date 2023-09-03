@@ -1,3 +1,17 @@
+<?php
+
+    if (!isset ($_SESSION)){
+        session_start();
+    }
+
+    if (isset($_GET['acesso_negado']) && $_GET['acesso_negado'] == 'true') {
+        echo "<script>alert('faça login para continar.');</script>";
+    } elseif (isset($_GET['sair_sucesso']) && $_GET['sair_sucesso'] == 'true') {
+        $mensagem = "Você saiu com sucesso.";
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +32,7 @@
             <h1 class="title">Bem vindo de volta!</h1>
             <div class="line"></div>
         </div>
-        <form class="form" action="../services/login/index_action.php"
-                        method="POST" id="form">
+        <form class="form" action="../services/login/index_action.php" method="POST" id="form">
             <div class="user-info-block">
                 <label class="" for="">Email:</label>
                 <div class="input-block">

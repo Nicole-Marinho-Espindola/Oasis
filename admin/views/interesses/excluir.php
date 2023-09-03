@@ -1,6 +1,7 @@
 <?php
     include_once('../../views/includes/head.php');
     include_once('../../config/database.php');
+    include_once('../../config/verificacao.php');
 
     // Verifica se o ID da interesse foi fornecido
     if (isset($_GET['cd_interesse'])) {

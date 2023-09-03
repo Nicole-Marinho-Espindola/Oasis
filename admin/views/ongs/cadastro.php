@@ -1,5 +1,6 @@
 <?php
     include_once('../../views/includes/head.php');
+    include_once('../../config/verificacao.php');
 ?>
     <div class="content">
         <div class="form-block">

@@ -1,6 +1,7 @@
 <?php
     include_once('../includes/head.php');
     include_once('../../config/database.php');
+    include_once('../../config/verificacao.php');
 ?>
 
 <div class="content">
