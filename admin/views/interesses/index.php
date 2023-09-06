@@ -75,27 +75,31 @@
         <ul class="pagination justify-content-center">
             <?php
 
-                // Paginação - Somar a quantidade de voluntários
-                $selectCount = $conn->prepare("SELECT COUNT(cd_interesse) AS num_result FROM tb_interesse");
-                $selectCount->execute();
-                $row_pg = $selectCount->fetch(PDO::FETCH_ASSOC);
+            // Defina o valor padrão da página atual como 1
+            $pagina_atual = (isset($_GET['pagina'])) ? filter_input(INPUT_GET, 'pagina', FILTER_SANITIZE_NUMBER_INT) : 1;
 
-                // Quantidade de páginas
-                $quantidade_pg = ceil($row_pg['num_result'] / $qnt_result_pg);
+            // Paginação - Somar a quantidade
+            $selectCount = $conn->prepare("SELECT COUNT(cd_interesse) AS num_result FROM tb_interesse");
+            $selectCount->execute();
+            $row_pg = $selectCount->fetch(PDO::FETCH_ASSOC);
 
-                $pag_ant = ($pagina_atual > 1) ? $pagina_atual - 1 : 1; // Página anterior
-                echo "<li class='page-item'><a class='page-link' href='index.php?pagina=$pag_ant'>Anterior</a></li>";
+            // Quantidade de páginas
+            $quantidade_pg = ceil($row_pg['num_result'] / $qnt_result_pg);
 
-                for ($pag = max(1, $pagina_atual - 2); $pag <= min($pagina_atual + 3, $quantidade_pg); $pag++) {
-                    if ($pag == $pagina_atual) {
-                        echo "<li class='page-item active'><a class='page-link'>$pag</a></li>";
-                    } else {
-                        echo "<li class='page-item'><a class='page-link' href='index.php?pagina=$pag'>$pag</a></li>";
-                    }
+            $pag_ant = ($pagina_atual > 1) ? $pagina_atual - 1 : 1; // Página anterior
+            echo "<li class='page-item'><a class='page-link' href='index.php?pagina=$pag_ant'>Anterior</a></li>";
+
+            for ($pag = 1; $pag <= $quantidade_pg; $pag++) {
+                if ($pag == $pagina_atual) {
+                    echo "<li class='page-item active'><a class='page-link'>$pag</a></li>";
+                } else {
+                    echo "<li class='page-item'><a class='page-link' href='index.php?pagina=$pag'>$pag</a></li>";
                 }
+            }
 
-                $pag_dep = ($pagina_atual < $quantidade_pg) ? $pagina_atual + 1 : $quantidade_pg;
-                echo "<li class='page-item'><a class='page-link' href='index.php?pagina=$pag_dep'>Próximo</a></li>";
+            $pag_dep = ($pagina_atual < $quantidade_pg) ? $pagina_atual + 1 : $pagina_atual; // Próxima página
+            echo "<li class='page-item'><a class='page-link' href='index.php?pagina=$pag_dep'>Próximo</a></li>";
+
             ?>
         </ul>
     </div>

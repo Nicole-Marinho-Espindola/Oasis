@@ -42,15 +42,15 @@
                     <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>
                 </div>
                 <div class="section">
-                    <div class="user-info-block">
-                    <label class="" for="">CNPJ:
-                            <div class="input-block">
-                                <i class="fa-regular fa-id-card icon-green"></i>
-                                <input class="input input-size" type="text" oninput="validarCNPJ(this.value)"
-                                    id="cnpjOng" name="cnpjOng" requerid>
-                            </div>
-                        </label>
-                    </div>
+                <div class="user-info-block">
+                    <label for="cnpjOng">CNPJ:
+                        <div class="input-block">
+                            <i class="fa-regular fa-id-card icon-green"></i>
+                            <input class="input input-size" type="text" oninput="validCNPJ(this.value)"
+                                id="cnpjOng" name="cnpjOng" required>
+                        </div>
+                    </label>
+                </div>
                     <div class="user-info-block">
                     <label for="">Celular:
                             <div class="input-block">
