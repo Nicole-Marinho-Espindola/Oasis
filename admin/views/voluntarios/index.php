@@ -43,6 +43,15 @@
                     $mensagem = "Excluído com sucesso.";
                 }
 
+                $pagina_atual = filter_input(INPUT_GET, 'pagina', FILTER_SANITIZE_NUMBER_INT);
+                $pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
+                
+                // Setar a quantidade de itens por página
+                $qnt_result_pg = 10; // Altere de acordo com o número de itens que deseja exibir por página
+                
+                // Calcular o início da visualização
+                $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
+                
                 try
                 {
                     $select = $conn->prepare('SELECT v.cd_voluntario, v.nm_voluntario, v.nm_sobrenome, 
@@ -50,9 +59,15 @@
                                             FROM tb_voluntario v
                                             LEFT JOIN tb_escolha e ON v.cd_voluntario = e.cd_voluntario
                                             LEFT JOIN tb_interesse i ON e.cd_interesse = i.cd_interesse
-                                            GROUP BY v.cd_voluntario');
+                                            GROUP BY v.cd_voluntario
+                                            LIMIT :inicio, :qnt_result_pg'); // Use os marcadores de posição
+                
+                    // Associe os valores aos marcadores de posição
+                    $select->bindValue(':inicio', $inicio, PDO::PARAM_INT);
+                    $select->bindValue(':qnt_result_pg', $qnt_result_pg, PDO::PARAM_INT);
+                
                     $select->execute();
-
+                
                     while ($row = $select->fetch())
                     {
             ?>
@@ -76,19 +91,37 @@
 
         </tbody>
     </table>
+
     <div class="page-nav" aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
-            <li class="page-item disabled">
-                <a class="page-link">Anterior</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">Próximo</a>
-            </li>
+
+            <?php
+
+                // Paginação - Somar a quantidade de voluntários
+                $selectCount = $conn->prepare("SELECT COUNT(cd_voluntario) AS num_result FROM tb_voluntario");
+                $selectCount->execute();
+                $row_pg = $selectCount->fetch(PDO::FETCH_ASSOC);
+
+                // Quantidade de páginas
+                $quantidade_pg = ceil($row_pg['num_result'] / $qnt_result_pg);
+
+                $pag_ant = ($pagina_atual > 1) ? $pagina_atual - 1 : 1; // Página anterior
+                echo "<li class='page-item'><a class='page-link' href='index.php?pagina=$pag_ant'>Anterior</a></li>";
+
+                for ($pag = max(1, $pagina_atual - 2); $pag <= min($pagina_atual + 3, $quantidade_pg); $pag++) {
+                    if ($pag == $pagina_atual) {
+                        echo "<li class='page-item active'><a class='page-link'>$pag</a></li>";
+                    } else {
+                        echo "<li class='page-item'><a class='page-link' href='index.php?pagina=$pag'>$pag</a></li>";
+                    }
+                }
+
+                $pag_dep = ($pagina_atual < $quantidade_pg) ? $pagina_atual + 1 : $quantidade_pg;
+                echo "<li class='page-item'><a class='page-link' href='index.php?pagina=$pag_dep'>Próximo</a></li>";
+            ?>
         </ul>
     </div>
+
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="<?= baseUrl('/assets/js/pesquisarAjax.js') ?>"></script>

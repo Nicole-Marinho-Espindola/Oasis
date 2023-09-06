@@ -7,12 +7,12 @@
 
         try {
             $select = $conn->prepare("SELECT v.cd_voluntario, v.nm_voluntario, v.nm_sobrenome, 
-            v.dt_nascimento, v.ds_email, GROUP_CONCAT(i.ds_interesse SEPARATOR ', ') AS interesses
-            FROM tb_voluntario v
-            LEFT JOIN tb_escolha e ON v.cd_voluntario = e.cd_voluntario
-            LEFT JOIN tb_interesse i ON e.cd_interesse = i.cd_interesse
-            WHERE v.nm_voluntario LIKE :searchTerm
-            GROUP BY v.cd_voluntario");
+                                v.dt_nascimento, v.ds_email, GROUP_CONCAT(i.ds_interesse SEPARATOR ', ') AS interesses
+                                FROM tb_voluntario v
+                                LEFT JOIN tb_escolha e ON v.cd_voluntario = e.cd_voluntario
+                                LEFT JOIN tb_interesse i ON e.cd_interesse = i.cd_interesse
+                                WHERE v.nm_voluntario LIKE :searchTerm
+                                GROUP BY v.cd_voluntario");
             
             $select->bindValue(':searchTerm', '%' . $searchTerm . '%', PDO::PARAM_STR);
             $select->execute();
