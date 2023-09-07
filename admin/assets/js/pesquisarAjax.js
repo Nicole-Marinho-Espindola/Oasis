@@ -1,103 +1,52 @@
-
 $(document).ready(function () {
+    // Defina a função genérica de pesquisa
+    function pesquisar(tipo) {
+        var searchTerm = $('#searchInput' + tipo).val();
+        var searchButton = $('#searchButton' + tipo);
+        var searchResults = $('#searchResults' + tipo);
+
+        $.ajax({
+            url: '../../views/' + tipo + '/search.php',
+            method: 'POST',
+            data: { search: searchTerm },
+            success: function (response) {
+                searchResults.html(response);
+            },
+            beforeSend: function () {
+                // Antes de enviar a solicitação, você pode fazer algo aqui, se necessário
+            },
+            complete: function () {
+                // Após a conclusão da solicitação (seja sucesso ou erro),
+                // redefina o texto do botão para "Pesquisar"
+                searchButton.text("Pesquisar");
+            }
+        });
+    }
+
+    // voluntários
     $('#searchInputVoluntario').on('input', function () {
-        pesquisarVoluntario(); // Chama a função para realizar a pesquisa quando o usuário digita
+        pesquisar('voluntarios');
     });
 
     $('#searchButtonVoluntario').click(function () {
-        pesquisarVoluntario(); // Chama a função para realizar a pesquisa quando o botão é clicado
+        pesquisar('voluntarios');
     });
 
-});
-
-function pesquisarVoluntario() {
-    var searchTerm = $('#searchInputVoluntario').val();
-    var searchButtonVoluntario = $('#searchButtonVoluntario'); // Referência ao botão de pesquisa
-
-    $.ajax({
-        url: '../../views/voluntarios/search.php',
-        method: 'POST',
-        data: { search: searchTerm },
-        success: function (response) {
-            $('#searchResults').html(response);
-        },
-        beforeSend: function () {
-            // Antes de enviar a solicitação, você pode fazer algo aqui, se necessário
-        },
-        complete: function () {
-            // Após a conclusão da solicitação (seja sucesso ou erro),
-            // redefina o texto do botão para "Pesquisar"
-            searchButtonVoluntario.text("Pesquisar");
-        }
-    });
-}
-
-// separando interesse
-
-$(document).ready(function () {
+    // interesses
     $('#searchInputInteresse').on('input', function () {
-        pesquisarInteresse(); // Chama a função para realizar a pesquisa quando o usuário digita
+        pesquisar('interesses');
     });
 
     $('#searchButtonInteresse').click(function () {
-        pesquisarInteresse(); // Chama a função para realizar a pesquisa quando o botão é clicado
+        pesquisar('interesses');
     });
 
-});
-
-function pesquisarInteresse() {
-    var searchTerm = $('#searchInputInteresse').val();
-    var searchButtonInteresse = $('#searchButtonInteresse'); // Referência ao botão de pesquisa
-
-    $.ajax({
-        url: '../../views/interesses/search.php',
-        method: 'POST',
-        data: { search: searchTerm },
-        success: function (response) {
-            $('#searchResults').html(response);
-        },
-        beforeSend: function () {
-            // Antes de enviar a solicitação, você pode fazer algo aqui, se necessário
-        },
-        complete: function () {
-            // Após a conclusão da solicitação (seja sucesso ou erro),
-            // redefina o texto do botão para "Pesquisar"
-            searchButtonInteresse.text("Pesquisar");
-        }
-    });
-}
-
-// separando ong
-
-$(document).ready(function () {
+    // ONGs
     $('#searchInputOng').on('input', function () {
-        pesquisarOng(); // Chama a função para realizar a pesquisa quando o usuário digita
+        pesquisar('ongs');
     });
 
     $('#searchButtonOng').click(function () {
-        pesquisarOng(); // Chama a função para realizar a pesquisa quando o botão é clicado
+        pesquisar('ongs');
     });
-
 });
-
-function pesquisarOng() {
-    var searchTerm = $('#searchInputOng').val();
-    var searchButtonOng = $('#searchButtonOng'); // Referência ao botão de pesquisa
-
-    $.ajax({
-        url: '../../views/ongs/search.php', // Alterado para pesquisar Ong
-        method: 'POST',
-        data: { search: searchTerm },
-        success: function (response) {
-            $('#searchResults').html(response); // Alterado para #searchResultsOng
-        },
-        beforeSend: function () {
-            // Antes de enviar a solicitação, você pode fazer algo aqui, se necessário
-        },
-        complete: function () {
-            // Após a conclusão da solicitação (seja sucesso ou erro),
-            // redefina o texto do botão para "Pesquisar"
-            searchButtonOng.text("Pesquisar"); // Alterado para searchButtonOng
-        }
-    });
-}

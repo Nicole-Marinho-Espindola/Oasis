@@ -15,7 +15,6 @@
     
             if ($select->execute()) {
                 $row = $select->fetch(PDO::FETCH_ASSOC);
-                print_r($row);
             } else {
                 echo "Erro na consulta: " . $select->errorInfo()[2];
             }
@@ -24,6 +23,25 @@
         }
     } else {
         echo "Não foi possível pegar o ID do voluntário.";
+    }
+
+    // Recupera os interesses do voluntário
+    $voluntario_interesses = array();
+
+    if (isset($_GET['cd_voluntario'])) {
+        $id = filter_input(INPUT_GET, 'cd_voluntario');
+
+        try {
+            $selectInteresses = $conn->prepare('SELECT cd_interesse FROM tb_escolha WHERE cd_voluntario = :id');
+            $selectInteresses->bindParam(':id', $id);
+            $selectInteresses->execute();
+
+            while ($rowInteresse = $selectInteresses->fetch(PDO::FETCH_ASSOC)) {
+                $voluntario_interesses[] = $rowInteresse['cd_interesse'];
+            }
+        } catch (PDOException $e) {
+            echo "Erro ao listar interesses do voluntário: " . $e->getMessage();
+        }
     }
 
 ?>
@@ -80,17 +98,19 @@
                                 while ($rowInteresse = $selectInteresses->fetch()) {
                                     $nomeInteresse = $rowInteresse['ds_interesse'];
                                     $cdInteresse = $rowInteresse['cd_interesse'];
-                            ?>
+                                    $isChecked = in_array($cdInteresse, $voluntario_interesses) ? 'checked' : ''; // Verifica se o interesse está selecionado
+
+                                    ?>
                                     <div class="label-interesse">
-                                        <input type="checkbox" name="interesses[]" value="<?= $cdInteresse ?>" id="<?= $nomeInteresse ?>">
+                                        <input type="checkbox" name="interesses[]" value="<?= $cdInteresse ?>" id="<?= $nomeInteresse ?>" <?= $isChecked ?>>
                                         <label for="<?= $nomeInteresse ?>"><?= $nomeInteresse ?></label>
                                     </div>
-                            <?php
+                                    <?php
                                 }
                             } catch (PDOException $e) {
                                 echo "Erro ao listar interesses: " . $e->getMessage();
                             }
-                            ?>
+                        ?>
                         </div>
                     </div>
                     <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>

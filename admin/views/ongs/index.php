@@ -26,7 +26,7 @@
             <th></th>
             <th></th>
         </thead>
-        <tbody>
+        <tbody id="searchResults">
 
             <?php
                 if (isset($_GET['cadastro_sucesso']) && $_GET['cadastro_sucesso'] == 'true') {
@@ -43,9 +43,22 @@
                     echo "<script>alert('Excluído com sucesso.');</script>";
                 }
 
+                $pagina_atual = filter_input(INPUT_GET, 'pagina', FILTER_SANITIZE_NUMBER_INT);
+                $pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
+                                
+                // Setar a quantidade de itens por página
+                $qnt_result_pg = 10; // Altere de acordo com o número de itens que deseja exibir por página
+                                
+                // Calcular o início da visualização
+                $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
+                
                 try
                 {
-                    $select = $conn->prepare('SELECT * FROM tb_ong');
+                    // Certifique-se de que a conexão PDO ($conn) esteja configurada corretamente antes deste trecho
+                    $select = $conn->prepare('SELECT * FROM tb_ong LIMIT :inicio, :qnt_result_pg');
+                    // Associe os valores aos marcadores de posição
+                    $select->bindValue(':inicio', $inicio, PDO::PARAM_INT);
+                    $select->bindValue(':qnt_result_pg', $qnt_result_pg, PDO::PARAM_INT);
                     $select->execute();
 
                     while ($row = $select->fetch())
@@ -73,15 +86,33 @@
     </table>
     <div class="page-nav" aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
-            <li class="page-item disabled">
-            <a class="page-link">Anterior</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-            <a class="page-link" href="#">Próximo</a>
-            </li>
+            <?php
+            // Defina o valor padrão da página atual como 1
+            $pagina_atual = (isset($_GET['pagina'])) ? filter_input(INPUT_GET, 'pagina', FILTER_SANITIZE_NUMBER_INT) : 1;
+
+            // Paginação - Somar a quantidade
+            $selectCount = $conn->prepare("SELECT COUNT(cd_ong) AS num_result FROM tb_ong");
+            $selectCount->execute();
+            $row_pg = $selectCount->fetch(PDO::FETCH_ASSOC);
+
+            // Quantidade de páginas
+            $quantidade_pg = ceil($row_pg['num_result'] / $qnt_result_pg);
+
+            $pag_ant = ($pagina_atual > 1) ? $pagina_atual - 1 : 1; // Página anterior
+            echo "<li class='page-item'><a class='page-link' href='index.php?pagina=$pag_ant'>Anterior</a></li>";
+
+            for ($pag = 1; $pag <= $quantidade_pg; $pag++) {
+                if ($pag == $pagina_atual) {
+                    echo "<li class='page-item active'><a class='page-link'>$pag</a></li>";
+                } else {
+                    echo "<li class='page-item'><a class='page-link' href='index.php?pagina=$pag'>$pag</a></li>";
+                }
+            }
+
+            $pag_dep = ($pagina_atual < $quantidade_pg) ? $pagina_atual + 1 : $pagina_atual; // Próxima página
+            echo "<li class='page-item'><a class='page-link' href='index.php?pagina=$pag_dep'>Próximo</a></li>";
+
+            ?>
         </ul>
     </div>
 </div>
