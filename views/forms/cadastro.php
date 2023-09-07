@@ -125,9 +125,9 @@
                             </div>
                         </label>
                     </div>
-                    <div class="terms-block">
-                        <input type="checkbox" id="termos" name="termos">
-                        <label for="termos">Concordo com os <a href="" class="purple-link">termos de uso</a> e <a href="" class="purple-link">politicas de privacidade</a>.</label>
+                    <div class="check-block">
+                        <input class="checkbox" type="checkbox" id="termos" name="check">
+                        <label for="check" class="terms-label">Concordo com os <a href="" class="purple-link">termos de uso</a> e <a href="" class="purple-link">politicas de privacidade</a>.</label>
                     </div>
                     
                     <button type="submit" class="btn btn-color btn-margin">Cadastrar</button>

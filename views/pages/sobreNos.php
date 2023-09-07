@@ -43,7 +43,7 @@
                     <span class="card-title">Conectar pessoas</span>
                 </div>
                 <p class="text-MVV">
-                    Dedique tempo para o que faz sua alma felizDedique tempo para o que faz sua alma feliz
+                A missão do nosso grupo é conectar pessoas através do voluntariado ambiental. Acreditamos que, ao unir esforços em prol do meio ambiente, estamos também fortalecendo laços entre indivíduos de diferentes origens e experiências
                 </p>
             </div>
             <div class="card-MVV">
@@ -52,7 +52,7 @@
                     <span class="card-title">Dar visibilidade</span>
                 </div>
                 <p class="text-MVV">
-                    Dedique tempo para o que faz sua alma felizDedique tempo para o que faz sua alma feliz
+                Ao dar visibilidade os esforços de voluntários, não apenas incentivamos mais pessoas a se envolverem, mas também mostramos o quão poderosa é a comunidade que se forma em torno da proteção da natureza.
                 </p>
             </div>
             <div class="card-MVV">
@@ -61,7 +61,7 @@
                     <span class="card-title">Transformar</span>
                 </div>
                 <p class="text-MVV">
-                    Dedique tempo para o que faz sua alma felizDedique tempo para o que faz sua alma feliz
+                Através da ação coletiva e do compromisso com a preservação da natureza, acreditamos que podemos realmente tornar o mundo um lugar melhor para as atuais e futuras gerações.
                 </p>
             </div>
         </div>        
@@ -95,8 +95,7 @@
                 </div>
                 <div class="girls-text-block">
                     <h1 class="girls-name">Emily</h1>
-                    <p class="girls-text">Somos um grupo composto por três garotas que desenvolveram esse projeto com 
-                        o intuito de ajudar pessoas que querem ajudar!</p>
+                    <p class="girls-text">Olá, sou a Emily! Faço parte da equipe Her, estarei trabalhando no projeto desenvolvendo o banco de dados.</p>
                 </div>
                 <div class="social-midia">
                     <div class="social-midia-icon-block">
@@ -116,8 +115,7 @@
                 </div>
                 <div class="girls-text-block">
                     <h1 class="girls-name">Maíra</h1>
-                    <p class="girls-text">Somos um grupo composto por três garotas que desenvolveram esse projeto com 
-                        o intuito de ajudar pessoas que querem ajudar!</p>
+                    <p class="girls-text">Olá, sou a Maíra! Faço parte da equipe Her, estarei trabalhando no projeto desenvolvendo o back-end.</p>
                 </div>
                 <div class="social-midia">
                     <div class="social-midia-icon-block">
@@ -137,8 +135,7 @@
                 </div>
                 <div class="girls-text-block">
                     <h1 class="girls-name">Nicole</h1>
-                    <p class="girls-text">Somos um grupo composto por três garotas que desenvolveram esse projeto com 
-                        o intuito de ajudar pessoas que querem ajudar!</p>
+                    <p class="girls-text">Olá, sou a Nicole! Faço parte da equipe Her, estarei trabalhando no projeto desenvolvendo o front-end.</p>
                 </div>
                 <div class="social-midia">
                     <div class="social-midia-icon-block">

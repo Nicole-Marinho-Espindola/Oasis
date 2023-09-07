@@ -43,7 +43,7 @@
                             </div>
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-color">Enviar</button>
+                    <button type="submit" class="btn btn-color" onclick="alertAlterar()">Enviar</button>
                 </div>
             </form>
         </div> 

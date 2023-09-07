@@ -21,7 +21,9 @@
         <link rel="stylesheet" href="<?= baseUrl('/assets/css/global.css')?>">
         <link rel="stylesheet" href="<?= baseUrl('/assets/css/navbar.css')?>">
         <!-- <link rel="stylesheet" href="<?= baseUrl('/assets/css/form.css')?>"> -->
-        <title>Admin</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <title>Plataforma | Oásis</title>
     </head>
 
 <?php

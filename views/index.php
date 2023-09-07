@@ -44,28 +44,28 @@
                 <div class="timeline-dot"></div>
                 <div class="timeline-card-title align-right">Conexão direta<i class="fa-solid fa-handshake-angle icon-timeline"></i></div>
                 <div class="timeline-content">
-                    <p>Comece rapidamente sua jornada de voluntariado com um processo de inscrição fácil e intuitivo.</p>
+                    <p>Se conecte com os projetos que mais se encaixam em seus gostos, faça parte dessa incrível jornada.</p>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-card-title icon-position"><i class="fa-solid fa-users-viewfinder icon-timeline"></i>Explorar oportunidades</div>
                 <div class="timeline-content">
-                    <p>Comece rapidamente sua jornada de voluntariado com um processo de inscrição fácil e intuitivo.</p>
+                    <p>Explore os diferentes projetos que nossas ONGs cadastradas tem a oferecer.</p>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-card-title align-right">Inovação social<i class="fa-regular fa-lightbulb icon-timeline"></i></div>
                 <div class="timeline-content">
-                    <p>Comece rapidamente sua jornada de voluntariado com um processo de inscrição fácil e intuitivo.</p>
+                    <p>Participe dos projetos e conheça pessoas que gostam de ajudar o meio ambiente assim como você.</p>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                <div class="timeline-card-title icon-position"><i class="fa-regular fa-heart icon-timeline"></i>Inscrições simples</div>
+                <div class="timeline-card-title icon-position"><i class="fa-regular fa-heart icon-timeline"></i>Comece agora</div>
                 <div class="timeline-content">
-                    <p>Comece rapidamente sua jornada de voluntariado com um processo de inscrição fácil e intuitivo.</p>
+                    <p>Não perca tempo e vá agora conferir as oportunidades disponíveis!.</p>
                 </div>
             </div>
         </div>

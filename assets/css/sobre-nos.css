@@ -198,12 +198,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 17em;
-    height: 20em;
+    width: 20em;
+    height: 22em;
     border-radius: 10px;
     border: 1px solid #AABE9B;
     background-color: #F0F3ED;
     margin: 2em;
+    padding: 20px;
 }
 
 .icon-MVV{
@@ -224,7 +225,7 @@
     justify-content: center;
     align-items: center;
     color: #586D48;
-    font-size: 23px;
+    font-size: 20px;
     /* background-color: #AABE9B; */
     width: 100%;
     height: 45px;
@@ -232,7 +233,7 @@
 }
 
 .text-MVV{
-    width: 13em;
+    width: 15em;
     text-align: justify;
     margin-top: 2em;
     font-size: 14px;
@@ -373,7 +374,7 @@
 
 .girls-text{
     text-align: justify;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .social-midia{
@@ -567,7 +568,7 @@
     
     .card-MVV{
         width: 15em;
-        height: 17em;
+        height: 22em;
     }
     
     .icon-MVV{
@@ -581,7 +582,7 @@
         align-items: center;
         color: #586D48;
         font-size: 18px;
-        background-color: #AABE9B;
+        /* background-color: #AABE9B; */
         width: 100%;
         height: 45px;
         margin-top: 15px;
@@ -848,7 +849,7 @@
     
     .card-MVV{
         width: 15em;
-        height: 17em;
+        height: 24em;
     }
     
     .icon-MVV{
@@ -862,7 +863,7 @@
         align-items: center;
         color: #586D48;
         font-size: 18px;
-        background-color: #AABE9B;
+        /* background-color: #AABE9B; */
         width: 100%;
         height: 45px;
         margin-top: 15px;
