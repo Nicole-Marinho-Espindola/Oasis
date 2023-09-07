@@ -299,4 +299,47 @@
         width: 8em;
         height: 40px;
     }
+    
+    .form-title-block{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        padding-left: 0;
+    }
+    
+    .form-subtitle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 17em;
+        color: #9b9b9b;
+    }
+
+    .form-title{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0;
+        margin-top: 2em;
+    }
+
+    .redirecionar-login{
+        margin-right: 0;
+    }
+
+    .check-block{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        padding: 20px;
+        margin-top: 0;
+        font-size: 12px;
+        margin-left: 0;
+    }
 }
