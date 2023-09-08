@@ -11,7 +11,7 @@
             Encontre oportunidades de voluntariado e ajude a transformar o mundo ao seu redor. Seja bem-vindo(a) ao Oásis para Todos.
         </p>
 
-        <button class="btn-purple"><a href="<?= baseUrl('/views/forms/cadastro.php')?>">Fazer parte</a></button>
+        <button class="btn-purple"><a href="<?= baseUrl('/views/forms/voluntarios/cadastro.php')?>">Fazer parte</a></button>
     </div>
     <div class="join-us-img-block">
         <img class="join-us-img" src="./../assets/img/Taking care of the Earth-amico.png" alt="">
