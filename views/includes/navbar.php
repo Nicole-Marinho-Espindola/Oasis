@@ -14,7 +14,7 @@
             <a href="<?= baseUrl('/views/pages/projetos.php') ?>" class="nav-bar-link-style"><li class="nav-li">Projetos</li></a>
         </ul>
         <div class="sign-up-block">
-            <a class="link-style-none sign-in" href="">Entrar</a>
+            <a class="link-style-none sign-in" href="<?= baseUrl('/views/forms/login.php') ?>">Entrar</a>
             <button class="btn"><a class="link-style-none" href="<?= baseUrl('/views/forms/cadastro.php') ?>">Cadastro</a></button>
         </div>
     </nav>
