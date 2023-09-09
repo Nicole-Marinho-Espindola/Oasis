@@ -1,8 +1,8 @@
 <?php
-    include_once('./includes/head.php')
+    include_once('./views/includes/head.php')
 ?>
 
-<link rel="stylesheet" href="./../assets/css/home.css">
+<link rel="stylesheet" href="./assets/css/home.css">
 
 <section class="join-us">
     <div class="join-us-text-block">
@@ -14,12 +14,12 @@
         <button class="btn-purple"><a href="<?= baseUrl('/views/forms/voluntarios/cadastro.php')?>">Fazer parte</a></button>
     </div>
     <div class="join-us-img-block">
-        <img class="join-us-img" src="./../assets/img/Taking care of the Earth-amico.png" alt="">
+        <img class="join-us-img" src="./assets/img/Taking care of the Earth-amico.png" alt="">
     </div>
 </section>
 <section class="green-block-explain">
     <div class="green-title-block">
-        <img src="../assets/img/logo-oasis-verde.png" alt="" class="green-block-img">
+        <img src="./assets/img/logo-oasis-verde.png" alt="" class="green-block-img">
         <span class="green-block-title">Imagine um Oásis....</span>
     </div>
     <p class="green-block-text">
@@ -90,7 +90,7 @@
                 </div>
                 <div class="partners-card">
                     <h3 class="partners-name">Formiguinhas</h3>
-                    <img class="partners-img" src="../assets/img/formiguinhas.jpg" alt="">
+                    <img class="partners-img" src="./assets/img/formiguinhas.jpg" alt="">
                     <button class="btn-partners-card"><a href="https://www.instagram.com/formiguinhasdapraia/" target="_blank">Saiba mais</a></button>
                 </div>
                 <div class="btn-block">
@@ -117,7 +117,7 @@
                 </div>
                 <div class="partners-card">
                     <h3 class="partners-name">Sereia Azul</h3>
-                    <img class="partners-img" src="../assets/img/sereia-azul.png" alt="">
+                    <img class="partners-img" src="./assets/img/sereia-azul.png" alt="">
                     <button class="btn-partners-card"><a href="https://www.instagram.com/asereiaazul/" target="_blank">Saiba mais</a></button>
                 </div>
                 <div class="btn-block">
@@ -129,6 +129,6 @@
     </section>
 
     <?php
-        include_once('./includes/footer.php')
+        include_once('./views/includes/footer.php')
     ?>
-    <script src="./../assets/js/passarCard.js"></script>
+    <script src="./assets/js/passarCard.js"></script>

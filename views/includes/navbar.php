@@ -9,7 +9,7 @@
             <span class="logo-nome">Oásis</span>
         </div>
         <ul class="nav-ul">
-            <a href="<?= baseUrl('/views/index.php') ?>" class="nav-bar-link-style"><li class="nav-li">Home</li></a>
+            <a href="<?= baseUrl('/index.php') ?>" class="nav-bar-link-style"><li class="nav-li">Home</li></a>
             <a href="<?= baseUrl('/views/pages/sobreNos.php') ?>" class="nav-bar-link-style"><li class="nav-li">Sobre nós</li></a>
             <a href="<?= baseUrl('/views/pages/projetos.php') ?>" class="nav-bar-link-style"><li class="nav-li">Projetos</li></a>
         </ul>
@@ -22,7 +22,7 @@
         <ul class="menuLateral">
             <li class="list-style">
                 <i class="fa-solid fa-house icon-color"></i>
-                <a class="link-style" href="<?= baseUrl('/views/index.php') ?>">Home</a>
+                <a class="link-style" href="<?= baseUrl('/index.php') ?>">Home</a>
             </li>
             <li class="list-style">
                 <i class="fa-solid fa-circle-info icon-color"></i>

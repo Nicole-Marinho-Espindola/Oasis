@@ -267,6 +267,21 @@
     font-size: 15px;
 }
 
+.span-required{
+    display: none;
+    color:#a71f1f;
+    font-size: 12px;
+}
+
+.required{
+    display: none;
+    /* align-items: center; */
+    border-bottom: 2px solid #a71f1f;
+    width: 20em;
+    margin-top: 7px;
+    height: 40px;
+}
+
 @media screen and (max-width:768px){
 
     .main-content{

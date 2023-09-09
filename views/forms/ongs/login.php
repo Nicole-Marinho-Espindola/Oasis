@@ -16,10 +16,10 @@
         <div class="form-block">
             <div class="form-title">
                 <div class="logo-block">
-                    <a href="<?= baseUrl('/views/index.php') ?>" class="back-green-btn">
+                    <a href="<?= baseUrl('/index.php') ?>" class="back-green-btn">
                         <i class="fa-solid fa-chevron-left"></i>
                     </a>
-                    <a href="<?= baseUrl('/views/index.php') ?>" class="back-span">Voltar</a>
+                    <a href="<?= baseUrl('/index.php') ?>" class="back-span">Voltar</a>
                 </div>
                 <div class="form-title">
                     <h1 class="title">Entrar</h1>

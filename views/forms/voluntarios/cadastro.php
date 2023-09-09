@@ -29,10 +29,10 @@
         <div class="form-block">
             <div class="form-title-block">
                 <div class="logo-block">
-                    <a href="<?= baseUrl('/views/index.php') ?>" class="back-green-btn">
+                    <a href="<?= baseUrl('/index.php') ?>" class="back-green-btn">
                         <i class="fa-solid fa-chevron-left"></i>
                     </a>
-                    <a href="<?= baseUrl('/views/index.php') ?>" class="back-span">Voltar</a>
+                    <a href="<?= baseUrl('/index.php') ?>" class="back-span">Voltar</a>
                 </div>
                 <div class="form-title">
                     <h1 class="title">Criar conta</h1>
@@ -44,11 +44,13 @@
             <form class="form" action="">
                 <div class="section active">
                     <div class="user-info-block">
-                        <label class="label-style" for="">Nome
-                            <div class="input-block">
+                        <label class="" for="">Nome:
+                            <div class="input-block required">
                                 <i class="fa-solid fa-user icon-green"></i>
-                                <input class="input input-size icon-green" type="text">
+                                <input class="input input-size" type="text"
+                                    id="nomeVoluntario" name="nomeVoluntario" oninput="nameValidate()">
                             </div>
+                            <span class="span-required">Mínimo de 3 caracteres</span>
                         </label>
                     </div>
                     <div class="user-info-block">
@@ -142,3 +144,4 @@
     </div>
 </body>
 <script src="<?= baseUrl('/assets/js/cadastroEtapas.js') ?>"></script>
+<script src="<?= baseUrl('/assets/js/validarInput.js') ?>"></script>
