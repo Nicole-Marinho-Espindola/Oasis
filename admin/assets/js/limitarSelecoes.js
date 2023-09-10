@@ -5,11 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     interesses.forEach(function (interesse) {
         interesse.addEventListener('change', function () {
+
             var selecionados = document.querySelectorAll('input[name="interesses[]"]:checked');
             var maximo = 3;
 
             if (selecionados.length > maximo) {
-                alert('Você só pode selecionar até ' + maximo + ' interesses.'); 
+                alertSelecao(); 
                 this.checked = false; // Desmarca a última caixa marcada
             }
         });

@@ -1,19 +1,20 @@
 $(document).ready(function () {
-    // Defina a função genérica de pesquisa
+
     function pesquisar(tipo) {
+
         var searchTerm = $('#searchInput' + tipo).val();
         var searchButton = $('#searchButton' + tipo);
-        var searchResults = $('#searchResults' + tipo);
+        var searchResults = $('#searchResults');
 
         $.ajax({
-            url: '../../views/' + tipo + '/search.php',
+            url: '../../views/' + tipo + 's' + '/search.php',
             method: 'POST',
             data: { search: searchTerm },
             success: function (response) {
+                console.log(response); // Adicione esta linha
                 searchResults.html(response);
             },
             beforeSend: function () {
-                // Antes de enviar a solicitação, você pode fazer algo aqui, se necessário
             },
             complete: function () {
                 // Após a conclusão da solicitação (seja sucesso ou erro),
@@ -23,30 +24,30 @@ $(document).ready(function () {
         });
     }
 
-    // voluntários
-    $('#searchInputVoluntario').on('input', function () {
-        pesquisar('voluntarios');
-    });
-
-    $('#searchButtonVoluntario').click(function () {
-        pesquisar('voluntarios');
-    });
-
-    // interesses
+     // interesses
     $('#searchInputInteresse').on('input', function () {
-        pesquisar('interesses');
+        pesquisar('Interesse');
     });
 
     $('#searchButtonInteresse').click(function () {
-        pesquisar('interesses');
+        pesquisar('Interesse');
+    });
+
+    // voluntários
+    $('#searchInputVoluntario').on('input', function () {
+        pesquisar('Voluntario');
+    });
+
+    $('#searchButtonVoluntario').click(function () {
+        pesquisar('Voluntario');
     });
 
     // ONGs
     $('#searchInputOng').on('input', function () {
-        pesquisar('ongs');
+        pesquisar('Ong');
     });
 
     $('#searchButtonOng').click(function () {
-        pesquisar('ongs');
+        pesquisar('Ong');
     });
 });

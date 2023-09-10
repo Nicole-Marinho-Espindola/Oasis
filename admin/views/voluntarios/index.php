@@ -31,23 +31,34 @@
         </thead>
         <tbody class="body-table" id="searchResults">
 
+        <script src="<?= baseUrl('/assets/js/alertSweet.js') ?>"></script>
+
+        <script>
+
             <?php
-            
-                if (isset($_GET['cadastro_sucesso']) && $_GET['cadastro_sucesso'] == 'true') {
-                    $mensagem = "Cadastrado com sucesso.";
-                } elseif (isset($_GET['email_repetido']) && $_GET['email_repetido'] == 'true') {
-                    $mensagem = "Email já cadastrado.";
-                } elseif (isset($_GET['editar_sucesso']) && $_GET['editar_sucesso'] == 'true') {
-                    $mensagem = "Editado com sucesso.";
-                } elseif (isset($_GET['excluir_sucesso']) && $_GET['excluir_sucesso'] == 'true') {
-                    $mensagem = "Excluído com sucesso.";
-                }
+            if (isset($_GET['cadastro_sucesso']) && $_GET['cadastro_sucesso'] == 'true') {
+                echo "alert();";
+            } elseif (isset($_GET['email_repetido']) && $_GET['email_repetido'] == 'true') {
+                echo "alertEmail();";
+            }
+
+            if (isset($_GET['editar_sucesso']) && $_GET['editar_sucesso'] == 'true') {
+                echo "alertAlterar();";
+            }
+
+            if (isset($_GET['excluir_sucesso']) && $_GET['excluir_sucesso'] == 'true') {
+                echo "alertExcluir();";
+            }
+            ?>
+
+        </script>
+
+            <?php
 
                 $pagina_atual = filter_input(INPUT_GET, 'pagina', FILTER_SANITIZE_NUMBER_INT);
                 $pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
                 
-                // Setar a quantidade de itens por página
-                $qnt_result_pg = 10; // Altere de acordo com o número de itens que deseja exibir por página
+                $qnt_result_pg = 10; // Alterar de acordo com o número de itens que deseja exibir por página
                 
                 // Calcular o início da visualização
                 $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
@@ -60,9 +71,7 @@
                                             LEFT JOIN tb_escolha e ON v.cd_voluntario = e.cd_voluntario
                                             LEFT JOIN tb_interesse i ON e.cd_interesse = i.cd_interesse
                                             GROUP BY v.cd_voluntario
-                                            LIMIT :inicio, :qnt_result_pg'); // Use os marcadores de posição
-                
-                    // Associe os valores aos marcadores de posição
+                                            LIMIT :inicio, :qnt_result_pg');
                     $select->bindValue(':inicio', $inicio, PDO::PARAM_INT);
                     $select->bindValue(':qnt_result_pg', $qnt_result_pg, PDO::PARAM_INT);
                 
@@ -97,7 +106,7 @@
 
         <?php
 
-            // Defina o valor padrão da página atual como 1
+            // Definir o valor padrão da página atual como 1
             $pagina_atual = (isset($_GET['pagina'])) ? filter_input(INPUT_GET, 'pagina', FILTER_SANITIZE_NUMBER_INT) : 1;
 
             // Paginação - Somar a quantidade de voluntários
@@ -129,4 +138,4 @@
 
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="<?= baseUrl('/assets/js/pesquisarAjax.js') ?>"></script>
+<script src="<?= baseUrl('/assets/js/searchAjax.js') ?>"></script>

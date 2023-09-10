@@ -97,7 +97,7 @@
                             </div>
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-color" onclick="alert()">Cadastrar</button>
+                    <button type="submit" class="btn btn-color">Cadastrar</button>
                 </div>
             </form>
         </div>
@@ -107,5 +107,6 @@
 
 <script src="<?= baseUrl('/assets/js/validarInput.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/cadastroEtapas.js') ?>"></script>
+<script src="<?= baseUrl('/assets/js/alertSweet.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/limitarSelecoes.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/validarEmail.js') ?>"></script>

@@ -2,11 +2,11 @@
     include_once('../../config/database.php');
 
     if (isset($_POST['search'])) {
-        $searchTerm = '%' . $_POST['search'] . '%'; // Modificado aqui
+        $searchTerm = '%' . $_POST['search'] . '%';
 
         try {
-            $select = $conn->prepare('SELECT * FROM tb_interesse WHERE ds_interesse LIKE :searchTerm'); // Modificado aqui
-            $select->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR); // Modificado aqui
+            $select = $conn->prepare('SELECT * FROM tb_interesse WHERE ds_interesse LIKE :searchTerm');
+            $select->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
             $select->execute();
 
             $results = "";

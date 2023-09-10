@@ -19,11 +19,10 @@
                             </div>
                         </label>
                     </div>
-                    <button type="submit" onclick="alert()" class="btn btn-color">Cadastrar</button>
+                    <button type="submit" class="btn btn-color">Cadastrar</button>
                 </div>
             </form>
         </div> 
     </div>
 </body>
 <script src="<?= baseUrl('/assets/js/cadastroEtapas.js') ?>"></script>
-<script src="<?= baseUrl('/assets/js/alert.js') ?>"></script>

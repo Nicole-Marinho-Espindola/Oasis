@@ -99,7 +99,7 @@
                     </div>
                 </label>
             </div> -->
-            <button type="submit" class="btn btn-color" onclick="alertExcluir()">Excluir ONG</button>
+            <button type="submit" class="btn btn-color"  >Excluir ONG</button>
         </form>
     </div>
 </div>

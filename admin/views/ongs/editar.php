@@ -104,7 +104,7 @@
                     </div>
                 </label>
             </div> -->
-            <button type="submit" class="btn btn-color" onclick="alertAlterar()">Alterar dados</button>
+            <button type="submit" class="btn btn-color">Alterar dados</button>
         </form>
     </div>
 </div>
