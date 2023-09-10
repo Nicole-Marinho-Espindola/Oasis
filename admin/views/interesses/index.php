@@ -7,11 +7,11 @@
 
     <div class="content">
         <div class="search-block">
-        <input class="search" id="searchInputInteresse" type="text" placeholder="Pesquisar...">
-            <button class="btn" id="searchButtonInteresse">Pesquisar</button>
-            <a class="link-style-none" href="<?= baseUrl('views/interesses/cadastro.php') ?>">
-                <button class="btn btn-color margin-5">Cadastrar</button>
-            </a>
+            <input class="search" id="searchInputInteresse" type="text" placeholder="Pesquisar...">
+                <button class="btn" id="searchButtonInteresse">Pesquisar</button>
+                <a class="link-style-none" href="<?= baseUrl('views/interesses/cadastro.php') ?>">
+                    <button class="btn btn-color margin-5">Cadastrar</button>
+                </a>
         </div>
 
     <table class="table">
@@ -26,7 +26,6 @@
 
         <script>
 
-            // Verificação em PHP para chamar a função JavaScript
             <?php
             if (isset($_GET['cadastro_sucesso']) && $_GET['cadastro_sucesso'] == 'true') {
                 echo "alert();";
@@ -49,8 +48,7 @@
                 $pagina_atual = filter_input(INPUT_GET, 'pagina', FILTER_SANITIZE_NUMBER_INT);
                 $pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
                 
-                // Setar a quantidade de itens por página
-                $qnt_result_pg = 10; // Altere de acordo com o número de itens que deseja exibir por página
+                $qnt_result_pg = 10; // Alterar de acordo com o número de itens que deseja exibir por página
                 
                 // Calcular o início da visualização
                 $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
@@ -58,7 +56,6 @@
                 try
                 {
                     $select = $conn->prepare('SELECT * FROM tb_interesse LIMIT :inicio, :qnt_result_pg');
-                    // Associe os valores aos marcadores de posição
                     $select->bindValue(':inicio', $inicio, PDO::PARAM_INT);
                     $select->bindValue(':qnt_result_pg', $qnt_result_pg, PDO::PARAM_INT);
                     $select->execute();
@@ -86,7 +83,7 @@
         <ul class="pagination justify-content-center">
             <?php
 
-            // Defina o valor padrão da página atual como 1
+            // Definir o valor padrão da página atual como 1
             $pagina_atual = (isset($_GET['pagina'])) ? filter_input(INPUT_GET, 'pagina', FILTER_SANITIZE_NUMBER_INT) : 1;
 
             // Paginação - Somar a quantidade
@@ -116,4 +113,4 @@
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="<?= baseUrl('/assets/js/pesquisarAjax.js') ?>"></script>
+<script src="<?= baseUrl('/assets/js/searchAjax.js') ?>"></script>
