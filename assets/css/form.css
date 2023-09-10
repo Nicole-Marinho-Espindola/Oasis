@@ -330,6 +330,7 @@
 
 .btn-sign-up-block{
     display: flex;
+    margin-top: 30px;
 }
 
 @media screen and (max-width:768px){
@@ -380,6 +381,10 @@
         width: 100%;
         padding-left: 0;
     }
+
+    .form-title{
+        margin-right: 0;
+    }
     
     .form-subtitle{
         display: flex;
@@ -414,4 +419,26 @@
         font-size: 12px;
         margin-left: 0;
     }
+
+    .back-block{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-left: 7em;
+        margin-top: 25px;
+    }
+
+    .container{
+        width: 25em;
+    }
+
+    .btn-back{
+        margin-left: 5em;
+        margin-right: 10px;
+    }
+
+    .btn-section-config{
+        margin-right: 4em;
+    }
+
 }
