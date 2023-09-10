@@ -19,14 +19,6 @@ var next = function (elem, selector) {
 };
 
 function passarEtapa() { // como clicar no botão com javascript
-    // console.log('Funcionou');
-    // var mudarClasse = document.querySelector(".active");
-    // console.log(mudarClasse);
-    // mudarClasse.classList.remove("section1");
-    // console.log('Funcionou');
-
-    // var mudarClasse = document.querySelector(".section1"); // atribui á variavel mudarClasse a busca que é feita pelo queryselector
-    // mudarClasse.classList.add("active"); // classList busca todas as classes do elemento e add adicona a classe entre parenteses ao elemento
 
     var currentActive = document.querySelector(".active"); 
     var nextActive = next(currentActive, 'div');
@@ -34,11 +26,19 @@ function passarEtapa() { // como clicar no botão com javascript
     currentActive.classList.remove("active"); 
     nextActive.classList.add("active"); 
 
-    // var mudarClasse2 = document.querySelector(".section2"); 
-    // mudarClasse2.classList.add("active"); 
-
-    // var mudarClasse3 = document.querySelector(".section3"); 
-
-    // console.log('oi');
 
 }
+
+function voltarEtapa() { // como clicar no botão com javascript
+    var currentActive = document.querySelector(".active"); // Pesquisa o elemento com a classe "active-display"
+    var prevActive = currentActive.previousElementSibling; // como voltar para o elemento anterior
+
+    if (prevActive && prevActive.matches("div")) {
+        currentActive.classList.remove("active"); // Remove a classe "active-display" do elemento atual
+        prevActive.classList.add("active"); // Adiciona a classe "active-display" ao elemento anterior
+
+    }
+
+}
+
+

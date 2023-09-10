@@ -19,10 +19,9 @@
 .form-title{
     display: flex;
     flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
-    padding-left: 5em;
-    margin-top: 2em;
+    /* margin-top: 2em; */
+    margin-right: 8em;
+    /* margin-bottom: 3em; */
 }
 
 .title{
@@ -34,8 +33,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 2em;
-    font-family: 'Poppins', sans-serif;
+    margin-top: 25px;
 }
 
 .img-block{
@@ -107,29 +105,30 @@
     justify-content: center;
     align-items: center;
     width: 32vw;
+    margin-top: 20px;
 }
 
-.label-interesse label{
+.label-interesse{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #b3c3a8;
-    border-radius: 10px;
-    border: 1px solid #9ea997;
-    padding: 10px;
-    margin-left: 5px;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.label-interesse label{
     cursor: pointer;
-    color: #fff;
 }
 
 .label-style{
     color: #6c6c6c;
+    margin-top: 25px;
 }
 
-.label-interesse input:checked + label{
+/* .label-interesse input:checked + label{
     background-color: #859579;
     border: 1px solid #424f38;
-}
+} */
 
 .check-block{
     display: flex;
@@ -257,10 +256,9 @@
 
 .back-block{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: row;
     width: 100%;
+    margin-left: 10em;
 }
 
 .terms-label{
@@ -280,6 +278,58 @@
     width: 20em;
     margin-top: 7px;
     height: 40px;
+}
+
+.label-content-int{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.int-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    box-shadow: 1px 3px 7px rgb(167, 167, 167);
+    border-radius:10px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.int-content:hover{
+    border-bottom: 4px solid #A173BD;
+    background-color: #e4daef;
+}
+
+.input-interesse:checked + .int-content{
+    border-bottom: 4px solid #A173BD;
+    background-color: #e4daef;
+}
+
+.img-interesse{
+    height: 40px;
+}
+
+.btn-section-config{
+    padding: 10px;
+    width: 12em;
+}
+
+.btn-back{
+    background-color: #A899B7;
+    margin-right: 30px;
+}
+
+.btn-back:hover{
+    background-color: #958e9d;
+}
+
+.btn-sign-up-block{
+    display: flex;
 }
 
 @media screen and (max-width:768px){
