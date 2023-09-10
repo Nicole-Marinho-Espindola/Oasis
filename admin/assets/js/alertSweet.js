@@ -15,6 +15,23 @@ function alert(){
       })
 }
 
+function alertEmail(){
+  Swal.fire({
+      title: 'Email repetido',
+      text:'reveja seu cadastro...',
+      width: 600,
+      padding: '3em',
+      color: '#AB7BC8',
+      background: '#fff',
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("../img/PYh.gif")
+        left top
+        no-repeat
+      `
+    })
+}
+
 function alertExcluir(){
     Swal.fire({
         imageUrl: 'https://unsplash.it/400/200',
@@ -51,4 +68,21 @@ function alertAlterar(){
           no-repeat
         `
       })
+}
+
+function alertSelecao(){
+  Swal.fire({
+      title: 'Você só pode selecionar até 3 interesses',
+      text:'reveja seu cadastro...',
+      width: 600,
+      padding: '3em',
+      color: '#AB7BC8',
+      background: '#fff',
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("../img/PYh.gif")
+        left top
+        no-repeat
+      `
+    })
 }

@@ -5,11 +5,9 @@
     $interesse = filter_input(INPUT_POST, 'interesse');
 
     try {
-        $stmt = $conn->prepare("UPDATE tb_interesse SET ds_interesse = :interesse
-                                        WHERE cd_interesse = :id");
 
-        $stmt->execute(array(':id' => $id,
-                            ':interesse' => $interesse));
+        $stmt = $conn->prepare("UPDATE tb_interesse SET ds_interesse = :interesse WHERE cd_interesse = :id");
+        $stmt->execute(array(':id' => $id, ':interesse' => $interesse));
 
         header("Location: ../../../views/interesses/index.php?editar_sucesso=true");
         exit();

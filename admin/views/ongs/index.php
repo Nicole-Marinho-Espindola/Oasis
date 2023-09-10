@@ -28,20 +28,30 @@
         </thead>
         <tbody id="searchResults">
 
+        <script src="<?= baseUrl('/assets/js/alertSweet.js') ?>"></script>
+
+        <script>
+
+            // Verificação em PHP para chamar a função JavaScript
             <?php
-                if (isset($_GET['cadastro_sucesso']) && $_GET['cadastro_sucesso'] == 'true') {
-                    echo "<script>alert('Cadastrado com sucesso.');</script>";
-                } elseif (isset($_GET['email_repetido']) && $_GET['email_repetido'] == 'true') {
-                    echo "<script>alert('Email já cadastrado.');</script>";
-                }
+            if (isset($_GET['cadastro_sucesso']) && $_GET['cadastro_sucesso'] == 'true') {
+                echo "alert();";
+            } elseif (isset($_GET['email_repetido']) && $_GET['email_repetido'] == 'true') {
+                echo "alertEmail();";
+            }
 
-                if (isset($_GET['editar_sucesso']) && $_GET['editar_sucesso'] == 'true') {
-                    echo "<script>alert('Editado com sucesso.');</script>";
-                }
+            if (isset($_GET['editar_sucesso']) && $_GET['editar_sucesso'] == 'true') {
+                echo "alertAlterar();";
+            }
 
-                if (isset($_GET['excluir_sucesso']) && $_GET['excluir_sucesso'] == 'true') {
-                    echo "<script>alert('Excluído com sucesso.');</script>";
-                }
+            if (isset($_GET['excluir_sucesso']) && $_GET['excluir_sucesso'] == 'true') {
+                echo "alertExcluir();";
+            }
+            ?>
+
+        </script>
+
+            <?php
 
                 $pagina_atual = filter_input(INPUT_GET, 'pagina', FILTER_SANITIZE_NUMBER_INT);
                 $pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
