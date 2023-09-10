@@ -1,7 +1,7 @@
 <?php
     include_once('../includes/head.php');
     include_once('../../config/database.php');
-    include_once('../../config/verificacao.php');
+    include_once('../../config/autenticacao.php');
     include_once('search.php');
 ?>
 
@@ -13,7 +13,6 @@
                 <button class="btn btn-color margin-5">Cadastrar</button>
             </a>
         </div>
-
 
     <table class="table">
         <thead class="header-table">

@@ -31,7 +31,7 @@
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
         </div>
-        <form action="" class="form">
+        <form action="../../services/controllers/voluntario/cadastro_action.php" class="form">
             <div class="section active">
                 <div class="form-title">
                     <h1 class="title">Criar conta</h1>

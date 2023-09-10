@@ -2,7 +2,7 @@
 
     include_once('../../views/includes/head.php');
     include_once('../../config/database.php');
-    include_once('../../config/verificacao.php');
+    include_once('../../config/autenticacao.php');
     
     $row = null; // Inicializa a variável $row
     

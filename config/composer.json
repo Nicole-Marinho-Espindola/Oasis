@@ -1,0 +1,15 @@
+{
+    "name": "maria/config",
+    "autoload": {
+        "psr-4": {
+            "Maria\\Config\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mairalouise",
+            "email": "mairalouisef23@gmail.com"
+        }
+    ],
+    "require": {}
+}
