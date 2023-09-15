@@ -41,7 +41,7 @@
                 </div>
             </div>
             
-            <form class="form" action="">
+            <form class="form" action="../../services/controllers/ongs/cadastro_action.php">
                 <div class="section active">
                     <div class="user-info-block">
                         <label class="label-style" for="">Nome
