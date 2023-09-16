@@ -342,6 +342,57 @@
     margin-bottom: 3em;
 }
 
+.card-email{
+    width: 26em;
+    height: 23em;
+    /* padding: 20px; */
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 4px 4px 15px 4px rgba(55, 50, 50, 0.25);
+    border-radius: 10px;
+    margin-top: 40px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.card-email-head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #715987;
+    height: 7em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 2em;
+    position: absolute;
+    top: 1;
+}
+
+.mail-icon{
+    height: 60px;
+}
+
+.card-email-text-block{
+    margin-top: 8em;
+    margin-bottom: 20px;
+}
+
+.card-email-title{
+    font-size: 17px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.card-email-text{
+    text-align: justify;
+    font-size: 14px;
+    width: 22em;
+}
+
 @media screen and (max-width:768px){
 
     .main-content{
