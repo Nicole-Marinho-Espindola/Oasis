@@ -42,7 +42,7 @@
                             </div>
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-color"  >Excluir</button>
+                    <button type="submit" class="btn btn-color">Excluir</button>
                 </div>
             </form>
         </div>
