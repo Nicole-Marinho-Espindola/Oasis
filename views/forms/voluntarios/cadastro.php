@@ -51,7 +51,8 @@
                     <label class="label-style" for="">Sobrenome
                         <div class="input-block">
                             <i class="fa-solid fa-user icon-green"></i>
-                            <input class="input input-size" type="text">
+                            <input class="input input-size" type="text"
+                            id="sobrenomeVoluntario" name="sobrenomeVoluntario">
                         </div>
                     </label>
                 </div>
@@ -59,7 +60,8 @@
                     <label class="label-style" for="">Data de nascimento
                         <div class="input-block">
                         <i class="fa-regular fa-calendar icon-green"></i>
-                            <input class="input input-size" type="text">
+                            <input class="input input-size" type="date"
+                            id="nascimentoVoluntario" name="nascimentoVoluntario">
                         </div>
                     </label>
                 </div>
@@ -74,81 +76,37 @@
                 </div>
                 <div class="user-info-block">
                     <div class="container center-itens">
+                    <?php
+                        try {
+                            include_once('../../config/database.php');
+
+                            $selectInteresses = $conn->prepare('SELECT * FROM tb_interesse');
+                            $selectInteresses->execute();
+
+                            while ($rowInteresse = $selectInteresses->fetch()) {
+                                $nomeInteresse = $rowInteresse['ds_interesse'];
+                                $cdInteresse = $rowInteresse['cd_interesse'];
+                                $iconeInteresse = $rowInteresse['nm_icone'];
+                    ?>
                             <div class="label-interesse">
                                 <label class="label-content-int">
-                                    <input type="checkbox" class="input-interesse" name="praia" id="praia">
+                                    <input type="checkbox" class="input-interesse" name="interesses[]" value="<?= $cdInteresse ?>" id="<?= $nomeInteresse ?>">
                                     <div class="int-content">
                                         <img class="img-interesse" src="<?= baseUrl('/assets/img/palmeira.png')?>" alt="">
                                     </div>
                                     Praia
                                 </label>
                             </div>
-                            <div class="label-interesse">
-                                <label class="label-content-int">
-                                    <input type="checkbox" name="" class="input-interesse" id="natureza">
-                                    <div class="int-content">
-                                        <img class="img-interesse" src="<?= baseUrl('/assets/img/natureza.png')?>" alt="">
-                                    </div>
-                                Natureza
-                            </label>
-                            </div>
-                            <div class="label-interesse">
-                                <label class="label-content-int">
-                                    <input type="checkbox" name="" class="input-interesse" id="eventos">
-                                    <div class="int-content">
-                                        <img class="img-interesse" src="<?= baseUrl('/assets/img/eventos.png')?>" alt="">
-                                    </div>
-                                    Eventos
-                                </label>
-                            </div>
-                            <div class="label-interesse">
-                                <label class="label-content-int">
-                                    <input type="checkbox" name="" class="input-interesse" id="animais">
-                                    <div class="int-content">
-                                        <img class="img-interesse" src="<?= baseUrl('/assets/img/flamingo.png')?>" alt="">
-                                    </div>
-                                    Animais
-                                </label>
-                            </div>
-                            <div class="label-interesse">
-                                <label class="label-content-int">
-                                    <input type="checkbox" name="" class="input-interesse" id="limpeza">
-                                    <div class="int-content">
-                                        <img class="img-interesse" src="<?= baseUrl('/assets/img/vassoura.png')?>" alt="">
-                                    </div>
-                                    Limpeza
-                                </label>
-                            </div>
-                            <div class="label-interesse">
-                                <label class="label-content-int">
-                                    <input type="checkbox" name="" class="input-interesse" id="plantas">
-                                    <div class="int-content">
-                                        <img class="img-interesse" src="<?= baseUrl('/assets/img/lavanda.png')?>" alt="">
-                                    </div>
-                                    Plantas
-                                </label>
-                            </div>
-                            <div class="label-interesse">
-                                <label class="label-content-int">
-                                    <input type="checkbox" name="" class="input-interesse" id="reciclagem">
-                                    <div class="int-content">
-                                        <img class="img-interesse" src="<?= baseUrl('/assets/img/reciclagem.png')?>" alt="">
-                                    </div>
-                                    Reciclagem
-                                </label>
-                            </div>
-                            <div class="label-interesse">
-                                <label class="label-content-int">
-                                    <input type="checkbox" name="" class="input-interesse" id="esportes">
-                                    <div class="int-content">
-                                        <img class="img-interesse" src="<?= baseUrl('/assets/img/futebol.png')?>" alt="">
-                                    </div>
-                                    Esportes
-                                </label>
-                            </div>
+                    
                             <button type="button" class="btn btn-color btn-margin btn-section-config btn-back" onclick="voltarEtapa()">Voltar</button>
                             <button type="button" class="btn btn-color btn-margin btn-section-config" onclick="passarEtapa()">Próximo</button>
                     </div>
+                    <?php
+                            }
+                        } catch (PDOException $e) {
+                            echo "Erro ao listar interesses: " . $e->getMessage();
+                        }
+                    ?>
                 </div>
             </div>
             <div class="section">

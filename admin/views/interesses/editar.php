@@ -31,7 +31,8 @@
                 <h1 class="title">Editar interesse!</h1>
                 <div class="line"></div>
             </div>
-            <form class="form" action=<?= baseUrl('services/CRUD/interesse/editar_action.php') ?> method="POST" id="form">
+            <form class="form" action=<?= baseUrl('services/CRUD/interesse/editar_action.php') ?> 
+                            method="POST" id="form" enctype="multipart/form-data">
                 <input type="hidden" name="idInteresse" value="<?= $row['cd_interesse']?>">
                 <div class="section active">
                     <div class="user-info-block">
@@ -40,6 +41,16 @@
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size icon-green" type="text"
                                         value="<?= $row['ds_interesse']?>" name="interesse">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="user-info-block">
+                        <label class="" for="">Ícone:
+                            <div class="input-block">
+                            <!-- precisa colocar o icone para os interesses aqui -->
+                                <i class="fa-solid fa-user icon-green"></i> 
+                                <input class="input input-size icon-green" type="file" 
+                                        value="<?= $row['ds_interesse']?>" name="icone" required>
                             </div>
                         </label>
                     </div>

@@ -9,13 +9,22 @@
                 <div class="line"></div>
             </div>
             <form class="form" action=<?= baseUrl('services/CRUD/interesse/cadastro_action.php') ?>
-                        method="POST" id="form">
+                        method="POST" id="form" enctype="multipart/form-data">
                 <div class="section active">
                     <div class="user-info-block">
                         <label class="" for="">Interesse:
                             <div class="input-block">
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size icon-green" type="text" name="interesse" required>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="user-info-block">
+                        <label class="" for="">Ícone:
+                            <div class="input-block">
+                            <!-- precisa colocar o icone para os interesses aqui -->
+                                <i class="fa-solid fa-user icon-green"></i> 
+                                <input class="input input-size icon-green" type="file" name="icone" required>
                             </div>
                         </label>
                     </div>

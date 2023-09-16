@@ -61,17 +61,17 @@
                             while ($rowInteresse = $selectInteresses->fetch()) {
                                 $nomeInteresse = $rowInteresse['ds_interesse'];
                                 $cdInteresse = $rowInteresse['cd_interesse'];
-                        ?>
+                    ?>
                                 <div class="label-interesse">
                                     <input type="checkbox" name="interesses[]" value="<?= $cdInteresse ?>" id="<?= $nomeInteresse ?>">
                                     <label for="<?= $nomeInteresse ?>"><?= $nomeInteresse ?></label>
                                 </div>
-                        <?php
+                    <?php
                             }
                         } catch (PDOException $e) {
                             echo "Erro ao listar interesses: " . $e->getMessage();
                         }
-                        ?>
+                    ?>
                     </div>
                 </div>
                 <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>
