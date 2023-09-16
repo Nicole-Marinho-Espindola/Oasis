@@ -39,14 +39,15 @@
             </div>
             <div class="card-email">
                 <div class="card-email-head">
-                    <i class="fa-regular fa-envelope"></i>
+                    <!-- <i class="fa-regular fa-envelope mail-icon"></i> -->
+                    <img class="mail-icon" src="<?= baseUrl('/assets/img/email-img.png')?>" alt="">
                 </div>
                 <div class="card-email-text-block">
                     <h3 class="card-email-title">Verifique seu email</h3>
                     <p class="card-email-text">Para uma maior segurança gostariamos que você confirmasse seu email,
                          não se preocupe, é rapido!</p>
-                    <button type="button" class="btn btn-color btn-margin btn-section-config">Confirmar email</button>
                 </div>
+                <button type="button" class="btn btn-purple">Confirmar email</button>
             </div>
         </div>
     </div>
