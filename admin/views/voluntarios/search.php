@@ -12,7 +12,8 @@
                                 LEFT JOIN tb_escolha e ON v.cd_voluntario = e.cd_voluntario
                                 LEFT JOIN tb_interesse i ON e.cd_interesse = i.cd_interesse
                                 WHERE v.nm_voluntario LIKE :searchTerm
-                                GROUP BY v.cd_voluntario");
+                                GROUP BY v.cd_voluntario
+                                ORDER BY v.nm_voluntario ASC");
             
             $select->bindValue(':searchTerm', '%' . $searchTerm . '%', PDO::PARAM_STR);
             $select->execute();

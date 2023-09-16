@@ -1,7 +1,4 @@
 <?php
-    session_start();
-    $logged_user = !empty($_SESSION['logged_user']) ? $_SESSION['logged_user'] : null;
-
     function includeURL($path = '') {
         return sprintf(
             "%s/%s/%s",
@@ -11,7 +8,8 @@
         );
     }
 
-    include_once(includeURL('/services/helpers.php'))
+    include_once(includeURL('/services/helpers.php'));
+    include_once(includeURL('config/autenticacao.php'));
 ?>
 
 <html>

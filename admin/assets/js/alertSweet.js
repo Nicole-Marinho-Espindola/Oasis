@@ -86,3 +86,71 @@ function alertSelecao(){
       `
     })
 }
+
+function alertAcesso(){
+  Swal.fire({
+      title: 'Faça login para continuar',
+      text:'entre em sua conta...',
+      width: 600,
+      padding: '3em',
+      color: '#AB7BC8',
+      background: '#fff',
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("../img/PYh.gif")
+        left top
+        no-repeat
+      `
+    })
+}
+
+function alertLogin(){
+  Swal.fire({
+      title: 'Nome de usuário ou senha incorretos',
+      text:'tente novamente...',
+      width: 600,
+      padding: '3em',
+      color: '#AB7BC8',
+      background: '#fff',
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("../img/PYh.gif")
+        left top
+        no-repeat
+      `
+    })
+}
+
+function alertLogout(){
+  Swal.fire({
+      title: 'Você saiu com sucesso',
+      text:'volte sempre...',
+      width: 600,
+      padding: '3em',
+      color: '#AB7BC8',
+      background: '#fff',
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("../img/PYh.gif")
+        left top
+        no-repeat
+      `
+    })
+}
+
+function alertSessao(){
+  Swal.fire({
+      title: 'Sua sessão expirou',
+      text:'entre novamente...',
+      width: 600,
+      padding: '3em',
+      color: '#AB7BC8',
+      background: '#fff',
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("../img/PYh.gif")
+        left top
+        no-repeat
+      `
+    })
+}

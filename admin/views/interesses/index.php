@@ -16,6 +16,7 @@
 
     <table class="table">
         <thead>
+            <th>ID</th>
             <th>Interesses Cadastrados</th>
             <th>Ícone</th>
             <th></th>
@@ -65,6 +66,7 @@
                     {
             ?>
                         <tr class="row-table">
+                        <td class="content-table"><?= $row['cd_interesse'] ?></td>
                             <td class="content-table"><?= $row['ds_interesse'] ?></td>
                             <td class="content-table"><img src="<?= baseUrl($row['nm_icone']) ?>"></td>
                             <td><a href="editar.php?cd_interesse=<?= $row['cd_interesse'] ?>"><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></a></td>

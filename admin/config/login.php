@@ -17,6 +17,9 @@
         $usuarioAdmin = $_ENV['LOGIN_USER'];
         $senhaAdmin = $_ENV['LOGIN_SENHA'];
 
+        var_dump($user);
+        var_dump($usuarioAdmin);
+
         //comparando
         if ($user === $usuarioAdmin && $senha === $senhaAdmin) {
 
@@ -26,13 +29,14 @@
 
         } else {
 
-            echo "Nome de usuário ou senha incorretos. Tente novamente.";
+            header("Location: ../views/index.php?login_errado=true");
+            exit();
 
-        }
+                }
 
     } else {
 
-        header("Location: ../../views/index.php");
+        header("Location: ../views/index.php");
         exit();
 
     }
