@@ -33,9 +33,9 @@
         </div>
         <div class="section active">
             <div class="form-title">
-                <h1 class="title">Confirmar seu email</h1>
+                <h1 class="title">Alterar senha</h1>
                 <div class="line line-config"></div>
-                <p class="form-subtitle">Quase lá! Falta pouco para você fazer parte do nosso Oásis.</p>
+                <p class="form-subtitle">Não lembra sua senha? Podemos resolver isso pra você!</p>
             </div>
             <div class="card-email">
                 <div class="card-email-head">
