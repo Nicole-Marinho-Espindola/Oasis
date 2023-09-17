@@ -76,7 +76,7 @@
                     <div class="line line-config"></div>
                     <p class="form-subtitle">Escolha até 3 interesses (relaxa, você pode mudar depois).</p>
                 </div>
-                
+                <!-- teste -->
                 <div class="user-info-block">
                     <div class="container center-itens">
                         <?php
