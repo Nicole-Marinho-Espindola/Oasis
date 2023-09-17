@@ -1,8 +1,8 @@
 {
-    "name": "maria/config",
+    "name": "maria/oasis",
     "autoload": {
         "psr-4": {
-            "Maria\\Config\\": "src/"
+            "Maria\\Oasis\\": "src/"
         }
     },
     "authors": [
@@ -11,5 +11,7 @@
             "email": "mairalouisef23@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
 }
