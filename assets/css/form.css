@@ -579,4 +579,36 @@
     .btn-larger{
         width: 13em;
     }
+
+    .card-senha{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 18em;
+        height: 26em;
+    }
+    
+    .card-senha-text-block{
+        margin-top: 5em;
+        margin-bottom: 20px;
+        width: 15em;
+    }
+    
+    .card-senha-title{
+        font-size: 15px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        margin-top: 15px;
+        width: 16em;
+    }
+    
+    .input-block-size{
+        width: 15em;
+    }
+    
+    .card-senha-text{
+        text-align: justify;
+        font-size: 13px;
+        width: 18em;
+    }
 }
