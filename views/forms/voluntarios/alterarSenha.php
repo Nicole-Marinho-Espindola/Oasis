@@ -33,19 +33,25 @@
         </div>
         <div class="section active">
             <div class="form-title">
-                <h1 class="title">Confirmar seu email</h1>
+                <h1 class="title">Alterar senha</h1>
                 <div class="line line-config"></div>
-                <p class="form-subtitle">Quase lá! Falta pouco para você fazer parte do nosso Oásis.</p>
+                <p class="form-subtitle">Não lembra sua senha? Podemos resolver isso pra você!</p>
             </div>
-            <div class="card-email">
-                <div class="card-email-head">
-                    <!-- <i class="fa-regular fa-envelope mail-icon"></i> -->
-                    <img class="mail-icon" src="<?= baseUrl('/assets/img/email-img.png')?>" alt="">
+            <div class="card-senha">
+                <div class="card-senha-head">
+                    <!-- <img class="mail-icon" src="<?= baseUrl('/assets/img/email-img.png')?>" alt=""> -->
                 </div>
-                <div class="card-email-text-block">
-                    <h3 class="card-email-title">Verifique seu email</h3>
-                    <p class="card-email-text">Para uma maior segurança gostariamos que você confirmasse seu email,
-                         não se preocupe, é rapido!</p>
+                <div class="card-senha-text-block">
+                    <h3 class="card-senha-title">Por favor, digite o endereço de e-mail associado à sua conta.</h3>
+                    <div class="user-info-block">
+                        <label class="label-style" for="">Email
+                            <div class="input-block input-block-size">
+                                <i class="fa-regular fa-envelope icon-green"></i>
+                                <input class="input input-size" type="text">
+                            </div>
+                        </label>
+                    </div>
+                    <p class="card-senha-text">Você irá receber instruções no email informado para voltar a acessar sua conta no Oásis.</p>
                 </div>
                 <button type="button" class="btn btn-purple btn-larger">Confirmar email</button>
             </div>
@@ -54,4 +60,3 @@
     <div class="img-block">
         <img class="form-img" src="<?= baseUrl('/assets/img/Sign up-bro.png')?>" alt="">
     </div>
-</div>

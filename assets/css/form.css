@@ -393,6 +393,54 @@
     width: 22em;
 }
 
+.card-senha{
+    width: 26em;
+    height: 26em;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 4px 4px 15px 4px rgba(55, 50, 50, 0.25);
+    border-radius: 10px;
+    margin-top: 40px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.card-senha-head{
+    width: 100%;
+    background-color: #715987;
+    height: 3em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 1;
+}
+
+.card-senha-text-block{
+    margin-top: 5em;
+    margin-bottom: 20px;
+}
+
+.card-senha-title{
+    font-size: 17px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+    width: 20em;
+}
+
+.input-block-size{
+    width: 20em;
+}
+
+.card-senha-text{
+    text-align: justify;
+    font-size: 14px;
+    width: 23em;
+}
+
 @media screen and (max-width:768px){
 
     .main-content{
@@ -501,4 +549,34 @@
         margin-right: 4em;
     }
 
+    .card-email{
+        width: 18em;
+        height: 21em;
+    }
+    
+    .card-email-head{
+        width: 100%;
+        height: 5em;
+    }
+    
+    .mail-icon{
+        height: 40px;
+    }
+    
+    .card-email-title{
+        font-size: 17px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+    
+    .card-email-text{
+        text-align: justify;
+        font-size: 14px;
+        width: 15em;
+    }
+
+    .btn-larger{
+        width: 13em;
+    }
 }
