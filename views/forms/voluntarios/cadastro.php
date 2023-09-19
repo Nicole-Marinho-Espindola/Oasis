@@ -8,8 +8,10 @@
         );
     }
 
-    include_once(includeURL('/services/helpers.php'))
+    include_once(includeURL('/config/database.php'));
+    include_once(includeURL('/services/helpers.php'));
 ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,38 +78,37 @@
                 </div>
                 <div class="user-info-block">
                     <div class="container center-itens">
-                    <?php
-                        try {
-                            include_once('../../config/database.php');
+                        <?php
+                            try {
+                                include_once(includeURL('/config/database.php'));
 
-                            $selectInteresses = $conn->prepare('SELECT * FROM tb_interesse');
-                            $selectInteresses->execute();
+                                $selectInteresses = $conn->prepare('SELECT * FROM tb_interesse');
+                                $selectInteresses->execute();
 
-                            while ($rowInteresse = $selectInteresses->fetch()) {
-                                $nomeInteresse = $rowInteresse['ds_interesse'];
-                                $cdInteresse = $rowInteresse['cd_interesse'];
-                                $iconeInteresse = $rowInteresse['nm_icone'];
-                    ?>
-                            <div class="label-interesse">
-                                <label class="label-content-int">
-                                    <input type="checkbox" class="input-interesse" name="interesses[]" value="<?= $cdInteresse ?>" id="<?= $nomeInteresse ?>">
-                                    <div class="int-content">
-                                        <img class="img-interesse" src="<?= baseUrl('/assets/img/palmeira.png')?>" alt="">
-                                    </div>
-                                    Praia
-                                </label>
-                                <div class="btn-block">
-                                    <button type="button" class="btn btn-color btn-margin btn-section-config btn-back" onclick="voltarEtapa()">Voltar</button>
-                                    <button type="button" class="btn btn-color btn-margin btn-section-config" onclick="passarEtapa()">Próximo</button>
+                                while ($rowInteresse = $selectInteresses->fetch()) {
+                                    $nomeInteresse = $rowInteresse['ds_interesse'];
+                                    $cdInteresse = $rowInteresse['cd_interesse'];
+                                    $iconeInteresse = $rowInteresse['nm_icone'];
+                        ?>
+                                <div class="label-interesse">
+                                    <label class="label-content-int">
+                                        <input type="checkbox" class="input-interesse" name="interesses[]" value="<?= $cdInteresse ?>" id="<?= $nomeInteresse ?>">
+                                        <div class="int-content">
+                                        <img class="img-interesse" src="<?= baseUrl('/admin/' . $iconeInteresse) ?>" alt="">
+                                        </div>
+                                        <?= $nomeInteresse ?>
+                                    </label>
                                 </div>
-                            </div> 
-                    </div>
-                    <?php
+                        <?php
+                                }
+                            } catch (PDOException $e) {
+                                echo "Erro ao listar interesses: " . $e->getMessage();
                             }
-                        } catch (PDOException $e) {
-                            echo "Erro ao listar interesses: " . $e->getMessage();
-                        }
-                    ?>
+                        ?>
+                    
+                            <button type="button" class="btn btn-color btn-margin btn-section-config btn-back" onclick="voltarEtapa()">Voltar</button>
+                            <button type="button" class="btn btn-color btn-margin btn-section-config" onclick="passarEtapa()">Próximo</button>
+                    </div>
                 </div>
             </div>
             <div class="section">
