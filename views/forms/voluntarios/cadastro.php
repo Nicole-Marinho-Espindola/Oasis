@@ -33,7 +33,8 @@
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
         </div>
-        <form action="../../services/controllers/voluntario/cadastro_action.php" class="form">
+        <form action="<?= baseUrl('/services/controllers/voluntarios/cadastro_action.php') ?>" method="POST"
+                    class="form">
             <div class="section active">
                 <div class="form-title">
                     <h1 class="title">Criar conta</h1>
@@ -121,7 +122,8 @@
                         <label class="label-style" for="">Email
                             <div class="input-block">
                                 <i class="fa-regular fa-envelope icon-green"></i>
-                                <input class="input input-size" type="text">
+                                <input class="input input-size" type="email"
+                                id="emailVoluntario" name="emailVoluntario" requerid>
                             </div>
                         </label>
                     </div>
@@ -129,18 +131,19 @@
                         <label class="label-style" for="">Senha
                             <div class="input-block">
                                 <i class="fa-solid fa-lock"></i>
-                                <input class="input" type="text">
+                                <input class="input" type="password"
+                                id="senhaVoluntario" name="senhaVoluntario" required>
                                 <i class="fa-regular fa-eye-slash icon-green"></i>
                             </div>
                         </label>
                     </div>
                     <div class="check-block">
-                        <input class="checkbox" type="checkbox" id="termos" name="check">
+                        <input class="checkbox" type="checkbox" id="termos" name="check" required>
                         <label for="check" class="terms-label">Concordo com os <a href="" class="purple-link">termos de uso</a> e <a href="" class="purple-link">politicas de privacidade</a>.</label>
                     </div>
                     <div class="btn-sign-up-block">
                         <button type="button" class="btn btn-color btn-margin btn-section-config btn-back" onclick="voltarEtapa()">Voltar</button>
-                        <button type="button" class="btn btn-color btn-margin btn-section-config">Cadastrar</button>
+                        <button type="submit" class="btn btn-color btn-margin btn-section-config">Cadastrar</button>
                     </div>
                 </div>
         </form>
