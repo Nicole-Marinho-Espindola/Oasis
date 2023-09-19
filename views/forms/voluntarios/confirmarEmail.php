@@ -33,7 +33,7 @@
         </div>
         <div class="section active">
             <div class="form-title">
-                <h1 class="title">Confirmar seu email</h1>
+                <h1 class="title">Confirme seu email</h1>
                 <div class="line line-config"></div>
                 <p class="form-subtitle">Quase lá! Falta pouco para você fazer parte do nosso Oásis.</p>
             </div>
@@ -45,9 +45,9 @@
                 <div class="card-email-text-block">
                     <h3 class="card-email-title">Verifique seu email</h3>
                     <p class="card-email-text">Para uma maior segurança gostariamos que você confirmasse seu email,
-                         não se preocupe, é rapido!</p>
+                        não se preocupe, é rápido!</p>
                 </div>
-                <button type="button" class="btn btn-purple btn-larger">Confirmar email</button>
+                <button type="button" <a href="<?= baseUrl('/services/controllers/voluntarios/confirmarEmail_action.php?cd_voluntario=' . $row['cd_voluntario']) ?>" class="btn btn-purple btn-larger">Confirmar email</button>
             </div>
         </div>
     </div>
