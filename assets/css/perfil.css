@@ -1,0 +1,125 @@
+.profile-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-purple-block{
+    background-color: #EBDEF7;
+    width: 100%;
+    height: 13em;
+    position: relative;
+}
+
+.social-midia-block{
+    display: flex;
+    flex-direction: row;
+    padding: 25px;
+}
+
+.social-midia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #AABE9B;
+    height: 30px;
+    width: 30px;
+    margin-right: 12px;
+    border-radius: 5px;
+}
+
+.social-midia-icon{
+    color: #fff;
+    font-size: 18px;
+}
+
+.edit-profile .social-midia-icon{
+    margin-right: 7px;
+}
+
+.edit-profile-position{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.edit-profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    margin-top: 5em;
+    padding: 7px;
+    background-color: #AABE9B;
+    border-radius: 5px;
+    width: 7em;
+    color: #fff;
+    margin-left: 0;
+}
+
+.edit-profile-span{
+    font-size: 12px;
+}
+
+.img-profile-block{
+    height: 16em;
+    width: 16em;
+    background-image: url('../img/jade-linda.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-bottom: 15em;
+}
+
+.user-profile-info{
+    margin-top: 8em;
+}
+
+.text-profile-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* margin-bottom: 10em; */
+}
+
+.user-name{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.line-profile-config{
+    width: 7em;
+}
+
+.user-profile-int{
+    display: flex;
+    flex-direction: row;
+}
+
+.label-content-int{
+    margin: 0;
+}
+
+.content-int{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 45px;
+    box-shadow: 1px 3px 7px rgb(167, 167, 167);
+    border-radius:10px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    margin-top: 20px;
+}
+
+.int-img{
+    height: 30px;
+}

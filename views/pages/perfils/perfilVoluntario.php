@@ -27,7 +27,7 @@
 </head>
 
 <?php
-    include_once('../../includes/navPerfil.php');
+    include_once('./../includes/navPerfil.php');
 ?>
 
 <body>
@@ -44,39 +44,43 @@
                     <i class="fa-brands fa-facebook-f social-midia-icon"></i>
                 </div>
             </div>
-            <div class="edit-profile">
-                <i class="fa-regular fa-pen-to-square social-midia-icon"></i>
-                <span>Editar perfil</span>
+            <div class="edit-profile-position">
+                <div class="edit-profile">
+                    <i class="fa-regular fa-pen-to-square social-midia-icon"></i>
+                    <span class="edit-profile-span">Editar perfil</span>
+                </div>
             </div>
         </div>
-        <img src="" alt="" class="profile-img">
+        <div class="img-profile-block">
+            <!-- <img src="<?= baseUrl('/assets/img/jade-linda.jpeg')?>" alt="Foto de perfil do usuario" class="profile-img"> -->
+        </div>
         <div class="user-profile-info">
             <div class="text-profile-block">
                 <h1 class="user-name">Maia Lilica Jade</h1>
-                <div class="line"></div>
+                <div class="line line-profile-config"></div>
             </div>
             <div class="user-profile-int">
                 <div class="label-interesse">
                     <label class="label-content-int">
-                        <input type="checkbox" class="input-interesse">
-                        <div class="int-content">
-                            <img class="img-interesse" src="<?= baseUrl('/assets/img/futebol.png')?>" alt="">
+                        <input type="checkbox" class="">
+                        <div class="content-int">
+                            <img class="int-img" src="<?= baseUrl('/assets/img/palmeira.png')?>" alt="">
                         </div>
                     </label>
                 </div>
                 <div class="label-interesse">
                     <label class="label-content-int">
-                        <input type="checkbox" class="input-interesse">
-                        <div class="int-content">
-                            <img class="img-interesse" src="<?= baseUrl('/assets/img/flamingo.png')?>" alt="">
+                        <input type="checkbox" class="">
+                        <div class="content-int">
+                            <img class="int-img" src="<?= baseUrl('/assets/img/flamingo.png')?>" alt="">
                         </div>
                     </label>
                 </div>
                 <div class="label-interesse">
                     <label class="label-content-int">
-                        <input type="checkbox" class="input-interesse">
-                        <div class="int-content">
-                            <img class="img-interesse" src="<?= baseUrl('/assets/img/lavanda.png')?>" alt="">
+                        <input type="checkbox" class="">
+                        <div class="content-int">
+                            <img class="int-img" src="<?= baseUrl('/assets/img/lavanda.png')?>" alt="">
                         </div>
                     </label>
                 </div>
@@ -96,5 +100,5 @@
 </body>
 
 <?php
-    include_once('../../includes/footer.php')
+    include_once('./../includes/footer.php')
 ?>
