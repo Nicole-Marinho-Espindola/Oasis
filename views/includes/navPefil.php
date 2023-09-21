@@ -1,13 +1,4 @@
 <?php
-    function includeURL($path = '') {
-        return sprintf(
-            "%s/%s/%s",
-            $_SERVER['DOCUMENT_ROOT'],
-            'Oasis',
-            $path
-        );
-    }
-
     include_once(includeURL('/services/helpers.php'));
 ?>
 

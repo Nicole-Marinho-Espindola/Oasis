@@ -1,4 +1,5 @@
 <?php
+
     function includeURL($path = '') {
         return sprintf(
             "%s/%s/%s",
@@ -9,6 +10,7 @@
     }
 
     include_once(includeURL('/services/helpers.php'));
+
 ?>
 
 <head>
@@ -27,7 +29,7 @@
 </head>
 
 <?php
-    include_once('./../includes/navPerfil.php');
+    include_once(includeURL('views\includes\navPefil.php'));
 ?>
 
 <body>
@@ -100,5 +102,5 @@
 </body>
 
 <?php
-    include_once('./../includes/footer.php')
+    include_once(includeURL('views/includes/footer.php'))
 ?>
