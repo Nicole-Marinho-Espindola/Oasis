@@ -9,7 +9,6 @@
         );
     }
 
-    include_once(includeURL('/config/database.php'));
     include_once(includeURL('/services/helpers.php'));
 
 ?>
@@ -20,7 +19,8 @@
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
 
-    require 'lib/vendor/autoload.php';
+    require_once '../../../config/lib/vendor/autoload.php';
+    include_once(includeURL('/config/database.php'));
 
     //pegando o id
     if (isset($_GET['cd_voluntario'])) {
@@ -43,7 +43,7 @@
         exit();
     }
 
-    if ($id->rowCount()) {
+    if ($select->rowCount()) {
 
         $mail = new PHPMailer(true);
 
@@ -61,33 +61,97 @@
 
             //Recipients
             $mail->setFrom('mairalinda@gmail.com.br', 'Maíra'); //substituir por um email de verdade
-            $mail->addAddress('nm_email', 'nm_voluntario');
+            $mail->addAddress($row['ds_email'], $row['nm_voluntario']);
 
-            $mail->isHTML(true);                                  //Set email format to HTML
-            $mail->Subject = 'Confirma o e-mail';
-            $mail->Body    = "Prezado(a) " . 'nm_voluntario' . ".<br><br>Agradecemos a sua solicitação de cadastramento 
-            em nosso site!<br><br>Para que possamos liberar o seu cadastro em nosso sistema, solicitamos a confirmação do e-mail 
-            clicanco no link abaixo: <br><br> <a href='http://localhost/celke/confirmar-email.php?token_email=$token_email'>Clique aqui</a><br><br>
-            Esta mensagem foi enviada a você pela empresa XXX.<br>Você está recebendo porque está cadastrado no banco de dados da empresa XXX.
-            Nenhum e-mail enviado pela empresa XXX tem arquivos anexados ou solicita o preenchimento de senhas e informações cadastrais.<br><br>" ;
+            $mail->isHTML(true);
+            $mail->Subject = 'Confirme seu cadastro na Plataforma Oásis';
 
-            $mail->AltBody = "Prezado(a) " . 'nm_voluntario' . ".\n\nAgradecemos a sua solicitação de cadastramento em nosso site!\n\nPara que
-            possamos liberar o seu cadastro em nosso sistema, solicitamos a confirmação do e-mail clicanco no link abaixo: \n\n 
-            http://localhost/celke/confirmar-email.php?token_email=$token_email \n\nEsta mensagem foi enviada a você pela empresa XXX.\nVocê está recebendo 
-            porque está cadastrado no banco de dados da empresa XXX. Nenhum e-mail enviado pela empresa XXX tem arquivos anexados ou solicita o 
-            preenchimento de senhas e informações cadastrais.\n\n";
+            $emailBody = '<html>
+                            <head>
+                                <style>
+                                    /* Adicione estilos de formatação aqui */
+                                    body {
+                                        font-family: Arial, sans-serif;
+                                        background-color: #f5f5f5;
+                                    }
 
+                                    .container {
+                                        max-width: 600px;
+                                        margin: 0 auto;
+                                        padding: 20px;
+                                        background-color: #ffffff;
+                                        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+                                    }
+
+                                    .header {
+                                        background-color: #4CAF50;
+                                        color: #fff;
+                                        padding: 20px;
+                                        text-align: center;
+                                    }
+
+                                    .content {
+                                        padding: 20px;
+                                    }
+
+                                    .button {
+                                        display: inline-block;
+                                        padding: 10px 20px;
+                                        background-color: #4CAF50;
+                                        color: #fff;
+                                        text-decoration: none;
+                                        border-radius: 5px;
+                                    }
+
+                                    .footer {
+                                        margin-top: 20px;
+                                        text-align: center;
+                                        color: #555;
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <div class="container">
+                                    <div class="header">
+                                        <h1>Confirme seu cadastro na Plataforma Oásis</h1>
+                                    </div>
+                                    <div class="content">
+                                    <p>Prezado(a) ' . $row['nm_voluntario'] . ',</p>
+                                    <p>Agradecemos por se cadastrar na Plataforma Oásis. Para ativar sua conta e começar a sua jornada como voluntário, por favor, confirme seu endereço de e-mail clicando no botão abaixo:</p>
+                                    <p><a class="button" href="http://localhost/oasis/views/forms/voluntarios/retornoEmail.php?token_email=' . $row['cd_token_email'] . '&cd_voluntario=' . $id . '">Confirmar E-mail</a></p>
+                                    <p>Se você não se cadastrou na Plataforma Oásis, pode ignorar esta mensagem.</p>                                    
+                                    </div>
+                                    <div class="footer">
+                                        Esta mensagem foi enviada a você pela Plataforma Oásis. © ' . date("Y") . '
+                                    </div>
+                                </div>
+                            </body>
+                            </html>';
+            $mail->Body = $emailBody;
+            $mail->AltBody = 'Prezado(a) ' . $row['nm_voluntario'] . ',\n\nAgradecemos por se cadastrar na Plataforma Oásis.
+            Para ativar sua conta e começar a sua jornada como voluntário, por favor, confirme seu endereço de e-mail 
+            clicando no link a seguir:\n\nhttp://localhost/oasis/views/forms/voluntarios/retornoEmail.php?token_email=' . $row['cd_token_email'] . '&cd_voluntario=' . $id 
+            . '\n\nSe você não se cadastrou na Plataforma Oásis, pode ignorar esta mensagem.';
             $mail->send();
 
-            $retorna = ['erro' => false, 'msg' => "<div class='alert alert-success' role='alert'>Usuário cadastrado com sucesso. Necessário acessar a caixa de e-mail para confimar o e-mail!</div>"];
+            $success = true;
 
         } catch (Exception $e) {
-            //$retorna = ['erro' => true, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Usuário não cadastrado com sucesso!</div>"];
 
-            $retorna = ['erro' => true, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Usuário não cadastrado com sucesso.</div>"];
+            $success = false;
         }
     } else {
-        $retorna = ['erro' => true, 'msg' => "<div class='alert alert-danger' role='alert'>Erro: Usuário não cadastrado com sucesso!</div>"];
+            $success = false;
+        
     }
 
-echo json_encode($retorna);
+    if ($success) {
+        $returnData = ['deu certo amigao' => true];
+    } else {
+        // Em caso de erro, você pode definir uma mensagem de erro personalizada.
+        $errorMessage = "Houve um erro ao cadastrar o usuário.";
+        $returnData = ['success' => false, 'error' => $errorMessage];
+    }
+    
+    // Saída em formato JSON.
+    echo json_encode($returnData);

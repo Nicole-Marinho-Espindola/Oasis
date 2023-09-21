@@ -38,7 +38,11 @@
                 header("Location: ../../../views/voluntarios/cadastro.php?email_repetido=true");
 
             } else {
+
                 $hashDaSenha = password_hash($senha, PASSWORD_DEFAULT);
+
+                //token do confirmar email
+                $token_email = password_hash($email . date("Y-m-d H:i:s"), PASSWORD_DEFAULT);
 
                 $stmt = $conn->prepare("INSERT INTO tb_voluntario(nm_voluntario, nm_sobrenome, dt_nascimento, ds_email, cd_senha, cd_token_email)
                                         VALUES (:nome, :sobrenome, :dt_nasc, :email, :senha, :token_email)");
@@ -48,11 +52,7 @@
                 $stmt->bindParam(':dt_nasc', $dt_nasc);
                 $stmt->bindParam(':email', $email);
                 $stmt->bindParam(':senha', $hashDaSenha);
-
-                //token do confirmar email
-                $token_email = password_hash($email. date("Y-m-d H:i:s"), PASSWORD_DEFAULT);
                 $stmt->bindParam(':token_email', $token_email, PDO::PARAM_STR);
-                
                 $stmt->execute();
 
             if (!empty($_SESSION['interesses_temporarios'])) {
@@ -73,7 +73,7 @@
             }
 
             //adicionar redirecionamento para confirmação de email
-            header("Location: ../../../views/forms/voluntarios/confirmarEmail.php");
+            header("Location: ../../../views/forms/voluntarios/confirmarEmail.php?cd_voluntario=" . $cd_voluntario);
             exit();
             }
             

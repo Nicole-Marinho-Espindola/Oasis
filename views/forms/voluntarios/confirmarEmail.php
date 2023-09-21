@@ -10,6 +10,15 @@
 
     include_once(includeURL('/services/helpers.php'))
 ?>
+
+<?php
+
+    if (isset($_GET['cd_voluntario'])) {
+    $id = filter_input(INPUT_GET, 'cd_voluntario');
+    }
+
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,6 +40,7 @@
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
         </div>
+        <form action="<?= baseUrl('/services/controllers/voluntarios/confirmarEmail_action.php') ?>" method="POST">
         <div class="section active">
             <div class="form-title">
                 <h1 class="title">Confirme seu email</h1>
@@ -47,7 +57,10 @@
                     <p class="card-email-text">Para uma maior segurança gostariamos que você confirmasse seu email,
                         não se preocupe, é rápido!</p>
                 </div>
-                <button type="button" <a href="<?= baseUrl('/services/controllers/voluntarios/confirmarEmail_action.php?cd_voluntario=' . $row['cd_voluntario']) ?>" class="btn btn-purple btn-larger">Confirmar email</button>
+                <button type="submit" class="btn btn-purple btn-larger">
+                    <a href="<?= baseUrl('/services/controllers/voluntarios/confirmarEmail_action.php?cd_voluntario=' . $id) ?>" class="btn-link">Confirmar email</a>
+                </button>
+
             </div>
         </div>
     </div>
