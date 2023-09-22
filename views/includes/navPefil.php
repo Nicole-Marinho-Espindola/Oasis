@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="<?= baseUrl('/assets/css/global.css')?>">
     <link rel="stylesheet" href="<?= baseUrl('/assets/css/navbar.css')?>">
     <link rel="stylesheet" href="<?= baseUrl('/assets/css/perfil.css')?>">
+    
     <title>Perfil voluntario | Oásis</title>
 </head>
 
@@ -23,6 +24,6 @@
         <span class="logo-nome">Oásis</span>
     </div>
     <div class="btn-block">
-        <button class="">Sair</button>
+        <button class="purple-small-btn">Sair</button>
     </div>
 </nav>

@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="<?= baseUrl('/assets/css/footer.css')?>">
 
 <div class="footer">
-    <div class="green-border"></div>
     <div class="social-midia-block">
         <div class="social-midia-footer"><i class="fa-brands fa-instagram footer-icon"></i></div>
         <div class="social-midia-footer"><i class="fa-brands fa-twitter footer-icon"></i></div>
