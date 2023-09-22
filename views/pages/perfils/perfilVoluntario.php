@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="<?= baseUrl('/assets/css/form.css')?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>Plataforma | Oásis</title>
+    <title>Perfil Voluntário | Oásis</title>
 </head>
 
 <?php
@@ -35,7 +35,7 @@
 <body>
     <div class="profile-block">
         <div class="profile-purple-block">
-            <div class="social-midia-block">
+            <div class="social-midia-profile-block">
                 <div class="social-midia">
                     <i class="fa-brands fa-instagram social-midia-icon"></i>
                 </div>
@@ -90,12 +90,16 @@
         </div>
         <div class="user-story">
             <div class="trajectory">
-                <h3 class="subtitle-profile">Minha trajetoria de projetos</h3>
-                <div class="green-small-block"><? $number ?></div>
+                <div class="head-trajectory">
+                    <h3 class="subtitle-profile">Minha trajetoria de projetos</h3>
+                    <div class="green-small-block"><? $number ?></div>
+                </div>
             </div>
             <div class="trajectory">
-                <h3 class="subtitle-profile">Minhas incrições em projetos</h3>
-                <div class="green-small-block"><? $number ?></div>
+                <div class="head-trajectory">
+                    <h3 class="subtitle-profile">Minhas incrições em projetos</h3>
+                    <div class="green-small-block"><? $number ?></div>
+                </div>
             </div>
         </div>
     </div>
