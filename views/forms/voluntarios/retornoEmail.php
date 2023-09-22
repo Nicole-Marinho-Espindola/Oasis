@@ -30,7 +30,7 @@
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             extract($row);
 
-            $stmtUpdate = $conn->prepare("UPDATE tb_voluntario SET nm_situacao = 1, cd_token_email = :token_email WHERE cd_voluntario=$id");
+            $stmtUpdate = $conn->prepare("UPDATE tb_voluntario SET cd_situacao = 1, cd_token_email = :token_email WHERE cd_voluntario=$id");
             $token_email = NULL;
             $stmtUpdate->bindParam(':token_email', $token_email, PDO::PARAM_STR);
 

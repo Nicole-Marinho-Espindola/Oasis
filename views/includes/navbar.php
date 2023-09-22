@@ -13,10 +13,22 @@
             <a href="<?= baseUrl('/views/pages/sobreNos.php') ?>" class="nav-bar-link-style"><li class="nav-li">Sobre nós</li></a>
             <a href="<?= baseUrl('/views/pages/projetos.php') ?>" class="nav-bar-link-style"><li class="nav-li">Projetos</li></a>
         </ul>
-        <div class="sign-up-block">
-            <a class="link-style-none sign-in" href="<?= baseUrl('/views/forms/voluntarios/login.php') ?>">Entrar</a>
-            <button class="btn"><a class="link-style-none" href="<?= baseUrl('/views/forms/voluntarios/cadastro.php') ?>">Cadastro</a></button>
-        </div>
+
+        <?php if(isset($_SESSION['email'])) { ?>
+
+            <div class="sign-up-block">
+                <a class="link-style-none sign-in">Olá, <?php echo $row['nome_usuario']; ?></a>
+            </div>
+
+        <?php } else{ ?>
+
+            <div class="sign-up-block">
+                <a class="link-style-none sign-in" href="<?= baseUrl('/views/forms/voluntarios/login.php') ?>">Entrar</a>
+                <button class="btn"><a class="link-style-none" href="<?= baseUrl('/views/forms/voluntarios/cadastro.php') ?>">Cadastro</a></button>
+            </div>
+
+        <?php } ?>
+
     </nav>
     <aside class="barra-lateral" >
         <ul class="menuLateral">
@@ -40,6 +52,12 @@
                 <i class="fa-solid fa-hand-holding-heart icon-color"></i>
                 <a href="" class="link-style">Doação</a>
             </li>
+            <div class="btn-block">
+                <a href="<?= baseUrl('services/controllers/auth/logout.php') ?>" class="btn">
+                    <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
+                    <span class="margin-5">Sair</span>
+                </a>
+            </div>
         </ul>
     </aside>
 

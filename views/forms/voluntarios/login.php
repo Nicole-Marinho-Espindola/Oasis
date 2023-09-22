@@ -59,7 +59,8 @@
                     <input class="checkbox" type="checkbox" id="termos" name="check">
                     <div>
                         <label for="check" class="terms-label">Lembrar de mim</label>
-                        <span>Esqueceu a senha?</span>
+                        <span><a href="alterarSenha.php">Esqueceu a senha?</a></span>
+
                     </div>
                 </div>
                 <button class="btn btn-color btn-margin btn-section-config">Entrar</button>

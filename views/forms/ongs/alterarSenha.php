@@ -47,7 +47,7 @@
                     <p class="card-email-text">Para uma maior segurança gostariamos que você confirmasse seu email,
                          não se preocupe, é rapido!</p>
                 </div>
-                <button type="button" class="btn btn-purple btn-larger">Confirmar email</button>
+                <button type="button" class="btn btn-purple btn-larger">Enviar</button>
             </div>
         </div>
     </div>
