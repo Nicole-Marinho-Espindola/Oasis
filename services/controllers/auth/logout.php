@@ -13,11 +13,11 @@
 			);
 		}
 
-		header("Location: ../views/index.php?sair_sucesso=true");
+		header("Location: ../../../index.php?sair_sucesso=true");
 		exit();
 
 	} else {
-		header("Location: ../views/index.php");
+		header("Location: ../../../index.php");
 		exit();
 
 	}

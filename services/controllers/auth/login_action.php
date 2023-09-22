@@ -5,7 +5,6 @@
     if (!empty($_POST)) {
         $email = $_POST['email'];
         $senha = $_POST['senha'];
-        $_SESSION['email'] = $_POST['email'];
 
         include_once('../../../config/database.php');
 
@@ -37,6 +36,7 @@
                 if (password_verify($senha, $hashDaSenha)) {
                     if ($emailConfirmado == 1) {
                         // Senha correta e email confirmado, continue com o processo de login
+                        $_SESSION['email'] = $_POST['email'];
                         header("Location: ../../../index.php");
                         exit();
                     } else {
