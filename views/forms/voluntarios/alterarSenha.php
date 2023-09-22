@@ -53,7 +53,7 @@
                     </div>
                     <p class="card-senha-text">Você irá receber instruções no email informado para voltar a acessar sua conta no Oásis.</p>
                 </div>
-                <button type="button" class="btn btn-purple btn-larger">Confirmar email</button>
+                <button type="button" class="btn btn-purple btn-larger">Enviar</button>
             </div>
         </div>
     </div>

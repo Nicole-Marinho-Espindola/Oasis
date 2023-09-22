@@ -9,6 +9,7 @@
     }
 
     include_once(includeURL('/services/helpers.php'));
+    include_once(includeURL('/config/autenticacao.php'));
 ?>
 
 <html>
