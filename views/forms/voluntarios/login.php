@@ -31,7 +31,7 @@
                     <i class="fa-solid fa-chevron-left"></i>
                 </a>
             </div>
-            <form class="form" action="">
+            <form class="form" action="<?= baseUrl('/services/controllers/auth/login_action.php') ?>" method="POST">
                 <div class="form-title form-title-config">
                     <h1 class="title">Entrar</h1>
                     <div class="line line-config"></div>
@@ -41,14 +41,17 @@
                     <label class="" for="">Email:</label>
                     <div class="input-block">
                         <i class="fa-regular fa-envelope" style="color: #586D48;"></i>
-                        <input class="input input-size" type="text">
+                        <input class="input input-size" type="text"
+                            id="email" name="email"  placeholder="digite seu email">
                     </div>
                 </div>
                 <div class="user-info-block">
                     <label for="">Senha:</label>
                     <div class="input-block">
                         <i class="fa-solid fa-lock" style="color: #586D48;"></i>
-                        <input class="input" type="text" name="password" placeholder="Senha" id="password" onChange="buttonToggle()">
+                        <input class="input" type="text"
+                                id="senha" name="senha"
+                            placeholder="digite sua senha" onChange="buttonToggle()">
                         <i class="fa-regular fa-eye-slash" style="color: #586D48;" id="eyePng" onClick="eyeClick()"></i>
                     </div>
                 </div>
@@ -61,7 +64,7 @@
                 </div>
                 <button class="btn btn-color btn-margin btn-section-config">Entrar</button>
             </form>
-            <span class="redirecionar-login">Novo por aqui? <a href="" class="purple-link">Cadastre-se</a></span>
+            <span class="redirecionar-login">Novo por aqui? <a href="cadastro.php" class="purple-link">Cadastre-se</a></span>
         </div>
         <div class="img-block">
             <img class="form-img" src="<?= baseUrl('/assets/img/Sign up-bro.png')?>" alt="">
