@@ -7,20 +7,23 @@
     $sobrenome = filter_input(INPUT_POST, 'sobrenomeVoluntario');
     $dt_nasc = filter_input(INPUT_POST, 'nascimentoVoluntario');
     $email = filter_input(INPUT_POST, 'emailVoluntario');
+    $situacao = filter_input(INPUT_POST, 'situacaoVoluntario');
     $interesses = $_POST['interesses'];
 
     try {
         $stmt = $conn->prepare("UPDATE tb_voluntario SET nm_voluntario = :nome,
                                                         nm_sobrenome = :sobrenome,
                                                         dt_nascimento = :dt_nasc,
-                                                        ds_email = :email
+                                                        ds_email = :email,
+                                                        cd_situacao = :situacao
                                                         WHERE cd_voluntario = :id");
 
         $stmt->execute(array(':id' => $idVoluntario,
                             ':nome' => $nome,
                             ':sobrenome' => $sobrenome,
                             ':dt_nasc' => $dt_nasc,
-                            ':email' => $email));
+                            ':email' => $email,
+                            ':situacao' => $situacao,));
 
         // Remove os interesses antigos do voluntário
         $stmtDelete = $conn->prepare("DELETE FROM tb_escolha WHERE cd_voluntario = :id");

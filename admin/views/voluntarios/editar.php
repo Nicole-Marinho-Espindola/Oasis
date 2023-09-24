@@ -44,6 +44,24 @@
         }
     }
 
+    // Recupera a situação do usuário
+    if (isset($_GET['cd_voluntario'])) {
+        $id = filter_input(INPUT_GET, 'cd_voluntario');
+    
+        try {
+            $selectSituacao = $conn->prepare('SELECT cd_situacao FROM tb_voluntario WHERE cd_voluntario = :id');
+            $selectSituacao->bindParam(':id', $id);
+            $selectSituacao->execute();
+            
+            while ($rowSituacao = $selectSituacao->fetch(PDO::FETCH_ASSOC)) {
+                $voluntario_situacao = $rowSituacao['cd_situacao'];
+            }
+
+        } catch (PDOException $e) {
+            echo "Erro ao listar situação do voluntário: " . $e->getMessage();
+        }
+    }
+
 ?>
 
 <link rel="stylesheet" href="<?= baseUrl('/assets/css/form.css') ?>">
@@ -146,6 +164,41 @@
                             </div>
                         </label>
                     </div> -->
+                    <button type="button" class="btn btn-color" onclick="passarEtapa()">Próximo</button>
+                </div>
+
+                <div class="section">
+                    <div class="user-info-block">
+                        <div class="center-itens subtitle-block">
+                            <span class="subtitle">Situação do voluntário:</span>
+                            <div class="line line-thin"></div>
+                        </div>
+                        <div class="container">
+                        <?php
+                            try {
+                                include_once('../../config/database.php');
+
+                                $selectSituacao = $conn->prepare('SELECT * FROM tb_situacao');
+                                $selectSituacao->execute();
+
+                                while ($rowSituacao = $selectSituacao->fetch()) {
+                                    $nomeSituacao = $rowSituacao['nm_situacao'];
+                                    $cdSituacao = $rowSituacao['cd_situacao'];
+                        ?>
+                                    <div class="label-interesse">
+                                        <input type="radio" name="situacaoVoluntario" value="<?= $cdSituacao ?>" id="<?= $nomeSituacao ?>" 
+                                        <?php if ($voluntario_situacao == $cdSituacao) echo 'checked'; ?>>
+                                        <label for="<?= $nomeSituacao ?>"><?= $nomeSituacao ?></label>
+                                    </div>
+                            <?php
+                                }
+                            } catch (PDOException $e) {
+                                echo "Erro ao listar situações: " . $e->getMessage();
+                            }
+                            ?>
+
+                        </div>
+                    </div>
                     <button type="submit" class="btn btn-color">Alterar</button>
                 </div>
                     

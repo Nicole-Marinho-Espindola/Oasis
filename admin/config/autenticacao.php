@@ -1,7 +1,7 @@
 <?php
 
     // Tempo máximo de inatividade (10 minutos)
-    $max_inactivity = 300; // Em segundos
+    $max_inactivity = 600; // Em segundos
 
     // Configuração de tempo da sessão
     ini_set('session.gc_maxlifetime', $max_inactivity);
