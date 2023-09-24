@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
-        'name' => 'maria/oasis',
+        'name' => 'nicol/lib',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '45c585b15b5c2153b606e1dd336e322c07955805',
+        'reference' => '729896a0630ea85dd5a9194f87a08aa24e975ef5',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -19,10 +19,10 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'maria/oasis' => array(
+        'nicol/lib' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '45c585b15b5c2153b606e1dd336e322c07955805',
+            'reference' => '729896a0630ea85dd5a9194f87a08aa24e975ef5',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
