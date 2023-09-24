@@ -58,5 +58,5 @@
         </div>
     </div>
     <div class="img-block">
-        <img class="form-img" src="<?= baseUrl('/assets/img/Sign up-bro.png')?>" alt="">
+        <img class="form-img" src="<?= baseUrl('/assets/img/Forgot password-pana.png')?>" alt="">
     </div>
