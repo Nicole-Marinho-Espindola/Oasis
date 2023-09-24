@@ -1,7 +1,7 @@
 <?php
 
     // Tempo máximo de inatividade (10 minutos)
-    $max_inactivity = 600; // Em segundos
+    $max_inactivity = 300; // Em segundos
 
     // Configuração de tempo da sessão
     ini_set('session.gc_maxlifetime', $max_inactivity);
@@ -10,7 +10,7 @@
     session_start();
 
     if (!isset($_SESSION['user'])) {
-        header("Location: ../views/index.php?acesso_negado=true");
+        header("Location: ../../views/index.php?acesso_negado=true");
         exit();
     }
 
@@ -25,7 +25,7 @@
         $usuarioAdmin = $_ENV['LOGIN_USER'];
 
         if ($_SESSION['user'] !== $usuarioAdmin) {
-            header("Location: ../views/index.php?acesso_negado=true");
+            header("Location: ../../views/index.php?acesso_negado=true");
             exit();
         }
 
@@ -45,7 +45,7 @@
                     $params["secure"], $params["httponly"]
                 );
             }
-            header("Location: ../views/index.php?sessao_expirada=true"); // Redirecione para a página de login
+            header("Location: ../../views/index.php?sessao_expirada=true"); // Redirecione para a página de login
             exit();
         }
     } catch (PDOException $e) {
