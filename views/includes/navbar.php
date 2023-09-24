@@ -52,12 +52,15 @@
                 <i class="fa-solid fa-hand-holding-heart icon-color"></i>
                 <a href="" class="link-style">Doação</a>
             </li>
+
+        <?php if(isset($_SESSION['email'])) { ?>
             <div class="btn-block">
                 <a href="<?= baseUrl('/services/controllers/auth/logout.php') ?>" class="btn">
                     <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
                     <span class="margin-5">Sair</span>
                 </a>
             </div>
+        <?php } ?>
         </ul>
     </aside>
 
