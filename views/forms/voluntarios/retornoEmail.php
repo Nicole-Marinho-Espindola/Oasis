@@ -9,52 +9,43 @@
         );
     }
 
-    include_once(includeURL('/services/helpers.php'));
-
-?>
-
-<?php
-
     include_once(includeURL('/config/database.php'));
 
     $token_email = filter_input(INPUT_GET, "token_email", FILTER_SANITIZE_STRING);
     $id = filter_input(INPUT_GET, "cd_voluntario", FILTER_SANITIZE_STRING);
 
-    if(!empty($token_email)){
+    try {
+        $conn->beginTransaction();
 
-        $stmt = $conn->prepare("SELECT cd_voluntario FROM tb_voluntario WHERE cd_token_email = :token_email LIMIT 1");
+        $stmt = $conn->prepare("SELECT v.cd_voluntario
+                                FROM tb_voluntario v
+                                JOIN tb_token_voluntario t ON v.cd_voluntario = t.cd_voluntario
+                                WHERE t.ds_token = :token_email AND t.cd_tipo_token = 1 AND t.cd_token_usado = 0 LIMIT 1");
         $stmt->bindParam(':token_email', $token_email, PDO::PARAM_STR);
         $stmt->execute();
 
-        if (($stmt) and ($stmt->rowCount() != 0)) {
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            extract($row);
-
-            $stmtUpdate = $conn->prepare("UPDATE tb_voluntario SET cd_situacao = 1, cd_token_email = :token_email WHERE cd_voluntario=$id");
-            $token_email = NULL;
+        if ($stmt->rowCount() === 1) {
+            $stmtUpdate = $conn->prepare("UPDATE tb_voluntario v
+                                        INNER JOIN tb_token_voluntario t ON v.cd_voluntario = t.cd_voluntario
+                                        SET v.cd_situacao = 1, t.cd_token_usado = 1
+                                        WHERE t.ds_token = :token_email");
             $stmtUpdate->bindParam(':token_email', $token_email, PDO::PARAM_STR);
 
-            if($stmtUpdate->execute()){
-                $success = true;
-            }else{
-                $success = false;
+            if ($stmtUpdate->execute()) {
+                $conn->commit();
+                $response = ['success' => true];
+            } else {
+                throw new Exception("Erro ao atualizar a situação do voluntário.");
             }
-
         } else {
-            $success = false;
+            throw new Exception("Token de e-mail inválido ou já utilizado.");
         }
-
-    }else{
-        $success = false;
-
+    } catch (Exception $e) {
+        $conn->rollback();
+        $response = ['success' => false, 'error' => $e->getMessage()];
     }
 
-    if ($success) {
-        $returnData = ['deu certo amigao' => true];
-    } else {
-        // Em caso de erro, você pode definir uma mensagem de erro personalizada.
-        $errorMessage = "deu merda.";
-        $returnData = ['success' => false, 'error' => $errorMessage];
-    }
-
+    header('Content-Type: application/json');
+    echo json_encode($response);
+    
 ?>
