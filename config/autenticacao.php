@@ -1,7 +1,5 @@
 <?php
 
-    include_once(includeURL('/config/database.php'));
-
     // Tempo máximo de inatividade (10 minutos)
     $max_inactivity = 600; // Em segundos
 
@@ -11,37 +9,25 @@
 
     session_start();
 
-    if (!isset($_SESSION['email'])) {
-        header("Location: ../index.php?acesso_negado=true");
+    if (!isset($_SESSION['user'])) {
+        header("Location: ../views/index.php?acesso_negado=true");
         exit();
     }
 
     try {
 
-        $email = $_SESSION['email'];
+        require_once 'lib/vendor/autoload.php';
 
-        $sql = "SELECT 
-            v.nm_voluntario AS nome_usuario,
-            'Voluntário' AS tipo_usuario,
-            v.nm_imagem AS imagem_usuario
-                FROM tb_voluntario v
-                WHERE v.ds_email = :email
-                UNION ALL
-                SELECT
-                    o.nm_ong AS nome_usuario,
-                    'ONG' AS tipo_usuario,
-                    o.nm_imagem AS imagem_usuario
-                FROM tb_ong o
-                WHERE o.ds_email = :email";
+        $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+        $dotenv->load();
 
+        // Definindo o usuário
+        $usuarioAdmin = $_ENV['LOGIN_USER'];
 
-        $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':email', $email);
-        $stmt->execute();
-
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        //agora definindo a expiração de sessão
+        if ($_SESSION['user'] !== $usuarioAdmin) {
+            header("Location: ../views/index.php?acesso_negado=true");
+            exit();
+        }
 
         // vendo o tempo da última atividade em cada página
         $_SESSION['last_activity'] = time();
@@ -59,7 +45,7 @@
                     $params["secure"], $params["httponly"]
                 );
             }
-            header("Location: ../index.php?sessao_expirada=true"); // Redirecione para a página de login
+            header("Location: ../views/index.php?sessao_expirada=true"); // Redirecione para a página de login
             exit();
         }
     } catch (PDOException $e) {

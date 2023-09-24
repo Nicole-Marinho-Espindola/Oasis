@@ -1,18 +1,17 @@
 {
-    "name": "maria/oasis",
+    "name": "nicol/lib",
     "autoload": {
         "psr-4": {
-            "Maria\\Oasis\\": "src/"
+            "Nicol\\Lib\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "mairalouise",
-            "email": "mairalouisef23@gmail.com"
+            "name": "Nicole Marinho Espíndola",
+            "email": "nicole.m.espindola@gmail.com"
         }
     ],
     "require": {
-        "vlucas/phpdotenv": "^5.5",
-        "phpmailer/phpmailer": "^6.8"
+        "vlucas/phpdotenv": "^5.5"
     }
 }
