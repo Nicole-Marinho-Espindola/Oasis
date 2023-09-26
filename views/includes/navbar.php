@@ -18,6 +18,7 @@
 
             <div class="sign-up-block">
                 <a class="link-style-none sign-in">Olá, <?php echo $row['nome_usuario']; ?></a>
+                <i class="fa-regular fa-user"></i>
             </div>
 
         <?php } else{ ?>
