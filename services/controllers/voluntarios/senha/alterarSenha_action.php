@@ -34,6 +34,7 @@
                 // Gerando token
                 $token = bin2hex(random_bytes(32));
                 $tipoToken = 2; // 2 é para redefinição de senha
+                date_default_timezone_set('America/Sao_Paulo');
                 $dt_pedido = date('Y-m-d H:i:s');
                 $dt_expiracao = date('Y-m-d H:i:s', strtotime('+10 minutes')); // 10 minutos a partir do pedido
 

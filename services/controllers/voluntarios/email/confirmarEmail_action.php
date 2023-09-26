@@ -1,4 +1,5 @@
 <?php
+
     session_start();
 
     function includeURL($path = '') {
@@ -20,7 +21,6 @@
     require_once includeURL('/config/database.php');
 
     if (isset($_SESSION['cd_voluntario'])) {
-        
         $cd_voluntario = $_SESSION['cd_voluntario'];
 
         try {
@@ -145,4 +145,5 @@
     }
 
     echo json_encode($returnData);
+
 ?>
