@@ -22,6 +22,7 @@
         $senha = $_POST['senhaVoluntario'];
         $interesses = $_POST['interesses'];
         $_SESSION['interesses_temporarios'] = $interesses;
+        
 
         try {
             $stmt_verificar = $conn->prepare("SELECT ds_email FROM tb_voluntario WHERE ds_email = :email");
@@ -37,7 +38,6 @@
 
             $stmt = $conn->prepare("INSERT INTO tb_voluntario(nm_voluntario, nm_sobrenome, dt_nascimento, ds_email, cd_senha)
                                     VALUES (:nome, :sobrenome, :dt_nasc, :email, :senha)");
-
             $stmt->bindParam(':nome', $nome);
             $stmt->bindParam(':sobrenome', $sobrenome);
             $stmt->bindParam(':dt_nasc', $dt_nasc);
@@ -47,6 +47,7 @@
 
             // Lida com o token de confirmação de e-mail
             $cd_voluntario = $conn->lastInsertId();
+            $_SESSION['cd_voluntario'] = $cd_voluntario;
             $token = bin2hex(random_bytes(32));
             $tipoToken = 1; // 1 é confirmação de e-mail
             $dt_pedido = date('Y-m-d H:i:s');
@@ -74,7 +75,7 @@
             }
 
             // vai para a confirmação de e-mail
-            header("Location: ../../../views/forms/voluntarios/confirmarEmail.php?cd_voluntario=" . $cd_voluntario);
+            header("Location: ../../../views/forms/voluntarios/confirmarEmail.php");
             exit();
         } catch (PDOException $e) {
             echo "Erro ao cadastrar: " . $e->getMessage();

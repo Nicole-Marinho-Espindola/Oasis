@@ -31,6 +31,7 @@
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
         </div>
+        <form action="<?= baseUrl('/services/controllers/voluntarios/senha/alterarSenha_action.php') ?>" method="POST">
         <div class="section active">
             <div class="form-title">
                 <h1 class="title">Alterar senha</h1>
@@ -47,13 +48,14 @@
                         <label class="label-style" for="">Email
                             <div class="input-block input-block-size">
                                 <i class="fa-regular fa-envelope icon-green"></i>
-                                <input class="input input-size" type="text">
+                                <input class="input input-size" type="text"
+                                    id="email" name="email">
                             </div>
                         </label>
                     </div>
                     <p class="card-senha-text">Você irá receber instruções no email informado para voltar a acessar sua conta no Oásis.</p>
                 </div>
-                <button type="button" class="btn btn-purple btn-larger">Enviar</button>
+                <button type="submit" class="btn btn-purple btn-larger">Enviar</button>
             </div>
         </div>
     </div>
