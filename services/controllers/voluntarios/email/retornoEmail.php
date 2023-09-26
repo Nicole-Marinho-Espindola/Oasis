@@ -12,7 +12,6 @@
     include_once(includeURL('/config/database.php'));
 
     $token_email = filter_input(INPUT_GET, "token_email", FILTER_SANITIZE_STRING);
-    $id = filter_input(INPUT_GET, "cd_voluntario", FILTER_SANITIZE_STRING);
 
     try {
         $conn->beginTransaction();

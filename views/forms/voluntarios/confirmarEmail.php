@@ -40,7 +40,7 @@
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
         </div>
-        <form action="<?= baseUrl('/services/controllers/voluntarios/confirmarEmail_action.php') ?>" method="POST">
+        <form action="<?= baseUrl('/services/controllers/voluntarios/email/confirmarEmail_action.php') ?>" method="POST">
         <div class="section active">
             <div class="form-title">
                 <h1 class="title">Confirme seu email</h1>
@@ -58,7 +58,7 @@
                         não se preocupe, é rápido!</p>
                 </div>
                 <button type="submit" class="btn btn-purple btn-larger">
-                    <a href="<?= baseUrl('/services/controllers/voluntarios/confirmarEmail_action.php?cd_voluntario=' . $id) ?>" class="btn-link">Confirmar email</a>
+                    <a class="btn-link">Confirmar email</a>
                 </button>
 
             </div>

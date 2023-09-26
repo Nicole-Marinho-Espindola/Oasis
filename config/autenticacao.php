@@ -17,14 +17,12 @@
 
             $sql = "SELECT 
                 v.nm_voluntario AS nome_usuario,
-                'Voluntário' AS tipo_usuario,
                 v.nm_imagem AS imagem_usuario
                 FROM tb_voluntario v
                 WHERE v.ds_email = :email
                 UNION ALL
                 SELECT
                     o.nm_ong AS nome_usuario,
-                    'ONG' AS tipo_usuario,
                     o.nm_imagem AS imagem_usuario
                 FROM tb_ong o
                 WHERE o.ds_email = :email";
