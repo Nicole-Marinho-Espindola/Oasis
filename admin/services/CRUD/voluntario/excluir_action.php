@@ -6,6 +6,10 @@
 
     try {
         
+        $delete_situacao = $conn->prepare("DELETE FROM tb_token_voluntario WHERE cd_voluntario = :id");
+        $delete_situacao->bindValue(':id', $id);
+        $delete_situacao->execute();
+
         $delete_associacao = $conn->prepare("DELETE FROM tb_escolha WHERE cd_voluntario = :id");
         $delete_associacao->bindValue(':id', $id);
         $delete_associacao->execute();

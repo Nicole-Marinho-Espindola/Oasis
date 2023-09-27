@@ -3,6 +3,7 @@
     include_once('../../config/database.php');
     include_once('../../config/autenticacao.php');
     include_once('search.php');
+    include_once ('../../services/alerts.php');
 ?>
 
     <div class="content">
@@ -29,28 +30,6 @@
             </tr>
         </thead>
         <tbody class="body-table" id="searchResults">
-
-        <script src="<?= baseUrl('/assets/js/alertSweet.js') ?>"></script>
-
-        <script>
-
-            <?php
-            if (isset($_GET['cadastro_sucesso']) && $_GET['cadastro_sucesso'] == 'true') {
-                echo "alert();";
-            } elseif (isset($_GET['email_repetido']) && $_GET['email_repetido'] == 'true') {
-                echo "alertEmail();";
-            }
-
-            if (isset($_GET['editar_sucesso']) && $_GET['editar_sucesso'] == 'true') {
-                echo "alertAlterar();";
-            }
-
-            if (isset($_GET['excluir_sucesso']) && $_GET['excluir_sucesso'] == 'true') {
-                echo "alertExcluir();";
-            }
-            ?>
-
-        </script>
 
             <?php
 
