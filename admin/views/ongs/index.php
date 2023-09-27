@@ -3,6 +3,7 @@
     include_once('../../config/database.php');
     include_once('../../config/autenticacao.php');
     include_once('search.php');
+    include_once ('../../services/alerts.php');
 ?>
 
     <div class="content">
@@ -20,35 +21,13 @@
             <th>Nome</th>
             <th>Razão Social</th>
             <th>CNPJ</th>
-            <!-- <th>Situação</th> -->
             <th>Email</th>
             <th>Celular</th>
+            <th>Situação</th>
             <th></th>
             <th></th>
         </thead>
         <tbody id="searchResults">
-
-        <script src="<?= baseUrl('/assets/js/alertSweet.js') ?>"></script>
-
-        <script>
-
-            <?php
-            if (isset($_GET['cadastro_sucesso']) && $_GET['cadastro_sucesso'] == 'true') {
-                echo "alert();";
-            } elseif (isset($_GET['email_repetido']) && $_GET['email_repetido'] == 'true') {
-                echo "alertEmail();";
-            }
-
-            if (isset($_GET['editar_sucesso']) && $_GET['editar_sucesso'] == 'true') {
-                echo "alertAlterar();";
-            }
-
-            if (isset($_GET['excluir_sucesso']) && $_GET['excluir_sucesso'] == 'true') {
-                echo "alertExcluir();";
-            }
-            ?>
-
-        </script>
 
             <?php
 
@@ -62,7 +41,18 @@
                 
                 try
                 {
-                    $select = $conn->prepare('SELECT * FROM tb_ong LIMIT :inicio, :qnt_result_pg');
+                    $select = $conn->prepare('SELECT
+                                o.cd_ong,
+                                o.nm_ong,
+                                o.nm_razao,
+                                o.cd_cnpj,
+                                s.nm_situacao AS situacao,
+                                o.ds_email,
+                                o.cd_celular_ong
+                            FROM tb_ong o
+                            LEFT JOIN tb_situacao s ON o.cd_situacao = s.cd_situacao
+                            GROUP BY o.cd_ong
+                            LIMIT :inicio, :qnt_result_pg');
                     $select->bindValue(':inicio', $inicio, PDO::PARAM_INT);
                     $select->bindValue(':qnt_result_pg', $qnt_result_pg, PDO::PARAM_INT);
                     $select->execute();
@@ -77,7 +67,7 @@
                             <td class="content-table"><?= $row['cd_cnpj'] ?></td>
                             <td class="content-table"><?= $row['ds_email'] ?></td>
                             <td class="content-table"><?= $row['cd_celular_ong'] ?></td>
-                            <!-- <td class="content-table"><?= $row['situacao'] ?></td>-->
+                            <td class="content-table"><?= $row['situacao'] ?></td>
                             <td><a href="editar.php?cd_ong=<?= $row['cd_ong'] ?>"><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></a></td>
                             <td><a href="excluir.php?cd_ong=<?= $row['cd_ong'] ?>"><i class="fa-solid fa-trash" style="color: #1f513b;"></i></a></td>
                         </tr>

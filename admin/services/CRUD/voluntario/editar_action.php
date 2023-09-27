@@ -31,7 +31,8 @@
         $stmtDelete->execute();
 
         // Insere os novos interesses do voluntário
-        $stmtInsert = $conn->prepare("INSERT INTO tb_escolha(cd_voluntario, cd_interesse) VALUES (:idVoluntario, :idInteresse)");
+        $stmtInsert = $conn->prepare("INSERT INTO tb_escolha(cd_voluntario, cd_interesse) 
+                            VALUES (:idVoluntario, :idInteresse)");
 
         foreach ($interesses as $idInteresse) {
             $stmtInsert->bindParam(':idVoluntario', $idVoluntario);

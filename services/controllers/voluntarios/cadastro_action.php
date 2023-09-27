@@ -50,6 +50,7 @@
             $_SESSION['cd_voluntario'] = $cd_voluntario;
             $token = bin2hex(random_bytes(32));
             $tipoToken = 1; // 1 é confirmação de e-mail
+            date_default_timezone_set('America/Sao_Paulo');
             $dt_pedido = date('Y-m-d H:i:s');
             $dt_expiracao = date('Y-m-d H:i:s', strtotime('+1 day')); // 1 dia a partir do pedido
 

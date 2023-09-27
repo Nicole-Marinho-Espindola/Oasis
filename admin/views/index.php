@@ -17,29 +17,9 @@
 </head>
 <body>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
-    <script src="../assets/js/alertSweet.js"></script>
-
-    <script>
-
         <?php
-
-            if (isset($_GET['acesso_negado']) && $_GET['acesso_negado'] == 'true') {
-                echo "alertAcesso();";
-            }
-            if (isset($_GET['sair_sucesso']) && $_GET['sair_sucesso'] == 'true') {
-                echo "alertLogout();";
-            }
-            if (isset($_GET['login_errado']) && $_GET['login_errado'] == 'true') {
-                echo "alertLogin();";
-            }
-            if (isset($_GET['sessao_expirada']) && $_GET['sessao_expirada'] == 'true') {
-                echo "alertSessao();";
-            }
-
+            include_once ('../services/alerts.php');
         ?>
-
-    </script>
 
 <div class="main-content">
     <div class="form-block">

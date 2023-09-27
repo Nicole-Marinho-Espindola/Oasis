@@ -36,22 +36,35 @@
                 $stmt->bindParam(':senha', $hashDaSenha);
                 $stmt->execute();
 
-            if (!empty($_SESSION['interesses_temporarios'])) {
-
+                 // Lida com o token de confirmação de e-mail
                 $cd_voluntario = $conn->lastInsertId();
+                $_SESSION['cd_voluntario'] = $cd_voluntario;
+                $token = bin2hex(random_bytes(32));
+                $tipoToken = 1; // 1 é confirmação de e-mail
+                date_default_timezone_set('America/Sao_Paulo');
+                $dt_pedido = date('Y-m-d H:i:s');
+                $dt_expiracao = date('Y-m-d H:i:s', strtotime('+1 day')); // 1 dia a partir do pedido
 
-                foreach ($_SESSION['interesses_temporarios'] as $interesse){
+                $stmtToken = $conn->prepare("INSERT INTO tb_token_voluntario (cd_tipo_token, cd_voluntario, ds_token, dt_pedido, dt_expiracao) 
+                                VALUES (:tipo_token, :voluntario, :token, :dt_pedido, :dt_expiracao)");
+                $stmtToken->bindParam(':tipo_token', $tipoToken);
+                $stmtToken->bindParam(':voluntario', $cd_voluntario);
+                $stmtToken->bindParam(':token', $token);
+                $stmtToken->bindParam(':dt_pedido', $dt_pedido);
+                $stmtToken->bindParam(':dt_expiracao', $dt_expiracao);
+                $stmtToken->execute();
 
-                    $stmt_associacao = $conn->prepare("INSERT INTO tb_escolha(cd_voluntario, cd_interesse)
-                                                        VALUES (:voluntario, :interesse)");
-
-                    $stmt_associacao->bindParam(':voluntario', $cd_voluntario);
-                    $stmt_associacao->bindParam(':interesse', $interesse);
-                    $stmt_associacao->execute();
-                }
-
-                unset($_SESSION['interesses_temporarios']);
+           // Lida com os interesses
+            if (!empty($_SESSION['interesses_temporarios'])) {
+            foreach ($_SESSION['interesses_temporarios'] as $interesse) {
+                $stmt_associacao = $conn->prepare("INSERT INTO tb_escolha(cd_voluntario, cd_interesse)
+                                                VALUES (:voluntario, :interesse)");
+                $stmt_associacao->bindParam(':voluntario', $cd_voluntario);
+                $stmt_associacao->bindParam(':interesse', $interesse);
+                $stmt_associacao->execute();
             }
+            unset($_SESSION['interesses_temporarios']);
+        }
 
             header("Location: ../../../views/voluntarios/index.php?cadastro_sucesso=true");
             exit();
@@ -60,7 +73,6 @@
         }catch (PDOException $e) {
             echo "Erro ao cadastrar: " . $e->getMessage();
         }
-
 
         // Feche a conexão com o banco de dados
         $conn = null;
