@@ -17,8 +17,8 @@
         <?php if(isset($_SESSION['email'])) { ?>
 
             <div class="sign-up-block">
-                <a class="link-style-none sign-in">Olá, <?php echo $row['nome_usuario']; ?></a>
-                <i class="fa-regular fa-user"></i>
+                <a class="link-style-none sign-in-on">Olá, <?php echo $row['nome_usuario']; ?></a>
+                <a href="<?= baseUrl('/views/pages/perfils/perfilVoluntario.php') ?>"><i class="fa-regular fa-user user"></i></a>
             </div>
 
         <?php } else{ ?>
@@ -56,7 +56,7 @@
 
         <?php if(isset($_SESSION['email'])) { ?>
 
-            <div class="btn-block">
+            <div class="nav-bar-btn-block">
                 <a href="<?= baseUrl('/services/controllers/auth/logout.php') ?>" class="btn">
                     <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
                     <span class="margin-5">Sair</span>

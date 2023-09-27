@@ -442,6 +442,10 @@
     width: 23em;
 }
 
+.forgot-password{
+    margin-left: 5em;
+}
+
 @media screen and (max-width:768px){
 
     .main-content{
