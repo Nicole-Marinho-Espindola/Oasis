@@ -21,9 +21,9 @@
             <th>Nome</th>
             <th>Razão Social</th>
             <th>CNPJ</th>
-            <th>Situação</th>
             <th>Email</th>
             <th>Celular</th>
+            <th>Situação</th>
             <th></th>
             <th></th>
         </thead>
