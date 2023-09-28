@@ -54,7 +54,7 @@
             </div>
         </div>
         <div class="img-profile-block">
-            <!-- <img src="<?= baseUrl('/assets/img/jade-linda.jpeg')?>" alt="Foto de perfil do usuario" class="profile-img"> -->
+            <img src="<?= baseUrl('/assets/img/jade-linda.jpeg')?>" alt="Foto de perfil do usuario">
         </div>
         <div class="user-profile-info">
             <div class="text-profile-block">

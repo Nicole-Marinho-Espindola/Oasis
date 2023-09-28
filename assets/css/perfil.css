@@ -63,17 +63,37 @@
     font-size: 12px;
 }
 
+.img-profile-block-ong{
+    height: 16em;
+    width: 16em;
+    border-radius: 50%;
+    position: absolute;
+    margin-bottom: 33em;
+    overflow: hidden;
+}
+
+.img-profile-block-ong > img{
+    height: 16em;
+    width: 16em;
+    object-fit: cover;
+    margin: 0;
+}
+
 .img-profile-block{
     height: 16em;
     width: 16em;
-    background-image: url('../img/jade-linda.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
     position: absolute;
     margin-bottom: 40em;
+    overflow: hidden;
+}
+
+.img-profile-block > img{
+    height: 16em;
+    width: 16em;
+    object-fit: cover;
 }
 
 .user-profile-info{
@@ -232,18 +252,43 @@
     .edit-profile-span{
         display: none;
     }
+
+    .img-profile-block-ong{
+        height: 16em;
+        width: 16em;
+        border-radius: 50%;
+        position: absolute;
+        margin-bottom: 60em;
+        overflow: hidden;
+    }
+
+    .img-profile-block-ong > img{
+        height: 16em;
+        width: 16em;
+        object-fit: cover;
+        margin: 0;
+    }
     
     .img-profile-block{
         height: 16em;
         width: 16em;
-        background-image: url('../img/jade-linda.jpeg');
-        background-repeat: no-repeat;
-        background-size: cover;
         border-radius: 50%;
-        justify-content: center;
-        align-items: center;
         position: absolute;
         margin-bottom: 65em;
+        overflow: hidden;
+    }
+
+    .img-profile-block > img{
+        height: 16em;
+        width: 16em;
+        object-fit: cover;
+        margin: 0;
+    }
+
+    .profile-img{
+        height: 16em;
+        width: 16em;
+        position: absolute;
     }
     
     .user-profile-info{
