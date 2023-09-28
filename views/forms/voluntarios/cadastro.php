@@ -130,7 +130,7 @@
                     <div class="user-info-block">
                         <label class="label-style" for="">Senha
                             <div class="input-block">
-                                <i class="fa-solid fa-lock"></i>
+                                <i class="fa-solid fa-lock icon-green"></i>
                                 <input class="input" type="password"
                                 id="senhaVoluntario" name="senhaVoluntario" required>
                                 <i class="fa-regular fa-eye-slash icon-green"></i>
