@@ -8,7 +8,10 @@
         );
     }
 
-    include_once(includeURL('/services/helpers.php'))
+    include_once(includeURL('/services/helpers.php'));
+
+    $token_senha = filter_input(INPUT_GET, 'token_senha', FILTER_DEFAULT);
+
 ?>
 <head>
     <meta charset="UTF-8">
@@ -31,7 +34,7 @@
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
         </div>
-        <form action="<?= baseUrl('/services/controllers/voluntarios/senha/alterarSenha_action.php') ?>" method="POST">
+        <form action="<?= baseUrl('/services/controllers/voluntarios/senha/atualizarSenha_action.php') ?>" method="POST">
         <div class="section active">
             <div class="form-title">
                 <h1 class="title">Atualizar senha</h1>
@@ -49,14 +52,15 @@
                             <div class="input-block input-block-size">
                                 <i class="fa-regular fa-envelope icon-green"></i>
                                 <input class="input input-size" type="text"
-                                    id="email" name="email">
+                                    id="senha" name="senha">
                             </div>
                         </label>
                         <label class="label-style" for="">Confirmar senha
                             <div class="input-block input-block-size">
                                 <i class="fa-regular fa-envelope icon-green"></i>
                                 <input class="input input-size" type="text"
-                                    id="email" name="email">
+                                    id="confirmar_senha" name="confirmar_senha">
+                                <input type="hidden" name="token_senha" value="<?= $token_senha ?>">
                             </div>
                         </label>
                     </div>

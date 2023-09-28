@@ -11,14 +11,6 @@
     include_once(includeURL('/services/helpers.php'))
 ?>
 
-<?php
-
-    if (isset($_GET['cd_voluntario'])) {
-    $id = filter_input(INPUT_GET, 'cd_voluntario');
-    }
-
-?>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

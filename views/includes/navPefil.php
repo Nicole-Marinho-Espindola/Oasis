@@ -25,6 +25,7 @@
         <span class="logo-nome">Oásis</span>
     </div>
     <div class="btn-block">
-        <button class="purple-small-btn">Sair</button>
+        <a href="<?= baseUrl('/services/controllers/auth/logout.php') ?>" class="purple-small-btn">Sair</a>
     </div>
+
 </nav>

@@ -1,8 +1,8 @@
 <?php
 
     // Configuração de tempo da sessão
-    ini_set('session.gc_maxlifetime', 600); // Em segundos
-    ini_set('session.cookie_lifetime', 600); // Em segundos
+    ini_set('session.gc_maxlifetime', 6000); // Em segundos
+    ini_set('session.cookie_lifetime', 6000); // Em segundos
 
     session_start();
 
