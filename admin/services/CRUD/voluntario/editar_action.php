@@ -12,8 +12,10 @@
 
     try {
 
-        $stmt_verificar = $conn->prepare("SELECT ds_email FROM tb_voluntario WHERE ds_email = :email");
+        $stmt_verificar = $conn->prepare("SELECT cd_voluntario FROM tb_voluntario WHERE ds_email = :email
+        AND cd_voluntario <> :idVoluntario");
         $stmt_verificar->bindParam(':email', $email);
+        $stmt_verificar->bindParam(':idVoluntario', $idVoluntario);
         $stmt_verificar->execute();
 
             if ($stmt_verificar->rowCount() > 0) {

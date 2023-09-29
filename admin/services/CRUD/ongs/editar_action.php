@@ -9,8 +9,10 @@
     $situacao = filter_input(INPUT_POST, 'situacaoOng');
 
     try {
-        $stmt_verificar = $conn->prepare("SELECT ds_email FROM tb_ong WHERE ds_email = :email");
+        $stmt_verificar = $conn->prepare("SELECT cd_ong FROM tb_ong WHERE ds_email = :email
+        AND cd_ong <> :idOng");
         $stmt_verificar->bindParam(':email', $email);
+        $stmt_verificar->bindParam(':idOng', $id);  
         $stmt_verificar->execute();
 
             if ($stmt_verificar->rowCount() > 0) {
