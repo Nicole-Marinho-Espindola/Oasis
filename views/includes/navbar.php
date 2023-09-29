@@ -51,7 +51,7 @@
             </li>
             <li class="list-style">
                 <i class="fa-solid fa-hand-holding-heart icon-color"></i>
-                <a href="" class="link-style">Doação</a>
+                <a href="<?= baseUrl('/views/pages/doe.php') ?>" class="link-style">Doação</a>
             </li>
 
         <?php if(isset($_SESSION['email'])) { ?>
