@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+.donate-main-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-title-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5em;
+}
+
+.purple-title{
+    color: #A173BD;
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+}
+
+.dark-green-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80em;
+    height: 33em;
+    position: relative;
+    border-radius: 70px;
+    background-color: #516442;
+    margin-top: 10em;
+}
+
+.donate-img{
+    height: 33em;
+    position: absolute;
+    margin-bottom: 30em;
+}
+
+.donate-span{
+    color: #fff;
+    font-weight: bolder;
+    font-size: 27px;
+    width: 27em;
+    text-align: center;
+    margin-top: 7em;
+}
+
+.donate-btn-block{
+    margin-top: 3em;
+}
+
+.purple-btn{
+    border: none;
+    color: #402954;
+    background-color: #BBA1D4;
+    font-weight: bolder;
+    border-radius: 10px;
+    padding: 15px;
+    width: 10em;
+    box-shadow: 1px 1px 7px #746c7c;
+    margin: 10px;
+}
+
+.green-btn{
+    border: none;
+    color: #334228;
+    background-color: #D8D8D8;
+    font-weight: bolder;
+    border-radius: 10px;
+    padding: 15px;
+    width: 10em;
+    box-shadow: 1px 1px 7px #6f7c6c;
+    margin: 10px;
+}
+
+.activity-block{
+    margin-top: 7em;
+}
+
+.activity-title-block{
+    margin-bottom: 3em;
+}
+
+.bold-title{
+    font-weight: bolder;
+}
+
+.line{
+    background-color: #A173BD;
+}
+
+.activity{
+    margin-top: 6em;
+}
+
+.activity-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.donate-icon{
+    font-size: 35px;
+    margin-right:15px ;
+}
+
+.user-donate-config{
+    margin-right: 47em;
+}
+
+.user-name{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.purple-span-donate{
+    color: #A173BD;
+    font-size: 15px;
+}
+
+.activity-child-content{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.tiny-line{
+    width: 65em;
+    height: 1px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    margin: 20px;
+}
