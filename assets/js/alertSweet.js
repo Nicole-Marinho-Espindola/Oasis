@@ -154,3 +154,41 @@ function alertSessao(){
       `
     })
 }
+
+function alertEmailConfirm(){
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title:'Email confirmado com sucesso!',
+    text: 'tudo certo por aqui...',
+    showConfirmButton: false,
+  })
+}
+
+function AlertEmailFail(){
+  Swal.fire({
+    icon: 'error',
+    title: 'Falha ao enviar o email',
+    text: 'Algo deu errado, tente novamente!',
+    showConfirmButton: false,
+  })
+}
+
+function alertSenhaConfirm(){
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title:'Senha alterada com sucesso!',
+    text: 'tudo certo por aqui...',
+    showConfirmButton: false,
+  })
+}
+
+function AlertEmailFail(){
+  Swal.fire({
+    icon: 'error',
+    title: 'Falha ao alterar a senha',
+    text: 'Algo deu errado, tente novamente!',
+    showConfirmButton: false,
+  })
+}

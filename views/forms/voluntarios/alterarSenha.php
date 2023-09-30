@@ -55,10 +55,12 @@
                     </div>
                     <p class="card-senha-text">Você irá receber instruções no email informado para voltar a acessar sua conta no Oásis.</p>
                 </div>
-                <button type="submit" class="btn btn-purple btn-larger">Enviar</button>
+                <button type="submit" onclick="alertEmailConfirm()" class="btn btn-purple btn-larger">Enviar</button>
             </div>
         </div>
     </div>
     <div class="img-block">
         <img class="form-img" src="<?= baseUrl('/assets/img/Forgot password-pana.png')?>" alt="">
     </div>
+
+<script src="<?= baseUrl('/assets/js/alertSweet.js')?>"></script>
