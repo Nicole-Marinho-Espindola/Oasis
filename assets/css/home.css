@@ -206,7 +206,7 @@
     grid-template-columns: 1fr 1fr;
     background-color: #fff;
     width: 70%;
-    padding: 5em;
+    padding: 3em;
     height: 37em;
     border-radius: 10px;
 }
@@ -222,7 +222,7 @@
 
 .our-partners-title{
     font-weight: bold;
-    font-size: 35px;
+    font-size: 28px;
 }
 
 .our-partners-description{

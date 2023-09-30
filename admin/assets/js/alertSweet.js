@@ -17,7 +17,7 @@ function alert(){
 
 function alertEmail(){
   Swal.fire({
-      title: 'Email repetido',
+      title: 'Email já cadastrado',
       text:'reveja seu cadastro...',
       width: 600,
       padding: '3em',

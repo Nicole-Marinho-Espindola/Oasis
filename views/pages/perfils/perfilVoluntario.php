@@ -39,7 +39,7 @@
 
         $email = $_SESSION['email'];
 
-        $sql = "SELECT 
+        $sql = "SELECT
                     v.cd_voluntario,
                     v.nm_voluntario,
                     v.nm_sobrenome,

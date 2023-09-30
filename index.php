@@ -35,37 +35,42 @@
         <div class="timeline-items">
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                <div class="timeline-card-title icon-position"><i class="fa-solid fa-paste icon-timeline"></i>Inscrições simples </div>
+                <div class="timeline-card-title icon-position"><i class="fa-solid fa-paste icon-timeline"></i>Cadastro Descomplicado</div>
                 <div class="timeline-content">
-                    <p>Comece rapidamente sua jornada de voluntariado com um processo de inscrição fácil e intuitivo.</p>
+                    <p>Faça parte da comunidade Oásis e comece rapidamente sua jornada de voluntariado
+                        com um processo de inscrição fácil e intuitivo.
+                    </p>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                <div class="timeline-card-title align-right">Conexão direta<i class="fa-solid fa-handshake-angle icon-timeline"></i></div>
+                <div class="timeline-card-title align-right">Conexão Direta<i class="fa-solid fa-handshake-angle icon-timeline"></i></div>
                 <div class="timeline-content">
-                    <p>Se conecte com os projetos que mais se encaixam em seus gostos, faça parte dessa incrível jornada.</p>
+                    <p>Se conecte diretamente com organizações e voluntários que compartilham sua paixão pelo meio ambiente. </p>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                <div class="timeline-card-title icon-position"><i class="fa-solid fa-users-viewfinder icon-timeline"></i>Explorar oportunidades</div>
+                <div class="timeline-card-title icon-position"><i class="fa-solid fa-users-viewfinder icon-timeline"></i>Descubra Oportunidades Únicas</div>
                 <div class="timeline-content">
-                    <p>Explore os diferentes projetos que nossas ONGs cadastradas tem a oferecer.</p>
+                    <p>Explore oportunidades de voluntariado que refletem seus interesses e causas.
+                        Na Oásis, a descoberta de projetos significativos está ao seu alcance.</p>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-card-title align-right">Inovação social<i class="fa-regular fa-lightbulb icon-timeline"></i></div>
                 <div class="timeline-content">
-                    <p>Participe dos projetos e conheça pessoas que gostam de ajudar o meio ambiente assim como você.</p>
+                    <p>Seja parte da inovação social. Na Oásis, estamos redefinindo o voluntariado ambiental,
+                        incentivando novas formas de agir em prol do meio ambiente.</p>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                <div class="timeline-card-title icon-position"><i class="fa-regular fa-heart icon-timeline"></i>Comece agora</div>
+                <div class="timeline-card-title icon-position"><i class="fa-regular fa-heart icon-timeline"></i>Simplicidade com Propósito</div>
                 <div class="timeline-content">
-                    <p>Não perca tempo e vá agora conferir as oportunidades disponíveis!.</p>
+                    <p>A simplicidade da Oásis esconde um propósito grandioso. Facilitamos para você se envolver
+                        em ações que impactam positivamente o meio ambiente.</p>
                 </div>
             </div>
         </div>
@@ -75,13 +80,16 @@
         <div class="partners-block active-display">
             <div class="our-partners-text-block">
                 <div class="our-partners-title-block">
-                    <h1 class="our-partners-title">Conheça algumas ONG’S parceiras</h1>
+                    <h1 class="our-partners-title">Descubra nossas colaborações: Parcerias que transformam!</h1>
                     <div class="line"></div>
                 </div>
                 <div class="our-partners-description">
-                    <h1 class="description-title">Formiguinhas</h1>
+                    <h1 class="description-title">Formiguinhas da Praia</h1>
                     <p class="description-text">
-                    Esta ONG tem como objetivo combater a fome e promover a inclusão social por meio de projetos que proporcionam alimentação, educação..
+                    Conheça o Grupo Formiguinhas, um grupo voluntário movido pelo propósito de promover o bem-estar e
+                    a sustentabilidade em nossa comunidade em Praia Grande, SP. Nossa paixão nos leva a percorrer as praias, 
+                    realizando caminhadas que vão além do exercício físico, pois são marcadas pela dedicação à limpeza do ambiente
+                    que amamos.
                     </p>
                 </div>
             </div>
@@ -89,7 +97,7 @@
                 <div class="partners-card-empty">
                 </div>
                 <div class="partners-card">
-                    <h3 class="partners-name">Formiguinhas</h3>
+                    <h3 class="partners-name">Formiguinhas da Praia</h3>
                     <img class="partners-img" src="./assets/img/formiguinhas.jpg" alt="">
                     <button class="btn-partners-card"><a href="https://www.instagram.com/formiguinhasdapraia/" target="_blank">Saiba mais</a></button>
                 </div>
@@ -102,13 +110,16 @@
         <div class="partners-block">
             <div class="our-partners-text-block">
                 <div class="our-partners-title-block">
-                    <h1 class="our-partners-title">Conheça algumas ONG’S parceiras</h1>
+                    <h1 class="our-partners-title">Descubra nossas colaborações: Parcerias que transformam!</h1>
                     <div class="line"></div>
                 </div>
                 <div class="our-partners-description">
                     <h1 class="description-title">Sereia Azul</h1>
                     <p class="description-text">
-                    Esta ONG tem como objetivo combater a fome e promover a inclusão social por meio de projetos que proporcionam alimentação, educação..
+                    Conheça a Sereia Azul, uma bióloga e educadora ambiental apaixonada por transmitir conhecimentos
+                    sobre o meio ambiente de uma maneira única e encantadora. Vestida de sereia, ela mergulha nas
+                    profundezas da educação ambiental, focando especialmente nas crianças, para inspirar amor e respeito 
+                    pelos oceanos.
                     </p>
                 </div>
             </div>

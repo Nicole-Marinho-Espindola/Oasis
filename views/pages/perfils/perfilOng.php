@@ -30,6 +30,24 @@
 
 <?php
     include_once(includeURL('views\includes\navPefil.php'));
+
+    $row = [];
+
+    if (isset($_SESSION['email'])) {
+
+        include_once(includeURL('config/database.php'));
+
+        $email = $_SESSION['email'];
+
+        $sql = "SELECT * FROM tb_ong WHERE ds_email = :email";
+                
+        $query = $conn->prepare($sql);
+        $query->bindParam(":email", $email);
+        $query->execute();
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+
+        $conn = null;
+    }
 ?>
 
 <body>
@@ -58,8 +76,8 @@
         </div>
         <div class="user-profile-info">
             <div class="text-profile-block">
-                <h1 class="user-name">Formiguinhas</h1>
-                <div class="line line-profile-config"></div>
+                    <h1 class="user-name"><?= $row['nm_ong'] ?></h1>
+                    <div class="line line-profile-config"></div>
             </div>
         </div>
         <div class="user-story">
@@ -74,7 +92,7 @@
                     <h3 class="subtitle-profile">Nossa missão</h3>
                 </div>
                 <div class="ong-missao-block">
-                    <p class="ong-missao"><?php $ongMissao ?></p>
+                    <p class="ong-missao"><?= $row['ds_missao'] ?></p>
                 </div>
             </div>
         </div>
