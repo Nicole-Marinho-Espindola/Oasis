@@ -44,10 +44,18 @@
                 <i class="fa-solid fa-users icon-color"></i>
                 <a class="link-style" href="">Sou uma ONG</a>
             </li>
-            <li class="list-style">
-                <i class="fa-solid fa-user icon-color"></i>
-                <a href="" class="link-style">Perfil</a>
-            </li>
+
+            <?php if(isset($_SESSION['email'])): ?>
+                <li class="list-style">
+                    <i class="fa-solid fa-user icon-color"></i>
+                    <?php if ($_SESSION['tipo_usuario'] === 'voluntario'): ?>
+                        <a href="<?= baseUrl('/views/pages/perfils/perfilVoluntario.php') ?>" class="link-style">Perfil</a>
+                    <?php elseif ($_SESSION['tipo_usuario'] === 'ong'): ?>
+                        <a href="<?= baseUrl('/views/pages/perfils/perfilOng.php') ?>" class="link-style">Perfil</a>
+                    <?php endif; ?>
+                </li>
+            <?php endif; ?>
+            
             <li class="list-style">
                 <i class="fa-solid fa-hand-holding-heart icon-color"></i>
                 <a href="<?= baseUrl('/views/pages/doe.php') ?>" class="link-style">Doação</a>
@@ -61,6 +69,7 @@
                     </a>
                 </div>
             <?php endif; ?>
+            
         </ul>
     </aside>
 
