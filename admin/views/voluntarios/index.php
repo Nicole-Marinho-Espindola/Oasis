@@ -27,6 +27,7 @@
                 <th class="h-table">Situação</th>
                 <th></th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody class="body-table" id="searchResults">
@@ -72,6 +73,7 @@
                             <td class="content-table"><?= $row['ds_email'] ?></td>
                             <td class="content-table"><?= $row['interesses'] ?></td>
                             <td class="content-table"><?= $row['situacao'] ?></td>
+                            <td><a href="solicitacaoSenha.php?cd_voluntario=<?= $row['cd_voluntario'] ?>"><i class="fa-solid fa-lock" style="color: #1f512b;"></i></a></td>
                             <td><a href="editar.php?cd_voluntario=<?= $row['cd_voluntario'] ?>"><i class="fa-solid fa-pen-to-square" style="color: #1f512b;"></i></a></td>
                             <td><a href="excluir.php?cd_voluntario=<?= $row['cd_voluntario'] ?>"><i class="fa-solid fa-trash" style="color: #1f513b;"></i></a></td>
                         </tr>
