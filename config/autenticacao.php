@@ -1,5 +1,4 @@
 <?php
-
     // Configuração de tempo da sessão
     ini_set('session.gc_maxlifetime', 6000); // Em segundos
     ini_set('session.cookie_lifetime', 6000); // Em segundos
@@ -8,22 +7,21 @@
 
     include_once(includeURL('/config/database.php'));
 
-
     try {
-
         if (isset($_SESSION['email'])) {
-
             $email = $_SESSION['email'];
 
             $sql = "SELECT 
                 v.nm_voluntario AS nome_usuario,
-                v.nm_imagem AS imagem_usuario
+                v.nm_imagem AS imagem_usuario,
+                NULL AS cnpj_ong
                 FROM tb_voluntario v
                 WHERE v.ds_email = :email
                 UNION ALL
                 SELECT
                     o.nm_ong AS nome_usuario,
-                    o.nm_imagem AS imagem_usuario
+                    o.nm_imagem AS imagem_usuario,
+                    o.cd_cnpj AS cnpj_ong
                 FROM tb_ong o
                 WHERE o.ds_email = :email";
 
@@ -32,6 +30,20 @@
             $stmt->execute();
 
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($row) {
+                $_SESSION['nome_usuario'] = $row['nome_usuario'];
+                $_SESSION['imagem_usuario'] = $row['imagem_usuario'];
+
+                if (!empty($row['cnpj_ong'])) {
+                    $_SESSION['tipo_usuario'] = 'ong';
+                } else {
+                    $_SESSION['tipo_usuario'] = 'voluntario';
+                }
+            } else {
+                // Usuário não encontrado
+                echo "Usuário não encontrado.";
+            }
         }
 
         // Agora definindo a expiração da sessão
@@ -62,7 +74,6 @@
             }
         }
     } catch (PDOException $e) {
-        echo "Erro durante a verificação: " . $e->getMessage();
+        echo "Erro no banco de dados: " . $e->getMessage();
     }
-
 ?>

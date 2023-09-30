@@ -1,9 +1,8 @@
-
 <body>
     <nav class="navbar">
         <div class="logo-block">
             <a href="javascript:void(0);">
-                <i class="fa-solid fa-bars icon" ></i>
+                <i class="fa-solid fa-bars icon"></i>
             </a>
             <img class="logo" src="<?= baseUrl('/assets/img/logo-oasis.png') ?>" alt="Logo da Oásis">
             <span class="logo-nome">Oásis</span>
@@ -14,24 +13,24 @@
             <a href="<?= baseUrl('/views/pages/projetos.php') ?>" class="nav-bar-link-style"><li class="nav-li">Projetos</li></a>
         </ul>
 
-        <?php if(isset($_SESSION['email'])) { ?>
-
+        <?php if(isset($_SESSION['email'])): ?>
             <div class="sign-up-block">
-                <a class="link-style-none sign-in-on">Olá, <?php echo $row['nome_usuario']; ?></a>
-                <a href="<?= baseUrl('/views/pages/perfils/perfilVoluntario.php') ?>"><i class="fa-regular fa-user user"></i></a>
+                <a class="link-style-none sign-in-on">Olá, <?= $row['nome_usuario'] ?></a>
+                <?php if ($_SESSION['tipo_usuario'] === 'voluntario'): ?>
+                    <a href="<?= baseUrl('/views/pages/perfils/perfilVoluntario.php') ?>"><i class="fa-regular fa-user user"></i></a>
+                <?php elseif ($_SESSION['tipo_usuario'] === 'ong'): ?>
+                    <a href="<?= baseUrl('/views/pages/perfils/perfilOng.php') ?>"><i class="fa-regular fa-user user"></i></a>
+                <?php endif; ?>
             </div>
-
-        <?php } else{ ?>
-
+        <?php else: ?>
             <div class="sign-up-block">
                 <a class="link-style-none sign-in" href="<?= baseUrl('/views/forms/voluntarios/login.php') ?>">Entrar</a>
                 <button class="btn"><a class="link-style-none" href="<?= baseUrl('/views/forms/voluntarios/cadastro.php') ?>">Cadastro</a></button>
             </div>
-
-        <?php } ?>
-
+        <?php endif; ?>
     </nav>
-    <aside class="barra-lateral" >
+
+    <aside class="barra-lateral">
         <ul class="menuLateral">
             <li class="list-style">
                 <i class="fa-solid fa-house icon-color"></i>
@@ -54,17 +53,16 @@
                 <a href="<?= baseUrl('/views/pages/doe.php') ?>" class="link-style">Doação</a>
             </li>
 
-        <?php if(isset($_SESSION['email'])) { ?>
-
-            <div class="nav-bar-btn-block">
-                <a href="<?= baseUrl('/services/controllers/auth/logout.php') ?>" class="btn">
-                    <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
-                    <span class="margin-5">Sair</span>
-                </a>
-            </div>
-            
-        <?php } ?>
+            <?php if(isset($_SESSION['email'])): ?>
+                <div class="nav-bar-btn-block">
+                    <a href="<?= baseUrl('/services/controllers/auth/logout.php') ?>" class="btn">
+                        <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
+                        <span class="margin-5">Sair</span>
+                    </a>
+                </div>
+            <?php endif; ?>
         </ul>
     </aside>
 
     <script src="<?= baseUrl('/assets/js/menuHamburguer.js') ?>"></script>
+</body>
