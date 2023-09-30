@@ -71,7 +71,7 @@
                     <img class="mail-icon" src="<?= baseUrl('/assets/img/email-img.png')?>" alt="">
                 </div>
                 <div class="card-email-text-block">
-                    <h3 class="card-email-title">Verifique o email</h3>
+                    <h3 class="card-email-title">Verifique o email de recuperação:</h3>
                     <p class="card-email-text"><?= $row['ds_email'] ?? '' ?></p>
                     <p class="card-email-text">Nota: Certifique-se de informar ao usuário que eles devem ter
                         acesso ao e-mail associado à conta para concluir o processo de redefinição de senha.</p>
