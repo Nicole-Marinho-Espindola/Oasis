@@ -76,7 +76,7 @@
         </div>
         <div class="user-profile-info">
             <div class="text-profile-block">
-                    <h1 class="user-name" id="nomeOng" name="nomeOng"><?= $row['nm_ong'] ?></h1>
+                    <h1 class="user-name"><?= $row['nm_ong'] ?></h1>
                     <div class="line line-profile-config"></div>
             </div>
         </div>
@@ -92,7 +92,7 @@
                     <h3 class="subtitle-profile">Nossa missão</h3>
                 </div>
                 <div class="ong-missao-block">
-                    <p class="ong-missao"><?php $ongMissao ?></p>
+                    <p class="ong-missao"><?= $row['ds_missao'] ?></p>
                 </div>
             </div>
         </div>

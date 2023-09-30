@@ -11,14 +11,14 @@
             <div class="info-sobre">
                 <h1 class="title-sobre">Sobre o nosso Oásis...</h1>
                 <p class="text-sobre">Somos um grupo apaixonado por voluntariado e comprometido com a preservação do meio ambiente.
-                    Nosso projeto, o TCC Oásis, nasceu com a missão de unir esforços em prol de um futuro mais sustentável e consciente.
+                    Nosso projeto, a Oásis, nasceu com a missão de unir esforços em prol de um futuro mais sustentável e consciente.
                     Mas quem está por trás dessa iniciativa?</p>
                 <a href="https://www.instagram.com/oasisparatodos/" target="_blank" class="purple-info-block">
                     <i class="fa-solid fa-chevron-right icon"></i>
                     <span class="purple-block-text">Conheça o nosso Instagram</span>
                 </a>
             </div>
-        </div> 
+        </div>
         <div class="citacao-block">
             <h1 class="hashtag-title">#oásisparatodos</h1>
             <p class="text-hashtag-block">“A Oásis é mais do que um projeto acadêmico - 
@@ -43,7 +43,7 @@
                     <span class="card-title">Conectar pessoas</span>
                 </div>
                 <p class="text-MVV">
-                A missão do nosso grupo é conectar pessoas através do voluntariado ambiental. Acreditamos que, ao unir esforços em prol do meio ambiente, estamos também fortalecendo laços entre indivíduos de diferentes origens e experiências
+                Unimos corações pelo voluntariado ambiental, fortalecendo laços e cultivando a paixão pela natureza. Queremos promover mudanças mais positivas através de ações voluntárias.
                 </p>
             </div>
             <div class="card-MVV">
@@ -52,7 +52,7 @@
                     <span class="card-title">Dar visibilidade</span>
                 </div>
                 <p class="text-MVV">
-                Ao dar visibilidade os esforços de voluntários, não apenas incentivamos mais pessoas a se envolverem, mas também mostramos o quão poderosa é a comunidade que se forma em torno da proteção da natureza.
+                Ao destacar as ações dos voluntários, incentivamos mais pessoas a se unirem a essa comunidade que protege a natureza.
                 </p>
             </div>
             <div class="card-MVV">
@@ -61,7 +61,7 @@
                     <span class="card-title">Transformar</span>
                 </div>
                 <p class="text-MVV">
-                Através da ação coletiva e do compromisso com a preservação da natureza, acreditamos que podemos realmente tornar o mundo um lugar melhor para as atuais e futuras gerações.
+                Cada passo na preservação é um passo na direção de um mundo melhor. Junte-se à transformação pela natureza.
                 </p>
             </div>
         </div>        
