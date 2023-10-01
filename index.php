@@ -86,10 +86,10 @@
                 <div class="our-partners-description">
                     <h1 class="description-title">Formiguinhas da Praia</h1>
                     <p class="description-text">
-                    Conheça o Grupo Formiguinhas, um grupo voluntário movido pelo propósito de promover o bem-estar e
-                    a sustentabilidade em nossa comunidade em Praia Grande, SP. Nossa paixão nos leva a percorrer as praias, 
-                    realizando caminhadas que vão além do exercício físico, pois são marcadas pela dedicação à limpeza do ambiente
-                    que amamos.
+                    Conheça o Grupo Formiguinhas, uma equipe voluntária dedicada a fomentar o bem-estar e a
+                    sustentabilidade em nossa comunidade em Praia Grande, SP. Sua paixão os impulsiona a 
+                    percorrer as praias, não apenas em caminhadas que promovem o exercício físico, mas também
+                    marcadas pela dedicação à limpeza do ambiente que tanto amam.
                     </p>
                 </div>
             </div>
