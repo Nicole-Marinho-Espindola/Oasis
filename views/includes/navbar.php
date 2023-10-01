@@ -40,10 +40,13 @@
                 <i class="fa-solid fa-circle-info icon-color"></i>
                 <a class="link-style" href="<?= baseUrl('/views/pages/sobreNos.php') ?>">Sobre nós</a>
             </li>
-            <li class="list-style">
-                <i class="fa-solid fa-users icon-color"></i>
-                <a class="link-style" href="">Sou uma ONG</a>
-            </li>
+
+            <?php if(empty($_SESSION['email']) || (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] === 'ong')): ?>
+                <li class="list-style">
+                    <i class="fa-solid fa-users icon-color"></i>
+                    <a class="link-style" href="">Sou uma ONG</a>
+                </li>
+            <?php endif; ?>
 
             <?php if(isset($_SESSION['email'])): ?>
                 <li class="list-style">
@@ -56,10 +59,14 @@
                 </li>
             <?php endif; ?>
             
-            <li class="list-style">
-                <i class="fa-solid fa-hand-holding-heart icon-color"></i>
-                <a href="<?= baseUrl('/views/pages/doe.php') ?>" class="link-style">Doação</a>
-            </li>
+            <?php if(isset($_SESSION['email'])): ?>
+                <?php if ($_SESSION['tipo_usuario'] === 'voluntario'): ?>
+                    <li class="list-style">
+                        <i class="fa-solid fa-hand-holding-heart icon-color"></i>
+                        <a href="<?= baseUrl('/views/pages/doe.php') ?>" class="link-style">Doação</a>
+                    </li>
+                <?php endif; ?>
+            <?php endif; ?>
 
             <?php if(isset($_SESSION['email'])): ?>
                 <div class="nav-bar-btn-block">
