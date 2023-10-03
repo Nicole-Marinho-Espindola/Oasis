@@ -68,7 +68,6 @@
 
 .green-btn{
     border: none;
-    color: #334228;
     background-color: #D8D8D8;
     font-weight: bolder;
     border-radius: 10px;
@@ -76,6 +75,11 @@
     width: 10em;
     box-shadow: 1px 1px 7px #6f7c6c;
     margin: 10px;
+}
+
+.green-btn > a{
+    text-decoration: none;
+    color: #334228;
 }
 
 .activity-block{

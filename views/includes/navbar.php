@@ -4,8 +4,10 @@
             <a href="javascript:void(0);">
                 <i class="fa-solid fa-bars icon"></i>
             </a>
-            <img class="logo" src="<?= baseUrl('/assets/img/logo-oasis.png') ?>" alt="Logo da Oásis">
-            <span class="logo-nome">Oásis</span>
+            <a class="logo-block-title" href="<?= baseUrl('/index.php') ?>">
+                <img class="logo" src="<?= baseUrl('/assets/img/logo-oasis.png') ?>" alt="Logo da Oásis">
+                <span class="logo-nome">Oásis</span>
+            </a>
         </div>
         <ul class="nav-ul">
             <a href="<?= baseUrl('/index.php') ?>" class="nav-bar-link-style"><li class="nav-li">Home</li></a>
