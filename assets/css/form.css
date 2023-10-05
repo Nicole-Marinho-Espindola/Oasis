@@ -454,6 +454,11 @@
     margin-top: 2em;
 }
 
+.btn-link{
+    text-decoration: none;
+    color: #fff;
+}
+
 @media screen and (max-width:768px){
 
     .main-content{

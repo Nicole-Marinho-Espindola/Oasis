@@ -52,11 +52,11 @@
 
                     //pra deixar icones aleatorios bonitinhos
                     $icones = [
-                        'fa-hand-holding-dollar',
-                        'fa-paper-plane',
-                        'fa-heart',
+                        'fa-solid fa-hand-holding-heart',
+                        'fa-regular fa-paper-plane',
+                        'fa-regular fa-heart',
                         'fa-clover',
-                        'fa-cannabis',
+                        'fa-pagelines',
                         'fa-tree',
                         'fa-handshake-angle',
                     ];

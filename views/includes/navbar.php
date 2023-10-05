@@ -46,7 +46,7 @@
             <?php if(empty($_SESSION['email']) || (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] === 'ong')): ?>
                 <li class="list-style">
                     <i class="fa-solid fa-users icon-color"></i>
-                    <a class="link-style" href="">Sou uma ONG</a>
+                    <a class="link-style" href="<?= baseUrl('/views/forms/ongs/cadastro.php') ?>">Sou uma ONG</a>
                 </li>
             <?php endif; ?>
 
