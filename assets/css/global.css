@@ -205,6 +205,51 @@
     margin-bottom: 20px;
 }
 
+.modal-window{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: #6d6d6d79;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal{
+    width: 60%;
+    min-width: 450px;
+    min-height: 400px;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.modal-title-block{
+
+}
+
+.modal-title{
+
+}
+
+.modal-subtitle{
+
+}
+
+.modal-input-blcok{
+
+}
+
+.modal-input{
+
+}
+
+.btn-modal{
+
+}
+
 @media screen and (max-width: 426px){
     .content{
         display: flex;
