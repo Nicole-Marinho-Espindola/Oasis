@@ -106,10 +106,12 @@
                                 echo "Erro ao listar interesses: " . $e->getMessage();
                             }
                         ?>
-                    
+                        <div>
+
+                        </div>
                             <button type="button" class="btn btn-color btn-margin btn-section-config btn-back" onclick="voltarEtapa()">Voltar</button>
                             <button type="button" class="btn btn-color btn-margin btn-section-config" onclick="passarEtapa()">Próximo</button>
-                    </div>
+                        </div>
                 </div>
             </div>
             <div class="section">

@@ -208,18 +208,19 @@
 .modal-window{
     width: 100vw;
     height: 100vh;
-    position: relative;
-    top: 0;
-    left: 0;
-    background-color: #6d6d6d79;
+    /* position: relative; */
+    /* top: 0;
+    left: 0; */
+    background-color: #bfbfbf2f;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    /* z-index: 999; */
 }
 
-.modal{
+.modal-window > .modal{
     width: 60%;
+    height: 250px;
     min-width: 450px;
     min-height: 400px;
     background-color: #fff;
@@ -227,11 +228,13 @@
 }
 
 .modal-title-block{
-
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
 .modal-title{
-
+    color: #242920;
 }
 
 .modal-subtitle{

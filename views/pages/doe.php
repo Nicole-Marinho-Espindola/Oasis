@@ -22,19 +22,6 @@
             </button>
         </div>
     </div>
-    <div class="modal-window" id="modalWindow">
-        <div class="modal">
-            <div class="modal-title-block">
-                <div class="modal-title">Copiar chave pix</div>
-                <div class="line"></div>
-                <div class="modal-subtitle">Copie o codigo pix para doar para o nosso oásis</div>
-            </div>
-            <div class="modal-input-block">
-                <input type="text" class="modal-input">
-            </div>
-            <button class="btn-modal">Concluido</button>
-        </div>
-    </div>
     <div class="activity-block">
         <div class="activity-title-block">
             <h3 class="activity-title"><span class="bold-title">Pessoas que fizeram a diferença:</span> confira quem já ajudou.</h3>
@@ -115,6 +102,20 @@
         </div>
     </div>
 </section>
+
+<div class="modal-window" id="modalWindow">
+        <div class="modal">
+            <div class="modal-title-block">
+                <div class="modal-title">Copiar chave pix</div>
+                <div class="line"></div>
+                <div class="modal-subtitle">Copie o codigo pix para doar para o nosso oásis</div>
+            </div>
+            <div class="modal-input-block">
+                <input type="text" class="modal-input">
+            </div>
+            <button class="btn-modal">Concluido</button>
+        </div>
+    </div>
 
 <script src="../../assets/js/copiarCompartilhamento.js"></script>
 
