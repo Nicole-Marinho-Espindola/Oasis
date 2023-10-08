@@ -118,11 +118,6 @@
     width: 30vw;
 }
 
-.label-interesse{
-    width: 7em;
-    height: 9em;
-}
-
 .form-block .label-interesse label{
     display: flex;
     justify-content: center;

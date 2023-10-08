@@ -104,18 +104,19 @@
 </section>
 
 <div class="modal-window" id="modalWindow">
-        <div class="modal">
-            <div class="modal-title-block">
-                <div class="modal-title">Copiar chave pix</div>
-                <div class="line"></div>
-                <div class="modal-subtitle">Copie o codigo pix para doar para o nosso oásis</div>
-            </div>
-            <div class="modal-input-block">
-                <input type="text" class="modal-input">
-            </div>
-            <button class="btn-modal">Concluido</button>
+    <div class="modal-card">
+        <div class="modal-title-block">
+            <div class="modal-title">Copiar chave pix</div>
+            <div class="line"></div>
+            <div class="modal-subtitle">Copie o codigo pix para doar para o nosso oásis</div>
         </div>
+        <div class="modal-input-block">
+            <input type="text" class="modal-input">
+            <i class="fa-regular fa-copy modal-input-icon"></i>
+        </div>
+        <button class="btn-modal">Concluido</button>
     </div>
+</div>
 
 <script src="../../assets/js/copiarCompartilhamento.js"></script>
 
