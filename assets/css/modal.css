@@ -1,0 +1,118 @@
+
+.modal-window{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #4949492f;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-window > .modal-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+    height: 250px;
+    min-width: 450px;
+    min-height: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.modal-title-block{
+    display: flex;
+    justify-content: left;
+    /* align-items: center; */
+    flex-direction: column;
+    width: 20em;
+}
+
+.modal-title{
+    color: #242920;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.modal-title-block > .line{
+    width: 14em;
+    height: 5px;
+    background-color: #C7D6BB;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.modal-subtitle{
+    color: #979797;
+    font-weight: 100;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.modal-input-block{
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    flex-direction: row;
+    width: 20em;
+    height: 2em;
+    border-radius: 3px;
+    border: 2px solid #94a588;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.modal-input{
+    width: 90%;
+    outline: none;
+    border: none;
+}
+
+.modal-input-icon{
+    font-size: 17px;
+    color: #94a588;
+    /* padding: 5px; */
+}
+
+.btn-modal{
+    background-color: #94a588;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 10px;
+    width: 19em;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.btn-modal:hover{
+    background-color: #586D48;
+    transition: ease-in-out 0.010s;
+}
+
+.modal-window.open{ /* importante que seja junto para que signifique "quando a janela modal tiver a classe abrir algo acontece" */
+    display: flex;
+}
+
+@keyframes open-modal{
+    from{
+        opacity: 0;
+        transform: translate3d(0,20px,-5px);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+
+.open .modal-card{
+    animation: open-modal 0.5s ease-in-out;
+}
+

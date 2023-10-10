@@ -15,7 +15,7 @@
         <img class="donate-img" src="<?= baseUrl('/assets/img/Taking care of the Earth-pana.png') ?>" alt="">
         <span class="donate-span">Seja a gota que faz florescer o nosso Oásis de esperança e sustentabilidade.</span>
         <div class="donate-btn-block">
-            <button class="purple-btn">Doe aqui</button>
+            <button class="purple-btn" onclick="openModal()">Doe aqui</button>
             <button class="green-btn">
                 <input type="hidden" value="https://www.instagram.com/oasisparatodos/" id="myInput" readonly>
                 <a onclick="copyToClipboard()" href="<?= baseUrl('/services/controllers/voluntarios/compartilhamento_action.php?email=' . $email) ?>">Compartilhar</a>
@@ -114,11 +114,12 @@
             <input type="text" class="modal-input">
             <i class="fa-regular fa-copy modal-input-icon"></i>
         </div>
-        <button class="btn-modal">Concluido</button>
+        <button class="btn-modal" id="close">Concluido</button>
     </div>
 </div>
 
 <script src="../../assets/js/copiarCompartilhamento.js"></script>
+<script src="../../assets/js/modal.js"></script>
 
 <?php
     include_once('../includes/footer.php')
