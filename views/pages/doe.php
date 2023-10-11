@@ -84,10 +84,12 @@
             ?>
                     <div class="activity-child">
                         <div class="activity-child-content">
-                            <i class="fa-solid <?= $iconeAleatorio ?> donate-icon"></i>
-                            <div class="user-donate-config">
-                                <h4 class="user-name"><?= $row['nome'] ?></h4>
-                                <span class="purple-span-donate"><?= $row['acao'] ?></span>
+                            <div class="donate-content-config">
+                                <i class="fa-solid <?= $iconeAleatorio ?> donate-icon"></i>
+                                <div class="user-donate-config">
+                                    <h4 class="user-name"><?= $row['nome'] ?></h4>
+                                    <span class="purple-span-donate"><?= $row['acao'] ?></span>
+                                </div>
                             </div>
                             <div class="user-donate-time"><?= $tempoFormatado ?></div>
                         </div>

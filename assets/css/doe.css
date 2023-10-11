@@ -88,6 +88,7 @@
 
 .activity-title-block{
     margin-bottom: 3em;
+    margin-left: 19em;
 }
 
 .bold-title{
@@ -115,7 +116,7 @@
 }
 
 .user-donate-config{
-    margin-right: 47em;
+    /* margin-right: 47em; */
 }
 
 .user-name{
@@ -131,10 +132,18 @@
 .activity-child-content{
     margin: 10px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
     padding: 5px;
+    width: 100em;
+}
+
+.donate-content-config{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .tiny-line{
@@ -234,6 +243,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        margin-left: 0;
     }
 
     .activity-title{
@@ -282,10 +292,11 @@
     .activity-child-content{
         margin: 10px;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         flex-direction: row;
         padding: 5px;
+        width: 100%;
     }
     
     .tiny-line{
@@ -385,6 +396,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        margin-left: 0;
     }
 
     .activity-title{
@@ -433,10 +445,11 @@
     .activity-child-content{
         margin: 10px;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         flex-direction: row;
         padding: 5px;
+        width: 100%;
     }
     
     .tiny-line{
