@@ -101,6 +101,71 @@
     display: flex;
 }
 
+.modal-card-profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+    height: 40em;
+    min-width: 450px;
+    min-height: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.img-profile{
+    height: 10em;
+    width: 10em;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* margin-bottom: 40em; */
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.img-profile::before{
+    content: "";
+    background-color: #58585849;
+    height: 10em;
+    width: 10em;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.icon-img-profile {
+    color: #000;
+    font-size: 50px;
+    position: absolute;
+    margin-bottom: 4em;
+}
+
+.img-profile > img{
+    height: 10em;
+    width: 10em;
+    object-fit: cover;
+}
+
+.modal-input-block-perfil{
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    flex-direction: row;
+    width: 20em;
+    height: 2em;
+    border-radius: 3px;
+    border: 2px solid #94a588;
+    margin-bottom: 30px;
+}
+
+.icon-input{
+    color: #94a588;
+}
+
 @keyframes open-modal{
     from{
         opacity: 0;

@@ -57,6 +57,7 @@
     width: 7em;
     color: #fff;
     margin-left: 0;
+    cursor: pointer;
 }
 
 .edit-profile-span{
@@ -86,7 +87,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    margin-bottom: 40em;
+    margin-bottom: 27em;
     overflow: hidden;
 }
 
@@ -185,6 +186,10 @@
     background-color: #8FA381;
     margin-left: 20px;
     border-radius: 5px;
+}
+
+.link-style-none{
+    text-decoration: none;
 }
 
 @media screen and (max-width: 1024px){
