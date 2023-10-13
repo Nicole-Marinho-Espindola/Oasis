@@ -173,6 +173,44 @@ body{
     color: #715987;
 }
 
+.btn-event-event-page{
+    padding: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 17px;
+    background-color: #F3F3F3;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    margin-left: 10px;
+    width: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-project-event-page{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #D9D9D9;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+}
+
+.link-projects-style{
+    text-decoration: none;
+    color: #000;
+}
+
+.link-projects-style:hover{
+    color: #715987;
+}
+
 @media screen and (min-width: 320px) and (max-width: 456px){
 
     .dark-purple-block{

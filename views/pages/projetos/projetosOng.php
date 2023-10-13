@@ -7,7 +7,9 @@
 <section class="projects">
     <div class="dark-purple-block">
         <div class="btn-project">Projetos</div>
-        <div class="btn-event">Eventos</div>
+        <a href="<?= baseUrl('/views/pages/eventos/eventosOng.php')?>" class="link-projects-style">
+            <div class="btn-event">Eventos</div>
+        </a>
     </div>
     <div class="filter-block">
         <i class="fa-solid fa-sliders filter-icon"></i>
