@@ -166,6 +166,69 @@
     color: #94a588;
 }
 
+.modal-card-projects{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 20em;
+    height: 44em;
+    min-width: 450px;
+    min-height: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px;
+}
+
+.modal-title-block-project{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    /* padding-left: 50px; */
+    margin-top: 1em;
+}
+
+.modal-title-project{
+    color: #242920;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.textarea-project{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 9em;
+    width: 100%;
+    border: 1px solid #94a588;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.textarea-project > textarea{
+    outline: none;
+    border: none;
+    text-align: justify;
+    color: #686868;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.modal-project-info{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.icon-modal-color{
+    color: #715987;
+}
+
 @keyframes open-modal{
     from{
         opacity: 0;
