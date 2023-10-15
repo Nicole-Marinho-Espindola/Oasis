@@ -43,7 +43,7 @@
                     <span class="name-span margin">13/09/2023</span>
                 </div>
             </div>
-            <button class="btn-project-card">Participar</button>
+            <button class="btn-project-card" onclick="openModal()">Participar</button>
         </div>
         <div class="project-card">
             <div class="card-title-add">Adicionar evento</div>
@@ -51,6 +51,45 @@
         </div>
     </div>
 </section>
+
+<div class="modal-window" id="modalWindow">
+    <div class="modal-card-projects">
+        <div class="project-img-block">
+            <img class="project-img" src="<?= baseUrl('/assets/img/foto-teste.webp')?>" alt="">
+        </div>
+        <div class="modal-title-block-project">
+            <div class="modal-title-project">Palestra na praia</div>
+            <div class="line"></div>
+        </div>
+        <div class="modal-title-block-project">
+            <div class="modal-title-project">Descrição</div>
+        </div>
+        <div class="textarea-project">
+            <textarea name="" id="" cols="45" rows="5" readonly>Unindo esforços para preservar nossas praias, este projeto visa reunir voluntários dedicados a remover resíduos e lixo das áreas costeiras, restaurando a beleza natural de nossas praias e protegendo a vida marinha.</textarea>
+        </div>   
+        <div class="modal-title-block-project">
+            <div class="modal-title-project">Requisitos</div>
+        </div>
+        <div class="modal-project-info">
+            <div class="info">
+                <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
+                <span class="name-span">Sereia azul</span>
+            </div>
+            <div class="info">
+                <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
+                <span class="name-span margin">Caiçara</span>
+            </div>
+            <div class="info">
+                <i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i>
+                <span class="name-span margin">13/09/2023</span>
+            </div>
+        </div>
+
+        <button class="btn-modal" id="close">Participar</button>
+    </div>
+</div>
+
+<script src="<?= baseUrl('/assets/js/modal.js')?>"></script>
 
 <?php
     include_once('../../includes/footer.php')
