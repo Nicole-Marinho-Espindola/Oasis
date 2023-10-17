@@ -34,7 +34,7 @@
             $stmt->bindParam(':dt_compartilhamento', $dt_compartilhamento);
 
             if ($stmt->execute()) {
-                header('Location: ../../../views/pages/doe.php');
+                header('Location: ../../../views/pages/doe.php?compartilhar_sucesso=true');
             }
 
         } else {

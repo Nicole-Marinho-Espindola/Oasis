@@ -2,9 +2,11 @@
     include_once('../includes/head.php');
     include_once('../../config/database.php');
     $_SESSION['email'] = $email;
+    
 ?>
 
 <link rel="stylesheet" href="<?= baseUrl('/assets/css/doe.css') ?>">
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css" rel="stylesheet">
 
 <section class="donate-main-block">
     <div class="main-title-block">
@@ -28,6 +30,7 @@
             <div class="line"></div>
         </div>
         <div class="activity">
+
             <?php
             try {
                 $select = $conn->prepare("SELECT
@@ -73,7 +76,7 @@
                     $tempoFormatado = '';
 
                     if ($intervalo->days > 0) {
-                        $tempoFormatado = $dataAcao->format('d/m/Y');
+                        $tempoFormatado = $intervalo->days . ' dias atrás';
                     } elseif ($intervalo->h > 0) {
                         $tempoFormatado = $intervalo->h . ' horas atrás';
                     } elseif ($intervalo->i > 0) {
@@ -103,6 +106,7 @@
     </div>
 </section>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../assets/js/copiarCompartilhamento.js"></script>
 
 <?php
