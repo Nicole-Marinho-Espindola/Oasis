@@ -80,7 +80,7 @@
         <div class="partners-block active-display">
             <div class="our-partners-text-block">
                 <div class="our-partners-title-block">
-                    <h1 class="our-partners-title">Descubra nossas colaborações: Parcerias que transformam!</h1>
+                    <h1 class="our-partners-title">Conheça algumas ONG’S parceiras</h1>
                     <div class="line"></div>
                 </div>
                 <div class="our-partners-description">
@@ -110,7 +110,7 @@
         <div class="partners-block">
             <div class="our-partners-text-block">
                 <div class="our-partners-title-block">
-                    <h1 class="our-partners-title">Descubra nossas colaborações: Parcerias que transformam!</h1>
+                    <h1 class="our-partners-title">Conheça algumas ONG’S parceiras</h1>
                     <div class="line"></div>
                 </div>
                 <div class="our-partners-description">

@@ -4,13 +4,15 @@
             <a href="javascript:void(0);">
                 <i class="fa-solid fa-bars icon"></i>
             </a>
-            <img class="logo" src="<?= baseUrl('/assets/img/logo-oasis.png') ?>" alt="Logo da Oásis">
-            <span class="logo-nome">Oásis</span>
+            <a class="logo-block-title" href="<?= baseUrl('/index.php') ?>">
+                <img class="logo" src="<?= baseUrl('/assets/img/logo-oasis.png') ?>" alt="Logo da Oásis">
+                <span class="logo-nome">Oásis</span>
+            </a>
         </div>
         <ul class="nav-ul">
             <a href="<?= baseUrl('/index.php') ?>" class="nav-bar-link-style"><li class="nav-li">Home</li></a>
             <a href="<?= baseUrl('/views/pages/sobreNos.php') ?>" class="nav-bar-link-style"><li class="nav-li">Sobre nós</li></a>
-            <a href="<?= baseUrl('/views/pages/projetos.php') ?>" class="nav-bar-link-style"><li class="nav-li">Projetos</li></a>
+            <a href="<?= baseUrl('/views/pages/projetos/projetosOng.php') ?>" class="nav-bar-link-style"><li class="nav-li">Projetos</li></a>
         </ul>
 
         <?php if(isset($_SESSION['email'])): ?>
@@ -44,7 +46,7 @@
             <?php if(empty($_SESSION['email']) || (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] === 'ong')): ?>
                 <li class="list-style">
                     <i class="fa-solid fa-users icon-color"></i>
-                    <a class="link-style" href="">Sou uma ONG</a>
+                    <a class="link-style" href="<?= baseUrl('/views/forms/ongs/cadastro.php') ?>">Sou uma ONG</a>
                 </li>
             <?php endif; ?>
 

@@ -17,7 +17,7 @@
         <img class="donate-img" src="<?= baseUrl('/assets/img/Taking care of the Earth-pana.png') ?>" alt="">
         <span class="donate-span">Seja a gota que faz florescer o nosso Oásis de esperança e sustentabilidade.</span>
         <div class="donate-btn-block">
-            <button class="purple-btn">Doe aqui</button>
+            <button class="purple-btn" onclick="openModal()">Doe aqui</button>
             <button class="green-btn">
                 <input type="hidden" value="https://www.instagram.com/oasisparatodos/" id="myInput" readonly>
                 <a onclick="copyToClipboard()" href="<?= baseUrl('/services/controllers/voluntarios/compartilhamento_action.php?email=' . $email) ?>">Compartilhar</a>
@@ -55,11 +55,11 @@
 
                     //pra deixar icones aleatorios bonitinhos
                     $icones = [
-                        'fa-hand-holding-dollar',
-                        'fa-paper-plane',
-                        'fa-heart',
+                        'fa-solid fa-hand-holding-heart',
+                        'fa-regular fa-paper-plane',
+                        'fa-regular fa-heart',
                         'fa-clover',
-                        'fa-cannabis',
+                        'fa-pagelines',
                         'fa-tree',
                         'fa-handshake-angle',
                     ];
@@ -87,10 +87,12 @@
             ?>
                     <div class="activity-child">
                         <div class="activity-child-content">
-                            <i class="fa-solid <?= $iconeAleatorio ?> donate-icon"></i>
-                            <div class="user-donate-config">
-                                <h4 class="user-name"><?= $row['nome'] ?></h4>
-                                <span class="purple-span-donate"><?= $row['acao'] ?></span>
+                            <div class="donate-content-config">
+                                <i class="fa-solid <?= $iconeAleatorio ?> donate-icon"></i>
+                                <div class="user-donate-config">
+                                    <h4 class="user-name"><?= $row['nome'] ?></h4>
+                                    <span class="purple-span-donate"><?= $row['acao'] ?></span>
+                                </div>
                             </div>
                             <div class="user-donate-time"><?= $tempoFormatado ?></div>
                         </div>
@@ -106,8 +108,27 @@
     </div>
 </section>
 
+<<<<<<< HEAD
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+=======
+<div class="modal-window" id="modalWindow">
+    <div class="modal-card">
+        <div class="modal-title-block">
+            <div class="modal-title">Copiar chave pix</div>
+            <div class="line"></div>
+            <div class="modal-subtitle">Copie o codigo pix para doar para o nosso oásis</div>
+        </div>
+        <div class="modal-input-block">
+            <input type="text" class="modal-input">
+            <i class="fa-regular fa-copy modal-input-icon"></i>
+        </div>
+        <button class="btn-modal" id="close">Concluido</button>
+    </div>
+</div>
+
+>>>>>>> 0b91d1b1e5ed0000b5a95dcc43f95435d30711db
 <script src="../../assets/js/copiarCompartilhamento.js"></script>
+<script src="../../assets/js/modal.js"></script>
 
 <?php
     include_once('../includes/footer.php')

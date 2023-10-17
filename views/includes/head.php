@@ -22,6 +22,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="<?= baseUrl('/assets/css/global.css')?>">
         <link rel="stylesheet" href="<?= baseUrl('/assets/css/navbar.css')?>">
+        <link rel="stylesheet" href="<?= baseUrl('/assets/css/modal.css')?>">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <title>Plataforma | Oásis</title>

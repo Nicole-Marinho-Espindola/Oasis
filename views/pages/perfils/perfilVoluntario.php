@@ -17,12 +17,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/4719b1c3ae.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="<?= baseUrl('/assets/css/global.css')?>">
     <link rel="stylesheet" href="<?= baseUrl('/assets/css/navbar.css')?>">
     <link rel="stylesheet" href="<?= baseUrl('/assets/css/perfil.css')?>">
     <link rel="stylesheet" href="<?= baseUrl('/assets/css/form.css')?>">
+    <link rel="stylesheet" href="<?= baseUrl('/assets/css/modal.css')?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Perfil Voluntário | Oásis</title>
@@ -87,10 +86,10 @@
                     <i class="fa-brands fa-facebook-f social-midia-icon"></i>
                 </div>
             </div>
-            <div class="edit-profile-position">
+            <div onclick="openModal()" class="edit-profile-position">
                 <div class="edit-profile">
                     <i class="fa-regular fa-pen-to-square social-midia-icon"></i>
-                    <span class="edit-profile-span">Editar perfil</span>
+                    <div class="edit-profile-span">Editar perfil</div>
                 </div>
             </div>
         </div>
@@ -137,7 +136,37 @@
             </div>
         </div>
     </div>
+
+    <div class="modal-window" id="modalWindow">
+        <div class="modal-card-profile">
+            <div class="modal-title-block">
+                <div class="modal-title">Editar perfil</div>
+                <div class="line"></div>
+            </div>
+            <div class="img-profile">
+                <img src="<?= baseUrl('/assets/img/jade-linda.jpeg')?>" alt="Foto de perfil do usuario">
+            </div>
+            <i class="fa-regular fa-pen-to-square icon-img-profile"></i>
+            <div class="modal-input-block-perfil">
+                <input id="nome" type="text" class="modal-input" placeholder="nome">
+                <i class="fa-regular fa-pen-to-square icon-input"></i>
+            </div>   
+            <div class="modal-input-block-perfil">
+                <input id="email" type="text" class="modal-input" placeholder="email">
+                <i class="fa-regular fa-pen-to-square icon-input"></i>
+            </div>
+            <div class="modal-input-block-perfil">
+                <input id="senha" type="text" class="modal-input" placeholder="senha">
+                <i class="fa-regular fa-pen-to-square icon-input"></i>
+            </div>
+            <button class="btn-modal" id="close">Concluido</button>
+        </div>
+    </div>
 </body>
+
+
+
+<script src="<?= baseUrl('/assets/js/modal.js')?>"></script>
 
 <?php
     include_once(includeURL('views/includes/footer.php'));

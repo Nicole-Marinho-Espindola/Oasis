@@ -114,6 +114,10 @@
     align-items: center;
     flex-direction: column;
     padding: 20px;
+    width: 7em;
+    height: 9em;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .label-interesse label{
@@ -454,6 +458,11 @@
     margin-top: 2em;
 }
 
+.btn-link{
+    text-decoration: none;
+    color: #fff;
+}
+
 @media screen and (max-width:768px){
 
     .main-content{
@@ -550,7 +559,7 @@
     }
 
     .container{
-        width: 70em;
+        width: 25em;
     }
 
     .btn-back{
