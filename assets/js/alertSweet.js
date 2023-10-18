@@ -192,3 +192,13 @@ function AlertEmailFail(){
     showConfirmButton: false,
   })
 }
+
+function AlertCompartilhamento() {
+  Swal.fire({
+      icon: 'center',
+      title: 'O link da Oásis foi copiado! 🌿',
+      text: 'Obrigado por fazer parte do movimento por um futuro mais sustentável.',
+      showConfirmButton: false,
+      
+  });
+}
