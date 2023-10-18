@@ -229,6 +229,27 @@
     color: #715987;
 }
 
+.project-img-add-modal{
+    margin-top: 20px;
+}
+
+.input-requitos{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #586D48;
+    width: 10em;
+    margin-top: 10px;
+    margin-left: 2em;
+}
+
+.ajust{
+    margin-left: 10px;
+}
+
+.input-img{
+    margin-top: 20px;
+}
+
 @keyframes open-modal{
     from{
         opacity: 0;

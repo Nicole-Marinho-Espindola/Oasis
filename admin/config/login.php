@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . '/lib/vendor/autoload.php';
+
     session_start();
 
     if (!empty($_POST)) {
