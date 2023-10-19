@@ -29,7 +29,6 @@ include_once(includeURL('/services/helpers.php'))
 
 <body>
 
-
     <?php
     if (isset($_GET['email_confirmado']) && $_GET['email_confirmado'] == 'true') {
         echo '<script src="../../../assets/js/alerts.js"></script>';

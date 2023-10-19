@@ -1,3 +1,11 @@
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
+</head>
+
+<body>
+
 <?php
 
     function includeURL($path = '') {
@@ -43,7 +51,10 @@
 
             $mail->send();
 
-            echo "Senha atualizada com sucesso! Um e-mail de confirmação foi enviado.";
+            echo '<script src="../../../assets/js/alerts.js"></script>';
+            echo '<script>alertSenhaConfirm();</script>';
+            header("Refresh: 1.5; URL=http://localhost/oasis/views/forms/senha/atualizarSenha.php");
+            exit();
 
         } catch (Exception $e) {
             echo "Erro no envio de e-mail: " . $e->getMessage();
@@ -147,13 +158,16 @@
                             </html>';
                             enviarEmailConfirmacao($rowToken['nm_voluntario'], $rowToken['ds_email'], $mensagem);
                         } else {
-                            echo "Erro: Tente novamente!";
+                            echo '<script src="../../../assets/js/alerts.js"></script>';
+                            echo '<script>alertSenhaFail();</script>';
                         }
                     } else {
-                        echo "Erro: Campo de senha vazio!";
+                        echo '<script src="../../../assets/js/alerts.js"></script>';
+                        echo '<script>alertSenhaFail();</script>';
                     }
                 } else {
-                    echo "Erro: Este link de redefinição de senha expirou. Solicite um novo link.";
+                    echo '<script src="../../../assets/js/alerts.js"></script>';
+                    echo '<script>alertSenhaExpired();</script>';
                 }
             } else {
                 $stmtOng = $conn->prepare("SELECT t.ds_token, t.cd_ong, t.dt_expiracao, o.nm_ong, o.ds_email
@@ -247,19 +261,30 @@
                             </html>';
                                 enviarEmailConfirmacao($rowTokenOng['nm_ong'], $rowTokenOng['ds_email'], $mensagemOng);
                             } else {
-                                echo "Erro: Tente novamente!";
+                                echo '<script src="../../../assets/js/alerts.js"></script>';
+                                echo '<script>alertSenhaFail();</script>';
+                                header("Refresh: 1.5; URL=http://localhost/oasis/views/forms/senha/atualizarSenha.php");
                             }
                         } else {
-                            echo "Erro: Campo de senha vazio!";
+                            echo '<script src="../../../assets/js/alerts.js"></script>';
+                            echo '<script>alertSenhaFail();</script>';
+                            header("Refresh: 1.5; URL=http://localhost/oasis/views/forms/senha/atualizarSenha.php");
                         }
                     } else {
-                        echo "Erro: Este link de redefinição de senha expirou. Solicite um novo link.";
+                        echo '<script src="../../../assets/js/alerts.js"></script>';
+                        echo '<script>alertSenhaExpired();</script>';
+                        header("Refresh: 1.5; URL=http://localhost/oasis/views/forms/senha/atualizarSenha.php");
                     }
                 } else {
-                    echo "Erro: Link inválido ou já utilizado. Solicite um novo link para atualizar a senha!";
+                    echo '<script src="../../../assets/js/alerts.js"></script>';
+                    echo '<script>alertSenhaRepeat();</script>';
+                    header("Refresh: 1.5; URL=http://localhost/oasis/views/forms/senha/atualizarSenha.php");
+                    exit();
                 }
             }
         } catch (PDOException $e) {
             echo "Erro no banco de dados: " . $e->getMessage();
         }
     }
+?>
+</body>

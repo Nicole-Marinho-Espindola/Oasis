@@ -121,6 +121,23 @@ function alertLogin(){
     })
 }
 
+function alertEmailUnconfirmed(){
+  Swal.fire({
+      title: 'Confirme seu email',
+      text:'Necessário confirmar o email antes de fazer login.',
+      width: 600,
+      padding: '3em',
+      color: '#AB7BC8',
+      background: '#fff',
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("../img/PYh.gif")
+        left top
+        no-repeat
+      `
+    })
+}
+
 function alertLogout(){
   Swal.fire({
       title: 'Você saiu com sucesso',
@@ -165,7 +182,16 @@ function alertEmailConfirm(){
   })
 }
 
-function AlertEmailFail(){
+function alertEmailSent(){
+  Swal.fire({
+    position: 'center',
+    title: 'Email enviado com sucesso',
+    text: 'Confira sua caixa de entrada',
+    showConfirmButton: false,
+  })
+}
+
+function alertEmailFail(){
   Swal.fire({
     icon: 'error',
     title: 'Falha ao enviar o email',
@@ -179,12 +205,12 @@ function alertSenhaConfirm(){
     position: 'center',
     icon: 'success',
     title:'Senha alterada com sucesso!',
-    text: 'tudo certo por aqui...',
+    text: 'Um email de confirmação foi enviado',
     showConfirmButton: false,
   })
 }
 
-function AlertSenhaFail(){
+function alertSenhaFail(){
   Swal.fire({
     icon: 'error',
     title: 'Falha ao alterar a senha',
@@ -193,18 +219,26 @@ function AlertSenhaFail(){
   })
 }
 
-function AlertEmailSent(){
+function alertSenhaRepeat(){
   Swal.fire({
-    position: 'center',
-    title: 'Email enviado com sucesso',
-    text: 'Confira sua caixa de entrada para confirmar seu email',
+    icon: 'error',
+    title: 'Falha ao alterar a senha',
+    text: 'Link inválido ou já utilizado. Solicite um novo link para atualizar a senha!',
+    showConfirmButton: false,
+  })
+}
+
+function alertSenhaExpired(){
+  Swal.fire({
+    icon: 'error',
+    title: 'Falha ao alterar a senha',
+    text: 'Este link de redefinição de senha expirou. Solicite um novo link.',
     showConfirmButton: false,
   })
 }
 
 
-
-function AlertCompartilhamento() {
+function alertCompartilhamento() {
   Swal.fire({
       icon: 'center',
       title: 'O link da Oásis foi copiado! 🌿',

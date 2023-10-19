@@ -30,7 +30,7 @@
             $stmt_verificar->execute();
 
             if ($stmt_verificar->rowCount() > 0) {
-                header("Location: ../../../views/voluntarios/cadastro.php?email_repetido=true");
+                header("Location: ../../../views/forms/voluntarios/cadastro.php?email_repetido=true");
                 exit();
             }
 
@@ -82,5 +82,3 @@
             echo "Erro ao cadastrar: " . $e->getMessage();
         }
     }
-    
-?>

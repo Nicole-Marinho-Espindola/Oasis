@@ -22,7 +22,7 @@
             <?php if (isset($_SESSION['email'])) : ?>
                 <?php if ($_SESSION['tipo_usuario'] === 'voluntario') : ?>
                     <a href="<?= baseUrl('/views/pages/doe.php') ?>" class="nav-bar-link-style">
-                        <li class="nav-li">Apoie-nos</li>
+                        <li class="nav-li">Nos apoie</li>
                     </a>
                 <?php endif; ?>
             <?php endif; ?>
@@ -39,7 +39,7 @@
             </div>
         <?php else : ?>
             <div class="sign-up-block">
-                <a class="link-style-none sign-in" href="<?= baseUrl('/views/forms/voluntarios/login.php') ?>">Entrar</a>
+                <a class="link-style-none sign-in" href="<?= baseUrl('/views/forms/login.php') ?>">Entrar</a>
                 <button class="btn"><a class="link-style-none" href="<?= baseUrl('/views/forms/voluntarios/cadastro.php') ?>">Cadastro</a></button>
             </div>
         <?php endif; ?>
@@ -78,7 +78,7 @@
                 <?php if ($_SESSION['tipo_usuario'] === 'voluntario') : ?>
                     <li class="list-style">
                         <i class="fa-solid fa-hand-holding-heart icon-color"></i>
-                        <a href="<?= baseUrl('/views/pages/doe.php') ?>" class="link-style">Apoie-nos</a>
+                        <a href="<?= baseUrl('/views/pages/doe.php') ?>" class="link-style">Nos apoie</a>
                     </li>
                 <?php endif; ?>
             <?php endif; ?>

@@ -10,6 +10,7 @@
 
     include_once(includeURL('/services/helpers.php'))
 ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,9 +21,24 @@
     <link rel="stylesheet" href="<?= baseUrl('/assets/css/navbar.css')?>">
     <link rel="stylesheet" href="<?= baseUrl('/assets/css/form.css')?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
     <title>Cadastro | Oásis</title>
 </head>
+
+<body>
+    <?php
+        if (isset($_GET['email_sucesso']) && $_GET['email_sucesso'] == 'true') {
+            echo '<script src="../../../assets/js/alerts.js"></script>';
+            echo '<script>AlertEmailSent();</script>';
+        }
+
+        if (isset($_GET['email_sucesso']) && $_GET['email_sucesso'] == 'false') {
+            echo '<script src="../../../assets/js/alerts.js"></script>';
+            echo '<script>AlertEmailFail();</script>';
+        }
+        ?>
+
 
 <div class="main-content">
     <div class="form">
@@ -63,4 +79,4 @@
         <img class="form-img" src="<?= baseUrl('/assets/img/Forgot password-pana.png')?>" alt="">
     </div>
 
-<script src="<?= baseUrl('/assets/js/alertSweet.js')?>"></script>
+</body>

@@ -304,10 +304,11 @@
             }
         
             if ($success) {
-                echo "E-mail enviado com sucesso!";
+                header("Location: ../../../views/forms/senha/alterarSenha.php?email_sucesso=true");
+                exit();
             } else {
-                // Em caso de erro, você pode definir uma mensagem de erro personalizada.
-                echo "Houve um erro ao enviar o e-mail.";
+                header("Location: ../../../views/forms/senha/alterarSenha.php?email_sucesso=false");
+                exit();
             }
             exit();
         } catch (PDOException $e) {
