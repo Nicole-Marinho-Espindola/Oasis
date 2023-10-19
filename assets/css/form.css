@@ -74,9 +74,9 @@
     margin-left: 10px;
 }
 
-.input-size{
+/* .input-size{
     width: 94%;
-}
+} */
 
 .btn-margin{
     margin-top: 3em;
@@ -276,12 +276,12 @@
 }
 
 .required{
-    display: none;
+    display: block;
     /* align-items: center; */
-    border-bottom: 2px solid #a71f1f;
-    width: 20em;
-    margin-top: 7px;
-    height: 40px;
+    /* border-bottom: 2px solid #a71f1f;
+    width: 22em;
+    margin-top: 2px;
+    height: 40px; */
 }
 
 .label-content-int{

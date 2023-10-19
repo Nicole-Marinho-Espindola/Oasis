@@ -43,11 +43,12 @@
                 </div>
                 <div class="user-info-block">
                 <label class="label-style" for="">Nome
-                    <div class="input-block">
+                    <div class="input-block required">
                         <i class="fa-solid fa-user icon-green"></i>
                         <input class="input input-size" type="text"
-                            id="nomeVoluntario" name="nomeVoluntario">
+                            id="nomeVoluntario" name="nomeVoluntario" oninput="nameValidate()">
                     </div>
+                    <span class="span-required">O nome deve conter mais de 3 letras</span>
                 </label>
                 </div>
                 <div class="user-info-block">

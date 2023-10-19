@@ -97,6 +97,8 @@
             <div class="modal-title-project">Imagem</div>
             <input class="input-img" type="file">
         </div>
+
+        
         <div class="modal-title-block-project">
             <div class="modal-title-project">Descrição</div>
         </div>

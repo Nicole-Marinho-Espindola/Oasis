@@ -42,27 +42,27 @@
                 <p class="form-subtitle">Não lembra sua senha? Podemos resolver isso pra você!</p>
             </div>
             <div class="card-senha">
-                <div class="card-senha-head">
-                    <!-- <img class="mail-icon" src="<?= baseUrl('/assets/img/email-img.png')?>" alt=""> -->
-                </div>
+                <div class="card-senha-head"></div>
                 <div class="card-senha-text-block">
                     <h3 class="card-senha-title">Digite sua nova senha</h3>
                     <div class="user-info-block">
                         <label class="label-style" for="">Senha
-                            <div class="input-block input-block-size">
+                            <div class="input-block input-block-size required">
                                 <i class="fa-regular fa-envelope icon-green"></i>
-                                <input class="input input-size" type="text"
-                                    id="senha" name="senha">
+                                <input class="input input-size" type="password"
+                                    id="senha" name="senha" oninput="mainPasswordValidate()">
                             </div>
                         </label>
+                        <span class="span-required">A senha deve conter mais que 6 caracteres</span>
                         <label class="label-style" for="">Confirmar senha
                             <div class="input-block input-block-size">
                                 <i class="fa-regular fa-envelope icon-green"></i>
-                                <input class="input input-size" type="text"
-                                    id="confirmar_senha" name="confirmar_senha">
+                                <input class="input input-size required" type="password"
+                                    id="confirmar_senha" name="confirmar_senha" oninput="PasswordValidate()">
                                 <input type="hidden" name="token_senha" value="<?= $token_senha ?>">
                             </div>
                         </label>
+                        <span class="span-required">Senhas não concidem</span>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-purple btn-larger">Enviar</button>
@@ -72,3 +72,5 @@
     <div class="img-block">
         <img class="form-img" src="<?= baseUrl('/assets/img/Forgot password-pana.png')?>" alt="">
     </div>
+
+    <script src="<?= baseUrl('/assets/js/validarInput.js')?>"></script>
