@@ -160,7 +160,7 @@ function alertEmailConfirm(){
     position: 'center',
     icon: 'success',
     title:'Email confirmado com sucesso!',
-    text: 'tudo certo por aqui...',
+    text: 'por favor, entre na sua conta para continuar',
     showConfirmButton: false,
   })
 }
@@ -184,7 +184,7 @@ function alertSenhaConfirm(){
   })
 }
 
-function AlertEmailFail(){
+function AlertSenhaFail(){
   Swal.fire({
     icon: 'error',
     title: 'Falha ao alterar a senha',
@@ -192,6 +192,17 @@ function AlertEmailFail(){
     showConfirmButton: false,
   })
 }
+
+function AlertEmailSent(){
+  Swal.fire({
+    position: 'center',
+    title: 'Email enviado com sucesso',
+    text: 'Confira sua caixa de entrada para confirmar seu email',
+    showConfirmButton: false,
+  })
+}
+
+
 
 function AlertCompartilhamento() {
   Swal.fire({

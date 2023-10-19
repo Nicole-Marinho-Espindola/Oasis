@@ -10,21 +10,34 @@
             </a>
         </div>
         <ul class="nav-ul">
-            <a href="<?= baseUrl('/index.php') ?>" class="nav-bar-link-style"><li class="nav-li">Home</li></a>
-            <a href="<?= baseUrl('/views/pages/sobreNos.php') ?>" class="nav-bar-link-style"><li class="nav-li">Sobre nós</li></a>
-            <a href="<?= baseUrl('/views/pages/projetos/projetosOng.php') ?>" class="nav-bar-link-style"><li class="nav-li">Projetos</li></a>
+            <a href="<?= baseUrl('/index.php') ?>" class="nav-bar-link-style">
+                <li class="nav-li">Home</li>
+            </a>
+            <a href="<?= baseUrl('/views/pages/sobreNos.php') ?>" class="nav-bar-link-style">
+                <li class="nav-li">Sobre nós</li>
+            </a>
+            <a href="<?= baseUrl('/views/pages/projetos/projetosOng.php') ?>" class="nav-bar-link-style">
+                <li class="nav-li">Projetos</li>
+            </a>
+            <?php if (isset($_SESSION['email'])) : ?>
+                <?php if ($_SESSION['tipo_usuario'] === 'voluntario') : ?>
+                    <a href="<?= baseUrl('/views/pages/doe.php') ?>" class="nav-bar-link-style">
+                        <li class="nav-li">Apoie-nos</li>
+                    </a>
+                <?php endif; ?>
+            <?php endif; ?>
         </ul>
 
-        <?php if(isset($_SESSION['email'])): ?>
+        <?php if (isset($_SESSION['email'])) : ?>
             <div class="sign-up-block">
                 <a class="link-style-none sign-in-on">Olá, <?= $row['nome_usuario'] ?></a>
-                <?php if ($_SESSION['tipo_usuario'] === 'voluntario'): ?>
+                <?php if ($_SESSION['tipo_usuario'] === 'voluntario') : ?>
                     <a href="<?= baseUrl('/views/pages/perfils/perfilVoluntario.php') ?>"><i class="fa-regular fa-user user"></i></a>
-                <?php elseif ($_SESSION['tipo_usuario'] === 'ong'): ?>
+                <?php elseif ($_SESSION['tipo_usuario'] === 'ong') : ?>
                     <a href="<?= baseUrl('/views/pages/perfils/perfilOng.php') ?>"><i class="fa-regular fa-user user"></i></a>
                 <?php endif; ?>
             </div>
-        <?php else: ?>
+        <?php else : ?>
             <div class="sign-up-block">
                 <a class="link-style-none sign-in" href="<?= baseUrl('/views/forms/voluntarios/login.php') ?>">Entrar</a>
                 <button class="btn"><a class="link-style-none" href="<?= baseUrl('/views/forms/voluntarios/cadastro.php') ?>">Cadastro</a></button>
@@ -43,34 +56,34 @@
                 <a class="link-style" href="<?= baseUrl('/views/pages/sobreNos.php') ?>">Sobre nós</a>
             </li>
 
-            <?php if(empty($_SESSION['email']) || (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] === 'ong')): ?>
+            <?php if (empty($_SESSION['email']) || (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] === 'ong')) : ?>
                 <li class="list-style">
                     <i class="fa-solid fa-users icon-color"></i>
                     <a class="link-style" href="<?= baseUrl('/views/forms/ongs/cadastro.php') ?>">Sou uma ONG</a>
                 </li>
             <?php endif; ?>
 
-            <?php if(isset($_SESSION['email'])): ?>
+            <?php if (isset($_SESSION['email'])) : ?>
                 <li class="list-style">
                     <i class="fa-solid fa-user icon-color"></i>
-                    <?php if ($_SESSION['tipo_usuario'] === 'voluntario'): ?>
+                    <?php if ($_SESSION['tipo_usuario'] === 'voluntario') : ?>
                         <a href="<?= baseUrl('/views/pages/perfils/perfilVoluntario.php') ?>" class="link-style">Perfil</a>
-                    <?php elseif ($_SESSION['tipo_usuario'] === 'ong'): ?>
+                    <?php elseif ($_SESSION['tipo_usuario'] === 'ong') : ?>
                         <a href="<?= baseUrl('/views/pages/perfils/perfilOng.php') ?>" class="link-style">Perfil</a>
                     <?php endif; ?>
                 </li>
             <?php endif; ?>
-            
-            <?php if(isset($_SESSION['email'])): ?>
-                <?php if ($_SESSION['tipo_usuario'] === 'voluntario'): ?>
+
+            <?php if (isset($_SESSION['email'])) : ?>
+                <?php if ($_SESSION['tipo_usuario'] === 'voluntario') : ?>
                     <li class="list-style">
                         <i class="fa-solid fa-hand-holding-heart icon-color"></i>
-                        <a href="<?= baseUrl('/views/pages/doe.php') ?>" class="link-style">Doação</a>
+                        <a href="<?= baseUrl('/views/pages/doe.php') ?>" class="link-style">Apoie-nos</a>
                     </li>
                 <?php endif; ?>
             <?php endif; ?>
 
-            <?php if(isset($_SESSION['email'])): ?>
+            <?php if (isset($_SESSION['email'])) : ?>
                 <div class="nav-bar-btn-block">
                     <a href="<?= baseUrl('/services/controllers/auth/logout.php') ?>" class="btn">
                         <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
@@ -78,7 +91,7 @@
                     </a>
                 </div>
             <?php endif; ?>
-            
+
         </ul>
     </aside>
 

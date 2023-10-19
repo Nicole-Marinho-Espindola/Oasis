@@ -1,13 +1,4 @@
-
-<head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
-</head>
-
-<body>
-
 <?php
-
 
     function includeURL($path = '') {
         return sprintf(
@@ -18,10 +9,10 @@
         );
     }
 
-
     include_once(includeURL('/config/database.php'));
 
     $token_email = filter_input(INPUT_GET, "token_email", FILTER_SANITIZE_STRING);
+    $redirecionamento = "http://localhost/oasis/index.php";
 
     try {
         $conn->beginTransaction();
@@ -40,28 +31,19 @@
                                         WHERE t.ds_token = :token_email");
             $stmtUpdate->bindParam(':token_email', $token_email, PDO::PARAM_STR);
 
-            if ($stmtUpdate->execute()) {
-                $conn->commit();
-                echo '<script src="../../../../assets/js/alerts.js"></script>';
-                echo '<script>alertEmailConfirm();</script>';
-                header("Refresh: 1.5; URL=http://localhost/oasis/index.php");
-                exit();
-            } else {
-                echo '<script src="../../../../assets/js/alerts.js"></script>';
-                echo '<script>AlertEmailFail();</script>';
-                header("Refresh: 1.5; URL=http://localhost/oasis/index.php");
-                exit();
-            }
-        } else {
-            echo '<script src="../../../../assets/js/alerts.js"></script>';
-            echo '<script>AlertEmailFail();</script>';
-            header("Refresh: 1.5; URL=http://localhost/oasis/index.php");
+        if ($stmtUpdate->execute()) {
+            header("Location: $redirecionamento?email_sucesso=true");
             exit();
-        }
-    } catch (Exception $e) {
-        $conn->rollback();
-        echo "Erro: " . $e->getMessage();
-    }
-?>
 
-</body>
+        } else {
+            echo "Erro ao atualizar a situação do voluntário.";
+        }
+    } else {
+        echo "Token de e-mail inválido ou já utilizado.";
+    }
+
+    $conn->commit();
+    } catch (PDOException $e) {
+        $conn->rollBack();
+        echo "Algo deu errado: " . $e->getMessage();
+    }

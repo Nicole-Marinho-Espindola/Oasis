@@ -8,7 +8,10 @@
         );
     }
 
-    include_once(includeURL('/services/helpers.php'))
+    include_once(includeURL('/services/helpers.php'));
+
+    $token_senha = filter_input(INPUT_GET, 'token_senha', FILTER_DEFAULT);
+
 ?>
 <head>
     <meta charset="UTF-8">
@@ -31,31 +34,38 @@
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
         </div>
-        <form action="<?= baseUrl('/services/controllers/voluntarios/senha/alterarSenha_action.php') ?>" method="POST">
+        <form action="<?= baseUrl('/services/controllers/senha/redefinirSenha.php') ?>" method="POST">
         <div class="section active">
             <div class="form-title">
-                <h1 class="title">Alterar senha</h1>
+                <h1 class="title">Atualizar senha</h1>
                 <div class="line line-config"></div>
                 <p class="form-subtitle">Não lembra sua senha? Podemos resolver isso pra você!</p>
             </div>
             <div class="card-senha">
-                <div class="card-senha-head">
-                    <!-- <img class="mail-icon" src="<?= baseUrl('/assets/img/email-img.png')?>" alt=""> -->
-                </div>
+                <div class="card-senha-head"></div>
                 <div class="card-senha-text-block">
-                    <h3 class="card-senha-title">Por favor, digite o endereço de e-mail associado à sua conta.</h3>
+                    <h3 class="card-senha-title">Digite sua nova senha</h3>
                     <div class="user-info-block">
-                        <label class="label-style" for="">Email
-                            <div class="input-block input-block-size">
+                        <label class="label-style" for="">Senha
+                            <div class="input-block input-block-size required">
                                 <i class="fa-regular fa-envelope icon-green"></i>
-                                <input class="input input-size" type="text"
-                                    id="email" name="email">
+                                <input class="input input-size" type="password"
+                                    id="senha" name="senha" oninput="mainPasswordValidate()">
                             </div>
                         </label>
+                        <span class="span-required">A senha deve conter mais que 6 caracteres</span>
+                        <label class="label-style" for="">Confirmar senha
+                            <div class="input-block input-block-size">
+                                <i class="fa-regular fa-envelope icon-green"></i>
+                                <input class="input input-size required" type="password"
+                                    id="confirmar_senha" name="confirmar_senha" oninput="PasswordValidate()">
+                                <input type="hidden" name="token_senha" value="<?= $token_senha ?>">
+                            </div>
+                        </label>
+                        <span class="span-required">Senhas não concidem</span>
                     </div>
-                    <p class="card-senha-text">Você irá receber instruções no email informado para voltar a acessar sua conta no Oásis.</p>
                 </div>
-                <button type="submit" onclick="alertEmailConfirm()" class="btn btn-purple btn-larger">Enviar</button>
+                <button type="submit" class="btn btn-purple btn-larger">Enviar</button>
             </div>
         </div>
     </div>
@@ -63,4 +73,4 @@
         <img class="form-img" src="<?= baseUrl('/assets/img/Forgot password-pana.png')?>" alt="">
     </div>
 
-<script src="<?= baseUrl('/assets/js/alertSweet.js')?>"></script>
+    <script src="<?= baseUrl('/assets/js/validarInput.js')?>"></script>

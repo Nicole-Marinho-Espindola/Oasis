@@ -48,6 +48,8 @@
                                             'Compartilhou' AS acao
                                         FROM tb_voluntario v
                                         JOIN tb_compartilhamento c ON v.cd_voluntario = c.cd_voluntario
+
+                                        ORDER BY data DESC;
                                         ");
                 $select->execute();
 
@@ -59,7 +61,6 @@
                         'fa-regular fa-paper-plane',
                         'fa-regular fa-heart',
                         'fa-clover',
-                        'fa-pagelines',
                         'fa-tree',
                         'fa-handshake-angle',
                     ];
@@ -108,9 +109,6 @@
     </div>
 </section>
 
-<<<<<<< HEAD
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-=======
 <div class="modal-window" id="modalWindow">
     <div class="modal-card">
         <div class="modal-title-block">
@@ -126,7 +124,6 @@
     </div>
 </div>
 
->>>>>>> 0b91d1b1e5ed0000b5a95dcc43f95435d30711db
 <script src="../../assets/js/copiarCompartilhamento.js"></script>
 <script src="../../assets/js/modal.js"></script>
 
