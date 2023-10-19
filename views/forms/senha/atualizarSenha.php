@@ -8,7 +8,10 @@
         );
     }
 
-    include_once(includeURL('/services/helpers.php'))
+    include_once(includeURL('/services/helpers.php'));
+
+    $token_senha = filter_input(INPUT_GET, 'token_senha', FILTER_DEFAULT);
+
 ?>
 <head>
     <meta charset="UTF-8">
@@ -31,27 +34,41 @@
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
         </div>
+        <form action="<?= baseUrl('/services/controllers/senha/redefinirSenha.php') ?>" method="POST">
         <div class="section active">
             <div class="form-title">
-                <h1 class="title">Alterar senha</h1>
+                <h1 class="title">Atualizar senha</h1>
                 <div class="line line-config"></div>
                 <p class="form-subtitle">Não lembra sua senha? Podemos resolver isso pra você!</p>
             </div>
-            <div class="card-email">
-                <div class="card-email-head">
-                    <!-- <i class="fa-regular fa-envelope mail-icon"></i> -->
-                    <img class="mail-icon" src="<?= baseUrl('/assets/img/email-img.png')?>" alt="">
+            <div class="card-senha">
+                <div class="card-senha-head">
+                    <!-- <img class="mail-icon" src="<?= baseUrl('/assets/img/email-img.png')?>" alt=""> -->
                 </div>
-                <div class="card-email-text-block">
-                    <h3 class="card-email-title">Verifique seu email</h3>
-                    <p class="card-email-text">Para uma maior segurança gostariamos que você confirmasse seu email,
-                         não se preocupe, é rapido!</p>
+                <div class="card-senha-text-block">
+                    <h3 class="card-senha-title">Digite sua nova senha</h3>
+                    <div class="user-info-block">
+                        <label class="label-style" for="">Senha
+                            <div class="input-block input-block-size">
+                                <i class="fa-regular fa-envelope icon-green"></i>
+                                <input class="input input-size" type="text"
+                                    id="senha" name="senha">
+                            </div>
+                        </label>
+                        <label class="label-style" for="">Confirmar senha
+                            <div class="input-block input-block-size">
+                                <i class="fa-regular fa-envelope icon-green"></i>
+                                <input class="input input-size" type="text"
+                                    id="confirmar_senha" name="confirmar_senha">
+                                <input type="hidden" name="token_senha" value="<?= $token_senha ?>">
+                            </div>
+                        </label>
+                    </div>
                 </div>
-                <button type="button" class="btn btn-purple btn-larger">Enviar</button>
+                <button type="submit" class="btn btn-purple btn-larger">Enviar</button>
             </div>
         </div>
     </div>
     <div class="img-block">
-        <img class="form-img" src="<?= baseUrl('/assets/img/Sign up-bro.png')?>" alt="">
+        <img class="form-img" src="<?= baseUrl('/assets/img/Forgot password-pana.png')?>" alt="">
     </div>
-</div>

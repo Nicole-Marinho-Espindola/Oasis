@@ -8,10 +8,7 @@
         );
     }
 
-    include_once(includeURL('/services/helpers.php'));
-
-    $token_senha = filter_input(INPUT_GET, 'token_senha', FILTER_DEFAULT);
-
+    include_once(includeURL('/services/helpers.php'))
 ?>
 <head>
     <meta charset="UTF-8">
@@ -34,10 +31,10 @@
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
         </div>
-        <form action="<?= baseUrl('/services/controllers/voluntarios/senha/atualizarSenha_action.php') ?>" method="POST">
+        <form action="<?= baseUrl('/services/controllers/senha/verificarUsuario.php') ?>" method="POST">
         <div class="section active">
             <div class="form-title">
-                <h1 class="title">Atualizar senha</h1>
+                <h1 class="title">Alterar senha</h1>
                 <div class="line line-config"></div>
                 <p class="form-subtitle">Não lembra sua senha? Podemos resolver isso pra você!</p>
             </div>
@@ -46,24 +43,17 @@
                     <!-- <img class="mail-icon" src="<?= baseUrl('/assets/img/email-img.png')?>" alt=""> -->
                 </div>
                 <div class="card-senha-text-block">
-                    <h3 class="card-senha-title">Digite sua nova senha</h3>
+                    <h3 class="card-senha-title">Por favor, digite o endereço de e-mail associado à sua conta.</h3>
                     <div class="user-info-block">
-                        <label class="label-style" for="">Senha
+                        <label class="label-style" for="">Email
                             <div class="input-block input-block-size">
                                 <i class="fa-regular fa-envelope icon-green"></i>
                                 <input class="input input-size" type="text"
-                                    id="senha" name="senha">
-                            </div>
-                        </label>
-                        <label class="label-style" for="">Confirmar senha
-                            <div class="input-block input-block-size">
-                                <i class="fa-regular fa-envelope icon-green"></i>
-                                <input class="input input-size" type="text"
-                                    id="confirmar_senha" name="confirmar_senha">
-                                <input type="hidden" name="token_senha" value="<?= $token_senha ?>">
+                                    id="email" name="email">
                             </div>
                         </label>
                     </div>
+                    <p class="card-senha-text">Você irá receber instruções no email informado para voltar a acessar sua conta no Oásis.</p>
                 </div>
                 <button type="submit" class="btn btn-purple btn-larger">Enviar</button>
             </div>
@@ -72,3 +62,5 @@
     <div class="img-block">
         <img class="form-img" src="<?= baseUrl('/assets/img/Forgot password-pana.png')?>" alt="">
     </div>
+
+<script src="<?= baseUrl('/assets/js/alertSweet.js')?>"></script>

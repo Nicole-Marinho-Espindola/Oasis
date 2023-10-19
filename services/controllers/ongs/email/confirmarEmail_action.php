@@ -39,8 +39,8 @@
                 $mail->isSMTP();
                 $mail->Host       = 'sandbox.smtp.mailtrap.io';
                 $mail->SMTPAuth   = true;
-                $mail->Username   = '73007940ef36e3';
-                $mail->Password   = '4017fe2ab23566';
+                $mail->Username   = '7e5019eaaeceaf';
+                $mail->Password   = 'a77db86086ea94';
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Port       = 2525;
 
@@ -119,28 +119,23 @@
                     . '\n\nSe você não se cadastrou na Plataforma Oásis, pode ignorar esta mensagem.';
                     $mail->send();
 
-                    $success = true;
+                    header("Location: ../../../../views/forms/voluntarios/confirmarEmail.php?email_sucesso=true");
+                    exit();
+
                 } else {
-                    echo "Erro na consulta: O endereço de e-mail não é válido ou o nome do voluntário está em branco.";
-                    $success = false;
+                    header("Location: ../../../../views/forms/voluntarios/confirmarEmail.php?email_fail=true");
+                    exit();
                 }
             } else {
                 echo "Erro na consulta: " . $select->errorInfo()[2];
-                $success = false;
+
             }
         } catch (PDOException $e) {
             echo "Erro: " . $e->getMessage();
-            $success = false;
         }
     } else {
         echo "Não foi possível pegar o ID do voluntário.";
         exit();
-    }
-
-    if ($success) {
-        header("Location: ../../../../views/forms/voluntarios/confirmarEmail.php?email_confirmado=true");
-    } else {
-        header("Location: ../../../../views/forms/voluntarios/confirmarEmail.php?email_confirmado=false");
     }
 
 ?>
