@@ -21,9 +21,24 @@
     <link rel="stylesheet" href="<?= baseUrl('/assets/css/global.css')?>">
     <link rel="stylesheet" href="<?= baseUrl('/assets/css/navbar.css')?>">
     <link rel="stylesheet" href="<?= baseUrl('/assets/css/form.css')?>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
     <title>Form | Login</title>
 </head>
+
 <body>
+
+    <?php
+        if (isset($_GET['login_fail']) && $_GET['login_fail'] == 'true') {
+            echo '<script src="../../assets/js/alerts.js"></script>';
+            echo '<script>alertLogin();</script>';
+        }
+        if (isset($_GET['email_unconfirmed']) && $_GET['email_unconfirmed'] == 'true') {
+            echo '<script src="../../assets/js/alerts.js"></script>';
+            echo '<script>alertEmailUnconfirmed();</script>';
+        }
+    ?>
+
     <div class="main-content">
         <div class="form-block">
             <div class="back-block">
@@ -72,4 +87,5 @@
         </div>
     </div>
 </body>
+
 </html>

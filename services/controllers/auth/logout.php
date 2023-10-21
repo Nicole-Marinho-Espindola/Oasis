@@ -1,3 +1,11 @@
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
+</head>
+
+<body>
+
+
 <?php
 	session_start();
 
@@ -13,8 +21,10 @@
 			);
 		}
 
-		header("Location: ../../../index.php?sair_sucesso=true");
-		exit();
+		echo '<script src="../../../assets/js/alerts.js"></script>';
+        echo '<script>alertLogout();</script>';
+        header("Refresh: 1.5; URL=http://localhost/oasis/index.php");
+        exit();
 
 	} else {
 		header("Location: ../../../index.php");
@@ -22,3 +32,5 @@
 
 	}
 ?>
+
+</body>

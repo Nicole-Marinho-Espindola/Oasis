@@ -33,7 +33,7 @@
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
         </div>
-        <form action="<?= baseUrl('/services/controllers/voluntarios/cadastro_action.php') ?>" method="POST"
+        <form action="<?= baseUrl('/services/controllers/ongs/cadastro_action.php') ?>" method="POST"
                     class="form">
             <div class="section active">
                 <div class="form-title">
@@ -46,7 +46,7 @@
                     <div class="input-block required">
                         <i class="fa-solid fa-user icon-green"></i>
                         <input class="input input-size" type="text"
-                            id="nomeVoluntario" name="nomeVoluntario" oninput="nameValidate()">
+                            id="nomeOng" name="nomeOng" oninput="nameValidate()">
                     </div>
                     <span class="span-required">O nome deve conter mais de 3 letras</span>
                 </label>
@@ -56,7 +56,7 @@
                         <div class="input-block">
                             <i class="fa-solid fa-users-between-lines icon-green"></i>
                             <input class="input input-size" type="text"
-                            id="sobrenomeVoluntario" name="sobrenomeVoluntario">
+                            id="razaoOng" name="razaoOng">
                         </div>
                     </label>
                 </div>
@@ -65,7 +65,7 @@
                         <div class="input-block">
                             <i class="fa-solid fa-rocket icon-green"></i>
                             <input class="input input-size" type="text"
-                            id="nascimentoVoluntario" name="nascimentoVoluntario">
+                            id="missaoOng" name="missaoOng">
                         </div>
                     </label>
                 </div>
@@ -83,7 +83,7 @@
                     <div class="input-block">
                         <i class="fa-solid fa-address-card icon-green"></i>
                         <input class="input input-size" type="number"
-                            id="nomeVoluntario" name="nomeVoluntario">
+                            id="cnpjOng" name="cnpjOng">
                     </div>
                 </label>
                 </div>
@@ -92,16 +92,16 @@
                         <div class="input-block">
                             <i class="fa-solid fa-location-dot icon-green"></i>
                             <input class="input input-size" type="text"
-                            id="sobrenomeVoluntario" name="sobrenomeVoluntario">
+                            id="enderecoOng" name="enderecoOng">
                         </div>
                     </label>
                 </div>
                 <div class="user-info-block">
-                    <label class="label-style" for="">Telefone
+                    <label class="label-style" for="">Celular
                         <div class="input-block">
                             <i class="fa-solid fa-phone icon-green"></i>
                             <input class="input input-size" type="number"
-                            id="nascimentoVoluntario" name="nascimentoVoluntario">
+                            id="celularOng" name="celularOng">
                         </div>
                     </label>
                 </div>
@@ -121,7 +121,7 @@
                             <div class="input-block">
                                 <i class="fa-regular fa-envelope icon-green"></i>
                                 <input class="input input-size" type="email"
-                                id="emailVoluntario" name="emailVoluntario" requerid>
+                                id="emailOng" name="emailOng" requerid>
                             </div>
                         </label>
                     </div>
@@ -130,7 +130,7 @@
                             <div class="input-block">
                                 <i class="fa-solid fa-lock icon-green"></i>
                                 <input class="input" type="password"
-                                id="senhaVoluntario" name="senhaVoluntario" required>
+                                id="senhaOng" name="senhaOng" required>
                                 <i class="fa-regular fa-eye-slash icon-green"></i>
                             </div>
                         </label>

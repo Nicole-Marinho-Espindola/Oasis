@@ -41,15 +41,13 @@
                         exit();
                     } else {
                         // Senha correta, mas o email não foi confirmado
-                        echo "Necessário confirmar o email antes de fazer login.";
+                        header("Location: ../../../views/forms/login.php?email_unconfirmed=true");
                     }
                 } else {
-                    // Senha incorreta
-                    echo "Senha incorreta. Tente novamente.";
+                    header("Location: ../../../views/forms/login.php?login_fail=true");
                 }
             } else {
-                // Usuário não encontrado
-                echo "Usuário não encontrado.";
+                header("Location: ../../../views/forms/login.php?login_fail=true");
             }
         } catch (PDOException $e) {
             echo "Erro durante o login: " . $e->getMessage();
