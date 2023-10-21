@@ -1,4 +1,3 @@
-
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
@@ -6,10 +5,11 @@
 
 <body>
 
-<?php
+    <?php
 
 
-    function includeURL($path = '') {
+    function includeURL($path = '')
+    {
         return sprintf(
             "%s/%s/%s",
             $_SERVER['DOCUMENT_ROOT'],
@@ -48,13 +48,13 @@
                 exit();
             } else {
                 echo '<script src="../../../../assets/js/alerts.js"></script>';
-                echo '<script>AlertEmailFail();</script>';
+                echo '<script>alertEmailFail();</script>';
                 header("Refresh: 1.5; URL=http://localhost/oasis/index.php");
                 exit();
             }
         } else {
             echo '<script src="../../../../assets/js/alerts.js"></script>';
-            echo '<script>AlertEmailFail();</script>';
+            echo '<script>alertEmailFail();</script>';
             header("Refresh: 1.5; URL=http://localhost/oasis/index.php");
             exit();
         }
@@ -62,6 +62,6 @@
         $conn->rollback();
         echo "Erro: " . $e->getMessage();
     }
-?>
+    ?>
 
 </body>
