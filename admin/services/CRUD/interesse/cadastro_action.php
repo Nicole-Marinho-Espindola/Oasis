@@ -30,7 +30,6 @@ if (!empty($_POST) && !isset($_SESSION['cadastro_realizado'])) {
 
                         $_SESSION['cadastro_realizado'] = true;
                         
-
                         header("Location: ../../../views/interesses/index.php?cadastro_sucesso=true");
                         exit();
                         

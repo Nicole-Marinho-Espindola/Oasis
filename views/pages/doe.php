@@ -67,29 +67,24 @@
 
                     $iconeAleatorio = $icones[array_rand($icones)];
 
-                    // Calcular a diferença de tempo
+                    // calcular a diferença de tempo
                     date_default_timezone_set('America/Sao_Paulo');
                     $dataAtual = new DateTime();
                     $dataAcao = new DateTime($row['data']);
-                    $intervalo = $dataAcao->diff($dataAtual);
+                    $intervalo = $dataAtual->diff($dataAcao);
 
-                    // Exibir o tempo formatado
+                    // exibir o tempo formatado
                     $tempoFormatado = '';
 
-                    if ($intervalo->y > 0) {
-                        $tempoFormatado = $intervalo->format('%y anos atrás');
-                    } elseif ($intervalo->m > 0) {
-                        $tempoFormatado = $intervalo->format('%m meses atrás');
-                    } elseif ($intervalo->d > 0) {
-                        $tempoFormatado = $intervalo->format('%d dias atrás');
+                    if ($intervalo->days > 0) {
+                        $tempoFormatado = $intervalo->days . ' dias atrás';
                     } elseif ($intervalo->h > 0) {
-                        $tempoFormatado = $intervalo->format('%h horas atrás');
+                        $tempoFormatado = $intervalo->h . ' horas atrás';
                     } elseif ($intervalo->i > 0) {
-                        $tempoFormatado = $intervalo->format('%i minutos atrás');
+                        $tempoFormatado = $intervalo->i . ' minutos atrás';
                     } else {
                         $tempoFormatado = 'Agora mesmo';
                     }
-
             ?>
                     <div class="activity-child">
                         <div class="activity-child-content">

@@ -55,7 +55,7 @@ function alertExcluir(){
 
 function alertAlterar(){
     Swal.fire({
-        title: 'Alterado com sucesso!',
+        title: 'Editado com sucesso!',
         text:'tudo certo por aqui...',
         width: 600,
         padding: '3em',
