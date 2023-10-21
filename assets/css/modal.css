@@ -130,7 +130,7 @@
 
 .img-profile::before{
     content: "";
-    background-color: #58585849;
+    background-color: #00000049;
     height: 10em;
     width: 10em;
     position: absolute;
@@ -138,10 +138,10 @@
 }
 
 .icon-img-profile {
-    color: #000;
+    color: #ffffff;
     font-size: 50px;
     position: absolute;
-    margin-bottom: 4em;
+    margin-bottom: 3em;
 }
 
 .img-profile > img{

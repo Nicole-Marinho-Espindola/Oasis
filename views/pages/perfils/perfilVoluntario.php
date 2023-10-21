@@ -169,10 +169,9 @@ if (isset($_SESSION['email'])) {
                     <?php else: ?>
                         <img src="<?= baseUrl('/assets/img/iconUser.jpg') ?>" alt="Foto de perfil do usuário">
                     <?php endif; ?>
+                    <!-- <span class="edit-img"><input class="input input-size icon-green" name="imagemVoluntario" type="file"></span> -->
                 </div>
-                <i class="fa-regular fa-pen-to-square icon-img-profile">
-                    <input class="input input-size icon-green" name="imagemVoluntario" type="file">
-                </i>
+                <i class="fa-regular fa-pen-to-square icon-img-profile"></i>
                 <div class="modal-input-block-perfil">
                     <input id="nomeVoluntario" name="nomeVoluntario" type="text" class="modal-input" value="<?= $nomeVoluntario ?? '' ?>">
                     <i class="fa-regular fa-pen-to-square icon-input"></i>
