@@ -241,7 +241,7 @@ function alertSenhaExpired(){
 function alertCompartilhamento() {
   Swal.fire({
       icon: 'center',
-      title: 'O link da Oásis foi copiado! 🌿',
+      title: '🌿 O link da Oásis foi copiado! ',
       text: 'Obrigado por fazer parte do movimento por um futuro mais sustentável.',
       showConfirmButton: false,
       

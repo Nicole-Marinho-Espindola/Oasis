@@ -1,4 +1,7 @@
 <?php
+
+    session_start();
+
     include_once('../../../config/database.php');
 
     $idVoluntario = filter_input(INPUT_POST, 'idVoluntario');
@@ -17,6 +20,25 @@
             exit();
         }
 
+        function obterNovoEmailDoVoluntario($idVoluntario, $conn) {
+            try {
+                $stmt = $conn->prepare("SELECT ds_email FROM tb_voluntario WHERE cd_voluntario = :idVoluntario");
+                $stmt->bindParam(':idVoluntario', $idVoluntario);
+                $stmt->execute();
+
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                if ($row) {
+                    return $row['ds_email'];
+                } else {
+                    return null;
+                }
+            } catch (PDOException $e) {
+                return null;
+            }
+        }
+
+        // Verifica se uma imagem foi enviada
         if ($imagem['error'] === UPLOAD_ERR_OK) {
             $dir = "../../../uploads/voluntarios/";
             date_default_timezone_set('America/Sao_Paulo');
@@ -41,6 +63,17 @@
             $stmt->bindParam(':nome', $nome);
             $stmt->bindParam(':email', $email);
             $stmt->execute();
+        }
+
+        // atualizar a sessão com o novo email
+        $novoEmail = obterNovoEmailDoVoluntario($idVoluntario, $conn);
+
+        if ($novoEmail) {
+
+            $_SESSION['email'] = $novoEmail;
+
+        } else {
+            echo "Erro ao atualizar o email na sessão.";
         }
 
         header("Location: ../../../views/pages/perfils/perfilVoluntario.php?editar_sucesso=true");
