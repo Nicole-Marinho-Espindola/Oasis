@@ -55,9 +55,9 @@
                         </label>
                         <span class="span-required">A senha deve conter mais que 6 caracteres</span>
                         <label class="label-style" for="">Confirmar senha
-                            <div class="input-block input-block-size">
+                            <div class="input-block input-block-size required">
                                 <i class="fa-regular fa-envelope icon-green"></i>
-                                <input class="input input-size required" type="password"
+                                <input class="input input-size" type="password"
                                     id="confirmar_senha" name="confirmar_senha" oninput="PasswordValidate()">
                                 <input type="hidden" name="token_senha" value="<?= $token_senha ?>">
                             </div>
