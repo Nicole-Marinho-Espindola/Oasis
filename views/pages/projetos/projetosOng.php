@@ -98,8 +98,6 @@
                 <div class="modal-title-project">Imagem</div>
                 <input class="input-img" type="file">
             </div>
-
-            
             <div class="modal-title-block-project">
                 <div class="modal-title-project">Descrição</div>
             </div>
@@ -112,7 +110,7 @@
             <div class="modal-project-info">
                 <div class="info-modal-req">
                     <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
-                    <input type="text" class="input-requitos" value="">
+                    <input type="text" class="input-requitos" value="" placeholder="Nome do grupo">
                 </div>
                 <div class="info-modal-req ajust">
                     <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>

@@ -45,8 +45,8 @@
             </div>
             <button class="btn-project-card" onclick="openModal()">Participar</button>
         </div>
-        <div class="project-card">
-            <div class="card-title-add">Adicionar evento</div>
+        <div class="project-card" onclick="openSecondModal()">
+            <div class="card-title-add">Adicionar projeto</div>
             <i class="fa-solid fa-plus icon-add-project"></i>
         </div>
     </div>
@@ -87,10 +87,46 @@
 
         <button class="btn-modal" id="close">Participar</button>
     </div>
-</div>
 
-<script src="<?= baseUrl('/assets/js/modal.js')?>"></script>
+    <div class="modal-window" id="SecondModalWindow">
+        <div class="modal-card-projects">
+            <div class="modal-title-block-project">
+                <div class="modal-title-project">Adicionar projeto</div>
+                <div class="line"></div>
+            </div>
+            <div class="project-img-add-modal">
+                <div class="modal-title-project">Imagem</div>
+                <input class="input-img" type="file">
+            </div>
+            <div class="modal-title-block-project">
+                <div class="modal-title-project">Descrição</div>
+            </div>
+            <div class="textarea-project">
+                <textarea name="" id="" cols="45" rows="5"></textarea>
+            </div>   
+            <div class="modal-title-block-project">
+                <div class="modal-title-project">Requisitos</div>
+            </div>
+            <div class="modal-project-info">
+                <div class="info-modal-req">
+                    <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
+                    <input type="text" class="input-requitos" value="" placeholder="Nome do grupo">
+                </div>
+                <div class="info-modal-req ajust">
+                    <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
+                    <input type="text" class="input-requitos" placeholder="Localização">
+                </div>
+                <div class="info-modal-req ajust">
+                    <i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i>
+                    <input type="text" class="input-requitos" placeholder="Data do projeto">
+                </div>
+            </div>
+            <button class="btn-modal" id="close">Adicionar</button>
+        </div>
+    </div>
 
-<?php
-    include_once('../../includes/footer.php')
-?>
+    <script src="<?= baseUrl('/assets/js/modal.js')?>"></script>
+
+    <?php
+        include_once('../../includes/footer.php')
+    ?>

@@ -264,7 +264,7 @@
     align-items: center;
     cursor: pointer;
     transition: color 300ms ease-in-out;
-    margin: 25px;
+    margin: 30px;
 }
 
 .img-block:hover{
