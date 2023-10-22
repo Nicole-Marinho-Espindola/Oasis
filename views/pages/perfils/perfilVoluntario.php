@@ -174,7 +174,7 @@
                         <?php endif; ?>
                     </div> -->
                     <label class="img-block" tabindex="0">
-                        <input class="input-profile-img" type="file" accept="image/*">
+                        <input class="input-profile-img" name="imagemVoluntario" type="file" accept="image/*">
                         <div class="img-text">
                             <?php if (!empty($imagemVoluntario)) : ?>
                                 <img src="<?= baseUrl($imagemVoluntario) ?>" alt="Foto de perfil do usuário">
@@ -183,7 +183,6 @@
                             <?php endif; ?>
                         </div>
                     </label>
-                    <!-- <i class="fa-regular fa-pen-to-square icon-img-profile"></i> -->
                     <div class="modal-input-block-perfil">
                         <input id="nomeVoluntario" name="nomeVoluntario" type="text" class="modal-input" value="<?= $nomeVoluntario ?? '' ?>">
                         <i class="fa-regular fa-pen-to-square icon-input"></i>

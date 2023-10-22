@@ -16,16 +16,15 @@
             <a href="<?= baseUrl('/views/pages/sobreNos.php') ?>" class="nav-bar-link-style">
                 <li class="nav-li">Sobre nós</li>
             </a>
-            <?php if (isset($_SESSION['email'])) : ?>
-                <?php if ($_SESSION['tipo_usuario'] === 'ong') : ?>
-                    <a href="<?= baseUrl('/views/pages/projetos/projetosOng.php') ?>" class="nav-bar-link-style">
+            <?php if (isset($_SESSION['email']) && $_SESSION['tipo_usuario'] === 'ong') : ?>
+                <a href="<?= baseUrl('/views/pages/projetos/projetosOng.php') ?>" class="nav-bar-link-style">
                     <li class="nav-li">Projetos</li>
-                <?php elseif ($_SESSION['tipo_usuario'] === 'voluntario') : ?>
-                    <a href="<?= baseUrl('/views/pages/projetos/projetosVoluntario.php') ?>" class="nav-bar-link-style">
+                </a>
+            <?php else : ?>
+                <a href="<?= baseUrl('/views/pages/projetos/projetosVoluntario.php') ?>" class="nav-bar-link-style">
                     <li class="nav-li">Projetos</li>
-                <?php endif; ?>
+                </a>
             <?php endif; ?>
-            </a>
             <?php if (isset($_SESSION['email'])) : ?>
                 <?php if ($_SESSION['tipo_usuario'] === 'voluntario') : ?>
                     <a href="<?= baseUrl('/views/pages/doe.php') ?>" class="nav-bar-link-style">

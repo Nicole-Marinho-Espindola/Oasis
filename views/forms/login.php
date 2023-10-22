@@ -80,7 +80,7 @@
                 </div>
                 <button class="btn btn-color btn-margin btn-section-config">Entrar</button>
             </form>
-            <span class="redirecionar-login">Novo por aqui? <a href="cadastro.php" class="purple-link">Cadastre-se</a></span>
+            <span class="redirecionar-login">Novo por aqui? <a href="./voluntarios/cadastro.php" class="purple-link">Cadastre-se</a></span>
         </div>
         <div class="img-block">
             <img class="form-img" src="<?= baseUrl('/assets/img/Sign up-bro.png')?>" alt="">
