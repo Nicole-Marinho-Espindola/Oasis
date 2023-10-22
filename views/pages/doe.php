@@ -5,8 +5,20 @@
     
 ?>
 
-<link rel="stylesheet" href="<?= baseUrl('/assets/css/doe.css') ?>">
-<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css" rel="stylesheet">
+<head>
+    <link rel="stylesheet" href="<?= baseUrl('/assets/css/doe.css') ?>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
+</head>
+
+<body>
+    <?php
+        if (isset($_GET['compartilhar_sucesso']) && $_GET['compartilhar_sucesso'] == 'true') {
+            echo '<script src="../../assets/js/alerts.js"></script>';
+            echo '<script>alertCompartilhamento();</script>';
+        }
+    ?>
+</body>
 
 <section class="donate-main-block">
     <div class="main-title-block">
@@ -49,7 +61,8 @@
                                         FROM tb_voluntario v
                                         JOIN tb_compartilhamento c ON v.cd_voluntario = c.cd_voluntario
 
-                                        ORDER BY data DESC;
+                                        ORDER BY data DESC
+                                        LIMIT 5;
                                         ");
                 $select->execute();
 
@@ -61,7 +74,10 @@
                         'fa-regular fa-paper-plane',
                         'fa-regular fa-heart',
                         'fa-clover',
+                        'fa-seedling',
                         'fa-tree',
+                        'fa-leaf',
+                        'fa-cloud-sun',
                         'fa-handshake-angle',
                     ];
 

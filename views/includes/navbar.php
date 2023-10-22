@@ -16,8 +16,15 @@
             <a href="<?= baseUrl('/views/pages/sobreNos.php') ?>" class="nav-bar-link-style">
                 <li class="nav-li">Sobre nós</li>
             </a>
-            <a href="<?= baseUrl('/views/pages/projetos/projetosOng.php') ?>" class="nav-bar-link-style">
-                <li class="nav-li">Projetos</li>
+            <?php if (isset($_SESSION['email'])) : ?>
+                <?php if ($_SESSION['tipo_usuario'] === 'ong') : ?>
+                    <a href="<?= baseUrl('/views/pages/projetos/projetosOng.php') ?>" class="nav-bar-link-style">
+                    <li class="nav-li">Projetos</li>
+                <?php elseif ($_SESSION['tipo_usuario'] === 'voluntario') : ?>
+                    <a href="<?= baseUrl('/views/pages/projetos/projetosVoluntario.php') ?>" class="nav-bar-link-style">
+                    <li class="nav-li">Projetos</li>
+                <?php endif; ?>
+            <?php endif; ?>
             </a>
             <?php if (isset($_SESSION['email'])) : ?>
                 <?php if ($_SESSION['tipo_usuario'] === 'voluntario') : ?>
@@ -56,7 +63,7 @@
                 <a class="link-style" href="<?= baseUrl('/views/pages/sobreNos.php') ?>">Sobre nós</a>
             </li>
 
-            <?php if (empty($_SESSION['email']) || (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] === 'ong')) : ?>
+            <?php if (empty($_SESSION['email'])) : ?>
                 <li class="list-style">
                     <i class="fa-solid fa-users icon-color"></i>
                     <a class="link-style" href="<?= baseUrl('/views/forms/ongs/cadastro.php') ?>">Sou uma ONG</a>

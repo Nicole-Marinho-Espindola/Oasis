@@ -40,13 +40,13 @@ try {
             exit();
         } else {
             echo '<script src="../../../../assets/js/alerts.js"></script>';
-            echo '<script>AlertEmailFail();</script>';
+            echo '<script>alertEmailFail();</script>';
             header("Refresh: 1.5; URL=http://localhost/oasis/index.php");
             exit();
         }
     } else {
         echo '<script src="../../../../assets/js/alerts.js"></script>';
-        echo '<script>AlertEmailFail();</script>';
+        echo '<script>alertEmailFail();</script>';
         header("Refresh: 1.5; URL=http://localhost/oasis/index.php");
         exit();
     }

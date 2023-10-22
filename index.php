@@ -2,6 +2,7 @@
     include_once('./views/includes/head.php')
 ?>
 
+
 <link rel="stylesheet" href="./assets/css/home.css">
 
 <section class="join-us">
