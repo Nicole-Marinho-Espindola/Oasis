@@ -7,7 +7,8 @@
     $idong = filter_input(INPUT_POST, 'id');
     $nome = filter_input(INPUT_POST, 'nomeOng');
     $email = filter_input(INPUT_POST, 'emailOng');
-    $imagem = $_FILES['imagemong'];
+    $missao = filter_input(INPUT_POST, 'missaoOng');
+    $imagem = $_FILES['imagemOng'];
 
     try {
         $stmt_verificar = $conn->prepare("SELECT cd_ong FROM tb_ong WHERE ds_email = :email AND cd_ong != :id");
@@ -49,19 +50,21 @@
 
             // Move a foto para a pasta
             if (move_uploaded_file($imagem['tmp_name'], $caminhoIMG)) {
-                $stmt = $conn->prepare("UPDATE tb_ong SET nm_ong = :nome, ds_email = :email, nm_imagem = :imagem WHERE cd_ong = :id");
+                $stmt = $conn->prepare("UPDATE tb_ong SET nm_ong = :nome, ds_email = :email, ds_missao = :missao, nm_imagem = :imagem WHERE cd_ong = :id");
                 $stmt->bindParam(':id', $idong);
                 $stmt->bindParam(':nome', $nome);
                 $stmt->bindParam(':email', $email);
+                $stmt->bindParam(':missao', $missao);
                 $stmt->bindParam(':imagem', $caminhoRelativo);
                 $stmt->execute();
             }
         } else {
             // Se nenhuma imagem for enviada, atualize apenas o nome e o email
-            $stmt = $conn->prepare("UPDATE tb_ong SET nm_ong = :nome, ds_email = :email WHERE cd_ong = :id");
+            $stmt = $conn->prepare("UPDATE tb_ong SET nm_ong = :nome, ds_missao = :missao, ds_email = :email WHERE cd_ong = :id");
             $stmt->bindParam(':id', $idong);
             $stmt->bindParam(':nome', $nome);
             $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':missao', $missao);
             $stmt->execute();
         }
 
