@@ -195,7 +195,6 @@
 
 .card-MVV{
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 20em;
@@ -204,7 +203,7 @@
     border: 1px solid #AABE9B;
     background-color: #F0F3ED;
     margin: 2em;
-    padding: 20px;
+    padding-top: 45px;
 }
 
 .icon-MVV{

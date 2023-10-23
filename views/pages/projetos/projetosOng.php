@@ -91,8 +91,9 @@
     <div class="modal-window" id="SecondModalWindow">
         <div class="modal-card-projects">
             <div class="modal-title-block-project">
-                <div class="modal-title-project">Adicionar projeto</div>
-                <div class="line"></div>
+                <div class="info-modal-req">
+                    <input type="text" class="input-requisitos" value="" placeholder="Titulo do projeto">
+                </div>
             </div>
             <div class="project-img-add-modal">
                 <div class="modal-title-project">Imagem</div>
@@ -110,15 +111,15 @@
             <div class="modal-project-info">
                 <div class="info-modal-req">
                     <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
-                    <input type="text" class="input-requitos" value="" placeholder="Nome do grupo">
+                    <input type="text" class="input-requisitos" value="" placeholder="Nome do grupo">
                 </div>
                 <div class="info-modal-req ajust">
                     <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
-                    <input type="text" class="input-requitos" placeholder="Localização">
+                    <input type="text" class="input-requisitos" placeholder="Localização">
                 </div>
                 <div class="info-modal-req ajust">
                     <i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i>
-                    <input type="text" class="input-requitos" placeholder="Data do projeto">
+                    <input type="text" class="input-requisitos" placeholder="Data do projeto">
                 </div>
             </div>
             <button class="btn-modal" id="close">Adicionar</button>

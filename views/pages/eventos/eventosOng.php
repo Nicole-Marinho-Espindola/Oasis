@@ -111,16 +111,16 @@
             </div>
             <div class="modal-project-info">
                 <div class="info-modal-req">
-                    <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
-                    <input type="text" class="input-requitos" value="" placeholder="Nome do grupo">
+                    <span class="icon-project-block"><i class="fa-solid fa-people-group icon-project icon-modal-color"></i></span>
+                    <input type="text" class="input-requisitos" value="" placeholder="Nome do grupo">
                 </div>
                 <div class="info-modal-req ajust">
-                    <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
-                    <input type="text" class="input-requitos" placeholder="Localização">
+                    <span class="icon-project-block"><i class="fa-solid fa-location-dot icon-project icon-modal-color"></i></span>
+                    <input type="text" class="input-requisitos" placeholder="Localização">
                 </div>
                 <div class="info-modal-req ajust">
-                    <i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i>
-                    <input type="text" class="input-requitos" placeholder="Data do projeto">
+                    <span class="icon-project-block"><i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i></span>
+                    <input type="text" class="input-requisitos" placeholder="Data do projeto">
                 </div>
             </div>
             <button class="btn-modal" id="close">Adicionar</button>
