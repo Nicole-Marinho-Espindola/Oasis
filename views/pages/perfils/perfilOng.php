@@ -40,7 +40,6 @@
         $email = $_SESSION['email'];
 
         $sql = "SELECT * FROM tb_ong WHERE ds_email = :email";
-                
         $query = $conn->prepare($sql);
         $query->bindParam(":email", $email);
         $query->execute();
@@ -72,7 +71,11 @@
             </div>
         </div>
         <div class="img-profile-block-ong">
-            <img src="<?= baseUrl('/assets/img/jade-linda.jpeg')?>" alt="Foto de perfil do usuario">
+        <?php if (!empty($row['nm_imagem'])) : ?>
+                    <img src="<?= baseUrl($row['nm_imagem']) ?>" alt="Foto de perfil do usuário">
+                <?php else: ?>
+                    <img src="<?= baseUrl('/assets/img/iconUser.jpg') ?>" alt="Foto de perfil do usuário">
+                <?php endif; ?>
         </div>
         <div class="user-profile-info">
             <div class="text-profile-block">

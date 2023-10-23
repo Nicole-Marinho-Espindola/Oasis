@@ -42,7 +42,7 @@
                 $tipoUsuario = 'ong';
             } else {
                 // E-mail não encontrado em nenhum tipo de usuário
-                echo "E-mail não cadastrado.";
+                header("Location: ../../../views/forms/senha/alterarSenha.php?email_sucesso=false");
                 exit();
             }
 
