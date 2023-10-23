@@ -247,3 +247,13 @@ function alertCompartilhamento() {
       
   });
 }
+
+function alertProjetoCadastrado() {
+  Swal.fire({
+      icon: 'center',
+      title: '🌿 Seu projeto foi cadastrado! ',
+      text: 'Obrigada por fazer parte do movimento por um futuro mais sustentável.',
+      showConfirmButton: false,
+      
+  });
+}

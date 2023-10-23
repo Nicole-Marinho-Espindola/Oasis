@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="<?= baseUrl('/assets/css/modal.css')?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
     <title>Perfil Ong | Oásis</title>
 </head>
 
@@ -51,6 +53,14 @@
 ?>
 
 <body>
+
+    <?php
+        if (isset($_GET['editar_sucesso']) && $_GET['editar_sucesso'] == 'true') {
+            echo '<script src="../../../assets/js/alerts.js"></script>';
+            echo '<script>alertAlterar();</script>';
+        }
+    ?>
+    
     <div class="profile-block">
         <div class="profile-purple-block">
             <div class="social-midia-profile-block">
@@ -110,13 +120,6 @@
                         <div class="modal-title">Editar perfil</div>
                         <div class="line"></div>
                     </div>
-                    <!-- <div class="img-profile">
-                        <?php if (!empty($imagemOng)) : ?>
-                            <img src="<?= baseUrl($imagemOng) ?>" alt="Foto de perfil do usuário">
-                        <?php else: ?>
-                            <img src="<?= baseUrl('/assets/img/iconUser.jpg') ?>" alt="Foto de perfil do usuário">
-                        <?php endif; ?>
-                    </div> -->
                     <label class="img-block" tabindex="0">
                         <input class="input-profile-img" name="imagemOng" type="file" accept="image/*">
                         <div class="img-text">
