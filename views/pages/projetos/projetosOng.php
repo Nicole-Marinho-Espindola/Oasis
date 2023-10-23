@@ -1,13 +1,46 @@
     <?php
-        include_once('../../includes/head.php')
+    include_once('../../includes/head.php');
+
+    $row = [];
+
+    if (isset($_SESSION['email'])) {
+
+        include_once(includeURL('config/database.php'));
+
+        $email = $_SESSION['email'];
+
+        $sql = "SELECT * FROM tb_ong WHERE ds_email = :email";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":email", $email);
+        $query->execute();
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+
+        $conn = null;
+    }
     ?>
 
-    <link rel="stylesheet" href="<?= baseUrl('/assets/css/projeto.css')?>">
+    <head>
+        <link rel="stylesheet" href="<?= baseUrl('/assets/css/projeto.css') ?>">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
+    </head>
+    
+
+<body>
+
+    <?php
+        if (isset($_GET['projeto_sucesso']) && $_GET['projeto_sucesso'] == 'true') {
+            echo '<script src="../../../assets/js/alerts.js"></script>';
+            echo '<script>alertProjetoCadastrado();</script>';
+        }
+    ?>
+    
+</body>
 
     <section class="projects">
         <div class="dark-purple-block">
             <div class="btn-project">Projetos</div>
-            <a href="<?= baseUrl('/views/pages/eventos/eventosOng.php')?>" class="link-projects-style">
+            <a href="<?= baseUrl('/views/pages/eventos/eventosOng.php') ?>" class="link-projects-style">
                 <div class="btn-event">Eventos</div>
             </a>
         </div>
@@ -21,7 +54,7 @@
         <div class="projects-cards-block">
             <div class="project-card">
                 <div class="project-img-block">
-                    <img class="project-img" src="<?= baseUrl('/assets/img/foto-teste.webp')?>" alt="">
+                    <img class="project-img" src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
                 </div>
                 <div class="card-title-block">
                     <div class="card-title">Recolher lixo da praia</div>
@@ -51,44 +84,48 @@
     </section>
 
     <div class="modal-window" id="modalWindow">
-    <form class="form" action=<?= baseUrl('/services/controllers/ongs/projetos/editarPerfil.php') ?> enctype="multipart/form-data" method="POST">
-        <div class="modal-card-projects">
-            <div class="project-img-block">
-                <img class="project-img" src="<?= baseUrl('/assets/img/foto-teste.webp')?>" alt="">
-            </div>
-            <div class="modal-title-block-project">
-                <div class="modal-title-project">Recolher lixo</div>
-                <div class="line"></div>
-            </div>
-            <div class="modal-title-block-project">
-                <div class="modal-title-project">Descrição</div>
-            </div>
-            <div class="textarea-project">
-                <textarea name="" id="" cols="45" rows="5" readonly>Unindo esforços para preservar nossas praias, este projeto visa reunir voluntários dedicados a remover resíduos e lixo das áreas costeiras, restaurando a beleza natural de nossas praias e protegendo a vida marinha.</textarea>
-            </div>   
-            <div class="modal-title-block-project">
-                <div class="modal-title-project">Requisitos</div>
-            </div>
-            <div class="modal-project-info">
-                <div class="info">
-                    <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
-                    <span class="name-span">Formiguinhas</span>
+        <form class="form" action=<?= baseUrl('/services/controllers/ongs/projetos/editarPerfil.php') ?> enctype="multipart/form-data" method="POST">
+            <div class="modal-card-projects">
+                <div class="project-img-block">
+                    <img class="project-img" src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
                 </div>
-                <div class="info">
-                    <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
-                    <span class="name-span margin">Caiçara</span>
+                <div class="modal-title-block-project">
+                    <div class="modal-title-project">Recolher lixo</div>
+                    <div class="line"></div>
                 </div>
-                <div class="info">
-                    <i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i>
-                    <span class="name-span margin">13/09/2023</span>
+                <div class="modal-title-block-project">
+                    <div class="modal-title-project">Descrição</div>
                 </div>
-            </div>
+                <div class="textarea-project">
+                    <textarea name="" id="" cols="45" rows="5" readonly>Unindo esforços para preservar nossas praias, este projeto visa reunir voluntários dedicados a remover resíduos e lixo das áreas costeiras, restaurando a beleza natural de nossas praias e protegendo a vida marinha.</textarea>
+                </div>
+                <div class="modal-title-block-project">
+                    <div class="modal-title-project">Requisitos</div>
+                </div>
+                <div class="modal-project-info">
+                    <div class="info">
+                        <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
+                        <span class="name-span">Formiguinhas</span>
+                    </div>
+                    <div class="info">
+                        <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
+                        <span class="name-span margin">Caiçara</span>
+                    </div>
+                    <div class="info">
+                        <i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i>
+                        <span class="name-span margin">13/09/2023</span>
+                    </div>
+                </div>
 
-            <button class="btn-modal" id="close">Participar</button>
-        </div>
+                <button class="btn-modal" id="close">Participar</button>
+            </div>
+        </form>
     </div>
 
     <div class="modal-window" id="SecondModalWindow">
+        <form class="form" action=<?= baseUrl('/services/controllers/ongs/projetos/adicionarProjeto.php') ?> enctype="multipart/form-data" method="POST">
+            <input type="hidden" name="id" value="<?= $row['cd_ong'] ?>">
+            <input type="hidden" name="nomeProjeto" value="Limpar a praia">
         <div class="modal-card-projects">
             <div class="modal-title-block-project">
                 <div class="info-modal-req">
@@ -108,26 +145,30 @@
             <div class="modal-title-block-project">
                 <div class="modal-title-project">Requisitos</div>
             </div>
-            <div class="modal-project-info">
-                <div class="info-modal-req">
-                    <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
-                    <input type="text" class="input-requisitos" value="" placeholder="Nome do grupo">
+                <div class="modal-title-block-project">
+                    <div class="modal-title-project">Detalhes Importantes</div>
                 </div>
-                <div class="info-modal-req ajust">
-                    <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
-                    <input type="text" class="input-requisitos" placeholder="Localização">
+                <div class="modal-project-info">
+                    <div class="info-modal-req">
+                        <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
+                        <input type="text" class="input-requisitos" value="<?= $row['nm_ong'] ?>" readonly>
+                    </div>
+                    <div class="info-modal-req ajust">
+                        <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
+                        <input type="text" class="input-requisitos" placeholder="Localização" name="enderecoProjeto">
+                    </div>
+                    <div class="info-modal-req ajust">
+                        <i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i>
+                        <input type="date" class="input-requisitos" placeholder="Data do projeto" name="dataProjeto">
+                    </div>
                 </div>
-                <div class="info-modal-req ajust">
-                    <i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i>
-                    <input type="text" class="input-requisitos" placeholder="Data do projeto">
-                </div>
+                <button type="submit" class="btn-modal" id="close">Adicionar</button>
             </div>
-            <button class="btn-modal" id="close">Adicionar</button>
-        </div>
+        </form>
     </div>
 
-    <script src="<?= baseUrl('/assets/js/modal.js')?>"></script>
+    <script src="<?= baseUrl('/assets/js/modal.js') ?>"></script>
 
     <?php
-        include_once('../../includes/footer.php')
+    include_once('../../includes/footer.php')
     ?>

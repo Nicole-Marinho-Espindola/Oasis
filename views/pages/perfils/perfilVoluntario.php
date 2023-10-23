@@ -1,7 +1,6 @@
 <?php
 
-    function includeURL($path = '')
-    {
+    function includeURL($path = ''){
         return sprintf(
             "%s/%s/%s",
             $_SERVER['DOCUMENT_ROOT'],
@@ -166,13 +165,6 @@
                         <div class="modal-title">Editar perfil</div>
                         <div class="line"></div>
                     </div>
-                    <!-- <div class="img-profile">
-                        <?php if (!empty($imagemVoluntario)) : ?>
-                            <img src="<?= baseUrl($imagemVoluntario) ?>" alt="Foto de perfil do usuário">
-                        <?php else: ?>
-                            <img src="<?= baseUrl('/assets/img/iconUser.jpg') ?>" alt="Foto de perfil do usuário">
-                        <?php endif; ?>
-                    </div> -->
                     <label class="img-block" tabindex="0">
                         <input class="input-profile-img" name="imagemVoluntario" type="file" accept="image/*">
                         <div class="img-text">
@@ -193,6 +185,7 @@
                     </div>
                     <button type="submit" class="btn-modal" id="close">Concluído</button>
                 </div>
+            </form>
         </div>
     </body>
 

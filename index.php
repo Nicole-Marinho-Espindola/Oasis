@@ -87,10 +87,9 @@
                 <div class="our-partners-description">
                     <h1 class="description-title">Formiguinhas da Praia</h1>
                     <p class="description-text">
-                    Conheça o Grupo Formiguinhas, uma equipe voluntária dedicada a fomentar o bem-estar e a
-                    sustentabilidade em nossa comunidade em Praia Grande, SP. Sua paixão os impulsiona a 
-                    percorrer as praias, não apenas em caminhadas que promovem o exercício físico, mas também
-                    marcadas pela dedicação à limpeza do ambiente que tanto amam.
+                    O Grupo Formiguinhas, de Praia Grande, SP, é uma equipe voluntária dedicada ao bem-estar e
+                    à sustentabilidade na comunidade. Realizam caminhadas que promovem o exercício físico e se 
+                    destacam pela limpeza das praias, mostrando seu amor pelo ambiente.
                     </p>
                 </div>
             </div>
@@ -117,10 +116,8 @@
                 <div class="our-partners-description">
                     <h1 class="description-title">Sereia Azul</h1>
                     <p class="description-text">
-                    Conheça a Sereia Azul, uma bióloga e educadora ambiental apaixonada por transmitir conhecimentos
-                    sobre o meio ambiente de uma maneira única e encantadora. Vestida de sereia, ela mergulha nas
-                    profundezas da educação ambiental, focando especialmente nas crianças, para inspirar amor e respeito 
-                    pelos oceanos.
+                    Sereia Azul é uma bióloga e educadora ambiental que, vestida de sereia, cativa crianças, 
+                    transmitindo conhecimentos encantadores e inspirando amor pelos oceanos.
                     </p>
                 </div>
             </div>

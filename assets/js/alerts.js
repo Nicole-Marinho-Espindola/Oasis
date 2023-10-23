@@ -242,7 +242,17 @@ function alertCompartilhamento() {
   Swal.fire({
       icon: 'center',
       title: '🌿 O link da Oásis foi copiado! ',
-      text: 'Obrigado por fazer parte do movimento por um futuro mais sustentável.',
+      text: 'Obrigada por fazer parte do movimento por um futuro mais sustentável.',
+      showConfirmButton: false,
+      
+  });
+}
+
+function alertProjetoCadastrado() {
+  Swal.fire({
+      icon: 'center',
+      title: '🌿 Seu projeto foi cadastrado! ',
+      text: 'Obrigada por fazer parte do movimento por um futuro mais sustentável.',
       showConfirmButton: false,
       
   });

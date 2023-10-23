@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="<?= baseUrl('/assets/css/modal.css')?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
     <title>Perfil Ong | Oásis</title>
 </head>
 
@@ -41,7 +43,6 @@
         $email = $_SESSION['email'];
 
         $sql = "SELECT * FROM tb_ong WHERE ds_email = :email";
-                
         $query = $conn->prepare($sql);
         $query->bindParam(":email", $email);
         $query->execute();
@@ -52,6 +53,14 @@
 ?>
 
 <body>
+
+    <?php
+        if (isset($_GET['editar_sucesso']) && $_GET['editar_sucesso'] == 'true') {
+            echo '<script src="../../../assets/js/alerts.js"></script>';
+            echo '<script>alertAlterar();</script>';
+        }
+    ?>
+    
     <div class="profile-block">
         <div class="profile-purple-block">
             <div class="social-midia-profile-block">
@@ -73,7 +82,11 @@
             </div>
         </div>
         <div class="img-profile-block-ong">
-            <img src="<?= baseUrl('/assets/img/jade-linda.jpeg')?>" alt="Foto de perfil do usuario">
+        <?php if (!empty($row['nm_imagem'])) : ?>
+                    <img src="<?= baseUrl($row['nm_imagem']) ?>" alt="Foto de perfil do usuário">
+                <?php else: ?>
+                    <img src="<?= baseUrl('/assets/img/iconUser.jpg') ?>" alt="Foto de perfil do usuário">
+                <?php endif; ?>
         </div>
         <div class="user-profile-info">
             <div class="text-profile-block">
@@ -100,36 +113,33 @@
     </div>
 
     <div class="modal-window" id="modalWindow">
-            <form class="form" action=<?= baseUrl('/services/controllers/voluntarios/editarPerfil.php') ?> enctype="multipart/form-data" method="POST">
-                <input type="hidden" name="idVoluntario" value="<?= $idVoluntario ?>">
+            <form class="form" action=<?= baseUrl('/services/controllers/Ongs/editarPerfil.php') ?> enctype="multipart/form-data" method="POST">
+                <input type="hidden" name="id" value="<?= $row['cd_ong'] ?>">
                 <div class="modal-card-profile">
                     <div class="modal-title-block">
                         <div class="modal-title">Editar perfil</div>
                         <div class="line"></div>
                     </div>
-                    <!-- <div class="img-profile">
-                        <?php if (!empty($imagemVoluntario)) : ?>
-                            <img src="<?= baseUrl($imagemVoluntario) ?>" alt="Foto de perfil do usuário">
-                        <?php else: ?>
-                            <img src="<?= baseUrl('/assets/img/iconUser.jpg') ?>" alt="Foto de perfil do usuário">
-                        <?php endif; ?>
-                    </div> -->
                     <label class="img-block" tabindex="0">
-                        <input class="input-profile-img" name="imagemVoluntario" type="file" accept="image/*">
+                        <input class="input-profile-img" name="imagemOng" type="file" accept="image/*">
                         <div class="img-text">
-                            <?php if (!empty($imagemVoluntario)) : ?>
-                                <img class="img-icon" src="<?= baseUrl($imagemVoluntario) ?>" alt="Foto de perfil do usuário" accept="image/*">
+                            <?php if (!empty($row['nm_imagem'])) : ?>
+                                <img class="img-icon" src="<?= baseUrl($row['nm_imagem']) ?>" alt="Foto de perfil do usuário" accept="image/*">
                             <?php else: ?>
                                 <img class="img-icon" src="<?= baseUrl('/assets/img/iconUser.jpg') ?>" alt="Foto de perfil do usuário" accept="image/*">
                             <?php endif; ?>
                         </div>
                     </label>
                     <div class="modal-input-block-perfil">
-                        <input id="nomeVoluntario" name="nomeVoluntario" type="text" class="modal-input" value="<?= $nomeVoluntario ?? '' ?>">
+                        <input id="nomeOng" name="nomeOng" type="text" class="modal-input" value="<?= $row['nm_ong'] ?>">
                         <i class="fa-regular fa-pen-to-square icon-input"></i>
                     </div>
                     <div class="modal-input-block-perfil">
-                        <input id="emailVoluntario" name="emailVoluntario" type="text" class="modal-input" value="<?= $emailVoluntario ?? '' ?>">
+                        <input id="emailOng" name="emailOng" type="text" class="modal-input" value="<?= $row['ds_email'] ?>">
+                        <i class="fa-regular fa-pen-to-square icon-input"></i>
+                    </div>
+                    <div class="modal-input-block-perfil">
+                        <input id="missaoOng" name="missaoOng" type="text" class="modal-input" value="<?= $row['ds_missao'] ?>">
                         <i class="fa-regular fa-pen-to-square icon-input"></i>
                     </div>
                     <button type="submit" class="btn-modal" id="close">Concluído</button>
