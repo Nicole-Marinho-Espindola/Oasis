@@ -43,7 +43,7 @@
                 </div>
                 <button class="btn-project-card" onclick="openModal()">Participar</button>
             </div>
-            <div class="project-card" onclick="openSecondModal()">
+            <div class="project-card project-card-effect" onclick="openSecondModal()">
                 <div class="card-title-add">Adicionar projeto</div>
                 <i class="fa-solid fa-plus icon-add-project"></i>
             </div>

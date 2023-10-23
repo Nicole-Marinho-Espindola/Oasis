@@ -99,7 +99,7 @@ body{
     box-shadow: 1px 1px 7px #b8b8b8;
 }
 
-.project-card:active{
+.project-card-effect:active{
     border: 1px solid #86719a;
     border-radius: 10px;
     margin: 2em;
