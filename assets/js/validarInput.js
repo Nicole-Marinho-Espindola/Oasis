@@ -23,6 +23,16 @@ function nameValidate(){ // iniciando a função nameValidate
     }
 }
 
+function LastNameValidate(){ // iniciando a função nameValidate
+    if(campos[1].querySelector('input').value.length < 3){ // "se campos no index 0 com o valor de caracteres digitados for menor que 3"
+        error(1); // aciona a função error que adicionar a borda vermelha
+        // console.log('não deu')
+    }else{ // se o if não acontecer então é porque tem mais que 3 caracteres
+        errorRemove(1); // aciona a função errorRemove que retorna o input a sua aparencia inicial
+        // console.log('deu');
+    }
+}
+
 function emailValidate(){
     if(emailRegex.test(campos[0].querySelector('input').value)){
         console.log(campos[0])
@@ -30,6 +40,16 @@ function emailValidate(){
     }else{
         console.log('validado')
         errorRemove(4);
+    }
+}
+
+function mainPasswordForm(){ // iniciando a função nameValidate
+    if(campos[6].querySelector('input').value.length < 6){ // "se campos no index 0 com o valor de caracteres digitados for menor que 3"
+        error(6); // aciona a função error que adicionar a borda vermelha
+        // console.log('não deu')
+    }else{ // se o if não acontecer então é porque tem mais que 3 caracteres
+        errorRemove(6); // aciona a função errorRemove que retorna o input a sua aparencia inicial
+        // console.log('deu');
     }
 }
 

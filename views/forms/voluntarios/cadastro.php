@@ -63,11 +63,12 @@
                     </div>
                     <div class="user-info-block">
                         <label class="label-style" for="">Sobrenome
-                            <div class="input-block">
+                            <div class="input-block required">
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size" type="text"
-                                id="sobrenomeVoluntario" name="sobrenomeVoluntario">
+                                id="sobrenomeVoluntario" name="sobrenomeVoluntario" oninput="LastNameValidate()">
                             </div>
+                            <span class="span-required">O sobrenome deve conter mais de 3 letras</span>
                         </label>
                     </div>
                     <div class="user-info-block">
@@ -142,12 +143,13 @@
                         </div>
                         <div class="user-info-block">
                             <label class="label-style" for="">Senha
-                                <div class="input-block">
+                                <div class="input-block required">
                                     <i class="fa-solid fa-lock icon-green"></i>
                                     <input class="input" type="password"
-                                    id="senhaVoluntario" name="senhaVoluntario" required>
+                                    id="senhaVoluntario" name="senhaVoluntario" required oninput="mainPasswordForm()">
                                     <i class="fa-regular fa-eye-slash icon-green"></i>
                                 </div>
+                                <span class="span-required">A senha deve conter mais de 6 letras</span>
                             </label>
                         </div>
                         <div class="check-block">
