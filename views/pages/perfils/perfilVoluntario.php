@@ -177,7 +177,7 @@
                         <input class="input-profile-img" name="imagemVoluntario" type="file" accept="image/*">
                         <div class="img-text">
                             <?php if (!empty($imagemVoluntario)) : ?>
-                                <img src="<?= baseUrl($imagemVoluntario) ?>" alt="Foto de perfil do usuário">
+                                <img class="img-icon" src="<?= baseUrl($imagemVoluntario) ?>" alt="Foto de perfil do usuário" accept="image/*">
                             <?php else: ?>
                                 <img class="img-icon" src="<?= baseUrl('/assets/img/iconUser.jpg') ?>" alt="Foto de perfil do usuário" accept="image/*">
                             <?php endif; ?>
