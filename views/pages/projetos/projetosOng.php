@@ -1,41 +1,40 @@
-    <?php
+<?php
     include_once('../../includes/head.php');
 
-    $row = [];
-
     if (isset($_SESSION['email'])) {
+        try {
+            include_once(includeURL('/config/database.php'));
+            $email = $_SESSION['email'];
 
-        include_once(includeURL('config/database.php'));
+            $sql = "SELECT * FROM tb_ong WHERE ds_email = :email";
+            $query = $conn->prepare($sql);
+            $query->bindParam(":email", $email);
+            $query->execute();
 
-        $email = $_SESSION['email'];
+            $row = $query->fetch(PDO::FETCH_ASSOC);
 
-        $sql = "SELECT * FROM tb_ong WHERE ds_email = :email";
-        $query = $conn->prepare($sql);
-        $query->bindParam(":email", $email);
-        $query->execute();
-        $row = $query->fetch(PDO::FETCH_ASSOC);
-
-        $conn = null;
+        } catch (PDOException $e) {
+            echo "Erro na consulta: " . $e->getMessage();
+        }
     }
-    ?>
+?>
 
     <head>
         <link rel="stylesheet" href="<?= baseUrl('/assets/css/projeto.css') ?>">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
     </head>
-    
 
-<body>
+    <body>
 
-    <?php
+        <?php
         if (isset($_GET['projeto_sucesso']) && $_GET['projeto_sucesso'] == 'true') {
             echo '<script src="../../../assets/js/alerts.js"></script>';
             echo '<script>alertProjetoCadastrado();</script>';
         }
-    ?>
-    
-</body>
+        ?>
+
+    </body>
 
     <section class="projects">
         <div class="dark-purple-block">
@@ -52,30 +51,59 @@
             </div>
         </div>
         <div class="projects-cards-block">
-            <div class="project-card">
-                <div class="project-img-block">
-                    <img class="project-img" src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                </div>
-                <div class="card-title-block">
-                    <div class="card-title">Recolher lixo da praia</div>
-                    <div class="line"></div>
-                </div>
-                <div class="project-info">
-                    <div class="info">
-                        <i class="fa-solid fa-people-group icon-project"></i>
-                        <span class="name-span">Formiguinhas</span>
+            <?php
+            try {
+                $selectProjetos = $conn->prepare("SELECT tb_projeto.*, tb_ong.nm_ong AS nome_ong
+                                                FROM tb_projeto
+                                                JOIN tb_ong ON tb_projeto.cd_ong = tb_ong.cd_ong");
+                $selectProjetos->execute();
+
+                while ($rowProjeto = $selectProjetos->fetch()) {
+                    $imagem = $rowProjeto['nm_imagem'];
+                    $titulo = $rowProjeto['nm_titulo_projeto'];
+                    $ong = $rowProjeto['nome_ong'];
+                    $endereco = $rowProjeto['ds_endereco'];
+                    $data = $rowProjeto['dt_projeto'];
+                    $descricao = $rowProjeto['ds_projeto'];
+            ?>
+                    <div class="project-card">
+                        <div class="project-img-block">
+                            <?php
+
+                            try {
+                                $imagePath = baseUrl($rowProjeto['nm_imagem']);
+                            } catch (Exception $ex) {
+                                $imagePath = ''; 
+                            }
+                            ?>
+                            <img class="project-img" src="<?= $imagePath ?>" alt="">
+                        </div>
+                        <div class="card-title-block">
+                            <div class="card-title"><?= $titulo ?></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="project-info">
+                            <div class="info">
+                                <i class="fa-solid fa-people-group icon-project"></i>
+                                <span class="name-span"><?= $ong ?></span>
+                            </div>
+                            <div class="info">
+                                <i class="fa-solid fa-location-dot icon-project"></i>
+                                <span class="name-span margin"><?= $rowProjeto['ds_endereco'] ?></span>
+                            </div>
+                            <div class="info">
+                                <i class="fa-solid fa-calendar-days icon-project"></i>
+                                <span class="name-span margin"><?= date("d-m-Y", strtotime($rowProjeto['dt_projeto'])) ?></span>
+                            </div>
+                        </div>
+                        <button class="btn-project-card" onclick="openModal()">Participar</button>
                     </div>
-                    <div class="info">
-                        <i class="fa-solid fa-location-dot icon-project"></i>
-                        <span class="name-span margin">Caiçara</span>
-                    </div>
-                    <div class="info">
-                        <i class="fa-solid fa-calendar-days icon-project"></i>
-                        <span class="name-span margin">13/09/2023</span>
-                    </div>
-                </div>
-                <button class="btn-project-card" onclick="openModal()">Participar</button>
-            </div>
+            <?php
+                }
+            } catch (PDOException $e) {
+                echo "Erro ao listar projetos: " . $e->getMessage();
+            }
+            ?>
             <div class="project-card project-card-effect" onclick="openSecondModal()">
                 <div class="card-title-add">Adicionar projeto</div>
                 <i class="fa-solid fa-plus icon-add-project"></i>
@@ -84,40 +112,39 @@
     </section>
 
     <div class="modal-window" id="modalWindow">
-        <form class="form" action=<?= baseUrl('/services/controllers/ongs/projetos/editarPerfil.php') ?> enctype="multipart/form-data" method="POST">
             <div class="modal-card-projects">
-                <div class="project-img-block">
-                    <img class="project-img" src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                </div>
-                <div class="modal-title-block-project">
-                    <div class="modal-title-project">Recolher lixo</div>
-                    <div class="line"></div>
-                </div>
-                <div class="modal-title-block-project">
-                    <div class="modal-title-project">Descrição</div>
-                </div>
-                <div class="textarea-project">
-                    <textarea name="" id="" cols="45" rows="5" readonly>Unindo esforços para preservar nossas praias, este projeto visa reunir voluntários dedicados a remover resíduos e lixo das áreas costeiras, restaurando a beleza natural de nossas praias e protegendo a vida marinha.</textarea>
-                </div>
-                <div class="modal-title-block-project">
-                    <div class="modal-title-project">Requisitos</div>
-                </div>
-                <div class="modal-project-info">
-                    <div class="info">
-                        <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
-                        <span class="name-span">Formiguinhas</span>
+                    <div class="project-img-block">
+                        <img class="project-img" src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
                     </div>
-                    <div class="info">
-                        <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
-                        <span class="name-span margin">Caiçara</span>
+                    <div class="modal-title-block-project">
+                        <div class="modal-title-project">Recolher lixo</div>
+                        <div class="line"></div>
                     </div>
-                    <div class="info">
-                        <i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i>
-                        <span class="name-span margin">13/09/2023</span>
+                    <div class="modal-title-block-project">
+                        <div class="modal-title-project">Descrição</div>
                     </div>
-                </div>
+                    <div class="textarea-project">
+                        <textarea name="" id="" cols="45" rows="5" readonly>Unindo esforços para preservar nossas praias, este projeto visa reunir voluntários dedicados a remover resíduos e lixo das áreas costeiras, restaurando a beleza natural de nossas praias e protegendo a vida marinha.</textarea>
+                    </div>
+                    <div class="modal-title-block-project">
+                        <div class "modal-title-project">Requisitos</div>
+                    </div>
+                    <div class="modal-project-info">
+                        <div class="info">
+                            <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
+                            <span class="name-span">Formiguinhas</span>
+                        </div>
+                        <div class="info">
+                            <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
+                            <span class="name-span margin">Caiçara</span>
+                        </div>
+                        <div class="info">
+                            <i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i>
+                            <span class="name-span margin">13/09/2023</span>
+                        </div>
+                    </div>
 
-                <button class="btn-modal" id="close">Participar</button>
+                    <button class="btn-modal" id="close">Participar</button>
             </div>
         </form>
     </div>
