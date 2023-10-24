@@ -189,6 +189,10 @@
     margin-top: 1em;
 }
 
+.modal-title-block-project > .info-modal-req > .input-requisitos{
+    width: 21.5em;
+}
+
 .modal-title-project{
     color: #242920;
     font-weight: bold;
@@ -233,17 +237,17 @@
     margin-top: 20px;
 }
 
-.input-requitos{
+.input-requisitos{
     outline: none;
     border: none;
     border-bottom: 2px solid #586D48;
-    width: 10em;
+    width: 20em;
     margin-top: 10px;
-    margin-left: 2em;
+    margin-left: 10px;
 }
 
 .ajust{
-    margin-left: 10px;
+    margin-left: 8px;
 }
 
 .input-img{

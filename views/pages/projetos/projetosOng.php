@@ -153,36 +153,40 @@
         <form class="form" action=<?= baseUrl('/services/controllers/ongs/projetos/adicionarProjeto.php') ?> enctype="multipart/form-data" method="POST">
             <input type="hidden" name="id" value="<?= $row['cd_ong'] ?>">
             <input type="hidden" name="nomeProjeto" value="Limpar a praia">
-            <div class="modal-card-projects">
-                <div class="modal-title-block-project">
-                    <div class="modal-title-project">Adicionar projeto</div>
-                    <div class="line"></div>
+        <div class="modal-card-projects">
+            <div class="modal-title-block-project">
+                <div class="info-modal-req">
+                    <input type="text" class="input-requisitos" value="" placeholder="Titulo do projeto">
                 </div>
-                <div class="project-img-add-modal">
-                    <div class="modal-title-project">Imagem</div>
-                    <input class="input-img" name="imagemProjeto" type="file" accept="image/*">
-                </div>
-                <div class="modal-title-block-project">
-                    <div class="modal-title-project">Descrição</div>
-                </div>
-                <div class="textarea-project">
-                    <textarea name="descricaoProjeto" id="" cols="45" rows="5"></textarea>
-                </div>
+            </div>
+            <div class="project-img-add-modal">
+                <div class="modal-title-project">Imagem</div>
+                <input class="input-img" type="file">
+            </div>
+            <div class="modal-title-block-project">
+                <div class="modal-title-project">Descrição</div>
+            </div>
+            <div class="textarea-project">
+                <textarea name="" id="" cols="45" rows="5"></textarea>
+            </div>   
+            <div class="modal-title-block-project">
+                <div class="modal-title-project">Requisitos</div>
+            </div>
                 <div class="modal-title-block-project">
                     <div class="modal-title-project">Detalhes Importantes</div>
                 </div>
                 <div class="modal-project-info">
                     <div class="info-modal-req">
                         <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
-                        <input type="text" class="input-requitos" value="<?= $row['nm_ong'] ?>" readonly>
+                        <input type="text" class="input-requisitos" value="<?= $row['nm_ong'] ?>" readonly>
                     </div>
                     <div class="info-modal-req ajust">
                         <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
-                        <input type="text" class="input-requitos" placeholder="Localização" name="enderecoProjeto">
+                        <input type="text" class="input-requisitos" placeholder="Localização" name="enderecoProjeto">
                     </div>
                     <div class="info-modal-req ajust">
                         <i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i>
-                        <input type="date" class="input-requitos" placeholder="Data do projeto" name="dataProjeto">
+                        <input type="date" class="input-requisitos" placeholder="Data do projeto" name="dataProjeto">
                     </div>
                 </div>
                 <button type="submit" class="btn-modal" id="close">Adicionar</button>
