@@ -1,3 +1,4 @@
+
 .profile-block{
     display: flex;
     justify-content: center;
@@ -151,6 +152,7 @@
     align-items: center;
     flex-direction: row;
     padding: 30px;
+    width: 100%;
 }
 
 .trajectory{
