@@ -12,29 +12,28 @@
             $query->execute();
 
             $row = $query->fetch(PDO::FETCH_ASSOC);
-
         } catch (PDOException $e) {
             echo "Erro na consulta: " . $e->getMessage();
         }
     }
 ?>
 
-    <head>
-        <link rel="stylesheet" href="<?= baseUrl('/assets/css/projeto.css') ?>">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
-    </head>
+<head>
+    <link rel="stylesheet" href="<?= baseUrl('/assets/css/projeto.css') ?>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
+</head>
 
-    <body>
+<body>
 
-        <?php
-        if (isset($_GET['projeto_sucesso']) && $_GET['projeto_sucesso'] == 'true') {
-            echo '<script src="../../../assets/js/alerts.js"></script>';
-            echo '<script>alertProjetoCadastrado();</script>';
-        }
-        ?>
+    <?php
+    if (isset($_GET['projeto_sucesso']) && $_GET['projeto_sucesso'] == 'true') {
+        echo '<script src="../../../assets/js/alerts.js"></script>';
+        echo '<script>alertProjetoCadastrado();</script>';
+    }
+    ?>
 
-    </body>
+</body>
 
     <section class="projects">
         <div class="dark-purple-block">
@@ -53,27 +52,32 @@
         <div class="projects-cards-block">
             <?php
             try {
+                $currentDate = date("Y-m-d"); // pega a data atual para nao exibir projetos que já tenham sido realizados
+
                 $selectProjetos = $conn->prepare("SELECT tb_projeto.*, tb_ong.nm_ong AS nome_ong
-                                                FROM tb_projeto
-                                                JOIN tb_ong ON tb_projeto.cd_ong = tb_ong.cd_ong");
+                                                    FROM tb_projeto
+                                                    JOIN tb_ong ON tb_projeto.cd_ong = tb_ong.cd_ong
+                                                    WHERE tb_projeto.dt_projeto >= :currentDate");
+                $selectProjetos->bindParam(":currentDate", $currentDate);
                 $selectProjetos->execute();
 
                 while ($rowProjeto = $selectProjetos->fetch()) {
+                    $id = $rowProjeto['cd_projeto'];
                     $imagem = $rowProjeto['nm_imagem'];
                     $titulo = $rowProjeto['nm_titulo_projeto'];
                     $ong = $rowProjeto['nome_ong'];
                     $endereco = $rowProjeto['ds_endereco'];
                     $data = $rowProjeto['dt_projeto'];
                     $descricao = $rowProjeto['ds_projeto'];
+
             ?>
                     <div class="project-card">
                         <div class="project-img-block">
                             <?php
-
                             try {
                                 $imagePath = baseUrl($rowProjeto['nm_imagem']);
                             } catch (Exception $ex) {
-                                $imagePath = ''; 
+                                $imagePath = '';
                             }
                             ?>
                             <img class="project-img" src="<?= $imagePath ?>" alt="">
@@ -89,14 +93,14 @@
                             </div>
                             <div class="info">
                                 <i class="fa-solid fa-location-dot icon-project"></i>
-                                <span class="name-span margin"><?= $rowProjeto['ds_endereco'] ?></span>
+                                <span class="name-span margin"><?= $endereco ?></span>
                             </div>
                             <div class="info">
                                 <i class="fa-solid fa-calendar-days icon-project"></i>
-                                <span class="name-span margin"><?= date("d-m-Y", strtotime($rowProjeto['dt_projeto'])) ?></span>
+                                <span class="name-span margin"><?= date("d-m-Y", strtotime($data)) ?></span>
                             </div>
                         </div>
-                        <button class="btn-project-card" onclick="openModal()">Participar</button>
+                        <button class="btn-project-card" data-id="<?= $id ?>" data-imagem="<?= $imagem ?>" data-titulo="<?= $titulo ?>" data-ong="<?= $ong ?>" data-descricao="<?= $descricao ?>" data-dia="<?= $data ?>" data-endereco="<?= $endereco ?>" onclick="openModal(this)">Participar</button>
                     </div>
             <?php
                 }
@@ -111,67 +115,67 @@
         </div>
     </section>
 
+    <!-- aparece ao clicar em participar -->
     <div class="modal-window" id="modalWindow">
-            <div class="modal-card-projects">
+            <input type="hidden" name="idProjeto" id="id" value="">
+                <div class="modal-card-projects">
                     <div class="project-img-block">
-                        <img class="project-img" src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                        <img class="project-img" id="modalImagem" src="<?= baseUrl($imagem) ?>" alt="">
                     </div>
                     <div class="modal-title-block-project">
-                        <div class="modal-title-project">Recolher lixo</div>
+                        <div class="modal-title-project" id="modalTitle"></div>
                         <div class="line"></div>
                     </div>
                     <div class="modal-title-block-project">
                         <div class="modal-title-project">Descrição</div>
                     </div>
                     <div class="textarea-project">
-                        <textarea name="" id="" cols="45" rows="5" readonly>Unindo esforços para preservar nossas praias, este projeto visa reunir voluntários dedicados a remover resíduos e lixo das áreas costeiras, restaurando a beleza natural de nossas praias e protegendo a vida marinha.</textarea>
+                        <textarea name="" id="modalDescricao" cols="45" rows="5" readonly></textarea>
                     </div>
                     <div class="modal-title-block-project">
-                        <div class "modal-title-project">Requisitos</div>
+                        <div class="modal-title-project">Informações adicionais</div>
                     </div>
                     <div class="modal-project-info">
                         <div class="info">
                             <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
-                            <span class="name-span">Formiguinhas</span>
+                            <span class="name-span" id="modalOng"></span>
                         </div>
                         <div class="info">
                             <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
-                            <span class="name-span margin">Caiçara</span>
+                            <span class="name-span margin" id="modalEndereco"></span>
                         </div>
                         <div class="info">
                             <i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i>
-                            <span class="name-span margin">13/09/2023</span>
+                            <span class="name-span margin" id="modalDia"></span>
                         </div>
                     </div>
-
-                    <button class="btn-modal" id="close">Participar</button>
-            </div>
-        </form>
+                    <button type="submit" class="btn-modal" id="close">Participar</button>
+                </div>
     </div>
 
+    <!-- adicionar projeto -->
     <div class="modal-window" id="SecondModalWindow">
-        <form class="form" action=<?= baseUrl('/services/controllers/ongs/projetos/adicionarProjeto.php') ?> enctype="multipart/form-data" method="POST">
+        <form class="form" action="<?= baseUrl('/services/controllers/ongs/projetos/adicionarProjeto.php') ?>" enctype="multipart/form-data" method="POST">
             <input type="hidden" name="id" value="<?= $row['cd_ong'] ?>">
-            <input type="hidden" name="nomeProjeto" value="Limpar a praia">
-        <div class="modal-card-projects">
-            <div class="modal-title-block-project">
-                <div class="info-modal-req">
-                    <input type="text" class="input-requisitos" value="" placeholder="Titulo do projeto">
+            <div class="modal-card-projects">
+                <div class="modal-title-block-project">
+                    <div class="info-modal-req">
+                        <input type="text" class="input-requisitos" name="nomeProjeto" placeholder="Titulo do projeto">
+                    </div>
                 </div>
-            </div>
-            <div class="project-img-add-modal">
-                <div class="modal-title-project">Imagem</div>
-                <input class="input-img" type="file">
-            </div>
-            <div class="modal-title-block-project">
-                <div class="modal-title-project">Descrição</div>
-            </div>
-            <div class="textarea-project">
-                <textarea name="" id="" cols="45" rows="5"></textarea>
-            </div>   
-            <div class="modal-title-block-project">
-                <div class="modal-title-project">Requisitos</div>
-            </div>
+                <div class="project-img-add-modal">
+                    <div class="modal-title-project">Imagem</div>
+                    <input class="input-img" type="file" name="imagemProjeto">
+                </div>
+                <div class="modal-title-block-project">
+                    <div class="modal-title-project">Descrição</div>
+                </div>
+                <div class="textarea-project">
+                    <textarea name="descricaoProjeto" id="" cols="45" rows="5"></textarea>
+                </div>
+                <div class="modal-title-block-project">
+                    <div class="modal-title-project">Requisitos</div>
+                </div>
                 <div class="modal-title-block-project">
                     <div class="modal-title-project">Detalhes Importantes</div>
                 </div>
@@ -194,8 +198,8 @@
         </form>
     </div>
 
-    <script src="<?= baseUrl('/assets/js/modal.js') ?>"></script>
+<script src="<?= baseUrl('/assets/js/modalProjetos.js') ?>"></script>
 
-    <?php
+<?php
     include_once('../../includes/footer.php')
-    ?>
+?>
