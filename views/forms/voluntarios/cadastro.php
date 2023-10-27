@@ -81,7 +81,10 @@
                         </label>
                     </div>
                     <button type="button" class="btn btn-color btn-margin" onclick="passarEtapa()">Próximo</button>
-                    <span class="redirecionar-login">Já tem uma conta? <a href="login.php" class="purple-link">Entrar</a></span>
+                    <div class="redirect-block">
+                        <span class="redirecionar-login">Já tem uma conta? <a href="login.php" class="purple-link">Entrar</a></span>
+                        <span class="redirecionar-login">É uma ONG? <a href="login.php" class="purple-link">Cadastre-se aqui</a></span>
+                    </div>   
                 </div> 
                 <div class="section">
                     <div class="form-title">

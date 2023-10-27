@@ -145,13 +145,13 @@
                 <div class="trajectory">
                     <div class="head-trajectory">
                         <h3 class="subtitle-profile">Minha trajetoria de projetos</h3>
-                        <div class="green-small-block"><? $number ?></div>
+                        <div class="green-small-block"><?= $number ?></div>
                     </div>
                 </div>
                 <div class="trajectory">
                     <div class="head-trajectory">
                         <h3 class="subtitle-profile">Minhas incrições em projetos</h3>
-                        <div class="green-small-block"><? $number ?></div>
+                        <div class="green-small-block"><?= $number ?></div>
                     </div>
                 </div>
             </div>

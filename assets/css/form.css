@@ -19,9 +19,7 @@
 .form-title{
     display: flex;
     flex-direction: column;
-    /* margin-top: 2em; */
     margin-right: 8em;
-    /* margin-bottom: 3em; */
 }
 
 .title{
@@ -232,6 +230,15 @@
     height: 50px;
 }
 
+.redirect-block{
+    width: 30em;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: start;
+    margin-left: 4em;
+}
+
 .redirecionar-login{
     margin-right: 13em;
     color: #000;
@@ -342,9 +349,9 @@
     margin-top: 30px;
 }
 
-.form-title-config{
+/* .form-title-config{
     margin-bottom: 3em;
-}
+} */
 
 .card-email{
     width: 26em;
@@ -463,7 +470,7 @@
     color: #fff;
 }
 
-@media screen and (max-width:768px){
+@media screen and (min-width: 320px) and (max-width:590px){
 
     .main-content{
         display: flex;
@@ -634,3 +641,194 @@
         width: 18em;
     }
 }
+
+@media screen and (min-width: 590px) and (max-width:800px){
+
+    .main-content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .img-block{
+        display: none;
+    }
+
+    .input-block{
+        width: 17em;
+        margin-top: 7px;
+        height: 30px;
+    }
+
+    .title{
+        font-size: 25px;
+    }
+
+    .line{
+        width: 10em;
+    }
+
+    .btn{
+        width: 8em;
+        height: 40px;
+    }
+    
+    .form-title-block{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .form-title{
+        margin-right: 0;
+    }
+    
+    .form-subtitle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 17em;
+        color: #9b9b9b;
+    }
+
+    .form-title{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: start;
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .redirecionar-login{
+        margin-right: 0;
+    }
+
+    .check-block{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        padding: 20px;
+        margin-top: 0;
+        font-size: 12px;
+        margin-left: 0;
+    }
+
+    .back-block{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .container{
+        width: 25em;
+    }
+
+    .btn-back{
+        margin-left: 5em;
+        margin-right: 10px;
+    }
+
+    .btn-section-config{
+        margin-right: 4em;
+    }
+
+    .card-email{
+        width: 18em;
+        height: 21em;
+    }
+    
+    .card-email-head{
+        width: 100%;
+        height: 5em;
+    }
+    
+    .mail-icon{
+        height: 40px;
+    }
+    
+    .card-email-title{
+        font-size: 17px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+    
+    .card-email-text{
+        text-align: justify;
+        font-size: 14px;
+        width: 15em;
+    }
+
+    .btn-larger{
+        width: 13em;
+    }
+
+    .card-senha{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 18em;
+        height: 26em;
+    }
+    
+    .card-senha-text-block{
+        margin-top: 5em;
+        margin-bottom: 20px;
+        width: 15em;
+    }
+    
+    .card-senha-title{
+        font-size: 15px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        margin-top: 15px;
+        width: 16em;
+    }
+    
+    .input-block{
+        width: 28em;
+        margin-top: 7px;
+        height: 30px;
+    }
+    
+    .card-senha-text{
+        text-align: justify;
+        font-size: 13px;
+        width: 18em;
+    }
+
+    .redirect-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: start;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .btn-margin {
+        margin-top: 2em;
+        width: 10em;
+        margin-bottom: 2em;
+    }
+}
+
