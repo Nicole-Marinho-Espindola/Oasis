@@ -1,4 +1,2 @@
-# esse arquivo serve para o git ignorar os arquivos abaixo.
-
-/vendor/
+/config/
 .env

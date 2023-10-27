@@ -257,3 +257,24 @@ function alertProjetoCadastrado() {
       
   });
 }
+
+function alertEventoCadastrado() {
+  Swal.fire({
+      icon: 'center',
+      title: '🌿 Seu evento foi cadastrado! ',
+      text: 'Obrigada por fazer parte do movimento por um futuro mais sustentável.',
+      showConfirmButton: false,
+      
+  });
+}
+
+
+function alertInscricao() {
+  Swal.fire({
+      icon: 'center',
+      title: '🌿 Sua inscrição foi realizada! ',
+      text: 'Obrigada por fazer parte do movimento por um futuro mais sustentável.',
+      showConfirmButton: false,
+      
+  });
+}
