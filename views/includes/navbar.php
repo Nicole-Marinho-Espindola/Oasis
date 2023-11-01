@@ -18,11 +18,11 @@
             </a>
             <?php if (isset($_SESSION['email']) && $_SESSION['tipo_usuario'] === 'ong') : ?>
                 <a href="<?= baseUrl('/views/pages/projetos/projetosOng.php') ?>" class="nav-bar-link-style">
-                    <li class="nav-li">Projetos</li>
+                    <li class="nav-li">Projetos e Eventos</li>
                 </a>
             <?php else : ?>
                 <a href="<?= baseUrl('/views/pages/projetos/projetosVoluntario.php') ?>" class="nav-bar-link-style">
-                    <li class="nav-li">Projetos</li>
+                    <li class="nav-li">Projetos e Eventos</li>
                 </a>
             <?php endif; ?>
             <?php if (isset($_SESSION['email'])) : ?>

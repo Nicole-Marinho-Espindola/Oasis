@@ -14,7 +14,7 @@ try {
     $stmt_verificar->execute();
 
     if ($stmt_verificar->rowCount() === 0) {
-        header("Location: ../../../views/pages/projetos/projetosVoluntario/index.php?voluntario_nao_existe=true");
+        header("Location: ../../../../views/pages/projetos/projetosVoluntario.php?inscricao_sucesso=false");
         exit();
     }
 

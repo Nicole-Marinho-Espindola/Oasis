@@ -278,3 +278,13 @@ function alertInscricao() {
       
   });
 }
+
+function alertInscricaoFailed() {
+  Swal.fire({
+      icon: 'center',
+      title: '🌿 É necessário ter uma conta para se inscrever ',
+      text: 'Por favor, faça login para continuar.',
+      showConfirmButton: false,
+      
+  });
+}

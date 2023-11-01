@@ -33,6 +33,12 @@ if (isset($_SESSION['email'])) {
         echo '<script>alertInscricao();</script>';
     }
     ?>
+        <?php
+    if (isset($_GET['inscricao_sucesso']) && $_GET['inscricao_sucesso'] == 'false') {
+        echo '<script src="../../../assets/js/alerts.js"></script>';
+        echo '<script>alertInscricaoFailed();</script>';
+    }
+    ?>
 
 </body>
 

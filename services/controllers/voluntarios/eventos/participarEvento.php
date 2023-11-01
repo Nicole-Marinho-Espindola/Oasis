@@ -13,7 +13,7 @@ try {
     $stmt_verificar->execute();
 
     if ($stmt_verificar->rowCount() === 0) {
-        header("Location: ../../../views/pages/eventos/eventosVoluntario.php?voluntario_nao_existe=true");
+        header("Location: ../../../../views/pages/eventos/eventosVoluntario.php?inscricao_sucesso=false");
         exit();
     }
 
