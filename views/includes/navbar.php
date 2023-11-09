@@ -10,9 +10,9 @@
             </a>
         </div>
         <ul class="nav-ul">
-            <a href="<?= baseUrl('/index.php') ?>" class="nav-bar-link-style">
+            <!-- <a href="<?= baseUrl('/index.php') ?>" class="nav-bar-link-style">
                 <li class="nav-li">Home</li>
-            </a>
+            </a> -->
             <a href="<?= baseUrl('/views/pages/sobreNos.php') ?>" class="nav-bar-link-style">
                 <li class="nav-li">Sobre nós</li>
             </a>

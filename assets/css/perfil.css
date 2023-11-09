@@ -157,9 +157,9 @@
 
 .trajectory{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     background-color: #fff;
     margin: 50px;
     box-shadow: 1px 3px 7px rgb(167, 167, 167);
@@ -169,13 +169,53 @@
     width: 40em;
 }
 
+.trajectory-ong{
+    width: 70em;
+}
+
 .head-trajectory{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    margin-bottom: 14em;
+    margin-bottom: 3em;
 }
+
+.pjcts-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.pjcts{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 70px;
+    width: 70px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.pjcts:hover{
+    transform: translate(1px, 2%);
+}
+
+.pjcts:active{
+    transform: translate(1px, 2%);
+    border: 1px solid #EBDEF7;
+    box-shadow: 0px 0px 3px #bcbcbc;
+}
+
+.pjcts > img{
+    height: 70px;
+    width: 70px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
 
 .subtitle-profile{
     font-size: 20px;
@@ -184,7 +224,7 @@
 
 .green-small-block{
     height: 35px;
-    width: 38px;
+    width: 35px;
     background-color: #8FA381;
     margin-left: 20px;
     border-radius: 5px;
