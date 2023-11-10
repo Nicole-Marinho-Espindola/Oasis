@@ -93,20 +93,29 @@
                     <h1 class="user-name"><?= $row['nm_ong'] ?></h1>
                     <div class="line line-profile-config"></div>
             </div>
+            <div class="ong-missao-block">
+                <p class="ong-missao"><?= $row['ds_missao'] ?></p>
+            </div>
         </div>
         <div class="user-story">
-            <div class="trajectory">
+            <div class="trajectory trajectory-ong">
                 <div class="head-trajectory">
                     <h3 class="subtitle-profile">Nossos projetos</h3>
                     <div class="green-small-block"><? $number ?></div>
                 </div>
-            </div>
-            <div class="trajectory">
-                <div class="head-trajectory">
-                    <h3 class="subtitle-profile">Nossa missão</h3>
-                </div>
-                <div class="ong-missao-block">
-                    <p class="ong-missao"><?= $row['ds_missao'] ?></p>
+                <div class="pjcts-block">
+                    <div class="pjcts">
+                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                    </div>
+                    <div class="pjcts">
+                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                    </div>
+                    <div class="pjcts">
+                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                    </div>
+                    <div class="pjcts">
+                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                    </div>
                 </div>
             </div>
         </div>
