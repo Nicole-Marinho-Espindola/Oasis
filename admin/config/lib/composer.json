@@ -1,0 +1,18 @@
+{
+    "name": "nicol/lib",
+    "autoload": {
+        "psr-4": {
+            "Nicol\\Lib\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nicole Marinho Espíndola",
+            "email": "nicole.m.espindola@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.5",
+        "phpmailer/phpmailer": "^6.8"
+    }
+}
