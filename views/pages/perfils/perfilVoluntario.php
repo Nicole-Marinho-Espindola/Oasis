@@ -145,13 +145,66 @@
                 <div class="trajectory">
                     <div class="head-trajectory">
                         <h3 class="subtitle-profile">Minha trajetoria de projetos</h3>
-                        <div class="green-small-block"><?= $number ?></div>
+                        <div class="green-small-block"></div>
+                    </div>
+                    <div class="pjcts-block">
+                        <div class="pjcts">
+                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                        </div>
+                        <div class="pjcts">
+                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                        </div>
+                        <div class="pjcts">
+                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                        </div>
+                        <div class="pjcts">
+                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                        </div>
+                    </div>
                     </div>
                 </div>
                 <div class="trajectory">
                     <div class="head-trajectory">
                         <h3 class="subtitle-profile">Minhas incrições em projetos</h3>
-                        <div class="green-small-block"><?= $number ?></div>
+                        <div class="green-small-block"></div>
+                    </div>
+                    <div class="pjcts-block">
+                        <div class="pjcts">
+                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                        </div>
+                        <div class="pjcts">
+                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                        </div>
+                        <div class="pjcts">
+                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                        </div>
+                        <div class="pjcts">
+                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                        </div>
+                        <div class="pjcts">
+                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                        </div>
+                        <div class="pjcts">
+                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                        </div>
+                        <div class="pjcts">
+                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                        </div>
+                        <div class="pjcts">
+                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                        </div>
+                        <div class="pjcts">
+                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                        </div>
+                        <div class="pjcts">
+                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                        </div>
+                        <div class="pjcts">
+                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                        </div>
+                        <div class="pjcts">
+                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
