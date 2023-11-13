@@ -152,24 +152,6 @@
                     <div class="pjcts">
                         <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
                     </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
                 </div>
             </div>
         </div>

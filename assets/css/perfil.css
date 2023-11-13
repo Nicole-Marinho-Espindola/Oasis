@@ -171,6 +171,7 @@
 
 .trajectory-ong{
     width: 70em;
+    height: 25em;
 }
 
 .head-trajectory{
@@ -195,11 +196,11 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    height: 70px;
-    width: 70px;
+    height: 100px;
+    width: 100px;
     border-radius: 5px;
     overflow: hidden;
-    margin: 10px;
+    margin: 20px 15px 0px 15px;
     transition: ease-in-out 0.3s;
 }
 
@@ -210,15 +211,15 @@
 .pjcts:active{
     transform: translate(1px, 2%);
     border: 1px solid #EBDEF7;
-    box-shadow: 0px 0px 3px #bcbcbc;
+    box-shadow: 0px 0px 3px #a2a2a2;
     cursor: pointer;
     opacity: 0.5;
     border: none;
 }
 
 .pjcts > img{
-    height: 70px;
-    width: 70px;
+    height: 100px;
+    width: 100px;
     border-radius: 5px;
     object-fit: cover;
 }
@@ -239,6 +240,16 @@
 
 .link-style-none{
     text-decoration: none;
+}
+
+.ong-missao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    margin-top: 20px;
+    width: 25em;
+    text-align: center;
 }
 
 @media screen and (max-width: 1024px){

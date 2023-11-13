@@ -3,7 +3,7 @@
         'name' => 'nicol/lib',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '15a65a9ab6d84ff81f40eb333c1242caa6c9b097',
+        'reference' => 'dbb5bf5775cf063b35c6dd37680cafb20759785d',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'nicol/lib' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '15a65a9ab6d84ff81f40eb333c1242caa6c9b097',
+            'reference' => 'dbb5bf5775cf063b35c6dd37680cafb20759785d',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

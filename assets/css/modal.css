@@ -320,3 +320,11 @@
     animation: open-modal 0.5s ease-in-out;
 }
 
+.open .modal-card-projects{
+    animation: open-modal 0.5s ease-in-out;
+}
+
+.open .modal-card-profile{
+    animation: open-modal 0.5s ease-in-out;
+}
+

@@ -6,6 +6,10 @@
     font-family: 'Poppins',sans-serif;
 }
 
+[data-anime]{
+    opacity: 0;
+}
+
 .content{
     padding: 7em 7em 3em 7em ;
 }
