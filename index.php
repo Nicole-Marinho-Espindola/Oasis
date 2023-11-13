@@ -18,7 +18,7 @@
         <img class="join-us-img" src="./assets/img/Taking care of the Earth-amico.png" alt="">
     </div>
 </section>
-<section class="green-block-explain" data-anime="top">
+<section class="green-block-explain">
     <div class="green-title-block">
         <img src="./assets/img/logo-oasis-verde.png" alt="" class="green-block-img">
         <span class="green-block-title">Imagine um Oásis....</span>
@@ -27,7 +27,7 @@
     A Oásis é uma comunidade de voluntários dedicados a preservar e restaurar a natureza. Junte-se a nós para fazer a diferença e ajudar a criar um mundo mais verde e sustentável.
     </p>
 </section>
-<section class="timeline" data-anime="left">
+<section class="timeline">
     <div class="timeline-title-block">
         <h1 class="timeline-title">Como funciona?</h1>
         <div class="line"></div>
@@ -78,7 +78,7 @@
     </section>
 </section>
     <section class="our-partners">
-        <div class="partners-block active-display" data-anime="right">
+        <div class="partners-block active-display">
             <div class="our-partners-text-block">
                 <div class="our-partners-title-block">
                     <h1 class="our-partners-title">Conheça algumas ONG’S parceiras</h1>
