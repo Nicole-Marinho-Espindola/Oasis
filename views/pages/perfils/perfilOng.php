@@ -1,5 +1,4 @@
 <?php
-
     function includeURL($path = '') {
         return sprintf(
             "%s/%s/%s",
@@ -48,7 +47,6 @@
         $query->execute();
         $row = $query->fetch(PDO::FETCH_ASSOC);
 
-        $conn = null;
     }
 ?>
 
@@ -98,79 +96,49 @@
             </div>
         </div>
         <div class="user-story">
-            <div class="trajectory trajectory-ong">
-                <div class="head-trajectory">
-                    <h3 class="subtitle-profile">Nossos projetos</h3>
-                    <div class="green-small-block"><? $number ?></div>
+        <?php
+            try {
+                $selectProjetos = $conn->prepare("SELECT tb_projeto.*, tb_ong.nm_ong AS nome_ong
+                                                FROM tb_projeto
+                                                JOIN tb_ong ON tb_projeto.cd_ong = tb_ong.cd_ong
+                                                WHERE tb_projeto.cd_ong = :ong");
+
+                $selectProjetos->bindParam(":ong", $row['cd_ong']);
+                $selectProjetos->execute();
+
+                //cont dos projetos
+                $countProjetos = $conn->prepare("SELECT COUNT(cd_projeto) AS total_projetos
+                                                    FROM tb_projeto
+                                                    WHERE cd_ong = :ong");
+
+                $countProjetos->bindParam(":ong", $row['cd_ong']);
+                $countProjetos->execute();
+                $totalProjetos = $countProjetos->fetchColumn();
+        ?>
+                <div class="trajectory trajectory-ong">
+                    <div class="head-trajectory">
+                        <h3 class="subtitle-profile">Nossos projetos</h3>
+                        <div class="green-small-block"><?= $totalProjetos ?></div>
+                    </div>
+
+                    <?php
+                        while ($rowProjeto = $selectProjetos->fetch()) {
+                            $imagem = $rowProjeto['nm_imagem'];
+                            ?>
+                            <div class="pjcts-block">
+                                <div class="pjcts">
+                                    <img src="<?= baseUrl($rowProjeto['nm_imagem']) ?>" alt="">
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    ?>
                 </div>
-                <div class="pjcts-block">
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                    <div class="pjcts">
-                        <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                    </div>
-                </div>
+        <?php
+            } catch (PDOException $e) {
+                echo "Erro ao listar projetos: " . $e->getMessage();
+            }
+        ?>
             </div>
         </div>
     </div>

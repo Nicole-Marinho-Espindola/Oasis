@@ -79,14 +79,12 @@
 
     <body>
 
-
     <?php
         if (isset($_GET['editar_sucesso']) && $_GET['editar_sucesso'] == 'true') {
             echo '<script src="../../../assets/js/alerts.js"></script>';
             echo '<script>alertAlterar();</script>';
         }
     ?>
-
 
         <div class="profile-block">
             <div class="profile-purple-block">
@@ -121,7 +119,6 @@
                         <h1 class="user-name" id="nomeVoluntario" name="nomeVoluntario"><?= $nomeVoluntario ?></h1>
                         <div class="line line-profile-config"></div>
                     <?php endif; ?>
-                    <!-- <span class="edit-img"><input class="input input-size icon-green" name="imagemVoluntario" type="file"></span> -->
                 </div>
                 <div class="user-profile-int">
                     <?php

@@ -52,8 +52,7 @@
         <div class="projects-cards-block">
             <?php
             try {
-                $currentDate = date("2023-15-12"); // pega a data atual para nao exibir projetos que já tenham sido realizados
-                // $currentDate = date("Y-m-d"); // pega a data atual para nao exibir projetos que já tenham sido realizados
+                $currentDate = date("Y-m-d"); // pega a data atual para nao exibir projetos que já tenham sido realizados
 
                 $selectProjetos = $conn->prepare("SELECT tb_projeto.*, tb_ong.nm_ong AS nome_ong
                                                     FROM tb_projeto
