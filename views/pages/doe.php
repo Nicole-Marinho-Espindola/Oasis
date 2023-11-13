@@ -56,7 +56,7 @@
 
                                         SELECT
                                             v.nm_voluntario AS nome,
-                                            c.dt_compartilhamento AS data,
+                                            c.hr_compartilhamento AS data,
                                             'Compartilhou' AS acao
                                         FROM tb_voluntario v
                                         JOIN tb_compartilhamento c ON v.cd_voluntario = c.cd_voluntario
