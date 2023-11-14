@@ -118,21 +118,23 @@
                 <div class="trajectory trajectory-ong">
                     <div class="head-trajectory">
                         <h3 class="subtitle-profile">Nossos projetos</h3>
-                        <div class="green-small-block"><?= $totalProjetos ?></div>
+                        <div class="green-small-block">
+                            <p><?= $totalProjetos ?></p>
+                        </div>
                     </div>
 
+                    <div class="pjcts-block">
                     <?php
                         while ($rowProjeto = $selectProjetos->fetch()) {
                             $imagem = $rowProjeto['nm_imagem'];
                             ?>
-                            <div class="pjcts-block">
                                 <div class="pjcts">
                                     <img src="<?= baseUrl($rowProjeto['nm_imagem']) ?>" alt="">
                                 </div>
-                            </div>
                             <?php
                         }
                     ?>
+                    </div>
                 </div>
         <?php
             } catch (PDOException $e) {
