@@ -28,16 +28,24 @@ if (isset($_SESSION['email'])) {
 <body>
 
     <?php
-    if (isset($_GET['inscricao_sucesso']) && $_GET['inscricao_sucesso'] == 'true') {
-        echo '<script src="../../../assets/js/alerts.js"></script>';
-        echo '<script>alertInscricao();</script>';
-    }
+        if (isset($_GET['inscricao_sucesso']) && $_GET['inscricao_sucesso'] == 'true') {
+            echo '<script src="../../../assets/js/alerts.js"></script>';
+            echo '<script>alertInscricao();</script>';
+        }
     ?>
-        <?php
-    if (isset($_GET['inscricao_sucesso']) && $_GET['inscricao_sucesso'] == 'false') {
-        echo '<script src="../../../assets/js/alerts.js"></script>';
-        echo '<script>alertInscricaoFailed();</script>';
-    }
+    
+    <?php
+        if (isset($_GET['inscricao_sucesso']) && $_GET['inscricao_sucesso'] == 'false') {
+            echo '<script src="../../../assets/js/alerts.js"></script>';
+            echo '<script>alertInscricaoFailed();</script>';
+        }
+    ?>
+
+    <?php
+        if (isset($_GET['inscricao_repetida']) && $_GET['inscricao_repetida'] == 'true') {
+            echo '<script src="../../../assets/js/alerts.js"></script>';
+            echo '<script>alertInscricaoRepetida();</script>';
+        }
     ?>
 
 </body>
@@ -131,7 +139,7 @@ if (isset($_SESSION['email'])) {
                 <div class="modal-title-project">Descrição</div>
             </div>
             <div class="textarea-project">
-                <textarea name="" id="modalDescricao" cols="45" rows="5" readonly></textarea>
+                <textarea name="" id="modalDescricao" cols="100" rows="5" readonly></textarea>
             </div>
             <div class="modal-title-block-project">
                 <div class="modal-title-project">Informações adicionais</div>
