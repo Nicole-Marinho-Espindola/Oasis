@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="<?= baseUrl('/assets/css/global.css')?>">
         <link rel="stylesheet" href="<?= baseUrl('/assets/css/navbar.css')?>">
         <link rel="stylesheet" href="<?= baseUrl('/assets/css/modal.css')?>">
+        <link rel="stylesheet" href="<?= baseUrl('/assets/css/perfil.css')?>">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>

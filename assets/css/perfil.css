@@ -366,6 +366,16 @@
     .edit-profile-span{
         display: none;
     }
+
+    .ong-missao{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        margin-top: 20px;
+        width: 20em;
+        text-align: center;
+    }
 }
 
 @media screen and (min-width: 321px) and (max-width: 768px){

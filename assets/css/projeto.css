@@ -219,6 +219,13 @@ body{
     color: #715987;
 }
 
+.small-blocks-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
 @media screen and (min-width: 320px) and (max-width: 456px){
 
     .dark-purple-block{

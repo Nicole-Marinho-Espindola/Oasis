@@ -149,7 +149,12 @@
                         <span class="name-span margin" id="modalDia"></span>
                     </div>
                 </div>
-                <button type="submit" class="btn-modal" id="close">Participar</button>
+                <!-- <button type="submit" class="btn-modal" id="close">Participar</button> -->
+                <div class="small-blocks-section">
+                    <div class="green-small-block"><i class="fa-regular fa-pen-to-square"></i></div>
+                    <div class="green-small-block"><i class="fa-regular fa-eye"></i></div>
+                    <div class="green-small-block"><i class="fa-solid fa-trash"></i></div>
+                </div>
             </div>
     </div>
 
