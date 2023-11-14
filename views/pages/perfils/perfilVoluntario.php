@@ -103,7 +103,7 @@
                     </div>
                 </div>
             </div>
-            <div class="img-profile-block">
+            <div class="img-profile-block img-profile-volunt">
                 <?php if (!empty($imagemVoluntario)) : ?>
                     <img src="<?= baseUrl($imagemVoluntario) ?>" alt="Foto de perfil do usuário">
                 <?php else: ?>
@@ -149,35 +149,36 @@
                         <div class="trajectory">
                             <div class="head-trajectory">
                                 <h3 class="subtitle-profile">Minha trajetória de projetos</h3>
-                                <div class="green-small-block"><?= $totalInscricoes ?></div>
+                                <div class="green-small-block">
+                                    <p><?= $totalInscricoes ?></p>
+                                </div>
                             </div>
 
-                            <?php
-                            $selectImagensProjeto = $conn->prepare("SELECT p.nm_imagem
-                                                                    FROM tb_projeto p
-                                                                    JOIN tb_inscricao ins ON p.cd_projeto = ins.cd_projeto
-                                                                    WHERE ins.cd_voluntario = :idVoluntario");
-                            $selectImagensProjeto->bindParam(":idVoluntario", $idVoluntario);
-                            $selectImagensProjeto->execute();
-                            
-                            while ($rowImagemProjeto = $selectImagensProjeto->fetch()) {
-                            ?>
-                                <div class="pjcts-block">
+                            <div class="pjcts-block">
+                                <?php
+                                $selectImagensProjeto = $conn->prepare("SELECT p.nm_imagem
+                                                                        FROM tb_projeto p
+                                                                        JOIN tb_inscricao ins ON p.cd_projeto = ins.cd_projeto
+                                                                        WHERE ins.cd_voluntario = :idVoluntario");
+                                $selectImagensProjeto->bindParam(":idVoluntario", $idVoluntario);
+                                $selectImagensProjeto->execute();
+                                
+                                while ($rowImagemProjeto = $selectImagensProjeto->fetch()) {
+                                ?>
                                     <div class="pjcts">
                                         <img src="<?= baseUrl($rowImagemProjeto['nm_imagem']) ?>" alt="">
                                     </div>
-                                </div>
-                            <?php
-                            }
-                            ?>
+                                <?php
+                                }
+                                ?>
+                            </div>
                         </div>
                 <?php
                     } catch (PDOException $e) {
                         echo "Erro ao listar projetos: " . $e->getMessage();
                     }
                 ?>
-            </div>
-            <?php
+                <?php
                     try {
 
                         $currentDate = date("Y-m-d");
@@ -197,29 +198,31 @@
                     <div class="trajectory">
                         <div class="head-trajectory">
                             <h3 class="subtitle-profile">Minhas inscrições em projetos</h3>
-                            <div class="green-small-block"><?= $inscricoesAtuais ?></div>
+                            <div class="green-small-block">
+                                <p><?= $inscricoesAtuais ?></p>
+                            </div>
                         </div>
 
-                        <?php
-                        $selectImagensInscricao = $conn->prepare("SELECT p.nm_imagem
-                                                                FROM tb_projeto p
-                                                                JOIN tb_inscricao ins ON p.cd_projeto = ins.cd_projeto
-                                                                WHERE ins.cd_voluntario = :idVoluntario
-                                                                AND p.dt_projeto >= :currentDate");
-                        $selectImagensInscricao->bindParam(":idVoluntario", $idVoluntario);
-                        $selectImagensInscricao->bindParam(":currentDate", $currentDate);
-                        $selectImagensInscricao->execute();
+                        <div class="pjcts-block">
+                            <?php
+                            $selectImagensInscricao = $conn->prepare("SELECT p.nm_imagem
+                                                                    FROM tb_projeto p
+                                                                    JOIN tb_inscricao ins ON p.cd_projeto = ins.cd_projeto
+                                                                    WHERE ins.cd_voluntario = :idVoluntario
+                                                                    AND p.dt_projeto >= :currentDate");
+                            $selectImagensInscricao->bindParam(":idVoluntario", $idVoluntario);
+                            $selectImagensInscricao->bindParam(":currentDate", $currentDate);
+                            $selectImagensInscricao->execute();
 
-                        while ($rowImagemInscricao = $selectImagensInscricao->fetch()) {
-                        ?>
-                            <div class="pjcts-block">
+                            while ($rowImagemInscricao = $selectImagensInscricao->fetch()) {
+                            ?>
                                 <div class="pjcts">
                                     <img src="<?= baseUrl($rowImagemInscricao['nm_imagem']) ?>" alt="">
                                 </div>
-                            </div>
-                        <?php
-                        }
-                        ?>
+                            <?php
+                            }
+                            ?>
+                        </div>
                     </div>
                     </div>
             <?php
@@ -227,6 +230,8 @@
                     echo "Erro ao listar projetos: " . $e->getMessage();
                 }
             ?>
+            </div>
+            
         </div>
 
         <div class="modal-window" id="modalWindow">

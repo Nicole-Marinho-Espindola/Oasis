@@ -269,6 +269,11 @@
     text-align: center;
 }
 
+.img-profile-volunt{
+    margin-bottom: 0;
+    margin-bottom: 40em;
+}
+
 @media screen and (max-width: 320px){
 
     .profile-purple-block {
