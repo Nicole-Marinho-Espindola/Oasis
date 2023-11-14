@@ -165,7 +165,7 @@
                                 
                                 while ($rowImagemProjeto = $selectImagensProjeto->fetch()) {
                                 ?>
-                                    <div class="pjcts">
+                                    <div class="pjcts" onclick="openSecondModal()">
                                         <img src="<?= baseUrl($rowImagemProjeto['nm_imagem']) ?>" alt="">
                                     </div>
                                 <?php
@@ -216,7 +216,7 @@
 
                             while ($rowImagemInscricao = $selectImagensInscricao->fetch()) {
                             ?>
-                                <div class="pjcts">
+                                <div class="pjcts" onclick="openSecondModal()">
                                     <img src="<?= baseUrl($rowImagemInscricao['nm_imagem']) ?>" alt="">
                                 </div>
                             <?php
@@ -264,6 +264,45 @@
                 </div>
             </form>
         </div>
+
+    <div class="modal-window" id="SecondModalWindow">
+        <form action="<?= baseUrl('/services/controllers/voluntarios/projetos/participarProjeto.php') ?>" method="POST">
+            <input type="hidden" name="idProjeto" id="id" value="">
+            <input type="hidden" name="idVoluntario" value="<?= $row['cd_voluntario'] ?>">
+            <div class="modal-card-projects">
+                <div class="project-img-block">
+                    <img class="project-img" id="modalImagem" src="<?= baseUrl($imagem) ?>" alt="">
+                </div>
+                <div class="modal-title-block-project">
+                    <div class="modal-title-project" id="modalTitle"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="modal-title-block-project">
+                    <div class="modal-title-project">Descrição</div>
+                </div>
+                <div class="textarea-project">
+                    <textarea name="" id="modalDescricao" cols="100" rows="5" readonly></textarea>
+                </div>
+                <div class="modal-title-block-project">
+                    <div class="modal-title-project">Informações adicionais</div>
+                </div>
+                <div class="modal-project-info">
+                    <div class="info">
+                        <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
+                        <span class="name-span" id="modalOng"></span>
+                    </div>
+                    <div class="info">
+                        <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
+                        <span class="name-span margin" id="modalEndereco"></span>
+                    </div>
+                    <div class="info">
+                        <i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i>
+                        <span class="name-span margin" id="modalDia"></span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
     </body>
 
     <script src="<?= baseUrl('/assets/js/visualizarImagem.js') ?>"></script>

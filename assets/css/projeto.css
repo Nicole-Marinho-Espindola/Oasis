@@ -219,6 +219,17 @@ body{
     color: #715987;
 }
 
+.green-small-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 35px;
+    background-color: #8FA381;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+
 .small-blocks-section{
     display: flex;
     justify-content: center;
