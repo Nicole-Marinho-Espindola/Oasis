@@ -288,3 +288,13 @@ function alertInscricaoFailed() {
       
   });
 }
+
+function alertInscricaoRepetida() {
+  Swal.fire({
+      icon: 'center',
+      title: '🌿 Você já se inscreveu neste projeto',
+      text: 'Por favor, verifique suas inscrições em seu perfil.',
+      showConfirmButton: false,
+      
+  });
+}

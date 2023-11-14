@@ -41,21 +41,20 @@
         $email = $_SESSION['email'];
 
         $sql = "SELECT
-                            v.cd_voluntario,
-                            v.nm_voluntario,
-                            v.nm_sobrenome,
-                            v.nm_imagem,
-                            v.dt_nascimento,
-                            v.ds_email,
-                            i.nm_icone,
-                            e.cd_interesse,
-                            s.nm_situacao AS situacao
-                        FROM tb_voluntario v
-                        LEFT JOIN tb_escolha e ON v.cd_voluntario = e.cd_voluntario
-                        LEFT JOIN tb_interesse i ON e.cd_interesse = i.cd_interesse
-                        LEFT JOIN tb_situacao s ON v.cd_situacao = s.cd_situacao
-                        WHERE v.ds_email = :email";
-
+                    v.cd_voluntario,
+                    v.nm_voluntario,
+                    v.nm_sobrenome,
+                    v.nm_imagem AS imagem_voluntario,
+                    v.dt_nascimento,
+                    v.ds_email,
+                    i.nm_icone,
+                    e.cd_interesse,
+                    s.nm_situacao AS situacao
+                FROM tb_voluntario v
+                LEFT JOIN tb_escolha e ON v.cd_voluntario = e.cd_voluntario
+                LEFT JOIN tb_interesse i ON e.cd_interesse = i.cd_interesse
+                LEFT JOIN tb_situacao s ON v.cd_situacao = s.cd_situacao
+                WHERE v.ds_email = :email";
         $query = $conn->prepare($sql);
         $query->bindParam(":email", $email);
         $query->execute();
@@ -69,10 +68,8 @@
             $idVoluntario = $row['cd_voluntario'];
             $nomeVoluntario = $row['nm_voluntario'];
             $emailVoluntario = $row['ds_email'];
-            $imagemVoluntario = $row['nm_imagem'];
+            $imagemVoluntario = $row['imagem_voluntario'];
         }
-
-        $conn = null;
     }
 
     ?>
@@ -139,72 +136,97 @@
                 </div>
             </div>
             <div class="user-story">
-                <div class="trajectory">
-                    <div class="head-trajectory">
-                        <h3 class="subtitle-profile">Minha trajetoria de projetos</h3>
-                        <div class="green-small-block"></div>
-                    </div>
-                    <div class="pjcts-block">
-                        <div class="pjcts">
-                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
+                <?php
+                    try {
+                        // Contagem de inscrições
+                        $countInscricoes = $conn->prepare("SELECT COUNT(cd_inscricao) AS total_inscricao
+                                                            FROM tb_inscricao
+                                                            WHERE cd_voluntario = :idVoluntario");
+                        $countInscricoes->bindParam(":idVoluntario", $idVoluntario);
+                        $countInscricoes->execute();
+                        $totalInscricoes = $countInscricoes->fetchColumn();
+                    ?>
+                        <div class="trajectory">
+                            <div class="head-trajectory">
+                                <h3 class="subtitle-profile">Minha trajetória de projetos</h3>
+                                <div class="green-small-block"><?= $totalInscricoes ?></div>
+                            </div>
+
+                            <?php
+                            $selectImagensProjeto = $conn->prepare("SELECT p.nm_imagem
+                                                                    FROM tb_projeto p
+                                                                    JOIN tb_inscricao ins ON p.cd_projeto = ins.cd_projeto
+                                                                    WHERE ins.cd_voluntario = :idVoluntario");
+                            $selectImagensProjeto->bindParam(":idVoluntario", $idVoluntario);
+                            $selectImagensProjeto->execute();
+                            
+                            while ($rowImagemProjeto = $selectImagensProjeto->fetch()) {
+                            ?>
+                                <div class="pjcts-block">
+                                    <div class="pjcts">
+                                        <img src="<?= baseUrl($rowImagemProjeto['nm_imagem']) ?>" alt="">
+                                    </div>
+                                </div>
+                            <?php
+                            }
+                            ?>
                         </div>
-                        <div class="pjcts">
-                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                        </div>
-                        <div class="pjcts">
-                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                        </div>
-                        <div class="pjcts">
-                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div class="trajectory">
-                    <div class="head-trajectory">
-                        <h3 class="subtitle-profile">Minhas incrições em projetos</h3>
-                        <div class="green-small-block"></div>
-                    </div>
-                    <div class="pjcts-block">
-                        <div class="pjcts">
-                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                        </div>
-                        <div class="pjcts">
-                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                        </div>
-                        <div class="pjcts">
-                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                        </div>
-                        <div class="pjcts">
-                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                        </div>
-                        <div class="pjcts">
-                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                        </div>
-                        <div class="pjcts">
-                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                        </div>
-                        <div class="pjcts">
-                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                        </div>
-                        <div class="pjcts">
-                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                        </div>
-                        <div class="pjcts">
-                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                        </div>
-                        <div class="pjcts">
-                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                        </div>
-                        <div class="pjcts">
-                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                        </div>
-                        <div class="pjcts">
-                            <img src="<?= baseUrl('/assets/img/foto-teste.webp') ?>" alt="">
-                        </div>
-                    </div>
-                </div>
+                <?php
+                    } catch (PDOException $e) {
+                        echo "Erro ao listar projetos: " . $e->getMessage();
+                    }
+                ?>
             </div>
+            <?php
+                    try {
+
+                        $currentDate = date("Y-m-d");
+            
+                        //inscrições em projetos que não passaram da data atual
+                        $countInscricoes = $conn->prepare("SELECT COUNT(ins.cd_inscricao) AS total_inscricao
+                                                            FROM tb_inscricao ins
+                                                            JOIN tb_projeto p ON ins.cd_projeto = p.cd_projeto
+                                                            WHERE ins.cd_voluntario = :idVoluntario
+                                                            AND p.dt_projeto >= :currentDate");
+                        $countInscricoes->bindParam(":idVoluntario", $idVoluntario);
+                        $countInscricoes->bindParam(":currentDate", $currentDate);
+                        $countInscricoes->execute();
+                        $inscricoesAtuais = $countInscricoes->fetchColumn();
+                        
+            ?>
+                    <div class="trajectory">
+                        <div class="head-trajectory">
+                            <h3 class="subtitle-profile">Minhas inscrições em projetos</h3>
+                            <div class="green-small-block"><?= $inscricoesAtuais ?></div>
+                        </div>
+
+                        <?php
+                        $selectImagensInscricao = $conn->prepare("SELECT p.nm_imagem
+                                                                FROM tb_projeto p
+                                                                JOIN tb_inscricao ins ON p.cd_projeto = ins.cd_projeto
+                                                                WHERE ins.cd_voluntario = :idVoluntario
+                                                                AND p.dt_projeto >= :currentDate");
+                        $selectImagensInscricao->bindParam(":idVoluntario", $idVoluntario);
+                        $selectImagensInscricao->bindParam(":currentDate", $currentDate);
+                        $selectImagensInscricao->execute();
+
+                        while ($rowImagemInscricao = $selectImagensInscricao->fetch()) {
+                        ?>
+                            <div class="pjcts-block">
+                                <div class="pjcts">
+                                    <img src="<?= baseUrl($rowImagemInscricao['nm_imagem']) ?>" alt="">
+                                </div>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                    </div>
+            <?php
+                } catch (PDOException $e) {
+                    echo "Erro ao listar projetos: " . $e->getMessage();
+                }
+            ?>
         </div>
 
         <div class="modal-window" id="modalWindow">
