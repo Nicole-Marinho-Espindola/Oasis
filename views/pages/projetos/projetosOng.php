@@ -100,7 +100,7 @@
                                 <span class="name-span margin"><?= date("d-m-Y", strtotime($data)) ?></span>
                             </div>
                         </div>
-                        <button class="btn-project-card" data-id="<?= $id ?>" data-imagem="<?= $imagem ?>" data-titulo="<?= $titulo ?>" data-ong="<?= $ong ?>" data-descricao="<?= $descricao ?>" data-dia="<?= $data ?>" data-endereco="<?= $endereco ?>" onclick="openModal(this)">Participar</button>
+                        <button class="btn-project-card" data-id="<?= $id ?>" data-imagem="<?= $imagem ?>" data-titulo="<?= $titulo ?>" data-ong="<?= $ong ?>" data-descricao="<?= $descricao ?>" data-dia="<?= $data ?>" data-endereco="<?= $endereco ?>" onclick="openModal(this)">Visualizar</button>
                     </div>
             <?php
                 }
@@ -149,7 +149,6 @@
                         <span class="name-span margin" id="modalDia"></span>
                     </div>
                 </div>
-                <!-- <button type="submit" class="btn-modal" id="close">Participar</button> -->
                 <div class="small-blocks-section">
                     <div class="green-small-block"><i class="fa-regular fa-pen-to-square"></i></div>
                     <div class="green-small-block"><i class="fa-regular fa-eye"></i></div>
