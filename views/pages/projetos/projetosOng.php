@@ -159,7 +159,8 @@
 
     <!-- adicionar projeto -->
     <div class="modal-window" id="SecondModalWindow">
-        <form class="form" action="<?= baseUrl('/services/controllers/ongs/projetos/adicionarProjeto.php') ?>" enctype="multipart/form-data" method="POST">
+    <form class="form" action="<?= baseUrl('/services/controllers/ongs/projetos/adicionarProjeto.php') ?>" enctype="multipart/form-data"
+        method="POST" onsubmit="return validateForm()">
             <input type="hidden" name="id" value="<?= $row['cd_ong'] ?>">
             <div class="modal-card-projects">
                 <div class="modal-title-block-project">
@@ -202,6 +203,7 @@
         </form>
     </div>
 
+<script src="<?= baseUrl('/assets/js/validateForm.js') ?>"></script>
 <script src="<?= baseUrl('/assets/js/modalProjetos.js') ?>"></script>
 
 <?php

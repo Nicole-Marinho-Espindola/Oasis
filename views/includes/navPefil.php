@@ -25,7 +25,42 @@
         <span class="logo-nome">Oásis</span>
     </div>
     <div class="btn-block">
-        <a href="<?= baseUrl('/services/controllers/auth/logout.php') ?>" class="purple-small-btn link-style-none">Sair</a>
+        <a href="<?= baseUrl('/services/controllers/auth/logout.php') ?>" class="purple-small-btn link-style-none logout-link">Sair</a>
     </div>
+    <script src="<?= baseUrl('/assets/js/alerts.js') ?>"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoutLinks = document.querySelectorAll('.logout-link');
+            if (logoutLinks) {
+                logoutLinks.forEach(logoutLink => {
+                    logoutLink.addEventListener('click', function (e) {
+                        e.preventDefault(); // Impede o comportamento padrão do link
 
+                        Swal.fire({
+                        title: '<span style="font-size: 25px;">Tem certeza de que deseja sair?</span>',
+                        icon: 'question',
+                        // iconHtml: '<i class="fa-solid fa-circle-exclamation" style="color: purple";></i>',
+                        showCancelButton: true,
+                        confirmButtonColor: '#586D48',
+                        cancelButtonColor: '#a173bdc9',
+                        confirmButtonText: 'Sair',
+                        cancelButtonText: 'Cancelar',
+                        customClass: {
+                            confirmButton: 'custom-confirm-btn-class',
+                            cancelButton: 'custom-cancel-btn-class'
+                        },
+                        background: '#fff'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            alertLogout();
+                            setTimeout(() => {
+                                window.location.href = e.target.href;
+                            });
+                        }
+                    });
+                });
+            });
+        }
+        });
+    </script>
 </nav>

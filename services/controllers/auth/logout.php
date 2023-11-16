@@ -20,14 +20,12 @@
 				$params["secure"], $params["httponly"]
 			);
 		}
-
-		echo '<script src="../../../assets/js/alerts.js"></script>';
-        echo '<script>alertLogout();</script>';
-        header("Refresh: 1.5; URL=http://localhost/oasis/index.php");
+		
+        header("Refresh: 0.8; URL=http://localhost/oasis/index.php");
         exit();
 
 	} else {
-		header("Location: ../../../index.php");
+		header("Location: ./index.php");
 		exit();
 
 	}

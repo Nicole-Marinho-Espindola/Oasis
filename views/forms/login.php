@@ -64,8 +64,7 @@
                     <label for="">Senha:</label>
                     <div class="input-block">
                         <i class="fa-solid fa-lock" style="color: #586D48;"></i>
-                        <input class="input" type="text"
-                                id="senha" name="senha"
+                        <input class="input" type="password" id="senha" name="senha"
                             placeholder="digite sua senha" onChange="buttonToggle()">
                         <i class="fa-regular fa-eye-slash" style="color: #586D48;" id="eyePng" onClick="eyeClick()"></i>
                     </div>

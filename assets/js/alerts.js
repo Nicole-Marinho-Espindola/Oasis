@@ -138,21 +138,21 @@ function alertEmailUnconfirmed(){
     })
 }
 
-function alertLogout(){
+function alertLogout() {
   Swal.fire({
       title: 'Você saiu com sucesso',
-      text:'volte sempre...',
+      text: 'Volte sempre...',
       width: 600,
       padding: '3em',
       color: '#AB7BC8',
       background: '#fff',
       backdrop: `
-        rgba(0,0,123,0.4)
-        url("../img/PYh.gif")
-        left top
-        no-repeat
+          rgba(0,0,123,0.4)
+          url("../img/PYh.gif")
+          left top
+          no-repeat
       `
-    })
+  });
 }
 
 function alertSessao(){
