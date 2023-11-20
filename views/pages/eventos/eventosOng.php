@@ -31,6 +31,16 @@
         echo '<script src="../../../assets/js/alerts.js"></script>';
         echo '<script>alertEventoCadastrado();</script>';
     }
+
+    if (isset($_GET['editar_sucesso']) && $_GET['editar_sucesso'] == 'true') {
+        echo '<script src="../../../assets/js/alerts.js"></script>';
+        echo '<script>alertAlterar();</script>';
+    }
+
+    if (isset($_GET['excluir_sucesso']) && $_GET['excluir_sucesso'] == 'true') {
+        echo '<script src="../../../assets/js/alerts.js"></script>';
+        echo '<script>alertExcluir();</script>';
+    }
     ?>
 
 </body>
@@ -117,9 +127,9 @@
         </div>
     </section>
 
-    <!-- aparece ao clicar em participar -->
+    <!-- visualizar -->
     <div class="modal-window" id="modalWindow">
-            <input type="hidden" name="idevento" id="idevento" value="">
+            <input type="hidden" name="id" id="id" value="">
                 <div class="modal-card-projects">
                     <div class="project-img-block">
                         <img class="project-img" id="modalImagem" src="<?= baseUrl($imagem) ?>" alt="">
@@ -152,9 +162,9 @@
                         </div>
                     </div>
                     <div class="small-blocks-section">
-                        <div class="green-small-block"><i class="fa-regular fa-pen-to-square"></i></div>
+                        <div class="green-small-block" onclick="openEditModal()"><i class="fa-regular fa-pen-to-square"></i></div>
                         <div class="green-small-block"><i class="fa-regular fa-eye"></i></div>
-                        <div class="green-small-block"><i class="fa-solid fa-trash"></i></div>
+                        <div class="green-small-block"><a id="deleteLinkEvento"><i class="fa-solid fa-trash"></i></a></div>
                     </div>
                 </div>
     </div>
@@ -200,6 +210,54 @@
                     </div>
                 </div>
                 <button type="submit" class="btn-modal" id="close">Adicionar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- editar evento -->
+    <div class="modal-window" id="EditModalWindow">
+        <form class="form" action="<?= baseUrl('/services/controllers/ongs/eventos/editarEvento.php') ?>" enctype="multipart/form-data"
+        method="POST" onsubmit="return validateForm()">
+            <input type="hidden" name="id" value="<?= $id ?>">
+            <div class="modal-card-projects">
+                <div class="modal-title-block-project">
+                    <div class="info-modal-req">
+                        <input type="text" class="input-requisitos" id="nomeEvento" name="nomeEvento" value="<?= $titulo ?>">
+                    </div>
+                </div>
+                <div class="project-img-add-modal">
+                    <div class="modal-title-project">Imagem</div>
+                    <input class="input-img" type="file"  name="imagemEvento" id="imagemEvento">
+                </div>
+                <div class="modal-title-block-project">
+                    <div class="modal-title-project">Descrição</div>
+                </div>
+                <div class="textarea-project">
+                <textarea name="descricaoEvento" id="descricaoEvento" cols="45" rows="5"><?= $descricao ?></textarea>
+                </div>
+                <div class="modal-title-block-project">
+                    <div class="modal-title-project">Requisitos</div>
+                </div>
+                <div class="modal-title-block-project">
+                    <div class="modal-title-project">Detalhes Importantes</div>
+                </div>
+                <div class="modal-project-info">
+                    <div class="info-modal-req">
+                        <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
+                        <input type="text" class="input-requisitos" value="<?= $row['nm_ong'] ?>" readonly>
+                    </div>
+                    <div class="info-modal-req ajust">
+                        <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
+                        <input type="text" class="input-requisitos" value="<?= $endereco ?>" 
+                        id="enderecoEvento" name="enderecoEvento">
+                    </div>
+                    <div class="info-modal-req ajust">
+                        <i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i>
+                        <input type="date" class="input-requisitos" value="<?= $data ?>"
+                        id="dataEvento" name="dataEvento">
+                    </div>
+                </div>
+                <button type="submit" class="btn-modal" id="close">Editar</button>
             </div>
         </form>
     </div>

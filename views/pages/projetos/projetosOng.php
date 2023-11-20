@@ -31,6 +31,16 @@
         echo '<script src="../../../assets/js/alerts.js"></script>';
         echo '<script>alertProjetoCadastrado();</script>';
     }
+
+    if (isset($_GET['editar_sucesso']) && $_GET['editar_sucesso'] == 'true') {
+        echo '<script src="../../../assets/js/alerts.js"></script>';
+        echo '<script>alertAlterar();</script>';
+    }
+
+    if (isset($_GET['excluir_sucesso']) && $_GET['excluir_sucesso'] == 'true') {
+        echo '<script src="../../../assets/js/alerts.js"></script>';
+        echo '<script>alertExcluir();</script>';
+    }
     ?>
 
 </body>
@@ -73,14 +83,7 @@
             ?>
                     <div class="project-card">
                         <div class="project-img-block">
-                            <?php
-                            try {
-                                $imagePath = baseUrl($rowProjeto['nm_imagem']);
-                            } catch (Exception $ex) {
-                                $imagePath = '';
-                            }
-                            ?>
-                            <img class="project-img" src="<?= $imagePath ?>" alt="">
+                            <img class="project-img" src="<?= baseUrl($imagem) ?>" alt="">
                         </div>
                         <div class="card-title-block">
                             <div class="card-title"><?= $titulo ?></div>
@@ -115,12 +118,12 @@
         </div>
     </section>
 
-    <!-- modal de se inscrever -->
+    <!-- modal para visualizar informações -->
     <div class="modal-window" id="modalWindow">
-        <input type="hidden" name="idProjeto" id="id" value="">
+        <input type="hidden" name="id" id="id" value="">
             <div class="modal-card-projects">
                 <div class="project-img-block">
-                    <img class="project-img" id="modalImagem" src="<?= baseUrl($imagem) ?>" alt="">
+                    <img class="project-img" id="modalImagem" alt="Imagem do projeto">
                 </div>
                 <div class="modal-title-block-project">
                     <div class="modal-title-project" id="modalTitle"></div>
@@ -130,7 +133,7 @@
                     <div class="modal-title-project">Descrição</div>
                 </div>
                 <div class="textarea-project">
-                    <textarea name="" id="modalDescricao" cols="45" rows="5" readonly></textarea>
+                    <textarea id="modalDescricao" cols="45" rows="5" readonly></textarea>
                 </div>
                 <div class="modal-title-block-project">
                     <div class="modal-title-project">Informações adicionais</div>
@@ -150,9 +153,9 @@
                     </div>
                 </div>
                 <div class="small-blocks-section">
-                    <div class="green-small-block"><i class="fa-regular fa-pen-to-square"></i></div>
+                    <div class="green-small-block" onclick="openEditModal()"><i class="fa-regular fa-pen-to-square"></i></div>
                     <div class="green-small-block"><i class="fa-regular fa-eye"></i></div>
-                    <div class="green-small-block"><i class="fa-solid fa-trash"></i></div>
+                    <div class="green-small-block"><a id="deleteLink"><i class="fa-solid fa-trash"></i></a></div>
                 </div>
             </div>
     </div>
@@ -165,18 +168,18 @@
             <div class="modal-card-projects">
                 <div class="modal-title-block-project">
                     <div class="info-modal-req">
-                        <input type="text" class="input-requisitos" name="nomeProjeto" placeholder="Titulo do projeto">
+                        <input type="text" class="input-requisitos" id="nomeProjeto" name="nomeProjeto" placeholder="Titulo do projeto">
                     </div>
                 </div>
                 <div class="project-img-add-modal">
                     <div class="modal-title-project">Imagem</div>
-                    <input class="input-img" type="file" name="imagemProjeto">
+                    <input class="input-img" type="file" name="imagemProjeto" id="imagemProjeto">
                 </div>
                 <div class="modal-title-block-project">
                     <div class="modal-title-project">Descrição</div>
                 </div>
                 <div class="textarea-project">
-                    <textarea name="descricaoProjeto" id="" cols="45" rows="5"></textarea>
+                    <textarea name="descricaoProjeto" id="descricaoProjeto" cols="45" rows="5"></textarea>
                 </div>
                 <div class="modal-title-block-project">
                     <div class="modal-title-project">Requisitos</div>
@@ -191,14 +194,64 @@
                     </div>
                     <div class="info-modal-req ajust">
                         <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
-                        <input type="text" class="input-requisitos" placeholder="Localização" name="enderecoProjeto">
+                        <input type="text" class="input-requisitos" placeholder="Localização" 
+                        id="enderecoProjeto" name="enderecoProjeto">
                     </div>
                     <div class="info-modal-req ajust">
                         <i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i>
-                        <input type="date" class="input-requisitos" placeholder="Data do projeto" name="dataProjeto">
+                        <input type="date" class="input-requisitos" placeholder="Data do projeto"
+                        id="dataProjeto" name="dataProjeto">
                     </div>
                 </div>
                 <button type="submit" class="btn-modal" id="close">Adicionar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- editar projeto -->
+    <div class="modal-window" id="EditModalWindow">
+        <form class="form" action="<?= baseUrl('/services/controllers/ongs/projetos/editarProjeto.php') ?>" enctype="multipart/form-data"
+        method="POST" onsubmit="return validateForm()">
+            <input type="hidden" name="id" value="<?= $id ?>">
+            <div class="modal-card-projects">
+                <div class="modal-title-block-project">
+                    <div class="info-modal-req">
+                        <input type="text" class="input-requisitos" id="nomeProjeto" name="nomeProjeto" value="<?= $titulo ?>">
+                    </div>
+                </div>
+                <div class="project-img-add-modal">
+                    <div class="modal-title-project">Imagem</div>
+                    <input class="input-img" type="file"  name="imagemProjeto" id="imagemProjeto">
+                </div>
+                <div class="modal-title-block-project">
+                    <div class="modal-title-project">Descrição</div>
+                </div>
+                <div class="textarea-project">
+                <textarea name="descricaoProjeto" id="descricaoProjeto" cols="45" rows="5"><?= $descricao ?></textarea>
+                </div>
+                <div class="modal-title-block-project">
+                    <div class="modal-title-project">Requisitos</div>
+                </div>
+                <div class="modal-title-block-project">
+                    <div class="modal-title-project">Detalhes Importantes</div>
+                </div>
+                <div class="modal-project-info">
+                    <div class="info-modal-req">
+                        <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
+                        <input type="text" class="input-requisitos" value="<?= $row['nm_ong'] ?>" readonly>
+                    </div>
+                    <div class="info-modal-req ajust">
+                        <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
+                        <input type="text" class="input-requisitos" value="<?= $endereco ?>" 
+                        id="enderecoProjeto" name="enderecoProjeto">
+                    </div>
+                    <div class="info-modal-req ajust">
+                        <i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i>
+                        <input type="date" class="input-requisitos" value="<?= $data ?>"
+                        id="dataProjeto" name="dataProjeto">
+                    </div>
+                </div>
+                <button type="submit" class="btn-modal" id="close">Editar</button>
             </div>
         </form>
     </div>
