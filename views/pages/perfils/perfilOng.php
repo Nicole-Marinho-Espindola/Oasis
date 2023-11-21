@@ -96,69 +96,70 @@ if (isset($_SESSION['email'])) {
             </div>
         </div>
         <div class="user-story">
-            <?php
-            try {
-                $selectIniciativas = $conn->prepare("SELECT 
-                                        tb_projeto.*, 
-                                        tb_ong.nm_ong AS nome_ong, 
-                                        tb_projeto.nm_imagem AS imagem_projeto, 
-                                        tb_evento.nm_imagem AS imagem_evento
-                                    FROM tb_projeto
-                                    JOIN tb_ong ON tb_projeto.cd_ong = tb_ong.cd_ong
-                                    LEFT JOIN tb_evento ON tb_projeto.cd_ong = tb_evento.cd_ong
-                                    WHERE tb_projeto.cd_ong = :ong");
-
-                $selectIniciativas->bindParam(":ong", $row['cd_ong']);
-                $selectIniciativas->execute();
-
-                //cont das iniciativas
-                $countProjetosEventos = $conn->prepare("SELECT 
-                (SELECT COUNT(*) FROM tb_projeto WHERE cd_ong = :ong) + 
-                (SELECT COUNT(*) FROM tb_evento JOIN tb_projeto ON tb_evento.cd_ong = tb_projeto.cd_ong WHERE tb_projeto.cd_ong = :ong) AS total_projetos_eventos");
-
-                $countProjetosEventos->bindParam(":ong", $row['cd_ong']);
-                $countProjetosEventos->execute();
-                $total = $countProjetosEventos->fetchColumn();
-
-
-            ?>
-                <div class="trajectory trajectory-ong">
-                    <div class="head-trajectory">
-                        <h3 class="subtitle-profile">Nossas iniciativas</h3>
-                        <div class="green-small-block">
-                            <p><?= $total ?></p>
-                        </div>
-                    </div>
-
-                    <div class="pjcts-block">
+            <div class="trajectory trajectory-ong">
+                <div class="head-trajectory">
+                    <h3 class="subtitle-profile">Nossas iniciativas</h3>
+                    <div class="green-small-block">
                         <?php
-                        while ($rowIniciativa = $selectIniciativas->fetch()) {
-                            if (isset($rowIniciativa['imagem_projeto'])) {
+                        try {
+                            $countProjetos = $conn->prepare("SELECT COUNT(*) FROM tb_projeto WHERE cd_ong = :ong");
+                            $countProjetos->bindParam(":ong", $row['cd_ong']);
+                            $countProjetos->execute();
+                            $totalProjetos = $countProjetos->fetchColumn();
+
+                            $countEventos = $conn->prepare("SELECT COUNT(*) FROM tb_evento WHERE cd_ong = :ong");
+                            $countEventos->bindParam(":ong", $row['cd_ong']);
+                            $countEventos->execute();
+                            $totalEventos = $countEventos->fetchColumn();
+
+                            $total = $totalProjetos + $totalEventos;
                         ?>
-                                <div class="pjcts">
-                                    <img src="<?= baseUrl($rowIniciativa['imagem_projeto']) ?>" alt="Imagem Projeto">
-                                </div>
-                            <?php
-                            }
-                            if (isset($rowIniciativa['imagem_evento'])) {
-                            ?>
-                                <div class="pjcts">
-                                    <img src="<?= baseUrl($rowIniciativa['imagem_evento']) ?>" alt="Imagem Evento">
-                                </div>
+                            <p><?= $total ?></p>
                         <?php
-                            }
+                        } catch (PDOException $e) {
+                            echo "Erro ao listar projetos: " . $e->getMessage();
                         }
                         ?>
-
                     </div>
                 </div>
-            <?php
-            } catch (PDOException $e) {
-                echo "Erro ao listar projetos: " . $e->getMessage();
-            }
-            ?>
+
+                <div class="pjcts-block">
+                    <?php
+                    // Consulta para imagens de projetos
+                    $selectProjetos = $conn->prepare("SELECT tb_projeto.nm_imagem AS imagem_projeto FROM tb_projeto WHERE tb_projeto.cd_ong = :ong");
+                    $selectProjetos->bindParam(":ong", $row['cd_ong']);
+                    $selectProjetos->execute();
+
+                    // Exibir imagens de projeto
+                    while ($rowProjeto = $selectProjetos->fetch()) {
+                        if (isset($rowProjeto['imagem_projeto'])) {
+                    ?>
+                            <div class="pjcts" onclick="openSecondModal()">
+                                <img src="<?= baseUrl($rowProjeto['imagem_projeto']) ?>" alt="Imagem Projeto">
+                            </div>
+                        <?php
+                        }
+                    }
+
+                    // Consulta para imagens de eventos
+                    $selectEventos = $conn->prepare("SELECT tb_evento.nm_imagem AS imagem_evento FROM tb_evento WHERE tb_evento.cd_ong = :ong");
+                    $selectEventos->bindParam(":ong", $row['cd_ong']);
+                    $selectEventos->execute();
+
+                    // Exibir imagens de evento
+                    while ($rowEvento = $selectEventos->fetch()) {
+                        if (isset($rowEvento['imagem_evento'])) {
+                        ?>
+                            <div class="pjcts" onclick="openSecondModal()">
+                                <img src="<?= baseUrl($rowEvento['imagem_evento']) ?>" alt="Imagem Evento">
+                            </div>
+                    <?php
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
         </div>
-    </div>
     </div>
 
     <div class="modal-window" id="modalWindow">
