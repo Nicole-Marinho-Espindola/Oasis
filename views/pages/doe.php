@@ -77,7 +77,12 @@
                         'fa-seedling',
                         'fa-tree',
                         'fa-leaf',
+                        'fa-cannabis',
                         'fa-cloud-sun',
+                        'fa-recycle',
+                        'fa-spa',
+                        'fa-rainbow',
+                        'fa-hands-holding',
                         'fa-handshake-angle',
                     ];
 
