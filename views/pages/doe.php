@@ -93,19 +93,19 @@
                     $dataAtual = new DateTime();
                     $dataAcao = new DateTime($row['data']);
                     $intervalo = $dataAtual->diff($dataAcao);
-
-                    // exibir o tempo formatado
+                    
                     $tempoFormatado = '';
-
+                    
                     if ($intervalo->days > 0) {
-                        $tempoFormatado = $intervalo->days . ' dias atrás';
+                        $tempoFormatado = $intervalo->days . ($intervalo->days == 1 ? ' dia atrás' : ' dias atrás');
                     } elseif ($intervalo->h > 0) {
-                        $tempoFormatado = $intervalo->h . ' horas atrás';
+                        $tempoFormatado = $intervalo->h . ($intervalo->h == 1 ? ' hora atrás' : ' horas atrás');
                     } elseif ($intervalo->i > 0) {
-                        $tempoFormatado = $intervalo->i . ' minutos atrás';
+                        $tempoFormatado = $intervalo->i . ($intervalo->i == 1 ? ' minuto atrás' : ' minutos atrás');
                     } else {
                         $tempoFormatado = 'Agora mesmo';
                     }
+                    
             ?>
                     <div class="activity-child">
                         <div class="activity-child-content">

@@ -1,5 +1,5 @@
 <?php
-    include_once('../includes/head.php')
+include_once('../includes/head.php')
 ?>
 
 <link rel="stylesheet" href="../../assets/css/sobre-nos.css">
@@ -21,7 +21,7 @@
         </div>
         <div class="citacao-block">
             <h1 class="hashtag-title">#oásisparatodos</h1>
-            <p class="text-hashtag-block">“A Oásis é mais do que um projeto acadêmico - 
+            <p class="text-hashtag-block">“A Oásis é mais do que um projeto acadêmico -
                 é uma manifestação do nosso compromisso com o voluntariado e a sustentabilidade.”</p>
             <span class="sub-text">Equipe Her, desenvolvedora da plataforma.</span>
         </div>
@@ -43,7 +43,7 @@
                     <span class="card-title">Conectar pessoas</span>
                 </div>
                 <p class="text-MVV">
-                Unimos corações pelo voluntariado ambiental, fortalecendo laços e cultivando a paixão pela natureza. Queremos promover mudanças mais positivas através de ações voluntárias.
+                    Unimos corações pelo voluntariado ambiental, fortalecendo laços e cultivando a paixão pela natureza. Queremos promover mudanças mais positivas através de ações voluntárias.
                 </p>
             </div>
             <div class="card-MVV">
@@ -52,19 +52,19 @@
                     <span class="card-title">Dar visibilidade</span>
                 </div>
                 <p class="text-MVV">
-                Ao destacar as ações dos voluntários, incentivamos mais pessoas a se unirem a essa comunidade que protege a natureza.
+                    Ao destacar as ações dos voluntários, incentivamos mais pessoas a se unirem a essa comunidade que protege a natureza.
                 </p>
             </div>
             <div class="card-MVV">
                 <div class="card-title-block">
-                    <i class="fa-solid fa-user-group icon-MVV"></i>
+                    <i class="fa-solid fa-wand-magic-sparkles icon-MVV"></i>
                     <span class="card-title">Transformar</span>
                 </div>
                 <p class="text-MVV">
-                Cada passo na preservação é um passo na direção de um mundo melhor. Junte-se à transformação pela natureza.
+                    Cada passo na preservação é um passo na direção de um mundo melhor. Junte-se à transformação pela natureza.
                 </p>
             </div>
-        </div>        
+        </div>
     </section>
     <section class="name-explain-block">
         <div class="name-explain-card">
@@ -158,5 +158,5 @@
 </div>
 
 <?php
-    include_once('../includes/footer.php')
+include_once('../includes/footer.php')
 ?>

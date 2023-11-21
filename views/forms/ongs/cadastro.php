@@ -70,8 +70,7 @@
                     </label>
                 </div>
                 <button type="button" class="btn btn-color btn-margin" onclick="passarEtapa()">Próximo</button>
-                <span class="redirecionar-login">Já tem uma conta? <a href="login.php" class="purple-link">Entrar</a></span>
-            </div> 
+                <span class="redirecionar-login">Já tem uma conta? <a href="../login.php" class="purple-link">Entrar</a></span>            </div> 
             <div class="section">
                 <div class="form-title">
                     <h1 class="title">Últimos passos</h1>
