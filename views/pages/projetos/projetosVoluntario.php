@@ -28,108 +28,107 @@ if (isset($_SESSION['email'])) {
 <body>
 
     <?php
-        if (isset($_GET['inscricao_sucesso']) && $_GET['inscricao_sucesso'] == 'true') {
-            echo '<script src="../../../assets/js/alerts.js"></script>';
-            echo '<script>alertInscricao();</script>';
-        }
-    ?>
-    
-    <?php
-        if (isset($_GET['inscricao_sucesso']) && $_GET['inscricao_sucesso'] == 'false') {
-            echo '<script src="../../../assets/js/alerts.js"></script>';
-            echo '<script>alertInscricaoFailed();</script>';
-        }
+    if (isset($_GET['inscricao_sucesso']) && $_GET['inscricao_sucesso'] == 'true') {
+        echo '<script src="../../../assets/js/alerts.js"></script>';
+        echo '<script>alertInscricao();</script>';
+    }
     ?>
 
     <?php
-        if (isset($_GET['inscricao_repetida']) && $_GET['inscricao_repetida'] == 'true') {
-            echo '<script src="../../../assets/js/alerts.js"></script>';
-            echo '<script>alertInscricaoRepetida();</script>';
-        }
+    if (isset($_GET['inscricao_sucesso']) && $_GET['inscricao_sucesso'] == 'false') {
+        echo '<script src="../../../assets/js/alerts.js"></script>';
+        echo '<script>alertInscricaoFailed();</script>';
+    }
+    ?>
+
+    <?php
+    if (isset($_GET['inscricao_repetida']) && $_GET['inscricao_repetida'] == 'true') {
+        echo '<script src="../../../assets/js/alerts.js"></script>';
+        echo '<script>alertInscricaoRepetida();</script>';
+    }
     ?>
 
 </body>
 
-    <section class="projects">
-        <div class="dark-purple-block">
-            <div class="btn-project">Projetos</div>
-            <a href="<?= baseUrl('/views/pages/eventos/eventosVoluntario.php') ?>" class="link-projects-style">
-                <div class="btn-event">Eventos</div>
-            </a>
-        </div>
-        <div class="filter-block">
-            <i class="fa-solid fa-sliders filter-icon"></i>
-        </div>
-        <div class="projects-cards-block">
-            <?php
-            try {
-                $currentDate = date("Y-m-d"); // pega a data atual para nao exibir projetos que já tenham sido realizados
+<section class="projects">
+    <div class="dark-purple-block">
+        <div class="btn-project">Projetos</div>
+        <a href="<?= baseUrl('/views/pages/eventos/eventosVoluntario.php') ?>" class="link-projects-style">
+            <div class="btn-event">Eventos</div>
+        </a>
+    </div>
+    <div class="filter-block">
+        <i class="fa-solid fa-sliders filter-icon"></i>
+    </div>
+    <div class="projects-cards-block">
+        <?php
+        try {
+            $currentDate = date("Y-m-d"); // pega a data atual para nao exibir projetos que já tenham sido realizados
 
-                $selectProjetos = $conn->prepare("SELECT tb_projeto.*, tb_ong.nm_ong AS nome_ong
+            $selectProjetos = $conn->prepare("SELECT tb_projeto.*, tb_ong.nm_ong AS nome_ong
                                                         FROM tb_projeto
                                                         JOIN tb_ong ON tb_projeto.cd_ong = tb_ong.cd_ong
                                                         WHERE tb_projeto.dt_projeto >= :currentDate");
-                $selectProjetos->bindParam(":currentDate", $currentDate);
-                $selectProjetos->execute();
+            $selectProjetos->bindParam(":currentDate", $currentDate);
+            $selectProjetos->execute();
 
-                while ($rowProjeto = $selectProjetos->fetch()) {
-                    $id = $rowProjeto['cd_projeto'];
-                    $imagem = $rowProjeto['nm_imagem'];
-                    $titulo = $rowProjeto['nm_titulo_projeto'];
-                    $ong = $rowProjeto['nome_ong'];
-                    $endereco = $rowProjeto['ds_endereco'];
-                    $data = $rowProjeto['dt_projeto'];
-                    $descricao = $rowProjeto['ds_projeto'];
+            while ($rowProjeto = $selectProjetos->fetch()) {
+                $id = $rowProjeto['cd_projeto'];
+                $imagem = $rowProjeto['nm_imagem'];
+                $titulo = $rowProjeto['nm_titulo_projeto'];
+                $ong = $rowProjeto['nome_ong'];
+                $endereco = $rowProjeto['ds_endereco'];
+                $data = $rowProjeto['dt_projeto'];
+                $descricao = $rowProjeto['ds_projeto'];
 
-            ?>
-                    <div class="project-card">
-                        <div class="project-img-block">
-                            <?php
-                            try {
-                                $imagePath = baseUrl($rowProjeto['nm_imagem']);
-                            } catch (Exception $ex) {
-                                $imagePath = '';
-                            }
-                            ?>
-                            <img class="project-img" src="<?= $imagePath ?>" alt="">
-                        </div>
-                        <div class="card-title-block">
-                            <div class="card-title"><?= $titulo ?></div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="project-info">
-                            <div class="info">
-                                <i class="fa-solid fa-people-group icon-project"></i>
-                                <span class="name-span"><?= $ong ?></span>
-                            </div>
-                            <div class="info">
-                                <i class="fa-solid fa-location-dot icon-project"></i>
-                                <span class="name-span margin"><?= $endereco ?></span>
-                            </div>
-                            <div class="info">
-                                <i class="fa-solid fa-calendar-days icon-project"></i>
-                                <span class="name-span margin"><?= date("d-m-Y", strtotime($data)) ?></span>
-                            </div>
-                        </div>
-                        <button class="btn-project-card" data-id="<?= $id ?>" data-titulo="<?= $titulo ?>" data-ong="<?= $ong ?>" data-descricao="<?= $descricao ?>" data-dia="<?= $data ?>" data-endereco="<?= $endereco ?>" onclick="openModal(this)">Participar</button>
+        ?>
+                <div class="project-card">
+                    <div class="project-img-block">
+                        <?php
+                        try {
+                            $imagePath = baseUrl($rowProjeto['nm_imagem']);
+                        } catch (Exception $ex) {
+                            $imagePath = '';
+                        }
+                        ?>
+                        <img class="project-img" src="<?= $imagePath ?>" alt="">
                     </div>
-            <?php
-                }
-            } catch (PDOException $e) {
-                echo "Erro ao listar projetos: " . $e->getMessage();
+                    <div class="card-title-block">
+                        <div class="card-title"><?= $titulo ?></div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="info">
+                            <i class="fa-solid fa-people-group icon-project"></i>
+                            <span class="name-span"><?= $ong ?></span>
+                        </div>
+                        <div class="info">
+                            <i class="fa-solid fa-location-dot icon-project"></i>
+                            <span class="name-span margin"><?= $endereco ?></span>
+                        </div>
+                        <div class="info">
+                            <i class="fa-solid fa-calendar-days icon-project"></i>
+                            <span class="name-span margin"><?= date("d-m-Y", strtotime($data)) ?></span>
+                        </div>
+                    </div>
+                    <button class="btn-project-card" data-id="<?= $id ?>" data-imagem="<?= $imagem ?>" data-titulo="<?= $titulo ?>" data-ong="<?= $ong ?>" data-descricao="<?= $descricao ?>" data-dia="<?= $data ?>" data-endereco="<?= $endereco ?>" onclick="openModal(this)">Visualizar</button>                </div>
+        <?php
             }
-            ?>
-        </div>
-    </section>
+        } catch (PDOException $e) {
+            echo "Erro ao listar projetos: " . $e->getMessage();
+        }
+        ?>
+    </div>
+</section>
 
-    <!-- aparece ao clicar em participar -->
-    <div class="modal-window" id="modalWindow">
+<!-- aparece ao clicar em participar -->
+<div class="modal-window" id="modalWindow">
     <form action="<?= baseUrl('/services/controllers/voluntarios/projetos/participarProjeto.php') ?>" method="POST">
         <input type="hidden" name="idProjeto" id="id" value="">
         <input type="hidden" name="idVoluntario" value="<?= $row['cd_voluntario'] ?>">
         <div class="modal-card-projects">
             <div class="project-img-block">
-                <img class="project-img" id="modalImagem" src="<?= baseUrl($imagem) ?>" alt="">
+                <img class="project-img" id="modalImagem" alt="Imagem do projeto">
             </div>
             <div class="modal-title-block-project">
                 <div class="modal-title-project" id="modalTitle"></div>
