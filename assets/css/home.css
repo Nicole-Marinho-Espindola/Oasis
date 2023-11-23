@@ -363,7 +363,7 @@
         font-size: 17px;
         width: 15em;
         margin-bottom: 60px;
-        text-align: justify;
+        text-align: center;
     }
 
     .join-us-img{
@@ -376,13 +376,9 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        height: 35em;
+        height: 27em;
         background-color: #AABE9B;
         padding: 10px;
-        /* margin-top: 5em;
-        margin-bottom: 3em; */
-        /* border-radius: 10px; */
-        font-family: 'Poppins', sans-serif;
     }
 
     .green-title-block{
@@ -400,16 +396,17 @@
     }
 
     .green-block-title{
-        margin-top: 20px;
-        font-size: 24px;
+        margin-top: 15px;
+        font-size: 22px;
     }
 
     .green-block-text{
         color: #fff;
-        font-size: 20px;
+        font-size: 17px;
         width: 12em;
         /* font-weight: 700; */
-        text-align: justify;
+        text-align: center;
+        width: 17em;
     }
 
     .timeline{
@@ -429,9 +426,8 @@
     }
 
     .timeline-title{
-        font-family: 'Poppins', sans-serif;
         font-weight: bold;
-        font-size: 25px;
+        font-size: 22px;
     }
 
     .timeline-section{
@@ -489,11 +485,10 @@
 
     .timeline-card-title{
         color: #000;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: bold;
-        /* text-align: left; */
         display: flex;
-        align-items: left;  
+        align-items: left;
         margin-bottom: 8px;
         margin-top: 35px;
     }
@@ -504,6 +499,12 @@
         border-radius: 10px;
         text-align: justify;
         color: #2E104A;
+    }
+
+    .timeline-content > p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: 14px;
     }
 
     .icon-timeline{
@@ -561,7 +562,7 @@
 
     .our-partners-title{
         font-weight: bold;
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .our-partners-description{
@@ -569,9 +570,9 @@
     }
 
     .description-title{
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 700;
-        color:#715987;
+        color: #715987;
         margin-bottom: 20px;
     }
 
