@@ -442,8 +442,7 @@
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
-        margin-top: 66em;
-        /* background-color: none; */
+        margin-top: 55em;
         margin-right: 5em;
     }
 
@@ -469,18 +468,18 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 25px;
+        font-size: 22px;
         margin: 0;
+        text-align: center;
     }
     
     .text-sobre{
         color: #C7D6BB;
         width: 18em;
-        font-family: "Poppins", sans-serif;
         text-align: justify;
-        font-size: 12px;
+        font-size: 13px;
         margin-top: 30px;
-        /* font-weight: 600; */
+        text-align: center;
     }
     
     .purple-info-block{
@@ -507,7 +506,6 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-
     }
 
     .hashtag-title{
@@ -515,27 +513,41 @@
     }
 
     .text-hashtag-block{
-        font-size: 18px;
-        width: 17em;
+        font-size: 15;
+        width: 21em;
         padding: 20px;
+        text-align: center;
     }
 
     .sub-text{
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 17px;
+        font-size: 15;
         margin-top: 35px;
-        width: 17em;
+        width: 21em;
         margin-bottom: 10em;
     }
 
     .MVV{
         height: 100em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 34em;
+    }
+
+    .MVV-title-block{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5em;
+        margin-bottom: 5em;
     }
     
     .MVV-title{
-        font-size: 30px;
+        font-size: 21px;
     }
     
     .line{
@@ -599,7 +611,7 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        height: 50em;
+        height: 35em;
     }
     
     .name-explain-card{
@@ -641,6 +653,7 @@
         line-height: normal;
         width: 18em;
         margin-top: 3em;
+        text-align: center;
     }
     
     .name-explain-quote{
@@ -654,7 +667,7 @@
         align-items: center;
         flex-direction: column;
         /* margin-top: 5em; */
-        height: 100em;
+        height: 92em;
         width: 100%;
     }
 
@@ -711,8 +724,11 @@
     .girls-img{
         height: 7em;
         width: 7em;
-        top: -45;
-        margin-left: 3em;
+        /* top: -45; */
+        margin-left: 4em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 /* 
     .img-block{
