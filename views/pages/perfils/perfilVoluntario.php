@@ -157,30 +157,72 @@ if (isset($_SESSION['email'])) {
 
                     <div class="pjcts-block">
                         <?php
-                        $selectImagensInscricoes = $conn->prepare("SELECT 
-                                                                        CASE WHEN p.cd_projeto IS NOT NULL THEN p.nm_imagem ELSE e.nm_imagem END AS nm_imagem,
-                                                                        CASE WHEN p.cd_projeto IS NOT NULL THEN 'projeto' ELSE 'evento' END AS tipo_inscricao
-                                                                    FROM tb_inscricao ins
-                                                                    LEFT JOIN tb_projeto p ON ins.cd_projeto = p.cd_projeto
-                                                                    LEFT JOIN tb_evento e ON ins.cd_evento = e.cd_evento
-                                                                    WHERE ins.cd_voluntario = :idVoluntario");
-                        $selectImagensInscricoes->bindParam(":idVoluntario", $idVoluntario);
-                        $selectImagensInscricoes->execute();
+                        // Consulta para os projetos
+                        $selectProjetos = $conn->prepare("SELECT 
+                                        p.cd_projeto,
+                                        p.nm_titulo_projeto,
+                                        p.ds_endereco,
+                                        DATE_FORMAT(p.dt_projeto, '%d/%m/%Y') AS data_formatada_projeto,
+                                        p.ds_projeto AS descricao_projeto,
+                                        p.nm_imagem AS imagem_projeto,
+                                        ong.nm_ong AS ong_nome
+                                    FROM tb_inscricao ins
+                                    LEFT JOIN tb_projeto p ON ins.cd_projeto = p.cd_projeto
+                                    LEFT JOIN tb_ong ong ON p.cd_ong = ong.cd_ong
+                                    WHERE ins.cd_voluntario = :idVoluntario");
+                        $selectProjetos->bindParam(":idVoluntario", $idVoluntario);
+                        $selectProjetos->execute();
 
-                        while ($rowImagemInscricao = $selectImagensInscricoes->fetch()) {
-                            $tipoInscricao = $rowImagemInscricao['tipo_inscricao'];
-                            $imagem = $rowImagemInscricao['nm_imagem'];
+                        while ($rowProjeto = $selectProjetos->fetch()) {
+                            // Obter dados do projeto e da ONG associada
+                            $idProjeto = $rowProjeto['cd_projeto'];
+                            $tituloProjeto = $rowProjeto['nm_titulo_projeto'];
+                            $descricaoProjeto = $rowProjeto['descricao_projeto'];
+                            $imagemProjeto = $rowProjeto['imagem_projeto'];
+                            $ongProjeto = $rowProjeto['ong_nome'];
+                            $enderecoProjeto = $rowProjeto['ds_endereco'];
 
-                            if ($tipoInscricao === 'projeto') {
+                            if (isset($rowProjeto['imagem_projeto'])) {
                         ?>
-                                <div class="pjcts" onclick="openSecondModal()">
-                                    <img src="<?= baseUrl($imagem) ?>" alt="">
+                                <div class="pjcts" data-id="<?= $idProjeto ?>" data-imagem="<?= $imagemProjeto ?>" data-titulo="<?= $tituloProjeto ?>" data-ong="<?= $ongProjeto ?>" data-descricao="<?= $descricaoProjeto ?>" data-dia="<?= $dataProjeto ?>" data-endereco="<?= $enderecoProjeto ?>" onclick="openSecondModal(this)">
+                                    <img src="<?= baseUrl($imagemProjeto) ?>" alt="Imagem Projeto">
                                 </div>
-                            <?php
-                            } elseif ($tipoInscricao === 'evento') {
-                            ?>
-                                <div class="pjcts" onclick="openSecondModal()">
-                                    <img src="<?= baseUrl($imagem) ?>" alt="">
+                        <?php
+                            }
+                        }
+                        ?>
+
+                        <?php
+                        // Consulta para os eventos
+                        $selectEventos = $conn->prepare("SELECT 
+                                        e.cd_evento,
+                                        e.nm_titulo_evento,
+                                        e.ds_endereco AS endereco_evento,
+                                        DATE_FORMAT(e.dt_evento, '%d/%m/%Y') AS data_formatada_evento,
+                                        e.ds_evento AS descricao_evento,
+                                        e.nm_imagem AS imagem_evento,
+                                        ong.nm_ong AS ong_nome
+                                    FROM tb_inscricao ins
+                                    LEFT JOIN tb_evento e ON ins.cd_evento = e.cd_evento
+                                    LEFT JOIN tb_ong ong ON e.cd_ong = ong.cd_ong
+                                    WHERE ins.cd_voluntario = :idVoluntario");
+                        $selectEventos->bindParam(":idVoluntario", $idVoluntario);
+                        $selectEventos->execute();
+
+                        while ($rowEvento = $selectEventos->fetch()) {
+                            // Obter dados do evento e da ONG associada
+                            $idEvento = $rowEvento['cd_evento'];
+                            $tituloEvento = $rowEvento['nm_titulo_evento'];
+                            $descricaoEvento = $rowEvento['descricao_evento'];
+                            $imagemEvento = $rowEvento['imagem_evento'];
+                            $ongEvento = $rowEvento['ong_nome'];
+                            $enderecoEvento = $rowEvento['endereco_evento'];
+                            $diaEvento = $rowEvento['data_formatada_evento'];
+
+                            if (isset($rowEvento['imagem_evento'])) {
+                        ?>
+                                <div class="pjcts" data-id="<?= $idEvento ?>" data-imagem="<?= $imagemEvento ?>" data-titulo="<?= $tituloEvento ?>" data-ong="<?= $ongEvento ?>" data-descricao="<?= $descricaoEvento ?>" data-dia="<?= $dataEvento ?>" data-endereco="<?= $enderecoEvento ?>" onclick="openSecondModal(this)">
+                                    <img src="<?= baseUrl($imagemEvento) ?>" alt="Imagem Evento">
                                 </div>
                         <?php
                             }
@@ -221,26 +263,80 @@ if (isset($_SESSION['email'])) {
 
                     <div class="pjcts-block">
                         <?php
-                        $selectImagensInscricoesAtuais = $conn->prepare("SELECT 
-                                                                CASE WHEN p.nm_imagem IS NOT NULL THEN p.nm_imagem ELSE e.nm_imagem END AS nm_imagem
-                                                            FROM tb_inscricao ins
-                                                            LEFT JOIN tb_projeto p ON ins.cd_projeto = p.cd_projeto
-                                                            LEFT JOIN tb_evento e ON ins.cd_evento = e.cd_evento
-                                                            WHERE ins.cd_voluntario = :idVoluntario
-                                                            AND (p.dt_projeto >= :currentDate OR e.dt_evento >= :currentDate)");
-                        $selectImagensInscricoesAtuais->bindParam(":idVoluntario", $idVoluntario);
-                        $selectImagensInscricoesAtuais->bindParam(":currentDate", $currentDate);
-                        $selectImagensInscricoesAtuais->execute();
+                        // Consulta para os projetos
+                        $selectProjetos = $conn->prepare("SELECT 
+                                        p.cd_projeto,
+                                        p.nm_titulo_projeto,
+                                        p.ds_endereco,
+                                        DATE_FORMAT(p.dt_projeto, '%d/%m/%Y') AS data_formatada_projeto,
+                                        p.ds_projeto AS descricao_projeto,
+                                        p.nm_imagem AS imagem_projeto,
+                                        ong.nm_ong AS ong_nome
+                                    FROM tb_inscricao ins
+                                    LEFT JOIN tb_projeto p ON ins.cd_projeto = p.cd_projeto
+                                    LEFT JOIN tb_ong ong ON p.cd_ong = ong.cd_ong
+                                    WHERE ins.cd_voluntario = :idVoluntario
+                                    AND p.dt_projeto >= :currentDate");
+                        $selectProjetos->bindParam(":idVoluntario", $idVoluntario);
+                        $selectProjetos->bindParam(":currentDate", $currentDate);
+                        $selectProjetos->execute();
 
-                        while ($rowImagemInscricao = $selectImagensInscricoesAtuais->fetch()) {
+                        while ($rowProjeto = $selectProjetos->fetch()) {
+                            // Obter dados do projeto e da ONG associada
+                            $idProjeto = $rowProjeto['cd_projeto'];
+                            $tituloProjeto = $rowProjeto['nm_titulo_projeto'];
+                            $descricaoProjeto = $rowProjeto['descricao_projeto'];
+                            $imagemProjeto = $rowProjeto['imagem_projeto'];
+                            $ongProjeto = $rowProjeto['ong_nome'];
+
+                            if (isset($rowProjeto['imagem_projeto'])) {
                         ?>
-                            <div class="pjcts" onclick="openSecondModal()">
-                                <img src="<?= baseUrl($rowImagemInscricao['nm_imagem']) ?>" alt="">
-                            </div>
+                                <div class="pjcts" data-id="<?= $idProjeto ?>" data-imagem="<?= $imagemProjeto ?>" data-titulo="<?= $tituloProjeto ?>" data-ong="<?= $ongProjeto ?>" data-descricao="<?= $descricaoProjeto ?>" data-dia="<?= $dataProjeto ?>" data-endereco="<?= $enderecoProjeto ?>" onclick="openSecondModal(this)">
+                                    <img src="<?= baseUrl($imagemProjeto) ?>" alt="Imagem Projeto">
+                                </div>
                         <?php
+                            }
+                        }
+                        ?>
+
+                        <?php
+                        // Consulta para os eventos
+                        $selectEventos = $conn->prepare("SELECT 
+                                        e.cd_evento,
+                                        e.nm_titulo_evento,
+                                        e.ds_endereco AS endereco_evento,
+                                        DATE_FORMAT(e.dt_evento, '%d/%m/%Y') AS data_formatada_evento,
+                                        e.ds_evento AS descricao_evento,
+                                        e.nm_imagem AS imagem_evento,
+                                        ong.nm_ong AS ong_nome
+                                    FROM tb_inscricao ins
+                                    LEFT JOIN tb_evento e ON ins.cd_evento = e.cd_evento
+                                    LEFT JOIN tb_ong ong ON e.cd_ong = ong.cd_ong
+                                    WHERE ins.cd_voluntario = :idVoluntario
+                                    AND e.dt_evento >= :currentDate");
+                        $selectEventos->bindParam(":idVoluntario", $idVoluntario);
+                        $selectEventos->bindParam(":currentDate", $currentDate);
+                        $selectEventos->execute();
+
+                        while ($rowEvento = $selectEventos->fetch()) {
+                            // Obter dados do evento e da ONG associada
+                            $idEvento = $rowEvento['cd_evento'];
+                            $tituloEvento = $rowEvento['nm_titulo_evento'];
+                            $descricaoEvento = $rowEvento['descricao_evento'];
+                            $imagemEvento = $rowEvento['imagem_evento'];
+                            $ongEvento = $rowEvento['ong_nome'];
+
+                            if (isset($rowEvento['imagem_evento'])) {
+                        ?>
+                                <div class="pjcts" data-id="<?= $idEvento ?>" data-imagem="<?= $imagemEvento ?>" data-titulo="<?= $tituloEvento ?>" data-ong="<?= $ongEvento ?>" data-descricao="<?= $descricaoEvento ?>" data-dia="<?= $dataEvento ?>" data-endereco="<?= $enderecoEvento ?>" onclick="openSecondModal(this)">
+                                    <img src="<?= baseUrl($imagemEvento) ?>" alt="Imagem Evento">
+                                </div>
+                        <?php
+                            }
                         }
                         ?>
                     </div>
+
                 </div>
             <?php
             } catch (PDOException $e) {
@@ -251,6 +347,7 @@ if (isset($_SESSION['email'])) {
 
     </div>
 
+    <!-- editar informações -->
     <div class="modal-window" id="modalWindow">
         <form class="form" action=<?= baseUrl('/services/controllers/voluntarios/editarPerfil.php') ?> enctype="multipart/form-data" method="POST">
             <input type="hidden" name="idVoluntario" value="<?= $idVoluntario ?>">
@@ -282,44 +379,43 @@ if (isset($_SESSION['email'])) {
         </form>
     </div>
 
+    <!-- exibir as informações do projeto -->
     <div class="modal-window" id="SecondModalWindow">
-        <form action="<?= baseUrl('/services/controllers/voluntarios/projetos/participarProjeto.php') ?>" method="POST">
-            <input type="hidden" name="idProjeto" id="id" value="">
-            <input type="hidden" name="idVoluntario" value="<?= $row['cd_voluntario'] ?>">
-            <div class="modal-card-projects">
-                <div class="project-img-block">
-                    <img class="project-img" id="modalImagem" src="<?= baseUrl($imagem) ?>" alt="">
+        <input type="hidden" name="idProjeto" id="id" value="">
+        <div class="modal-card-projects">
+            <div class="project-img-block">
+                <img class="project-img" id="modalImagem" alt="Imagem do projeto">
+            </div>
+            <div class="modal-title-block-project">
+                <div class="modal-title-project" id="modalTitle"></div>
+                <div class="line"></div>
+            </div>
+            <div class="modal-title-block-project">
+                <div class="modal-title-project">Descrição</div>
+            </div>
+            <div class="textarea-project">
+                <textarea name="" id="modalDescricao" cols="100" rows="5" readonly></textarea>
+            </div>
+            <div class="modal-title-block-project">
+                <div class="modal-title-project">Informações adicionais</div>
+            </div>
+            <div class="modal-project-info">
+                <div class="info">
+                    <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
+                    <span class="name-span" id="modalOng"></span>
                 </div>
-                <div class="modal-title-block-project">
-                    <div class="modal-title-project" id="modalTitle"></div>
-                    <div class="line"></div>
+                <div class="info">
+                    <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
+                    <span class="name-span margin" id="modalEndereco"></span>
                 </div>
-                <div class="modal-title-block-project">
-                    <div class="modal-title-project">Descrição</div>
-                </div>
-                <div class="textarea-project">
-                    <textarea name="" id="modalDescricao" cols="100" rows="5" readonly></textarea>
-                </div>
-                <div class="modal-title-block-project">
-                    <div class="modal-title-project">Informações adicionais</div>
-                </div>
-                <div class="modal-project-info">
-                    <div class="info">
-                        <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
-                        <span class="name-span" id="modalOng"></span>
-                    </div>
-                    <div class="info">
-                        <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
-                        <span class="name-span margin" id="modalEndereco"></span>
-                    </div>
-                    <div class="info">
-                        <i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i>
-                        <span class="name-span margin" id="modalDia"></span>
-                    </div>
+                <div class="info">
+                    <i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i>
+                    <span class="name-span margin" id="modalDia"></span>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
+
 </body>
 
 <script src="<?= baseUrl('/assets/js/visualizarImagem.js') ?>"></script>

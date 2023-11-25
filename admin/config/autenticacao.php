@@ -48,6 +48,7 @@
             header("Location: ../../views/index.php?sessao_expirada=true"); // Redirecione para a página de login
             exit();
         }
+
     } catch (PDOException $e) {
         echo "Erro durante a verificação: " . $e->getMessage();
     }

@@ -125,33 +125,51 @@ if (isset($_SESSION['email'])) {
 
                 <div class="pjcts-block">
                     <?php
-                    // Consulta para imagens de projetos
-                    $selectProjetos = $conn->prepare("SELECT tb_projeto.nm_imagem AS imagem_projeto FROM tb_projeto WHERE tb_projeto.cd_ong = :ong");
+                    // Consulta para os projetos
+                    $selectProjetos = $conn->prepare("SELECT tb_projeto.*, tb_projeto.nm_imagem AS imagem_projeto, DATE_FORMAT(tb_projeto.dt_projeto, '%d/%m/%Y') AS data_formatada FROM tb_projeto WHERE tb_projeto.cd_ong = :ong");
                     $selectProjetos->bindParam(":ong", $row['cd_ong']);
                     $selectProjetos->execute();
 
-                    // Exibir imagens de projeto
+                    // pegar as informações dos projetos
                     while ($rowProjeto = $selectProjetos->fetch()) {
+                        $id = $rowProjeto['cd_projeto'];
+                        $titulo = $rowProjeto['nm_titulo_projeto'];
+                        $ong = $row['nm_ong'];
+                        $endereco = $rowProjeto['ds_endereco'];
+                        $data = $rowProjeto['data_formatada'];
+                        $descricao = $rowProjeto['ds_projeto'];
+                        $imagem = $rowProjeto['imagem_projeto'];
+
                         if (isset($rowProjeto['imagem_projeto'])) {
                     ?>
-                            <div class="pjcts" onclick="openSecondModal()">
-                                <img src="<?= baseUrl($rowProjeto['imagem_projeto']) ?>" alt="Imagem Projeto">
-                            </div>
+                    
+                        <div class="pjcts" data-id="<?= $id ?>" data-imagem="<?= $imagem ?>" data-titulo="<?= $titulo ?>" data-ong="<?= $ong ?>" data-descricao="<?= $descricao ?>" data-dia="<?= $data ?>" data-endereco="<?= $endereco ?>" onclick="openSecondModal(this)">
+                            <img src="<?= baseUrl($imagem) ?>" alt="Imagem Projeto">
+                        </div>
+
                         <?php
                         }
                     }
 
-                    // Consulta para imagens de eventos
-                    $selectEventos = $conn->prepare("SELECT tb_evento.nm_imagem AS imagem_evento FROM tb_evento WHERE tb_evento.cd_ong = :ong");
+                    // Consulta para informações eventos
+                    $selectEventos = $conn->prepare("SELECT tb_evento.*, tb_evento.nm_imagem AS imagem_evento, DATE_FORMAT(tb_evento.dt_evento, '%d/%m/%Y') AS data_formatada FROM tb_evento WHERE tb_evento.cd_ong = :ong");
                     $selectEventos->bindParam(":ong", $row['cd_ong']);
                     $selectEventos->execute();
 
-                    // Exibir imagens de evento
+                    // Exibir informações dos eventos
                     while ($rowEvento = $selectEventos->fetch()) {
+                        $id = $rowEvento['cd_evento'];
+                        $imagem = $rowEvento['imagem_evento'];
+                        $titulo = $rowEvento['nm_titulo_evento'];
+                        $ong = $row['nm_ong'];
+                        $endereco = $rowEvento['ds_endereco'];
+                        $data = $rowEvento['data_formatada'];
+                        $descricao = $rowEvento['ds_evento'];
+    
                         if (isset($rowEvento['imagem_evento'])) {
                         ?>
-                            <div class="pjcts" onclick="openSecondModal()">
-                                <img src="<?= baseUrl($rowEvento['imagem_evento']) ?>" alt="Imagem Evento">
+                            <div class="pjcts" data-id="<?= $id ?>" data-imagem="<?= $imagem ?>" data-titulo="<?= $titulo ?>" data-ong="<?= $ong ?>" data-descricao="<?= $descricao ?>" data-dia="<?= $data ?>" data-endereco="<?= $endereco ?>" onclick="openSecondModal(this)">
+                                <img src="<?= baseUrl($rowEvento['imagem_evento']) ?>" alt="Imagem Projeto">
                             </div>
                     <?php
                         }
@@ -162,6 +180,44 @@ if (isset($_SESSION['email'])) {
         </div>
     </div>
 
+    <!-- exibir as informações do projeto -->
+    <div class="modal-window" id="SecondModalWindow">
+        <input type="hidden" name="idProjeto" id="id" value="">
+        <div class="modal-card-projects">
+            <div class="project-img-block">
+                <img class="project-img" id="modalImagem" alt="Imagem do projeto">
+            </div>
+            <div class="modal-title-block-project">
+                <div class="modal-title-project" id="modalTitle"></div>
+                <div class="line"></div>
+            </div>
+            <div class="modal-title-block-project">
+                <div class="modal-title-project">Descrição</div>
+            </div>
+            <div class="textarea-project">
+                <textarea name="" id="modalDescricao" cols="100" rows="5" readonly></textarea>
+            </div>
+            <div class="modal-title-block-project">
+                <div class="modal-title-project">Informações adicionais</div>
+            </div>
+            <div class="modal-project-info">
+                <div class="info">
+                    <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
+                    <span class="name-span" id="modalOng"></span>
+                </div>
+                <div class="info">
+                    <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
+                    <span class="name-span margin" id="modalEndereco"></span>
+                </div>
+                <div class="info">
+                    <i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i>
+                    <span class="name-span margin" id="modalDia"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- edição de informações -->
     <div class="modal-window" id="modalWindow">
         <form class="form" action=<?= baseUrl('/services/controllers/Ongs/editarPerfil.php') ?> enctype="multipart/form-data" method="POST">
             <input type="hidden" name="id" value="<?= $row['cd_ong'] ?>">
@@ -194,44 +250,6 @@ if (isset($_SESSION['email'])) {
                 </div>
                 <button type="submit" class="btn-modal" id="close">Concluído</button>
             </div>
-    </div>
-    <div class="modal-window" id="SecondModalWindow">
-        <form action="<?= baseUrl('/services/controllers/voluntarios/projetos/participarProjeto.php') ?>" method="POST">
-            <input type="hidden" name="idProjeto" id="id" value="">
-            <input type="hidden" name="idVoluntario" value="<?= $row['cd_voluntario'] ?>">
-            <div class="modal-card-projects">
-                <div class="project-img-block">
-                    <img class="project-img" id="modalImagem" src="<?= baseUrl($imagem) ?>" alt="">
-                </div>
-                <div class="modal-title-block-project">
-                    <div class="modal-title-project" id="modalTitle"></div>
-                    <div class="line"></div>
-                </div>
-                <div class="modal-title-block-project">
-                    <div class="modal-title-project">Descrição</div>
-                </div>
-                <div class="textarea-project">
-                    <textarea name="" id="modalDescricao" cols="100" rows="5" readonly></textarea>
-                </div>
-                <div class="modal-title-block-project">
-                    <div class="modal-title-project">Informações adicionais</div>
-                </div>
-                <div class="modal-project-info">
-                    <div class="info">
-                        <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
-                        <span class="name-span" id="modalOng"></span>
-                    </div>
-                    <div class="info">
-                        <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
-                        <span class="name-span margin" id="modalEndereco"></span>
-                    </div>
-                    <div class="info">
-                        <i class="fa-solid fa-calendar-days icon-project icon-modal-color"></i>
-                        <span class="name-span margin" id="modalDia"></span>
-                    </div>
-                </div>
-            </div>
-        </form>
     </div>
 
     <script src="<?= baseUrl('/assets/js/visualizarImagem.js') ?>"></script>
