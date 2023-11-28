@@ -185,7 +185,7 @@ if (isset($_SESSION['email'])) {
         <input type="hidden" name="idProjeto" id="id" value="">
         <div class="modal-card-projects">
             <div class="project-img-block">
-                <img class="project-img" id="modalImagem" alt="Imagem do projeto">
+                <img id="modalImagem" alt="Imagem do projeto">
             </div>
             <div class="modal-title-block-project">
                 <div class="modal-title-project" id="modalTitle"></div>

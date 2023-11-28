@@ -63,4 +63,20 @@
         }
         });
     </script>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget({
+            rootPah: '/app',
+            personalization: 'https://vlibras.gov.br/config/default_logo.json',
+            opacity: 0.5,
+            position: 'BR',
+            avatar: 'hosana',
+        });
+    </script>
 </nav>
