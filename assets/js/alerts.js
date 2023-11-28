@@ -251,7 +251,7 @@ function alertCompartilhamento() {
 function alertProjetoCadastrado() {
   Swal.fire({
       icon: 'center',
-      title: '🌿 Seu projeto foi cadastrado! ',
+      title: '<span style="font-size: 29.5px;">🌿 Seu projeto foi cadastrado!</span>',
       text: 'Obrigada por fazer parte do movimento por um futuro mais sustentável.',
       showConfirmButton: false,
       
@@ -261,7 +261,7 @@ function alertProjetoCadastrado() {
 function alertEventoCadastrado() {
   Swal.fire({
       icon: 'center',
-      title: '🌿 Seu evento foi cadastrado! ',
+      title: '<span style="font-size: 29.5px;">🌿 Seu evento foi cadastrado!</span>',
       text: 'Obrigada por fazer parte do movimento por um futuro mais sustentável.',
       showConfirmButton: false,
       

@@ -73,6 +73,25 @@
                 exit();
             }
         }
+
+        //nao permitir acesso em determinadas páginas
+        $paginaAtual = basename($_SERVER['PHP_SELF']);
+
+        // Verificar se a página termina com "Voluntario.php" ou "Ong.php"
+        if (strpos($paginaAtual, 'Voluntario.php') !== false || strpos($paginaAtual, 'Ong.php') !== false) {
+            if ($_SESSION['tipo_usuario'] === 'voluntario' && strpos($paginaAtual, 'Voluntario.php') === false) {
+                // Se for voluntário e tentar acessar uma página não permitida, exibe um alerta e volta para a página anterior.
+                echo "<script>alert('Página não permitida para voluntários.'); window.history.back();</script>";
+                exit();
+            }
+    
+            if ($_SESSION['tipo_usuario'] === 'ong' && strpos($paginaAtual, 'Ong.php') === false) {
+                // Se for ONG e tentar acessar uma página não permitida, exibe um alerta e volta para a página anterior.
+                echo "<script>alert('Página não permitida para ONGs.'); window.history.back();</script>";
+                exit();
+            }
+        }
+
     } catch (PDOException $e) {
         echo "Erro no banco de dados: " . $e->getMessage();
     }

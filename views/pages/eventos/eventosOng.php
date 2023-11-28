@@ -66,7 +66,7 @@
             try {
                 $currentDate = date("Y-m-d"); // pega a data atual para nao exibir eventos que já tenham sido realizados
 
-                $selecteventos = $conn->prepare("SELECT tb_evento.*, tb_ong.nm_ong AS nome_ong
+                $selecteventos = $conn->prepare("SELECT tb_evento.*, tb_ong.nm_ong AS nome_ong, DATE_FORMAT(tb_evento.dt_evento, '%d/%m/%Y') AS data_formatada
                                                     FROM tb_evento
                                                     JOIN tb_ong ON tb_evento.cd_ong = tb_ong.cd_ong
                                                     WHERE tb_evento.dt_evento >= :currentDate");
@@ -79,7 +79,7 @@
                     $titulo = $rowEvento['nm_titulo_evento'];
                     $ong = $rowEvento['nome_ong'];
                     $endereco = $rowEvento['ds_endereco'];
-                    $data = $rowEvento['dt_evento'];
+                    $data = $rowEvento['data_formatada'];
                     $descricao = $rowEvento['ds_evento'];
 
             ?>
@@ -109,7 +109,7 @@
                             </div>
                             <div class="info">
                                 <i class="fa-solid fa-calendar-days icon-project"></i>
-                                <span class="name-span margin"><?= date("d-m-Y", strtotime($data)) ?></span>
+                                <span class="name-span margin"><?= $data ?></span>
                             </div>
                         </div>
                         <button class="btn-project-card" data-id="<?= $id ?>" data-imagem="<?= $imagem ?>" data-titulo="<?= $titulo ?>" data-ong="<?= $ong ?>" data-descricao="<?= $descricao ?>" data-dia="<?= $data ?>" data-endereco="<?= $endereco ?>" onclick="openModal(this)">Visualizar</button>

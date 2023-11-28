@@ -65,10 +65,10 @@ if (isset($_SESSION['email'])) {
         try {
             $currentDate = date("Y-m-d"); // pega a data atual para nao exibir projetos que já tenham sido realizados
 
-            $selectProjetos = $conn->prepare("SELECT tb_projeto.*, tb_ong.nm_ong AS nome_ong
-                                                        FROM tb_projeto
-                                                        JOIN tb_ong ON tb_projeto.cd_ong = tb_ong.cd_ong
-                                                        WHERE tb_projeto.dt_projeto >= :currentDate");
+            $selectProjetos = $conn->prepare("SELECT tb_projeto.*, tb_ong.nm_ong AS nome_ong, DATE_FORMAT(tb_projeto.dt_projeto, '%d/%m/%Y') AS data_formatada
+                                            FROM tb_projeto
+                                            JOIN tb_ong ON tb_projeto.cd_ong = tb_ong.cd_ong
+                                            WHERE tb_projeto.dt_projeto >= :currentDate");
             $selectProjetos->bindParam(":currentDate", $currentDate);
             $selectProjetos->execute();
 
@@ -78,7 +78,7 @@ if (isset($_SESSION['email'])) {
                 $titulo = $rowProjeto['nm_titulo_projeto'];
                 $ong = $rowProjeto['nome_ong'];
                 $endereco = $rowProjeto['ds_endereco'];
-                $data = $rowProjeto['dt_projeto'];
+                $data = $rowProjeto['data_formatada'];
                 $descricao = $rowProjeto['ds_projeto'];
 
         ?>
@@ -108,7 +108,7 @@ if (isset($_SESSION['email'])) {
                         </div>
                         <div class="info">
                             <i class="fa-solid fa-calendar-days icon-project"></i>
-                            <span class="name-span margin"><?= date("d-m-Y", strtotime($data)) ?></span>
+                            <span class="name-span margin"><?= $data ?></span>
                         </div>
                     </div>
                     <button class="btn-project-card" data-id="<?= $id ?>" data-imagem="<?= $imagem ?>" data-titulo="<?= $titulo ?>" data-ong="<?= $ong ?>" data-descricao="<?= $descricao ?>" data-dia="<?= $data ?>" data-endereco="<?= $endereco ?>" onclick="openModal(this)">Visualizar</button>                </div>
