@@ -154,9 +154,77 @@
                 </div>
                 <div class="small-blocks-section">
                     <div class="green-small-block" onclick="openEditModal()"><i class="fa-regular fa-pen-to-square"></i></div>
-                    <div class="green-small-block"><i class="fa-regular fa-eye"></i></div>
+                    <div class="green-small-block" onclick="openViewModal()"><i class="fa-regular fa-eye"></i></div>
                     <div class="green-small-block"><a id="deleteLink"><i class="fa-solid fa-trash"></i></a></div>
                 </div>
+            </div>
+    </div>
+
+    <!-- Visualizar candidatos -->
+    <div class="modal-window" id="viewModalWindow">
+        <input type="hidden" name="id" id="id" value="">
+            <div class="modal-card modal-card-view">
+                <div class="card-view-title">
+                    <img class="logo" src="<?= baseUrl('/assets/img/logo-oasis.png') ?>" alt="Logo da Oásis">
+                    <h1 class="view-title">Voluntarios que desejam participar:</h1>
+                </div>
+                <div class="table-block">
+                    <table class="table">
+                        <thead>
+                            <th>Voluntários</th>
+                            <th></th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Maíra</td>
+                                <td><i class="fa-regular fa-eye"></i></td>
+                                <td><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Maíra</td>
+                                <td><i class="fa-regular fa-eye"></i></td>
+                                <td><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Maíra</td>
+                                <td><i class="fa-regular fa-eye"></i></td>
+                                <td><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Maíra</td>
+                                <td><i class="fa-regular fa-eye"></i></td>
+                                <td><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Maíra</td>
+                                <td><i class="fa-regular fa-eye"></i></td>
+                                <td><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Maíra</td>
+                                <td><i class="fa-regular fa-eye"></i></td>
+                                <td><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Maíra</td>
+                                <td><i class="fa-regular fa-eye"></i></td>
+                                <td><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Maíra</td>
+                                <td><i class="fa-regular fa-eye"></i></td>
+                                <td><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Maíra</td>
+                                <td><i class="fa-regular fa-eye"></i></td>
+                                <td><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
             </div>
     </div>
 

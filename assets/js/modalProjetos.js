@@ -23,6 +23,22 @@ function openSecondModal() {
     });
 }
 
+function openViewModal() {
+    closeAllModals();
+
+    const modal = document.getElementById("viewModalWindow");
+    modal.classList.add("open");
+
+    modal.addEventListener("click", (e) => {
+        if (
+            e.target.id === "viewModalWindow" &&
+            !e.target.closest(".small-blocks-section")
+        ) {
+            modal.classList.remove("open");
+        }
+    });
+}
+
 function openEditModal() {
     closeAllModals();
 
