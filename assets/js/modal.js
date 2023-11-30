@@ -31,11 +31,11 @@ function openSecondModal(element) {
     const modalImagem = document.getElementById("modalImagem");
 
     // Preencher os dados do modal com os atributos data-* do elemento clicado
-    modalTitle.innerText = element.getAttribute("data-titulo");
-    modalOng.innerText = element.getAttribute("data-ong");
-    modalDescricao.innerText = element.getAttribute("data-descricao");
-    modalDia.innerText = element.getAttribute("data-dia");
-    modalEndereco.innerText = element.getAttribute("data-endereco");
+    modalTitle.textContent = element.getAttribute("data-titulo");
+    modalOng.textContent = element.getAttribute("data-ong");
+    modalDescricao.textContent = element.getAttribute("data-descricao");
+    modalDia.textContent = element.getAttribute("data-dia");
+    modalEndereco.textContent = element.getAttribute("data-endereco");
 
     // Define o src da imagem usando o caminho fornecido
     const base = "../../../";

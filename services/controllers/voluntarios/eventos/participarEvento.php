@@ -8,6 +8,17 @@ $idVoluntario = filter_input(INPUT_POST, 'idVoluntario');
 
 
 try {
+    // verificar se o voluntário já está inscrito no evento
+    $stmt_verificar_inscricao = $conn->prepare("SELECT cd_inscricao FROM tb_inscricao WHERE cd_voluntario = :idVoluntario AND cd_evento = :idEvento");
+    $stmt_verificar_inscricao->bindParam(':idVoluntario', $idVoluntario);
+    $stmt_verificar_inscricao->bindParam(':idEvento', $idEvento);
+    $stmt_verificar_inscricao->execute();
+
+    if ($stmt_verificar_inscricao->rowCount() > 0) {
+        header("Location: ../../../../views/pages/eventos/eventosVoluntario.php?inscricao_repetida=true");
+        exit();
+    }
+
     $stmt_verificar = $conn->prepare("SELECT cd_voluntario FROM tb_voluntario WHERE cd_voluntario = :idVoluntario");
     $stmt_verificar->bindParam(':idVoluntario', $idVoluntario);
     $stmt_verificar->execute();

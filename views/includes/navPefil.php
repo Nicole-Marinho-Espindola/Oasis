@@ -16,7 +16,7 @@
 
 <nav class="nav-perfil">
     <div class="back-block">
-        <a href="<?= baseUrl('/index.php') ?>" class="back-green-btn">
+        <a onclick="voltarPagina()" class="back-green-btn">
             <i class="fa-solid fa-chevron-left"></i>
         </a>
     </div>
