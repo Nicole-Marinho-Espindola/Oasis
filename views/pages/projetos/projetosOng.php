@@ -155,7 +155,7 @@
                 <div class="small-blocks-section">
                     <div class="green-small-block" onclick="openEditModal()"><i class="fa-regular fa-pen-to-square"></i></div>
                     <div class="green-small-block" onclick="openViewModal()"><i class="fa-regular fa-eye"></i></div>
-                    <div class="green-small-block"><a id="deleteLink"><i class="fa-solid fa-trash"></i></a></div>
+                    <div class="green-small-block"><a class="link-style-none" id="deleteLink"><i class="fa-solid fa-trash"></i></a></div>
                 </div>
             </div>
     </div>
@@ -170,58 +170,58 @@
                 </div>
                 <div class="table-block">
                     <table class="table">
-                        <thead>
-                            <th>Voluntários</th>
-                            <th></th>
-                            <th></th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Maíra</td>
-                                <td><i class="fa-regular fa-eye"></i></td>
-                                <td><i class="fa-solid fa-trash"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Maíra</td>
-                                <td><i class="fa-regular fa-eye"></i></td>
-                                <td><i class="fa-solid fa-trash"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Maíra</td>
-                                <td><i class="fa-regular fa-eye"></i></td>
-                                <td><i class="fa-solid fa-trash"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Maíra</td>
-                                <td><i class="fa-regular fa-eye"></i></td>
-                                <td><i class="fa-solid fa-trash"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Maíra</td>
-                                <td><i class="fa-regular fa-eye"></i></td>
-                                <td><i class="fa-solid fa-trash"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Maíra</td>
-                                <td><i class="fa-regular fa-eye"></i></td>
-                                <td><i class="fa-solid fa-trash"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Maíra</td>
-                                <td><i class="fa-regular fa-eye"></i></td>
-                                <td><i class="fa-solid fa-trash"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Maíra</td>
-                                <td><i class="fa-regular fa-eye"></i></td>
-                                <td><i class="fa-solid fa-trash"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Maíra</td>
-                                <td><i class="fa-regular fa-eye"></i></td>
-                                <td><i class="fa-solid fa-trash"></i></td>
-                            </tr>
-                        </tbody>
+                            <thead>
+                                <th>Voluntários</th>
+                                <th></th>
+                                <th></th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Maíra</td>
+                                    <td><i class="fa-regular fa-eye"></i></td>
+                                    <td><i class="fa-solid fa-trash"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Maíra</td>
+                                    <td><i class="fa-regular fa-eye"></i></td>
+                                    <td><i class="fa-solid fa-trash"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Maíra</td>
+                                    <td><i class="fa-regular fa-eye"></i></td>
+                                    <td><i class="fa-solid fa-trash"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Maíra</td>
+                                    <td><i class="fa-regular fa-eye"></i></td>
+                                    <td><i class="fa-solid fa-trash"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Maíra</td>
+                                    <td><i class="fa-regular fa-eye"></i></td>
+                                    <td><i class="fa-solid fa-trash"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Maíra</td>
+                                    <td><i class="fa-regular fa-eye"></i></td>
+                                    <td><i class="fa-solid fa-trash"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Maíra</td>
+                                    <td><i class="fa-regular fa-eye"></i></td>
+                                    <td><i class="fa-solid fa-trash"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Maíra</td>
+                                    <td><i class="fa-regular fa-eye"></i></td>
+                                    <td><i class="fa-solid fa-trash"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Maíra</td>
+                                    <td><i class="fa-regular fa-eye"></i></td>
+                                    <td><i class="fa-solid fa-trash"></i></td>
+                                </tr>
+                            </tbody>
                     </table>
                 </div>
                 
