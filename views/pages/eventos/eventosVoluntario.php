@@ -39,6 +39,12 @@
         echo '<script>alertInscricaoFailed();</script>';
     }
     ?>
+     <?php
+    if (isset($_GET['inscricao_repetida']) && $_GET['inscricao_repetida'] == 'true') {
+        echo '<script src="../../../assets/js/alerts.js"></script>';
+        echo '<script>alertInscricaoRepetida();</script>';
+    }
+    ?>
 
 </body>
 
@@ -152,7 +158,7 @@
                             <span class="name-span margin" id="modalDia"></span>
                         </div>
                     </div>
-                    <button type="submit" class="btn-modal" id="close">Participar</button>
+                    <button type="submit" class="btn-modal" id="close">Se inscrever</button>
                 </div>
     </div>
 

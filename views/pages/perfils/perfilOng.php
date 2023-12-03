@@ -143,10 +143,10 @@ if (isset($_SESSION['email'])) {
 
                         if (isset($rowProjeto['imagem_projeto'])) {
                     ?>
-                    
-                        <div class="pjcts" data-id="<?= $id ?>" data-imagem="<?= $imagem ?>" data-titulo="<?= $titulo ?>" data-ong="<?= $ong ?>" data-descricao="<?= $descricao ?>" data-dia="<?= $data ?>" data-endereco="<?= $endereco ?>" onclick="openSecondModal(this)">
-                            <img src="<?= baseUrl($imagem) ?>" alt="Imagem Projeto">
-                        </div>
+
+                            <div class="pjcts" data-id="<?= $id ?>" data-imagem="<?= $imagem ?>" data-titulo="<?= $titulo ?>" data-ong="<?= $ong ?>" data-descricao="<?= $descricao ?>" data-dia="<?= $data ?>" data-endereco="<?= $endereco ?>" onclick="openSecondModal(this)">
+                                <img src="<?= baseUrl($imagem) ?>" alt="Imagem Projeto">
+                            </div>
 
                         <?php
                         }
@@ -166,11 +166,11 @@ if (isset($_SESSION['email'])) {
                         $endereco = $rowEvento['ds_endereco'];
                         $data = $rowEvento['data_formatada'];
                         $descricao = $rowEvento['ds_evento'];
-    
+
                         if (isset($rowEvento['imagem_evento'])) {
                         ?>
                             <div class="pjcts" data-id="<?= $id ?>" data-imagem="<?= $imagem ?>" data-titulo="<?= $titulo ?>" data-ong="<?= $ong ?>" data-descricao="<?= $descricao ?>" data-dia="<?= $data ?>" data-endereco="<?= $endereco ?>" onclick="openSecondModal(this)">
-                                <img src="<?= baseUrl($rowEvento['imagem_evento']) ?>" alt="Imagem Projeto">
+                                <img src="<?= baseUrl($imagem) ?>" alt="Imagem Projeto">
                             </div>
                     <?php
                         }
@@ -183,7 +183,7 @@ if (isset($_SESSION['email'])) {
 
     <!-- exibir as informações do projeto -->
     <div class="modal-window" id="SecondModalWindow">
-        <input type="hidden" name="idProjeto" id="id" value="">
+        <input type="hidden" name="id" id="id" value="">
         <div class="modal-card-projects">
             <div class="project-img-block">
                 <img class="project-img" id="modalImagem" alt="Imagem do projeto">
@@ -196,7 +196,7 @@ if (isset($_SESSION['email'])) {
                 <div class="modal-title-project">Descrição</div>
             </div>
             <div class="textarea-project">
-                <textarea name="" id="modalDescricao" cols="100" rows="5" readonly></textarea>
+                <textarea id="modalDescricao" cols="45" rows="5" readonly></textarea>
             </div>
             <div class="modal-title-block-project">
                 <div class="modal-title-project">Informações adicionais</div>
@@ -217,6 +217,7 @@ if (isset($_SESSION['email'])) {
             </div>
         </div>
     </div>
+
 
     <!-- edição de informações -->
     <div class="modal-window" id="modalWindow">

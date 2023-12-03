@@ -111,7 +111,7 @@ if (isset($_SESSION['email'])) {
                             <span class="name-span margin"><?= $data ?></span>
                         </div>
                     </div>
-                    <button class="btn-project-card" data-id="<?= $id ?>" data-imagem="<?= $imagem ?>" data-titulo="<?= $titulo ?>" data-ong="<?= $ong ?>" data-descricao="<?= $descricao ?>" data-dia="<?= $data ?>" data-endereco="<?= $endereco ?>" onclick="openModal(this)">Visualizar</button>                </div>
+                    <button class="btn-project-card" data-id="<?= $id ?>" data-imagem="<?= $imagem ?>" data-titulo="<?= $titulo ?>" data-ong="<?= $ong ?>" data-descricao="<?= $descricao ?>" data-dia="<?= $data ?>" data-endereco="<?= $endereco ?>" onclick="openModal(this)">Participar</button></div>
         <?php
             }
         } catch (PDOException $e) {
@@ -157,7 +157,7 @@ if (isset($_SESSION['email'])) {
                     <span class="name-span margin" id="modalDia"></span>
                 </div>
             </div>
-            <button type="submit" class="btn-modal" id="close">Participar</button>
+            <button type="submit" class="btn-modal" id="close">Se inscrever</button>
         </div>
     </form>
 </div>

@@ -298,3 +298,9 @@ function alertInscricaoRepetida() {
       
   });
 }
+
+
+    function voltarPagina() {
+        window.history.back();
+    }
+

@@ -39,25 +39,47 @@ $row = [];
 if (isset($_SESSION['email'])) {
     include_once(includeURL('config/database.php'));
 
-    $email = $_SESSION['email'];
+    if (isset($_GET['id'])) {
+        $idFromGet = $_GET['id'];
+        $sql = "SELECT
+                        v.cd_voluntario,
+                        v.nm_voluntario,
+                        v.nm_sobrenome,
+                        v.nm_imagem AS imagem_voluntario,
+                        v.dt_nascimento,
+                        v.ds_email,
+                        i.nm_icone,
+                        e.cd_interesse,
+                        s.nm_situacao AS situacao
+                    FROM tb_voluntario v
+                    LEFT JOIN tb_escolha e ON v.cd_voluntario = e.cd_voluntario
+                    LEFT JOIN tb_interesse i ON e.cd_interesse = i.cd_interesse
+                    LEFT JOIN tb_situacao s ON v.cd_situacao = s.cd_situacao
+                    WHERE v.cd_voluntario = :id";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":id", $idFromGet);
+    } else {
+        $email = $_SESSION['email'];
 
-    $sql = "SELECT
-                    v.cd_voluntario,
-                    v.nm_voluntario,
-                    v.nm_sobrenome,
-                    v.nm_imagem AS imagem_voluntario,
-                    v.dt_nascimento,
-                    v.ds_email,
-                    i.nm_icone,
-                    e.cd_interesse,
-                    s.nm_situacao AS situacao
-                FROM tb_voluntario v
-                LEFT JOIN tb_escolha e ON v.cd_voluntario = e.cd_voluntario
-                LEFT JOIN tb_interesse i ON e.cd_interesse = i.cd_interesse
-                LEFT JOIN tb_situacao s ON v.cd_situacao = s.cd_situacao
-                WHERE v.ds_email = :email";
-    $query = $conn->prepare($sql);
-    $query->bindParam(":email", $email);
+        $sql = "SELECT
+                        v.cd_voluntario,
+                        v.nm_voluntario,
+                        v.nm_sobrenome,
+                        v.nm_imagem AS imagem_voluntario,
+                        v.dt_nascimento,
+                        v.ds_email,
+                        i.nm_icone,
+                        e.cd_interesse,
+                        s.nm_situacao AS situacao
+                    FROM tb_voluntario v
+                    LEFT JOIN tb_escolha e ON v.cd_voluntario = e.cd_voluntario
+                    LEFT JOIN tb_interesse i ON e.cd_interesse = i.cd_interesse
+                    LEFT JOIN tb_situacao s ON v.cd_situacao = s.cd_situacao
+                    WHERE v.ds_email = :email";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":email", $email);
+    }
+
     $query->execute();
 
     $iconesInteresse = [];
@@ -74,6 +96,7 @@ if (isset($_SESSION['email'])) {
 }
 
 ?>
+
 
 <body>
 
@@ -97,12 +120,20 @@ if (isset($_SESSION['email'])) {
                     <i class="fa-brands fa-facebook-f social-midia-icon"></i>
                 </div>
             </div>
-            <div onclick="openModal()" class="edit-profile-position">
-                <div class="edit-profile">
-                    <i class="fa-regular fa-pen-to-square social-midia-icon"></i>
-                    <div class="edit-profile-span">Editar perfil</div>
+            <?php
+            // Verifica se o ID do voluntário logado é o mesmo do perfil atual
+            if (isset($_SESSION['idVoluntario']) && $_SESSION['idVoluntario'] === $idVoluntario) {
+                // Se sim, exibe o botão de editar perfil
+            ?>
+                <div onclick="openModal()" class="edit-profile-position">
+                    <div class="edit-profile">
+                        <i class="fa-regular fa-pen-to-square social-midia-icon"></i>
+                        <div class="edit-profile-span">Editar perfil</div>
+                    </div>
                 </div>
-            </div>
+            <?php
+            }
+            ?>
         </div>
         <div class="img-profile-block img-profile-volunt">
             <?php if (!empty($imagemVoluntario)) : ?>
@@ -381,7 +412,6 @@ if (isset($_SESSION['email'])) {
 
     <!-- exibir as informações do projeto -->
     <div class="modal-window" id="SecondModalWindow">
-        <input type="hidden" name="idProjeto" id="id" value="">
         <div class="modal-card-projects">
             <div class="project-img-block">
                 <img class="project-img" id="modalImagem" alt="Imagem do projeto">

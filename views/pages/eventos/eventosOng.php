@@ -4,14 +4,17 @@
     if (isset($_SESSION['email'])) {
         try {
             include_once(includeURL('/config/database.php'));
+
             $email = $_SESSION['email'];
 
             $sql = "SELECT * FROM tb_ong WHERE ds_email = :email";
             $query = $conn->prepare($sql);
             $query->bindParam(":email", $email);
             $query->execute();
-
             $row = $query->fetch(PDO::FETCH_ASSOC);
+
+            $nome_ong = $row['nm_ong'];
+
         } catch (PDOException $e) {
             echo "Erro na consulta: " . $e->getMessage();
         }
@@ -66,7 +69,7 @@
             try {
                 $currentDate = date("Y-m-d"); // pega a data atual para nao exibir eventos que já tenham sido realizados
 
-                $selecteventos = $conn->prepare("SELECT tb_evento.*, tb_ong.nm_ong AS nome_ong, DATE_FORMAT(tb_evento.dt_evento, '%d/%m/%Y') AS data_formatada
+                $selecteventos = $conn->prepare("SELECT tb_evento.*, tb_ong.nm_ong, DATE_FORMAT(tb_evento.dt_evento, '%d/%m/%Y') AS data_formatada
                                                     FROM tb_evento
                                                     JOIN tb_ong ON tb_evento.cd_ong = tb_ong.cd_ong
                                                     WHERE tb_evento.dt_evento >= :currentDate");
@@ -77,7 +80,7 @@
                     $id = $rowEvento['cd_evento'];
                     $imagem = $rowEvento['nm_imagem'];
                     $titulo = $rowEvento['nm_titulo_evento'];
-                    $ong = $rowEvento['nome_ong'];
+                    $ong = $rowEvento['nm_ong'];
                     $endereco = $rowEvento['ds_endereco'];
                     $data = $rowEvento['data_formatada'];
                     $descricao = $rowEvento['ds_evento'];
@@ -85,14 +88,7 @@
             ?>
                     <div class="project-card">
                         <div class="project-img-block">
-                            <?php
-                            try {
-                                $imagePath = baseUrl($rowEvento['nm_imagem']);
-                            } catch (Exception $ex) {
-                                $imagePath = '';
-                            }
-                            ?>
-                            <img class="project-img" src="<?= $imagePath ?>" alt="">
+                            <img class="project-img" src="<?= baseUrl($imagem) ?>" alt="">
                         </div>
                         <div class="card-title-block">
                             <div class="card-title"><?= $titulo ?></div>
@@ -163,11 +159,62 @@
                     </div>
                     <div class="small-blocks-section">
                         <div class="green-small-block" onclick="openEditModal()"><i class="fa-regular fa-pen-to-square"></i></div>
-                        <div class="green-small-block"><i class="fa-regular fa-eye"></i></div>
+                        <div class="green-small-block" onclick="openViewModal()"><i class="fa-regular fa-eye"></i></div>
                         <div class="green-small-block"><a id="deleteLinkEvento"><i class="fa-solid fa-trash"></i></a></div>
                     </div>
                 </div>
     </div>
+
+    <!-- Visualizar candidatos -->
+<div class="modal-window" id="viewModalWindow">
+    <input type="hidden" name="id" id="id" value="">
+    <div class="modal-card modal-card-view">
+        <div class="card-view-title">
+            <img class="logo" src="<?= baseUrl('/assets/img/logo-oasis.png') ?>" alt="Logo da Oásis">
+            <h1 class="view-title">Voluntarios que desejam participar:</h1>
+        </div>
+        <div class="table-block">
+            <table class="table">
+                <thead>
+                    <th>Voluntários</th>
+                    <th></th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <?php
+                    try {
+                        // Consulta para obter os voluntários inscritos no evento específico
+                        $sql = "SELECT v.nm_voluntario AS nome_voluntario, v.cd_voluntario as id_voluntario
+                                FROM tb_inscricao i
+                                JOIN tb_voluntario v ON i.cd_voluntario = v.cd_voluntario
+                                WHERE i.cd_evento = :id_evento";
+
+                        $stmt = $conn->prepare($sql);
+                        $stmt->bindParam(":id_evento", $id);
+                        $stmt->execute();
+
+                        // Exibir a lista de voluntários inscritos
+                        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                            $nome_voluntario = $row['nome_voluntario'];
+                            $id_voluntario = $row['id_voluntario'];
+                    ?>
+                            <tr>
+                                <td><?php echo $nome_voluntario; ?></td>
+                                <td><a href="../../../views/pages/perfils/perfilVoluntario.php?id=<?php echo $id_voluntario; ?>"><i class="fa-regular fa-eye"></i></a></td>
+                                <td><a href="../../../services/controllers/ongs/eventos/excluirInscricao.php?id=<?php echo $id; ?>&id_voluntario=<?php echo $id_voluntario; ?>"><i class="fa-solid fa-trash"></i></td>
+                            </tr>
+                    <?php
+                        }
+                    } catch (PDOException $e) {
+                        echo "<tr><td>Erro ao listar voluntários inscritos: " . $e->getMessage() . "</td></tr>";
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
 
     <!-- adicionar evento -->
     <div class="modal-window" id="SecondModalWindow">
@@ -198,7 +245,7 @@
                 <div class="modal-project-info">
                     <div class="info-modal-req">
                         <i class="fa-solid fa-people-group icon-project icon-modal-color"></i>
-                        <input type="text" class="input-requisitos" value="<?= $row['nm_ong'] ?>" readonly>
+                        <input type="text" class="input-requisitos" value="<?= $nome_ong ?>" readonly>
                     </div>
                     <div class="info-modal-req ajust">
                         <i class="fa-solid fa-location-dot icon-project icon-modal-color"></i>
