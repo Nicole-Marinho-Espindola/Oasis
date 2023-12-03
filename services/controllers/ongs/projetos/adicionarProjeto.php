@@ -9,6 +9,8 @@
     $data = filter_input(INPUT_POST, 'dataProjeto');
     $imagem = $_FILES['imagemProjeto'];
 
+    var_dump($idong);
+
     try {
         $stmt_verificar = $conn->prepare("SELECT cd_ong FROM tb_ong WHERE ds_email = :email AND cd_ong != :id");
         $stmt_verificar->bindParam(':email', $email);
