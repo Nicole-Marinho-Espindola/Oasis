@@ -56,7 +56,7 @@
                         <div class="input-block required">
                             <i class="fa-solid fa-user icon-green"></i>
                             <input class="input input-size" type="text"
-                                id="nomeVoluntario" name="nomeVoluntario" oninput="nameValidate()">
+                                id="nomeVoluntario" name="nomeVoluntario" oninput="nameValidate()" value="Chloe">
                         </div>
                         <span class="span-required">O nome deve conter mais de 3 letras</span>
                     </label>
@@ -66,7 +66,7 @@
                             <div class="input-block required">
                                 <i class="fa-solid fa-user icon-green"></i>
                                 <input class="input input-size" type="text"
-                                id="sobrenomeVoluntario" name="sobrenomeVoluntario" oninput="LastNameValidate()">
+                                id="sobrenomeVoluntario" name="sobrenomeVoluntario" oninput="LastNameValidate()" value="Kardashian">
                             </div>
                             <span class="span-required">O sobrenome deve conter mais de 3 letras</span>
                         </label>
@@ -76,7 +76,7 @@
                             <div class="input-block">
                             <i class="fa-regular fa-calendar icon-green"></i>
                                 <input class="input input-size" type="date"
-                                id="nascimentoVoluntario" name="nascimentoVoluntario">
+                                id="nascimentoVoluntario" name="nascimentoVoluntario" value="05/06/2005">
                             </div>
                         </label>
                     </div>
@@ -140,7 +140,7 @@
                                 <div class="input-block">
                                     <i class="fa-regular fa-envelope icon-green"></i>
                                     <input class="input input-size" type="email"
-                                    id="emailVoluntario" name="emailVoluntario" requerid>
+                                    id="emailVoluntario" name="emailVoluntario" requerid value="chloe@gmail.com">
                                 </div>
                             </label>
                         </div>
@@ -149,8 +149,8 @@
                                 <div class="input-block required">
                                     <i class="fa-solid fa-lock icon-green"></i>
                                     <input class="input" type="password"
-                                    id="senhaVoluntario" name="senhaVoluntario" required oninput="mainPasswordForm()">
-                                    <i class="fa-regular fa-eye-slash icon-green"></i>
+                                    id="senhaVoluntario" name="senhaVoluntario" required oninput="mainPasswordForm()" value="123">
+                                    <!-- <i class="fa-regular fa-eye-slash icon-green"></i> -->
                                 </div>
                                 <span class="span-required">A senha deve conter mais de 6 letras</span>
                             </label>

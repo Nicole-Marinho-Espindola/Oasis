@@ -46,7 +46,7 @@
                     <div class="input-block required">
                         <i class="fa-solid fa-user icon-green"></i>
                         <input class="input input-size" type="text"
-                            id="nomeOng" name="nomeOng" oninput="nameValidate()">
+                            id="nomeOng" name="nomeOng" oninput="nameValidate()" value="Sereia Azul">
                     </div>
                     <span class="span-required">O nome deve conter mais de 3 letras</span>
                 </label>
@@ -56,7 +56,7 @@
                         <div class="input-block">
                             <i class="fa-solid fa-users-between-lines icon-green"></i>
                             <input class="input input-size" type="text"
-                            id="razaoOng" name="razaoOng">
+                            id="razaoOng" name="razaoOng" value="Grupo Sereia Azul">
                         </div>
                     </label>
                 </div>
@@ -65,7 +65,7 @@
                         <div class="input-block">
                             <i class="fa-solid fa-rocket icon-green"></i>
                             <input class="input input-size" type="text"
-                            id="missaoOng" name="missaoOng">
+                            id="missaoOng" name="missaoOng" value="Ajudar o mundo por meio do voluntariado ambiental">
                         </div>
                     </label>
                 </div>
@@ -82,7 +82,7 @@
                     <div class="input-block">
                         <i class="fa-solid fa-address-card icon-green"></i>
                         <input class="input input-size" type="number"
-                            id="cnpjOng" name="cnpjOng">
+                            id="cnpjOng" name="cnpjOng" value="00.520.304/0001-80.">
                     </div>
                 </label>
                 </div>
@@ -91,7 +91,7 @@
                         <div class="input-block">
                             <i class="fa-solid fa-location-dot icon-green"></i>
                             <input class="input input-size" type="text"
-                            id="enderecoOng" name="enderecoOng">
+                            id="enderecoOng" name="enderecoOng" value="Praia Grande, Cidade Ocian">
                         </div>
                     </label>
                 </div>
@@ -100,7 +100,7 @@
                         <div class="input-block">
                             <i class="fa-solid fa-phone icon-green"></i>
                             <input class="input input-size" type="number"
-                            id="celularOng" name="celularOng">
+                            id="celularOng" name="celularOng" value="(13)99153-3252">
                         </div>
                     </label>
                 </div>
@@ -120,7 +120,7 @@
                             <div class="input-block">
                                 <i class="fa-regular fa-envelope icon-green"></i>
                                 <input class="input input-size" type="email"
-                                id="emailOng" name="emailOng" requerid>
+                                id="emailOng" name="emailOng" requerid value="sereiaazul@gmail.com">
                             </div>
                         </label>
                     </div>
@@ -129,8 +129,8 @@
                             <div class="input-block">
                                 <i class="fa-solid fa-lock icon-green"></i>
                                 <input class="input" type="password"
-                                id="senhaOng" name="senhaOng" required>
-                                <i class="fa-regular fa-eye-slash icon-green"></i>
+                                id="senhaOng" name="senhaOng" required value="123">
+                                <!-- <i class="fa-regular fa-eye-slash icon-green"></i> -->
                             </div>
                         </label>
                     </div>
