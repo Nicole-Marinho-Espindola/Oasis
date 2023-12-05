@@ -201,8 +201,8 @@
                     ?>
                             <tr>
                                 <td><?php echo $nome_voluntario; ?></td>
-                                <td><a class="link-style-none" href="../../../views/pages/perfils/perfilVoluntario.php?id=<?php echo $id_voluntario; ?>"><i class="fa-regular fa-eye"></i></a></td>
-                                <td><a class="link-style-none" href="../../../services/controllers/ongs/eventos/excluirInscricao.php?id=<?php echo $id; ?>&id_voluntario=<?php echo $id_voluntario; ?>"><i class="fa-solid fa-trash"></i></td>
+                                <td><a class="link-style-none-green" href="../../../views/pages/perfils/perfilVoluntario.php?id=<?php echo $id_voluntario; ?>"><i class="fa-regular fa-eye"></i></a></td>
+                                <td><a class="link-style-none-green" href="../../../services/controllers/ongs/eventos/excluirInscricao.php?id=<?php echo $id; ?>&id_voluntario=<?php echo $id_voluntario; ?>"><i class="fa-solid fa-trash"></i></td>
                             </tr>
                     <?php
                         }

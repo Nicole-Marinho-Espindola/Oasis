@@ -170,7 +170,7 @@
         <div class="modal-card modal-card-view">
             <div class="card-view-title">
                 <img class="logo" src="<?= baseUrl('/assets/img/logo-oasis.png') ?>" alt="Logo da Oásis">
-                <h1 class="view-title">Voluntários que desejam participar:</h1>
+                <h1 class="view-title">Voluntários que desejam participar</h1>
             </div>
             <div class="table-block">
                 <table class="table">
@@ -199,8 +199,8 @@
                         ?>
                                 <tr>
                                     <td><?php echo $nome_voluntario; ?></td>
-                                    <td><a href="../../../views/pages/perfils/perfilVoluntario.php?id=<?php echo $id_voluntario; ?>"><i class="fa-regular fa-eye"></i></a></td>
-                                    <td><a href="../../../services/controllers/ongs/projetos/excluirInscricao.php?id=<?php echo $id; ?>&id_voluntario=<?php echo $id_voluntario; ?>"><i class="fa-solid fa-trash"></i></td>
+                                    <td><a class= "link-style-none-green" href="../../../views/pages/perfils/perfilVoluntario.php?id=<?php echo $id_voluntario; ?>"><i class="fa-regular fa-eye"></i></a></td>
+                                    <td><a class= "link-style-none-green" href="../../../services/controllers/ongs/projetos/excluirInscricao.php?id=<?php echo $id; ?>&id_voluntario=<?php echo $id_voluntario; ?>"><i class="fa-solid fa-trash"></i></td>
                                 </tr>
                         <?php
                             }

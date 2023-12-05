@@ -62,12 +62,32 @@
                 <a class="link-style" href="<?= baseUrl('/views/pages/sobreNos.php') ?>">Sobre nós</a>
             </li>
 
+
             <?php if (empty($_SESSION['email'])) : ?>
                 <li class="list-style">
                     <i class="fa-solid fa-users icon-color"></i>
                     <a class="link-style" href="<?= baseUrl('/views/forms/ongs/cadastro.php') ?>">Sou uma ONG</a>
                 </li>
             <?php endif; ?>
+
+            <?php if (isset($_SESSION['email']) && isset($_SESSION['tipo_usuario'])) : ?>
+            <?php if ($_SESSION['tipo_usuario'] === 'ong') : ?>
+                <li class="list-style">
+                    <i class="fa-solid fa-umbrella-beach icon-color"></i>
+                    <a class="link-style" href="<?= baseUrl('/views/pages/projetos/projetosOng.php') ?>">Projetos e Eventos</a>
+            </li>
+            <?php else : ?>
+                <li class="list-style">
+                    <i class="fa-solid fa-umbrella-beach icon-color"></i>
+                    <a class="link-style" href="<?= baseUrl('/views/pages/projetos/projetosVoluntario.php') ?>">Projetos e Eventos</a>
+            </li>
+            <?php endif; ?>
+        <?php else : ?>
+            <li class="list-style">
+                    <i class="fa-solid fa-umbrella-beach icon-color"></i>
+                    <a class="link-style" href="<?= baseUrl('/views/pages/projetos/projetosVoluntario.php') ?>">Projetos e Eventos</a>
+            </li>
+        <?php endif; ?>
 
             <?php if (isset($_SESSION['email'])) : ?>
                 <li class="list-style">

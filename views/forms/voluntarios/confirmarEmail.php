@@ -57,7 +57,6 @@ include_once(includeURL('/services/helpers.php'))
                     </div>
                     <div class="card-email">
                         <div class="card-email-head">
-                            <!-- <i class="fa-regular fa-envelope mail-icon"></i> -->
                             <img class="mail-icon" src="<?= baseUrl('/assets/img/email-img.png') ?>" alt="">
                         </div>
                         <div class="card-email-text-block">

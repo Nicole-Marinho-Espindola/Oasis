@@ -121,20 +121,12 @@ if (isset($_SESSION['email'])) {
                     <i class="fa-brands fa-facebook-f social-midia-icon"></i>
                 </div>
             </div>
-            <?php
-            // Verifica se o ID do voluntário logado é o mesmo do perfil atual
-            if (isset($_SESSION['idVoluntario']) && $_SESSION['idVoluntario'] === $idVoluntario) {
-                // Se sim, exibe o botão de editar perfil
-            ?>
-                <div onclick="openModal()" class="edit-profile-position">
-                    <div class="edit-profile">
-                        <i class="fa-regular fa-pen-to-square social-midia-icon"></i>
-                        <div class="edit-profile-span">Editar perfil</div>
-                    </div>
+            <div onclick="openModal()" class="edit-profile-position">
+                <div class="edit-profile">
+                    <i class="fa-regular fa-pen-to-square social-midia-icon"></i>
+                    <div class="edit-profile-span">Editar perfil</div>
                 </div>
-            <?php
-            }
-            ?>
+            </div>
         </div>
         <div class="img-profile-block img-profile-volunt">
             <?php if (!empty($imagemVoluntario)) : ?>
@@ -254,7 +246,7 @@ if (isset($_SESSION['email'])) {
 
                             if (isset($rowEvento['imagem_evento'])) {
                         ?>
-                                <div class="pjcts" data-id="<?= $idEvento ?>" data-imagem="<?= $imagemEvento ?>" data-titulo="<?= $tituloEvento ?>" data-ong="<?= $ongEvento ?>" data-descricao="<?= $descricaoEvento ?>" data-dia="<?= $dataEvento ?>" data-endereco="<?= $enderecoEvento ?>" onclick="openSecondModal(this)">
+                                <div class="pjcts" data-id="<?= $idEvento ?>" data-imagem="<?= $imagemEvento ?>" data-titulo="<?= $tituloEvento ?>" data-ong="<?= $ongEvento ?>" data-descricao="<?= $descricaoEvento ?>" data-dia="<?= $diaEvento ?>" data-endereco="<?= $enderecoEvento ?>" onclick="openSecondModal(this)">
                                     <img src="<?= baseUrl($imagemEvento) ?>" alt="Imagem Evento">
                                 </div>
                         <?php
@@ -321,6 +313,8 @@ if (isset($_SESSION['email'])) {
                             $descricaoProjeto = $rowProjeto['descricao_projeto'];
                             $imagemProjeto = $rowProjeto['imagem_projeto'];
                             $ongProjeto = $rowProjeto['ong_nome'];
+                            $enderecoProjeto = $rowProjeto['ong_nome'];
+                            $dataProjeto = $rowProjeto['ds_endereco'];
 
                             if (isset($rowProjeto['imagem_projeto'])) {
                         ?>
@@ -358,10 +352,12 @@ if (isset($_SESSION['email'])) {
                             $descricaoEvento = $rowEvento['descricao_evento'];
                             $imagemEvento = $rowEvento['imagem_evento'];
                             $ongEvento = $rowEvento['ong_nome'];
+                            $diaEvento = $rowEvento['data_formatada_evento'];
+                            $enderecoEvento =  $rowEvento['endereco_evento'];
 
                             if (isset($rowEvento['imagem_evento'])) {
                         ?>
-                                <div class="pjcts" data-id="<?= $idEvento ?>" data-imagem="<?= $imagemEvento ?>" data-titulo="<?= $tituloEvento ?>" data-ong="<?= $ongEvento ?>" data-descricao="<?= $descricaoEvento ?>" data-dia="<?= $dataEvento ?>" data-endereco="<?= $enderecoEvento ?>" onclick="openSecondModal(this)">
+                                <div class="pjcts" data-id="<?= $idEvento ?>" data-imagem="<?= $imagemEvento ?>" data-titulo="<?= $tituloEvento ?>" data-ong="<?= $ongEvento ?>" data-descricao="<?= $descricaoEvento ?>" data-dia="<?= $diaEvento ?>"  data-endereco="<?= $enderecoEvento ?>" onclick="openSecondModal(this)">
                                     <img src="<?= baseUrl($imagemEvento) ?>" alt="Imagem Evento">
                                 </div>
                         <?php
