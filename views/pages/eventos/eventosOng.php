@@ -161,7 +161,7 @@
                     <div class="small-blocks-section">
                         <div class="green-small-block" onclick="openEditModal()"><i class="fa-regular fa-pen-to-square"></i></div>
                         <div class="green-small-block" onclick="openViewModal()"><i class="fa-regular fa-eye"></i></div>
-                        <div class="green-small-block"><a id="deleteLinkEvento"><i class="fa-solid fa-trash"></i></a></div>
+                        <div class="green-small-block"><a class= "link-style-none" id="deleteLinkEvento"><i class="fa-solid fa-trash"></i></a></div>
                     </div>
                 </div>
     </div>
