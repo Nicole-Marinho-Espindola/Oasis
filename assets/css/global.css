@@ -53,6 +53,11 @@
     color: #fff;
 }
 
+.link-style-none-green{
+    text-decoration: none;
+    color: #586D48;
+}
+
 .btn-color{
     background-color: #586D48;
     box-shadow: 1px 1px 7px #586D48;
