@@ -23,6 +23,7 @@ include_once(includeURL('/services/helpers.php'));
     <link rel="stylesheet" href="<?= baseUrl('/assets/css/perfil.css') ?>">
     <link rel="stylesheet" href="<?= baseUrl('/assets/css/form.css') ?>">
     <link rel="stylesheet" href="<?= baseUrl('/assets/css/modal.css') ?>">
+    <link rel="stylesheet" href="<?= baseUrl('/assets/css/projeto.css') ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
@@ -210,6 +211,7 @@ if (isset($_SESSION['email'])) {
                             $tituloProjeto = $rowProjeto['nm_titulo_projeto'];
                             $descricaoProjeto = $rowProjeto['descricao_projeto'];
                             $imagemProjeto = $rowProjeto['imagem_projeto'];
+                            $dataProjeto = $rowProjeto['data_formatada_projeto'];
                             $ongProjeto = $rowProjeto['ong_nome'];
                             $enderecoProjeto = $rowProjeto['ds_endereco'];
 

@@ -14,6 +14,7 @@
             $row = $query->fetch(PDO::FETCH_ASSOC);
 
             $nome_ong = $row['nm_ong'];
+            $id_ong = $row['cd_ong'];
 
         } catch (PDOException $e) {
             echo "Erro na consulta: " . $e->getMessage();
@@ -218,7 +219,7 @@
     <!-- adicionar projeto -->
     <div class="modal-window" id="SecondModalWindow">
         <form class="form" action="<?= baseUrl('/services/controllers/ongs/projetos/adicionarProjeto.php') ?>" enctype="multipart/form-data" method="POST" onsubmit="return validateForm()">
-            <input type="hidden" name="id" value="<?= $row['cd_ong'] ?>">
+            <input type="hidden" name="id" value="<?= $id_ong ?>">
             <div class="modal-card-projects">
                 <div class="modal-title-block-project">
                     <div class="info-modal-req">
