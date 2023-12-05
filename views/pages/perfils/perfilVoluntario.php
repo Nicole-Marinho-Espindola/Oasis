@@ -313,8 +313,8 @@ if (isset($_SESSION['email'])) {
                             $descricaoProjeto = $rowProjeto['descricao_projeto'];
                             $imagemProjeto = $rowProjeto['imagem_projeto'];
                             $ongProjeto = $rowProjeto['ong_nome'];
-                            $enderecoProjeto = $rowProjeto['ong_nome'];
-                            $dataProjeto = $rowProjeto['ds_endereco'];
+                            $enderecoProjeto = $rowProjeto['ds_endereco'];
+                            $dataProjeto = $rowProjeto['data_formatada_projeto'];
 
                             if (isset($rowProjeto['imagem_projeto'])) {
                         ?>
