@@ -37,12 +37,12 @@
 
                 $mail->CharSet = "UTF-8";
                 $mail->isSMTP();
-                $mail->Host       = 'mail.oasisparatodos.com';
+                $mail->Host       = $_ENV['host'];
                 $mail->SMTPAuth   = true;
-                $mail->Username   = '_mainaccount@oasisparatodos.com';
-                $mail->Password   = 'mudar@123';
+                $mail->Username   = $_ENV['username'];
+                $mail->Password   = $_ENV['password'];
                 $mail->SMTPSecure = 'tls';
-                $mail->Port       = 587;
+                $mail->Port       = $_ENV['port'];
 
                 $mail->setFrom('oasis@oasisparatodos.com', 'Oásis'); // Substituir por um email real
                 if (isset($row['ds_email']) && filter_var($row['ds_email'], FILTER_VALIDATE_EMAIL) && isset($row['nm_ong'])) {
