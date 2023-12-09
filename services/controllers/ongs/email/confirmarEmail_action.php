@@ -2,8 +2,6 @@
 
     session_start();
 
-
-
     function includeURL($path = '') {
         return sprintf(
             "%s/%s/%s",
@@ -39,14 +37,14 @@
 
                 $mail->CharSet = "UTF-8";
                 $mail->isSMTP();
-                $mail->Host       = 'sandbox.smtp.mailtrap.io';
+                $mail->Host       = 'mail.oasisparatodos.com';
                 $mail->SMTPAuth   = true;
-                $mail->Username   = '73007940ef36e3';
-                $mail->Password   = '4017fe2ab23566';
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-                $mail->Port       = 2525;
+                $mail->Username   = '_mainaccount@oasisparatodos.com';
+                $mail->Password   = 'mudar@123';
+                $mail->SMTPSecure = 'tls';
+                $mail->Port       = 587;
 
-                $mail->setFrom('mairalinda@gmail.com.br', 'Maíra'); // Substituir por um email real
+                $mail->setFrom('oasis@oasisparatodos.com', 'Oásis'); // Substituir por um email real
                 if (isset($row['ds_email']) && filter_var($row['ds_email'], FILTER_VALIDATE_EMAIL) && isset($row['nm_ong'])) {
                     $mail->addAddress($row['ds_email'], $row['nm_ong']);
 
